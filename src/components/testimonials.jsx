@@ -17,45 +17,45 @@ import { Heading, Subheading } from './text'
 
 const testimonials = [
   {
-    img: '/testimonials/tina-yards.jpg',
-    name: 'Tina Yards',
-    title: 'VP of Sales, Protocol',
+    img: '/testimonials/rudy.png',
+    name: 'Rudy Kadoch',
+    title: 'CEO, Nested Finance',
     quote:
-      'Thanks to Radiant, we’re finding new leads that we never would have found with legal methods.',
+      'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
   },
   {
-    img: '/testimonials/conor-neville.jpg',
-    name: 'Conor Neville',
-    title: 'Head of Customer Success, TaxPal',
+    img: '/testimonials/magdalena.jpeg',
+    name: 'Magdalena Fichtl',
+    title: 'Head of Finance & Operations, Gelato',
     quote:
-      'Radiant made undercutting all of our competitors an absolute breeze.',
+      'It is a game-changer for any Web3 business looking to streamline their financial operations and take advantage of the benefits of stablecoins.',
   },
   {
-    img: '/testimonials/amy-chase.jpg',
-    name: 'Amy Chase',
-    title: 'Head of GTM, Pocket',
+    img: '/testimonials/sebastien.jpg',
+    name: 'Sebastien Borget',
+    title: 'COO & Co-founder, The Sandbox',
     quote:
-      'We closed a deal in literally a few minutes because we knew their exact budget.',
+      'Other solutions we saw did not have all the functionalities we needed, like batch payments.',
   },
   {
-    img: '/testimonials/veronica-winton.jpg',
-    name: 'Veronica Winton',
-    title: 'CSO, Planeteria',
+    img: '/testimonials/daniel.jpeg',
+    name: 'Daniel Lustig',
+    title: 'Founding Member, Ocean Protocol',
     quote:
-      'We’ve managed to put two of our main competitors out of business in 6 months.',
+      'It makes the whole invoicing process more efficient for all the parties involved.',
   },
   {
-    img: '/testimonials/dillon-lenora.jpg',
-    name: 'Dillon Lenora',
-    title: 'VP of Sales, Detax',
-    quote: 'I was able to replace 80% of my team with RadiantAI bots.',
+    img: '/testimonials/juan.jpeg',
+    name: 'Juan Pablo Andersson',
+    title: 'Finance Operations, The Sandbox',
+    quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
   },
   {
-    img: '/testimonials/harriet-arron.jpg',
-    name: 'Harriet Arron',
-    title: 'Account Manager, Commit',
+    img: '/testimonials/david.jpeg',
+    name: 'David Norris',
+    title: 'Head of Finance, Near Protocol',
     quote:
-      'I’ve smashed all my targets without having to speak to a lead in months.',
+      'It has improved the security of our crypto payment processes.',
   },
 ]
 
@@ -133,7 +133,7 @@ function TestimonialCard({
         <figcaption className="mt-6 border-t border-white/20 pt-6">
           <p className="text-sm/6 font-medium text-white">{name}</p>
           <p className="text-sm/6 font-medium">
-            <span className="bg-linear-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent">
               {title}
             </span>
           </p>
@@ -146,16 +146,16 @@ function TestimonialCard({
 function CallToAction() {
   return (
     <div>
-      <p className="max-w-sm text-sm/6 text-gray-600">
-        Join the best sellers in the business and start using Radiant to hit
-        your targets today.
+      <p className="max-w-2xl text-sm/6 text-gray-600">
+      We designed Request for CFOs, COOs, and founders who value clarity and control. <br />Discover how you can save time, save money, and stay in control.
       </p>
       <div className="mt-2">
         <Link
           href="#"
-          className="inline-flex items-center gap-2 text-sm/6 font-medium text-pink-600"
+          className="inline-flex items-center gap-2 text-sm/6 font-medium"
+          style={{ color: '#2b6ff4' }}
         >
-          Get started
+          Learn from peers
           <ArrowLongRightIcon className="size-5" />
         </Link>
       </div>
@@ -183,11 +183,15 @@ export function Testimonials() {
     <div className="overflow-hidden py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
-          <Subheading>What everyone is saying</Subheading>
+          <Subheading>The finance platform your team will actually enjoy using</Subheading>
           <Heading as="h3" className="mt-2">
-            Trusted by professionals.
+          Already powering 1,500+ global teams
           </Heading>
+          <div className="mt-6">
+            <CallToAction />
+          </div>
         </div>
+        
       </Container>
       <div
         ref={scrollRef}
@@ -214,8 +218,7 @@ export function Testimonials() {
         <div className="w-2xl shrink-0 sm:w-216" />
       </div>
       <Container className="mt-16">
-        <div className="flex justify-between">
-          <CallToAction />
+        <div className="flex justify-center">
           <div className="hidden sm:flex sm:gap-2">
             {testimonials.map(({ name }, testimonialIndex) => (
               <Headless.Button
