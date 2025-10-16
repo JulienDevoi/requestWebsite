@@ -2,8 +2,8 @@ import '@/styles/tailwind.css'
 
 export const metadata = {
   title: {
-    template: '%s - Radiant',
-    default: 'Radiant - Close every deal',
+    template: '%s - Request',
+    default: 'Request Finance',
   },
 }
 

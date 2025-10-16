@@ -11,7 +11,7 @@ import { LogoCluster } from '@/components/logo-cluster'
 import { LogoTimeline } from '@/components/logo-timeline'
 import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
-import { Screenshot } from '@/components/screenshot'
+import { BeforeAfter } from '@/components/before-after'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -29,7 +29,7 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="/blog/radiant-raises-100m-series-a-from-tailwind-ventures"
+              href="#"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Tired of Wallet Chaos & Compliance Stress? There’s a Better Way.
@@ -46,7 +46,7 @@ function Hero() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="#">Get started</Button>
-            <Button variant="secondary" href="/pricing">
+            <Button variant="secondary" href="#">
               See pricing
             </Button>
           </div>
@@ -61,21 +61,17 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-4xl">
-    Traditional payments can’t keep up
+    Traditional payments can't keep up
         </Heading>
         <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
         Managing global finances through banks and outdated systems means delays, hidden fees, and manual work.
         <br />Crypto promised freedom, but volatility and complexity made it difficult to use for real businesses.
         </p>
-        <p className="mt-6 max-w-5xl text-xl/7 font-semibold text-gray-950 sm:text-1xl/8">
+       
+        <BeforeAfter className="mt-8 max-w-4xl" />
+        <p className="mt-8 max-w-5xl text-xl/7 font-semibold text-gray-950 sm:text-1xl/8">
         You need something better: the speed of crypto with the stability of fiat.
           </p>
-        <Screenshot
-          width={1216}
-          height={768}
-          src="/images/screenshot.png"
-          className="mt-16 h-144 sm:h-auto sm:w-304"
-        />
       </Container>
     </div>
   )
@@ -158,11 +154,11 @@ function DarkBentoSection() {
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
           <BentoCard
             dark
-            eyebrow="Networking"
-            title="Sell at the speed of light"
-            description="Our RadiantAI chat assistants analyze the sentiment of your conversations in real time, ensuring you're always one step ahead."
+            eyebrow="Fast, secure, and compliant"
+            title="All-in-one platform for stablecoins & fiat operations"
+            description="Accounts Payable, Accounts Receivable, and Accounting. Stay compliant, be audit-ready. No more juggling multiple tools."
             graphic={
-              <div className="h-80 bg-[url(/screenshots/networking.png)] bg-size-[851px_344px] bg-no-repeat" />
+              <div className="h-80 bg-[url(/images/screenshot.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
             fade={['top']}
             className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl"
@@ -170,27 +166,39 @@ function DarkBentoSection() {
           <BentoCard
             dark
             eyebrow="Integrations"
-            title="Meet leads where they are"
-            description="With thousands of integrations, no one will be able to escape your cold outreach."
+            title="Bridging stablecoins & fiat"
+            description="Connect to and from wallets, accounting software, and banks."
             graphic={<LogoTimeline />}
             // `overflow-visible!` is needed to work around a Chrome bug that disables the mask on the graphic.
             className="z-10 overflow-visible! lg:col-span-2 lg:rounded-tr-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Meetings"
-            title="Smart call scheduling"
-            description="Automatically insert intro calls into your leads' calendars without their consent."
-            graphic={<LinkedAvatars />}
+            eyebrow="Crypto to fiat"
+            title="Offramp payments made easy"
+            description="Pay in stablecoins and your beneficiaries receive fiat, seamlessly."
+            graphic={
+              <div className="h-80 relative overflow-hidden">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="https://cheq-public.s3.eu-west-2.amazonaws.com/req-tech+(2).mp4" type="video/mp4" />
+                </video>
+              </div>
+            }
             className="lg:col-span-2 lg:rounded-bl-4xl"
           />
           <BentoCard
             dark
-            eyebrow="Engagement"
-            title="Become a thought leader"
-            description="RadiantAI automatically writes LinkedIn posts that relate current events to B2B sales, helping you build a reputation as a thought leader."
+            eyebrow="Corporate cards"
+            title="Spend management simplified"
+            description="Unlock the full potential of stablecoins and fiat payments with our business credit card."
             graphic={
-              <div className="h-80 bg-[url(/screenshots/engagement.png)] bg-size-[851px_344px] bg-no-repeat" />
+              <div className="h-80 bg-[url(/images/corporate-cards.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
             fade={['top']}
             className="max-lg:rounded-b-4xl lg:col-span-4 lg:rounded-br-4xl"

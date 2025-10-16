@@ -12,7 +12,7 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-        Ready to boost your payments?
+        Ready to transform your payments?
           <br />
           Start your free trial today.
         </p>
@@ -52,19 +52,20 @@ function Sitemap() {
   return (
     <>
       <div>
-        <SitemapHeading>Product</SitemapHeading>
+        <SitemapHeading>Solutions</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="#">Analysis</SitemapLink>
-          <SitemapLink href="#">API</SitemapLink>
+          <SitemapLink href="#">For Startups</SitemapLink>
+          <SitemapLink href="#">For Agencies</SitemapLink>
+          <SitemapLink href="#">For SMBs</SitemapLink>
+          <SitemapLink href="#">For Big Organizations</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="#">Careers</SitemapLink>
-          <SitemapLink href="/blog">Blog</SitemapLink>
-          <SitemapLink href="/company">Company</SitemapLink>
+          <SitemapLink href="#">Blog</SitemapLink>
+          <SitemapLink href="#">About us</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -117,24 +118,14 @@ function SocialLinks() {
   return (
     <>
       <Link
-        href="https://facebook.com"
-        target="_blank"
-        aria-label="Visit us on Facebook"
-        className="text-gray-950 data-hover:text-gray-950/75"
-      >
-        <SocialIconFacebook className="size-4" />
-      </Link>
-      <Link
-        href="https://x.com"
-        target="_blank"
+        href="#"
         aria-label="Visit us on X"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconX className="size-4" />
       </Link>
       <Link
-        href="https://linkedin.com"
-        target="_blank"
+        href="#"
         aria-label="Visit us on LinkedIn"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
@@ -147,7 +138,7 @@ function SocialLinks() {
 function Copyright() {
   return (
     <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Radiant Inc.
+      &copy; {new Date().getFullYear()} Request Finance. All rights reserved.
     </div>
   )
 }

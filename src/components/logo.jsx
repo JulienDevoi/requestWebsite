@@ -19,7 +19,7 @@ export function Logo({ className }) {
 export function Mark({ className }) {
   return (
     <Image
-      src="/images/request-finance.svg"
+      src="/images/icon.svg"
       alt="Request Finance"
       width={34}
       height={34}
