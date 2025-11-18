@@ -13,7 +13,7 @@ import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
 import { BeforeAfter } from '@/components/before-after'
 import { Testimonials } from '@/components/testimonials'
-import { Heading, Subheading } from '@/components/text'
+import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
@@ -29,7 +29,7 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="#"
+              href="/waitlist"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -45,8 +45,8 @@ function Hero() {
             Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Join the waitlist</Button>
-            <Button variant="secondary" href="#">
+            <Button href="/waitlist">Join the waitlist</Button>
+            <Button variant="secondary" href="#introducing">
               Discover how it works
             </Button>
           </div>
@@ -56,7 +56,7 @@ function Hero() {
   )
 }
 
-function FeatureSection() {
+{/*function FeatureSection() {
   return (
     <div className="overflow-hidden">
       <Container className="pb-24">
@@ -74,6 +74,100 @@ function FeatureSection() {
           </p>
       </Container>
     </div>
+  )
+}*/}
+
+function Person({ name, description, img }) {
+  return (
+    <li className="flex items-center gap-4">
+      <img alt="" src={img} className="size-12 rounded-full" />
+      <div className="text-sm/6">
+        <h3 className="font-medium">{name}</h3>
+        <p className="text-gray-500">{description}</p>
+      </div>
+    </li>
+  )
+}
+
+function Team() {
+  return (
+    <Container className="mt-12 mb-32">
+      <Subheading>The problem</Subheading>
+      <Heading as="h3" className="mt-2">
+      The hidden cost of outdated spend management
+      </Heading>
+      <Lead className="mt-6 max-w-3xl">
+      Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work.
+      </Lead>
+      <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
+        <div className="max-w-lg">
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+                <span className="font-semibold text-gray-950">3–7 days</span> waiting for reimbursement approvals
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+              <span className="font-semibold text-gray-950">2.9–4%</span> lost in fees using traditional corporate cards
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+              <span className="font-semibold text-gray-950">12–48 hours</span> chasing receipts and employee expense reports
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+              <span className="font-semibold text-gray-950">2 weeks</span> to open new bank accounts for new entities
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+              <span className="font-semibold text-gray-950">5%</span> lost on FX when teams spend abroad
+              </p>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-xl font-medium text-gray-400">+</span>
+              <p className="text-sm/6 text-gray-600 flex-1">
+              <span className="font-semibold text-gray-950">∞</span> worrying about budget overruns, rogue spending, and last-minute surprises...
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl font-medium text-gray-950">=</span>
+              <div>
+                <p className="text-lg font-semibold text-gray-950">
+                  Endless payment headaches ☁️ 
+                </p>
+               
+              </div>
+            </div>
+          </div>
+          {/*<div className="mt-8">
+            <Button className="w-full sm:w-auto" href="/waitlist">
+              Join the waitlist
+            </Button>
+          </div>*/}
+        </div>
+        <div className="max-lg:order-first max-lg:max-w-lg">
+          <div className="aspect-3/2 overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
+            <img
+              alt=""
+              src="/images/spend-management.jpg"
+              className="block size-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+      
+    </Container>
   )
 }
 
@@ -141,7 +235,7 @@ function BentoSection() {
 
 function DarkBentoSection() {
   return (
-    <div className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
+    <div id="introducing" className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
         <Subheading dark>Introducing</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
@@ -218,7 +312,8 @@ export default function Home() {
           <LogoCloud />
         </Container>
         <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
-          <FeatureSection />
+          {/* <FeatureSection /> */}
+          <Team />
           {/* <BentoSection /> */}
           <DarkBentoSection />
         </div>

@@ -12,17 +12,15 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-        Ready to transform your payments?
-          <br />
-          Start your free trial today.
+        Ready to Simplify Your Business Spend Management?
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-l text-sm/6 text-gray-500">
-      Experience the simplicity and reliability of stablecoin payments without the complexity of crypto.
+      Experience the simplicity and reliability of stablecoin. 
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="#">
-          Get started
+        <Button className="w-full sm:w-auto" href="/waitlist">
+          Join the waitlist
         </Button>
       </div>
     </div>
@@ -151,7 +149,7 @@ export function Footer() {
         <Container>
           <CallToAction />
           <PlusGrid className="pb-16">
-            <PlusGridRow>
+            {/* <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
                   <PlusGridItem className="pt-6 lg:pb-6">
@@ -162,9 +160,12 @@ export function Footer() {
                   <Sitemap />
                 </div>
               </div>
-            </PlusGridRow>
+            </PlusGridRow> */}
             <PlusGridRow className="flex justify-between">
-              <div>
+              <div className="flex items-center gap-3">
+                <PlusGridItem className="py-3">
+                  <Logo className="h-9" />
+                </PlusGridItem>
                 <PlusGridItem className="py-3">
                   <Copyright />
                 </PlusGridItem>

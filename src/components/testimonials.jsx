@@ -149,7 +149,7 @@ function CallToAction() {
       <p className="max-w-2xl text-sm/6 text-gray-600">
       We designed Request for CFOs, COOs, and founders who value clarity and control. <br />Discover how you can save time, save money, and stay in control.
       </p>
-      <div className="mt-2">
+       {/*<div className="mt-2">
         <Link
           href="#"
           className="inline-flex items-center gap-2 text-sm/6 font-medium"
@@ -158,7 +158,7 @@ function CallToAction() {
           Learn from peers
           <ArrowLongRightIcon className="size-5" />
         </Link>
-      </div>
+      </div>*/}
     </div>
   )
 }

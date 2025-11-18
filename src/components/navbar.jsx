@@ -12,7 +12,7 @@ import { Logo } from './logo'
 import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
-  { href: '#', label: 'Join the waitlist' }
+  { href: '/waitlist', label: 'Join the waitlist' }
 ]
 
 function DesktopNav() {
