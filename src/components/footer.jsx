@@ -118,14 +118,14 @@ function SocialLinks() {
   return (
     <>
       <Link
-        href="#"
+        href="https://x.com/RequestFinance"
         aria-label="Visit us on X"
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconX className="size-4" />
       </Link>
       <Link
-        href="#"
+        href="https://www.linkedin.com/company/request-finance/"
         aria-label="Visit us on LinkedIn"
         className="text-gray-950 data-hover:text-gray-950/75"
       >

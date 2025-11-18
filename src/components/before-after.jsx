@@ -1,13 +1,13 @@
 import { clsx } from 'clsx'
 
 const painPoints = [
-  { time: '3-7 days', task: 'waiting for international wire transfers' },
-  { time: '2.9-4%', task: 'paying excessive payment processing fees' },
-  { time: '48 hrs', task: 'managing chargeback disputes' },
-  { time: '2 weeks', task: 'opening business bank accounts globally' },
-  { time: '5%', task: 'losing money on currency conversions' },
-  { time: '24 hrs', task: 'reconciling payment data across platforms' },
-  { time: '∞', task: 'worrying about account freezes...' },
+  { time: 'The hidden cost', task: 'of outdated spend management' },
+  { time: '3–7 days', task: 'waiting for reimbursement approvals' },
+  { time: '2.9–4%', task: 'lost in fees using traditional corporate cards' },
+  { time: '12–48 hours', task: 'chasing receipts and employee expense reports' },
+  { time: '2 weeks', task: 'to open new bank accounts for new entities' },
+  { time: '5% lost', task: 'on FX when teams spend abroad' },
+  { time: '∞', task: 'worrying about budget overruns, rogue spending, and last-minute surprises...' },
 ]
 
 export function BeforeAfter({ className }) {

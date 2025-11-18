@@ -32,22 +32,22 @@ function Hero() {
               href="#"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
-              Tired of Wallet Chaos & Compliance Stress? There’s a Better Way.
+              Ready to Simplify Your Business Spend Management?
               <ChevronRightIcon className="size-4" />
             </Link>
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[0.9] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[0.8] md:text-6xl/[0.8]">
-            Payments for modern companies
+          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.2] md:text-6xl/[0.8]">
+            Spend management for modern companies
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Empower your finance team with corporate cards, bill payments, and global payouts. <br />Powered by stablecoins, simplified for everyone.
+            Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="#">Get started</Button>
+            <Button href="#">Join the waitlist</Button>
             <Button variant="secondary" href="#">
-              See pricing
+              Discover how it works
             </Button>
           </div>
         </div>
@@ -61,16 +61,16 @@ function FeatureSection() {
     <div className="overflow-hidden">
       <Container className="pb-24">
         <Heading as="h2" className="max-w-4xl">
-    Traditional payments can't keep up
+    Traditional spend management can't keep up
         </Heading>
         <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-        Managing global finances through banks and outdated systems means delays, hidden fees, and manual work.
-        <br />Crypto promised freedom, but volatility and complexity made it difficult to use for real businesses.
+        Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work.
+        
         </p>
        
         <BeforeAfter className="mt-8 max-w-4xl" />
         <p className="mt-8 max-w-5xl text-xl/7 font-semibold text-gray-950 sm:text-1xl/8">
-        You need something better: the speed of crypto with the stability of fiat.
+        Finance teams spend more time fixing problems than driving strategy.
           </p>
       </Container>
     </div>
@@ -82,10 +82,10 @@ function BentoSection() {
     <Container>
       <Subheading>Introducing</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        The better way to move money
+        The better way to manage company spend
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      Request brings the benefits of stablecoins to everyday business payments, without the learning curve.
+      Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
         </p>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -145,10 +145,10 @@ function DarkBentoSection() {
       <Container>
         <Subheading dark>Introducing</Subheading>
         <Heading as="h3" dark className="mt-2 max-w-3xl">
-          The better way to move money
+          The better way to manage company spend
         </Heading>
         <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-400 sm:text-1xl/8">
-      Request brings the benefits of stablecoins to everyday business payments, without the learning curve.
+        Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
