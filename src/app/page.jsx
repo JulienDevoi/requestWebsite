@@ -144,7 +144,7 @@ function Team() {
               <span className="text-2xl font-medium text-gray-950">=</span>
               <div>
                 <p className="text-lg font-semibold text-gray-950">
-                  Endless payment headaches ☁️ 
+                  Endless payment headaches
                 </p>
                
               </div>
@@ -176,7 +176,7 @@ function BentoSection() {
     <Container>
       <Subheading>Introducing</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        The better way to manage company spend
+        The easier way to manage company spend
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
       Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
@@ -233,13 +233,88 @@ function BentoSection() {
   )
 }
 
+function UseCases() {
+  const useCases = [
+    {
+      title: 'Multi Payout',
+      description: 'Streamline affiliate payments, content creator payouts, and bulk disbursements. Send payments to hundreds of recipients simultaneously with automated workflows and real-time tracking.',
+      examples: ['Affiliate payments', 'Content creator payouts', 'Commission distributions'],
+      image: '/company/1.jpg',
+    },
+    {
+      title: 'International Payments',
+      description: 'Simplify international transactions for import/export, marketplaces, and global operations. Pay suppliers worldwide with competitive FX rates and transparent fees.',
+      examples: ['Import/export transactions', 'Marketplace payments', 'Global supplier payments'],
+      image: '/company/2.jpg',
+    },
+    {
+      title: 'Accounts Payable',
+      description: 'Automate your accounts payable process with seamless vendor payments. Manage invoices, approvals, and payments all in one place with full audit trails.',
+      examples: ['Vendor invoices', 'Recurring payments', 'Invoice automation'],
+      image: '/company/3.jpg',
+    },
+  ]
+
+  return (
+    <div className="bg-linear-to-b from-gray-100 to-white py-32">
+      <Container>
+        <Subheading>Use Cases</Subheading>
+        <Heading as="h2" className="mt-2">
+          Built for every payment scenario.
+        </Heading>
+        <Lead className="mt-6 max-w-3xl">
+          Request adapts to your business needs, whether you're managing affiliate payouts, 
+          processing international transactions, or automating vendor payments.
+        </Lead>
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {useCases.map((useCase, index) => (
+            <div
+              key={index}
+              className="relative flex flex-col rounded-3xl bg-white p-2 shadow-md ring-1 shadow-black/5 ring-black/5"
+            >
+              {useCase.image && (
+                <img
+                  alt=""
+                  src={useCase.image}
+                  className="aspect-3/2 w-full rounded-2xl object-cover"
+                />
+              )}
+              <div className="flex flex-1 flex-col p-8">
+                <h3 className="text-xl font-medium tracking-tight text-gray-950">
+                  {useCase.title}
+                </h3>
+                <p className="mt-4 text-sm/6 text-gray-600">
+                  {useCase.description}
+                </p>
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                    Common Use Cases
+                  </p>
+                  <ul className="mt-3 space-y-2">
+                    {useCase.examples.map((example, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm/6 text-gray-600">
+                        <span className="size-1.5 shrink-0 rounded-full bg-gray-400" />
+                        {example}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </div>
+  )
+}
+
 function DarkBentoSection() {
   return (
     <div id="introducing" className="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
       <Container>
         <Subheading dark>Introducing</Subheading>
-        <Heading as="h3" dark className="mt-2 max-w-3xl">
-          The better way to manage company spend
+        <Heading as="h3" dark className="mt-2 max-w-6xl">
+          The easier way to manage company spend
         </Heading>
         <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-400 sm:text-1xl/8">
         Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
@@ -320,6 +395,7 @@ export default function Home() {
         
       </main>
       <Testimonials />
+      <UseCases />
       <Footer />
     </div>
   )
