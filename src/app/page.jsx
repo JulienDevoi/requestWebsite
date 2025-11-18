@@ -56,7 +56,7 @@ function HeroSaved() {
   )
 }
 
-function Hero() {
+function HeroSavedVideoWhite() {
   return (
     <div className="relative">
       <div className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset overflow-hidden">
@@ -69,7 +69,7 @@ function Hero() {
         >
           <source src="/images/request-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-white/65" />
+        <div className="absolute inset-0 bg-blue-100/70" />
       </div>
       <Container className="relative">
         <Navbar
@@ -93,6 +93,61 @@ function Hero() {
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/waitlist">Join the waitlist</Button>
             <Button variant="secondary" href="#introducing">
+              Discover how it works
+            </Button>
+          </div>
+        </div>
+      </Container>
+    </div>
+  )
+}
+
+function Hero() {
+  return (
+    <div className="relative">
+      <div className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/images/request-video.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/65" />
+      </div>
+      <Container className="relative">
+        <Navbar
+          banner={
+            <Link
+              href="/waitlist"
+              className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
+            >
+              Ready to Simplify Your Business Spend Management?
+              <ChevronRightIcon className="size-4" />
+            </Link>
+          }
+        />
+        <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
+          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-white sm:text-6xl/[1.2] md:text-6xl/[0.8]">
+            Spend management for modern companies
+          </h1>
+          <p className="mt-8 max-w-5xl text-xl/7 font-medium text-white/90 sm:text-2xl/8">
+            Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
+          </p>
+          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
+            <Button 
+              href="/waitlist"
+              className="bg-white text-gray-950 data-hover:bg-gray-100"
+            >
+              Join the waitlist
+            </Button>
+            <Button 
+              variant="secondary" 
+              href="#introducing"
+              className="bg-white/15 text-white border-white/20 ring-white/20 data-hover:bg-white/20"
+            >
               Discover how it works
             </Button>
           </div>
@@ -427,7 +482,7 @@ function DarkBentoSection() {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <Hero />
+      <HeroSavedVideoWhite />
       <main>
         <Container className="mt-10">
           <LogoCloud />
