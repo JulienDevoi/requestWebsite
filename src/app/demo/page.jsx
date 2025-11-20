@@ -3,9 +3,49 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
+import { useEffect } from 'react'
 import { Logo } from '@/components/logo'
 
 export default function Demo() {
+  useEffect(() => {
+    // HubSpot script should automatically initialize, but we can trigger it manually if needed
+    const initHubSpot = () => {
+      // The HubSpot script automatically finds elements with class 'meetings-iframe-container'
+      // and data-src attribute, so we just need to ensure the script is loaded
+      if (window.hbspt && typeof window.hbspt.meetings !== 'undefined') {
+        // Force re-initialization if needed
+        const containers = document.querySelectorAll('.meetings-iframe-container')
+        containers.forEach((container) => {
+          if (!container.querySelector('iframe')) {
+            const dataSrc = container.getAttribute('data-src')
+            if (dataSrc) {
+              // Create iframe directly since HubSpot's auto-init might not work in React
+              const iframe = document.createElement('iframe')
+              iframe.src = dataSrc
+              iframe.style.width = '100%'
+              iframe.style.height = '100%'
+              iframe.style.border = 'none'
+              iframe.style.minHeight = '600px'
+              iframe.setAttribute('frameborder', '0')
+              iframe.setAttribute('allowtransparency', 'true')
+              container.appendChild(iframe)
+            }
+          }
+        })
+      }
+    }
+
+    // Try to initialize immediately
+    initHubSpot()
+
+    // Also check periodically in case script loads later
+    const interval = setInterval(() => {
+      initHubSpot()
+    }, 500)
+
+    // Cleanup
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
@@ -31,7 +71,7 @@ export default function Demo() {
               <div className="lg:flex lg:space-x-12 xl:space-x-16">
                 {/* Left side */}
                 <div className="grow lg:mt-16 mb-16 lg:mb-0 text-center lg:text-left">
-                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-8 sm:text-5xl">Be the first to try the new standard in spend management</h1>
+                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-8 sm:text-5xl">The new standard in business spend management</h1>
 
                   <div className="mb-12">
                     <ul className="inline-flex flex-col text-slate-500 space-y-2.5">
@@ -130,7 +170,7 @@ export default function Demo() {
                     <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden">
                       {/* HubSpot Meetings Embed */}
                       <div 
-                        className="meetings-iframe-container w-full" 
+                        className="meetings-iframe-container w-full min-h-[600px]" 
                         data-src="https://content.request.finance/meetings/rf-team/demo-call?embed=true"
                       ></div>
                     </div>
