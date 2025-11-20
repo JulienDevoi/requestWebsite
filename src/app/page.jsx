@@ -9,6 +9,7 @@ import { LinkedAvatars } from '@/components/linked-avatars'
 import { LogoCloud } from '@/components/logo-cloud'
 import { LogoCluster } from '@/components/logo-cluster'
 import { LogoTimeline } from '@/components/logo-timeline'
+import { LogoTimeline2 } from '@/components/logo-timeline-2'
 import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
 import { BeforeAfter } from '@/components/before-after'
@@ -19,8 +20,46 @@ import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
+  title: 'Request Finance - Spend Management for Modern Companies',
   description:
-    'Radiant helps you sell more by revealing sensitive information about your customers.',
+    'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+  keywords: [
+    'spend management',
+    'corporate cards',
+    'accounts payable',
+    'stablecoins',
+    'business finance',
+    'expense management',
+    'fintech',
+    'business payments',
+  ],
+  openGraph: {
+    title: 'Request Finance - Spend Management for Modern Companies',
+    description:
+      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    url: 'https://requestfinance.com',
+    siteName: 'Request Finance',
+    images: [
+      {
+        url: '/images/thumbnail.png',
+        width: 1200,
+        height: 630,
+        alt: 'Request Finance - Spend Management Platform',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Request Finance - Spend Management for Modern Companies',
+    description:
+      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    images: ['/images/thumbnail.png'],
+  },
+  alternates: {
+    canonical: 'https://requestfinance.com',
+  },
 }
 
 function HeroSaved() {
@@ -183,7 +222,7 @@ function Hero() {
 function Person({ name, description, img }) {
   return (
     <li className="flex items-center gap-4">
-      <img alt="" src={img} className="size-12 rounded-full" />
+      <img alt={`${name} - ${description}`} src={img} className="size-12 rounded-full" />
       <div className="text-sm/6">
         <h3 className="font-medium">{name}</h3>
         <p className="text-gray-500">{description}</p>
@@ -262,7 +301,7 @@ function Team() {
         <div className="max-lg:order-first max-lg:max-w-lg">
           <div className="aspect-3/2 overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
             <img
-              alt=""
+              alt="Business spend management dashboard showing expense tracking and payment processing"
               src="/images/spend-management.jpg"
               className="block size-full object-cover"
             />
@@ -278,7 +317,7 @@ function BentoSection() {
   return (
     <Container>
       <Subheading>Get to know Request</Subheading>
-      <Heading as="h3" className="mt-2 max-w-3xl">
+      <Heading as="h3" className="mt-2 max-w-6xl">
         The alternative to the banks who failed your business
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
@@ -287,47 +326,77 @@ function BentoSection() {
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
-          eyebrow="Insight"
-          title="Get perfect clarity"
-          description="Radiant uses social engineering to build a detailed financial picture of your leads. Know their budget, compensation package, social security number, and more."
+          key="corporate-cards"
+          eyebrow="Corporate cards"
+          title="Control your spend"
+          description="Issue virtual and physical cards with real-time controls and instant notifications."
           graphic={
-            <div className="h-80 bg-[url(/screenshots/profile.png)] bg-size-[1000px_560px] bg-position-[left_-109px_top_-112px] bg-no-repeat" />
+            <img 
+              src="/images/corporate-cards.gif" 
+              alt="Corporate cards" 
+              className="h-full w-full object-cover"
+            />
           }
           fade={['bottom']}
           className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
         />
         <BentoCard
-          eyebrow="Analysis"
-          title="Undercut your competitors"
-          description="With our advanced data mining, you’ll know which companies your leads are talking to and exactly how much they’re being charged."
+          key="accounts-payable"
+          eyebrow="Accounts Payable"
+          title="Process bills at lightning speed"
+          description="Manage invoices, approvals, and payments all in one place with full audit trails. Whether you have 1 or 10,000 accounts payable per month."
           graphic={
-            <div className="absolute inset-0 bg-[url(/screenshots/competitors.png)] bg-size-[1100px_650px] bg-position-[left_-38px_top_-73px] bg-no-repeat" />
+            <div className="h-80 relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/images/accounts-payable.mp4" type="video/mp4" />
+              </video>
+            </div>
           }
           fade={['bottom']}
           className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
+          key="on-off-ramp"
           eyebrow="Speed"
-          title="Built for power users"
-          description="It’s never been faster to cold email your entire contact list using our streamlined keyboard shortcuts."
+          title="On and off ramp payments"
+          description="Pay in stablecoins and your beneficiaries receive fiat, seamlessly. Or the other way around."
           graphic={
-            <div className="flex size-full pt-10 pl-10">
-              <Keyboard highlighted={['LeftCommand', 'LeftShift', 'D']} />
+            <div className="h-80 relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="https://cheq-public.s3.eu-west-2.amazonaws.com/req-tech+(2).mp4" type="video/mp4" />
+              </video>
             </div>
           }
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
+          key="source-reach"
           eyebrow="Source"
           title="Get the furthest reach"
           description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
-          graphic={<LogoCluster />}
+          graphic={
+            // <LogoCluster />
+            <LogoTimeline2 />
+          }
           className="lg:col-span-2"
         />
         <BentoCard
-          eyebrow="Limitless"
-          title="Sell globally"
-          description="Radiant helps you sell in locations currently under international embargo."
+          key="operate-globally"
+          eyebrow="Worldwide"
+          title="Operate globally"
+          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
@@ -377,7 +446,7 @@ function UseCases() {
             >
               {useCase.image && (
                 <img
-                  alt=""
+                  alt={`${useCase.title} use case illustration for ${useCase.description.substring(0, 50)}...`}
                   src={useCase.image}
                   className="aspect-3/2 w-full rounded-2xl object-cover"
                 />
@@ -425,6 +494,7 @@ function DarkBentoSection() {
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
           <BentoCard
+            key="all-in-one-platform"
             dark
             eyebrow="Fast, secure, and compliant"
             title="All-in-one platform for stablecoins & fiat operations"
@@ -436,6 +506,7 @@ function DarkBentoSection() {
             className="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl"
           />
           <BentoCard
+            key="integrations-bridging"
             dark
             eyebrow="Integrations"
             title="Bridging stablecoins & fiat"
@@ -445,6 +516,7 @@ function DarkBentoSection() {
             className="z-10 overflow-visible! lg:col-span-2 lg:rounded-tr-4xl"
           />
           <BentoCard
+            key="crypto-to-fiat"
             dark
             eyebrow="Crypto to fiat"
             title="Offramp payments made easy"
@@ -465,6 +537,7 @@ function DarkBentoSection() {
             className="lg:col-span-2 lg:rounded-bl-4xl"
           />
           <BentoCard
+            key="spend-management-simplified"
             dark
             eyebrow="Corporate cards"
             title="Spend management simplified"
@@ -482,8 +555,47 @@ function DarkBentoSection() {
 }
 
 export default function Home() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Request Finance',
+    url: 'https://requestfinance.com',
+    logo: 'https://requestfinance.com/images/request-finance.svg',
+    description: 'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    sameAs: [
+      // Add social media links here when available
+      // 'https://twitter.com/requestfinance',
+      // 'https://linkedin.com/company/requestfinance',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      url: 'https://requestfinance.com/demo',
+    },
+  }
+
+  const websiteStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Request Finance',
+    url: 'https://requestfinance.com',
+    description: 'Spend management for modern companies. Corporate cards, accounts payable, and accrual accounting powered by stablecoins.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Request Finance',
+    },
+  }
+
   return (
     <div className="overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+      />
       <HeroSaved />
       <main>
         <Container className="mt-10">
@@ -532,7 +644,6 @@ export default function Home() {
             {/* <FeatureSection /> */}
             {/* <Team /> */}
             <BentoSection />
-            {/* <DarkBentoSection /> */}
           </div>
           <Steps />
         </div>

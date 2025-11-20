@@ -9,27 +9,27 @@ export function LogoCloud({ className }) {
       )}
     >
       <img
-        alt="SavvyCal"
+        alt="PWC - Trusted by PWC"
         src="/logo-cloud/pwc.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
       <img
-        alt="Laravel"
+        alt="Deloitte - Trusted by Deloitte"
         src="/logo-cloud/deloitte.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
       <img
-        alt="Tuple"
+        alt="Xange - Trusted by Xange"
         src="/logo-cloud/xange.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
       <img
-        alt="Transistor"
+        alt="Stake Capital - Trusted by Stake Capital"
         src="/logo-cloud/stake-capital.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
       <img
-        alt="Statamic"
+        alt="Ledger - Trusted by Ledger"
         src="/logo-cloud/ledger.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />

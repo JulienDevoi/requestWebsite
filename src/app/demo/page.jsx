@@ -1,190 +1,73 @@
-'use client'
+import { DemoContent } from './demo-content'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import Script from 'next/script'
-import { useEffect } from 'react'
-import { Logo } from '@/components/logo'
+export const metadata = {
+  title: 'Book a Demo - Request Finance',
+  description:
+    'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+  keywords: [
+    'book a demo',
+    'spend management demo',
+    'corporate cards demo',
+    'accounts payable demo',
+    'business finance platform',
+    'fintech demo',
+  ],
+  openGraph: {
+    title: 'Book a Demo - Request Finance',
+    description:
+      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+    url: 'https://requestfinance.com/demo',
+    siteName: 'Request Finance',
+    images: [
+      {
+        url: '/images/thumbnail.png',
+        width: 1200,
+        height: 630,
+        alt: 'Request Finance - Book a Demo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book a Demo - Request Finance',
+    description:
+      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+    images: ['/images/thumbnail.png'],
+  },
+  alternates: {
+    canonical: 'https://requestfinance.com/demo',
+  },
+}
 
 export default function Demo() {
-  useEffect(() => {
-    // HubSpot script should automatically initialize, but we can trigger it manually if needed
-    const initHubSpot = () => {
-      // The HubSpot script automatically finds elements with class 'meetings-iframe-container'
-      // and data-src attribute, so we just need to ensure the script is loaded
-      if (window.hbspt && typeof window.hbspt.meetings !== 'undefined') {
-        // Force re-initialization if needed
-        const containers = document.querySelectorAll('.meetings-iframe-container')
-        containers.forEach((container) => {
-          if (!container.querySelector('iframe')) {
-            const dataSrc = container.getAttribute('data-src')
-            if (dataSrc) {
-              // Create iframe directly since HubSpot's auto-init might not work in React
-              const iframe = document.createElement('iframe')
-              iframe.src = dataSrc
-              iframe.style.width = '100%'
-              iframe.style.height = '100%'
-              iframe.style.border = 'none'
-              iframe.style.minHeight = '600px'
-              iframe.setAttribute('frameborder', '0')
-              iframe.setAttribute('allowtransparency', 'true')
-              container.appendChild(iframe)
-            }
-          }
-        })
-      }
-    }
-
-    // Try to initialize immediately
-    initHubSpot()
-
-    // Also check periodically in case script loads later
-    const interval = setInterval(() => {
-      initHubSpot()
-    }, 500)
-
-    // Cleanup
-    return () => clearInterval(interval)
-  }, [])
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Spend Management Platform',
+    provider: {
+      '@type': 'Organization',
+      name: 'Request Finance',
+      url: 'https://requestfinance.com',
+    },
+    areaServed: 'Worldwide',
+    description:
+      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      url: 'https://requestfinance.com/demo',
+    },
+  }
 
   return (
     <>
-      <header className="absolute w-full z-30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Site branding */}
-            <div className="shrink-0 mr-4">
-              {/* Logo */}
-              <Link className="block" href="/" aria-label="Request Finance">
-                <Logo className="h-9" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Page content */}
-      <main className="grow">
-        <section>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-36 pb-12 md:pt-40 md:pb-20">
-              <div className="lg:flex lg:space-x-12 xl:space-x-16">
-                {/* Left side */}
-                <div className="grow lg:mt-16 mb-16 lg:mb-0 text-center lg:text-left">
-                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-8 sm:text-5xl">The new standard in business spend management</h1>
-
-                  <div className="mb-12">
-                    <ul className="inline-flex flex-col text-slate-500 space-y-2.5">
-                      <li className="flex items-center text-left">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Payments without delays</span>
-                      </li>
-                      <li className="flex items-center text-left">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>No hidden fees, ever</span>
-                      </li>
-                      <li className="flex items-center text-left">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Simple to use, seamless to integrate</span>
-                      </li>
-                      <li className="flex items-center text-left">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Built for global operations</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Press logos */}
-                  <div className="w-full">
-                    <div className="text-xs text-slate-400 font-[350] uppercase tracking-wider text-center lg:text-left mb-5">
-                      Trusted by the best
-                    </div>
-
-                    <div className="flex flex-nowrap items-center justify-center lg:justify-start -m-4 lg:-m-2 xl:-m-4">
-                      {/* Facebook */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/ht.svg" alt="Harris & Trotter" />
-                      </div>
-
-                      {/* Nike */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/deloitte.svg" alt="Deloitte" />
-                      </div>
-
-                      {/* Samsung */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/pwc.svg" alt="PWC" />
-                      </div>
-
-                      {/* Disney */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/xange.svg" alt="Xange" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right side */}
-                <div className="relative shrink-0 text-center lg:text-left">
-                  {/* Bg */}
-                  <div
-                    className="absolute inset-0 mb-44 -mx-4 sm:-mx-6 lg:-mt-[9999px] lg:ml-0 lg:-mr-[9999px] rounded-bl-[100px] bg-gradient-to-tr from-blue-600 to-blue-500 pointer-events-none -z-10"
-                    aria-hidden="true"
-                  />
-
-                  {/* Illustration */}
-                  <Image
-                    className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -mt-40 ml-20 pointer-events-none -z-10 max-w-none mix-blend-lighten"
-                    src="/images/hero-illustration.svg"
-                    alt="Illustration"
-                    width={600}
-                    height={600}
-                    aria-hidden="true"
-                  />
-
-                  <div className="flex pt-12 lg:pt-0 lg:pl-12 xl:pl-20">
-                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden">
-                      {/* HubSpot Meetings Embed */}
-                      <div 
-                        className="meetings-iframe-container w-full min-h-[600px]" 
-                        data-src="https://content.request.finance/meetings/rf-team/demo-call?embed=true"
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Script
-        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
-        strategy="afterInteractive"
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <DemoContent />
     </>
   )
 }

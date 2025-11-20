@@ -26,7 +26,7 @@ export function Steps() {
       <Container>
         <Subheading>Get started</Subheading>
         <Heading as="h2" className="mt-2 max-w-6xl">
-          Three steps to transform your company's spend management
+          3 steps to transform your company's spend management
         </Heading>
         {/*<p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
           Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work. It's time for an upgrade.

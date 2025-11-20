@@ -12,11 +12,11 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-        Ready to Simplify Your Business Spend Management?
+        Ready to Upgrade Your Business Spend Management?
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-l text-sm/6 text-gray-500">
-      Experience the simplicity and reliability of stablecoin. 
+        Experience the simplicity and reliability of stablecoins. <br /> Your account setup takes less than 5 minutes.
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="/demo">
