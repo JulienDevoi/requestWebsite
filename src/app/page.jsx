@@ -88,9 +88,9 @@ function HeroSaved() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/demo">Book a demo</Button>
-            <Button variant="secondary" href="#get-to-know-request">
+            <SmoothScrollButton variant="secondary" href="#get-to-know-request">
               Discover how it works
-            </Button>
+            </SmoothScrollButton>
           </div>
         </div>
       </Container>
@@ -134,9 +134,9 @@ function HeroSavedVideoWhite() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/demo">Book a demo</Button>
-            <Button variant="secondary" href="#get-to-know-request">
+            <SmoothScrollButton variant="secondary" href="#get-to-know-request">
               Discover how it works
-            </Button>
+            </SmoothScrollButton>
           </div>
         </div>
       </Container>
@@ -185,13 +185,13 @@ function Hero() {
             >
               Book a demo
             </Button>
-            <Button 
+            <SmoothScrollButton 
               variant="secondary" 
-              href="#introducing"
+              href="#get-to-know-request"
               className="bg-white/15 text-white border-white/20 ring-white/20 data-hover:bg-white/20"
             >
               Discover how it works
-            </Button>
+            </SmoothScrollButton>
           </div>
         </div>
       </Container>

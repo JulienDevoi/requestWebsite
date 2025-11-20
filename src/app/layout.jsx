@@ -1,4 +1,5 @@
 import '@/styles/tailwind.css'
+import Script from 'next/script'
 
 export const metadata = {
   title: {
@@ -24,6 +25,11 @@ export default function RootLayout({ children }) {
       </head>
       <body className="text-gray-950 antialiased">
         {children}
+        <Script
+          src="https://beamanalytics.b-cdn.net/beam.min.js"
+          data-token="4ca70d3b-e6aa-48ea-bdb2-1515a762fd66"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
