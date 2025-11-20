@@ -384,9 +384,9 @@ function BentoSection() {
         />
         <BentoCard
           key="source-reach"
-          eyebrow="Source"
-          title="Get the furthest reach"
-          description="Bypass those inconvenient privacy laws to source leads from the most unexpected places."
+          eyebrow="Integrations"
+          title="Connect with your daily tool"
+          description="Connect to and from wallets, accounting software, and banks."
           graphic={
             // <LogoCluster />
             <LogoTimeline2 />
