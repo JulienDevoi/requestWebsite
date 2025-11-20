@@ -17,11 +17,11 @@ import { Heading, Subheading } from './text'
 
 const testimonials = [
   {
-    img: '/testimonials/rudy.png',
-    name: 'Rudy Kadoch',
-    title: 'CEO, Nested Finance',
+    img: '/testimonials/david.jpeg',
+    name: 'David Norris',
+    title: 'Head of Finance, Near Protocol',
     quote:
-      'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
+      'It has improved the security of our stablecoin payment processes.',
   },
   {
     img: '/testimonials/magdalena.jpeg',
@@ -51,11 +51,11 @@ const testimonials = [
     quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
   },
   {
-    img: '/testimonials/david.jpeg',
-    name: 'David Norris',
-    title: 'Head of Finance, Near Protocol',
+    img: '/testimonials/rudy.png',
+    name: 'Rudy Kadoch',
+    title: 'CEO, Nested Finance',
     quote:
-      'It has improved the security of our crypto payment processes.',
+      'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
   },
 ]
 

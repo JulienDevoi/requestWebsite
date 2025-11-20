@@ -6,7 +6,7 @@ export function Steps() {
   const steps = [
     {
       number: '1',
-      title: 'Pass KYB',
+      title: 'KYB verification',
       description: 'Complete your Know Your Business verification quickly and securely.',
     },
     {
@@ -16,7 +16,7 @@ export function Steps() {
     },
     {
       number: '3',
-      title: 'All setup',
+      title: 'You are setup!',
       description: 'Your finance team is ready to go.',
     },
   ]

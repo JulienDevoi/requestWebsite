@@ -17,6 +17,7 @@ import { Solutions } from '@/components/solutions'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Lead, Subheading } from '@/components/text'
+import { SmoothScrollButton } from '@/components/smooth-scroll-button'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
@@ -87,7 +88,7 @@ function HeroSaved() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/demo">Book a demo</Button>
-            <Button variant="secondary" href="#introducing">
+            <Button variant="secondary" href="#get-to-know-request">
               Discover how it works
             </Button>
           </div>
@@ -133,7 +134,7 @@ function HeroSavedVideoWhite() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/demo">Book a demo</Button>
-            <Button variant="secondary" href="#introducing">
+            <Button variant="secondary" href="#get-to-know-request">
               Discover how it works
             </Button>
           </div>
@@ -315,7 +316,7 @@ function Team() {
 
 function BentoSection() {
   return (
-    <Container>
+    <Container id="get-to-know-request">
       <Subheading>Get to know Request</Subheading>
       <Heading as="h3" className="mt-2 max-w-6xl">
         The alternative to the banks who failed your business
