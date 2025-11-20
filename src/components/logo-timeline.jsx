@@ -44,73 +44,85 @@ export function LogoTimeline() {
         </div>
       </div>
       <div className="@container absolute inset-0 grid grid-cols-1 pt-8">
-        <Row>
+        <Row key="row-safe-revolut">
           <Logo
+            key="safe"
             label="Safe"
             src="/logo-timeline/safe.jpg"
             className="[animation-delay:-26s] [animation-duration:30s]"
           />
           <Logo
+            key="revolut"
             label="Revolut"
             src="/logo-timeline/revolut.svg"
             className="[animation-delay:-8s] [animation-duration:30s]"
           />
         </Row>
-        <Row>
+        <Row key="row-ledger-metamask">
           <Logo
+            key="ledger"
             label="Ledger"
             src="/logo-timeline/ledger.png"
             className="[animation-delay:-40s] [animation-duration:40s]"
           />
           <Logo
+            key="metamask"
             label="Metamask"
             src="/logo-timeline/metamask.png"
             className="[animation-delay:-20s] [animation-duration:40s]"
           />
         </Row>
-        <Row>
+        <Row key="row-xero-sap">
           <Logo
+            key="xero"
             label="Xero"
             src="/logo-timeline/xero.png"
             className="[animation-delay:-10s] [animation-duration:40s]"
           />
           <Logo
+            key="sap"
             label="SAP"
             src="/logo-timeline/sap.svg"
             className="[animation-delay:-32s] [animation-duration:40s]"
           />
         </Row>
-        <Row>
+        <Row key="row-dbs-citibank">
           <Logo
+            key="dbs"
             label="DBS"
             src="/logo-timeline/dbs.png"
             className="[animation-delay:-45s] [animation-duration:45s]"
           />
           <Logo
+            key="citibank"
             label="Citibank"
             src="/logo-timeline/citibank.png"
             className="[animation-delay:-23s] [animation-duration:45s]"
           />
         </Row>
-        <Row>
+        <Row key="row-chase-wise">
           <Logo
+            key="chase"
             label="Chase"
             src="/logo-timeline/chase.png"
             className="[animation-delay:-55s] [animation-duration:60s]"
           />
           <Logo
+            key="wise"
             label="Wise"
             src="/logo-timeline/wise.svg"
             className="[animation-delay:-20s] [animation-duration:60s]"
           />
         </Row>
-        <Row>
+        <Row key="row-quickbooks-aspire">
           <Logo
+            key="quickbooks"
             label="Quickbooks"
             src="/logo-timeline/quickbooks.svg"
             className="[animation-delay:-9s] [animation-duration:40s]"
           />
           <Logo
+            key="aspire"
             label="Aspire"
             src="/logo-timeline/aspire.png"
             className="[animation-delay:-28s] [animation-duration:40s]"

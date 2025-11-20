@@ -33,15 +33,27 @@ function Marker({ src, top, offset, delay }) {
 }
 
 export function Map() {
+  const markers = [
+    { id: 'marker-1', src: '/map/1.jpg', top: 96, offset: -128, delay: 0.15 },
+    { id: 'marker-2', src: '/map/2.jpg', top: 160, offset: -16, delay: 0.4 },
+    { id: 'marker-3', src: '/map/3.jpg', top: 144, offset: 96, delay: 0.3 },
+    { id: 'marker-4', src: '/map/4.jpg', top: 192, offset: 64, delay: 0.6 },
+    { id: 'marker-5', src: '/map/5.jpg', top: 224, offset: -32, delay: 0.8 },
+  ]
+
   return (
     <div aria-hidden="true" className="relative size-full">
       <div className="absolute inset-0 bg-[url(/map.png)] mask-[linear-gradient(to_bottom,black_50%,transparent)] bg-size-[530px_430px] bg-position-[center_-75px] bg-no-repeat" />
       <div className="absolute inset-0">
-        <Marker key="marker-1" src="/map/1.jpg" top={96} offset={-128} delay={0.15} />
-        <Marker key="marker-2" src="/map/2.jpg" top={160} offset={-16} delay={0.4} />
-        <Marker key="marker-3" src="/map/3.jpg" top={144} offset={96} delay={0.3} />
-        <Marker key="marker-4" src="/map/4.jpg" top={192} offset={64} delay={0.6} />
-        <Marker key="marker-5" src="/map/5.jpg" top={224} offset={-32} delay={0.8} />
+        {markers.map((marker) => (
+          <Marker
+            key={marker.id}
+            src={marker.src}
+            top={marker.top}
+            offset={marker.offset}
+            delay={marker.delay}
+          />
+        ))}
       </div>
     </div>
   )
