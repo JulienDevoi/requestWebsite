@@ -19,8 +19,8 @@ function CallToAction() {
       Experience the simplicity and reliability of stablecoin. 
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/waitlist">
-          Join the waitlist
+        <Button className="w-full sm:w-auto" href="/demo">
+          Book a demo
         </Button>
       </div>
     </div>

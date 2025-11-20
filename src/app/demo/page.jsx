@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useState, useRef } from 'react'
 import { Logo } from '@/components/logo'
 
-export default function Waitlist() {
+export default function Demo() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const formRef = useRef(null)

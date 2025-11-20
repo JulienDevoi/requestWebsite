@@ -12,6 +12,7 @@ import { LogoTimeline } from '@/components/logo-timeline'
 import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
 import { BeforeAfter } from '@/components/before-after'
+import { Solutions } from '@/components/solutions'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -29,7 +30,7 @@ function HeroSaved() {
         <Navbar
           banner={
             <Link
-              href="/waitlist"
+              href="/demo"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -45,7 +46,7 @@ function HeroSaved() {
             Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/waitlist">Join the waitlist</Button>
+            <Button href="/demo">Book a demo</Button>
             <Button variant="secondary" href="#introducing">
               Discover how it works
             </Button>
@@ -75,7 +76,7 @@ function HeroSavedVideoWhite() {
         <Navbar
           banner={
             <Link
-              href="/waitlist"
+              href="/demo"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -91,7 +92,7 @@ function HeroSavedVideoWhite() {
             Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/waitlist">Join the waitlist</Button>
+            <Button href="/demo">Book a demo</Button>
             <Button variant="secondary" href="#introducing">
               Discover how it works
             </Button>
@@ -121,7 +122,7 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="/waitlist"
+              href="/demo"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -138,10 +139,10 @@ function Hero() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button 
-              href="/waitlist"
+              href="/demo"
               className="bg-white text-gray-950 data-hover:bg-gray-100"
             >
-              Join the waitlist
+              Book a demo
             </Button>
             <Button 
               variant="secondary" 
@@ -252,8 +253,8 @@ function Team() {
             </div>
           </div>
           {/*<div className="mt-8">
-            <Button className="w-full sm:w-auto" href="/waitlist">
-              Join the waitlist
+            <Button className="w-full sm:w-auto" href="/demo">
+              Book a demo
             </Button>
           </div>*/}
         </div>
@@ -275,12 +276,12 @@ function Team() {
 function BentoSection() {
   return (
     <Container>
-      <Subheading>Introducing</Subheading>
+      <Subheading>Get to know Request</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        The easier way to manage company spend
+        Your alternative to banks who failed your business
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
+      Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work. It's time for an upgrade.
         </p>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -482,16 +483,54 @@ function DarkBentoSection() {
 export default function Home() {
   return (
     <div className="overflow-hidden">
-      <HeroSavedVideoWhite />
+      <HeroSaved />
       <main>
         <Container className="mt-10">
           <LogoCloud />
         </Container>
+        {/* <Solutions 
+          eyebrow="Get to know Request"
+          title="Your alternative to banks"
+          description="Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work. It's time for an upgrade."
+          items={[
+            {
+              title: "Corporate Cards",
+              description: "Issue virtual and physical cards with real-time controls and instant notifications.",
+              image: "/images/corporate-cards.png",
+            },
+            {
+              title: "Accounts Payable",
+              description: "Automate vendor payments, invoice processing, and approval workflows.",
+              image: "/company/3.jpg",
+            },
+            {
+              title: "Accounting Integration",
+              description: "Seamlessly sync with your existing accounting software and maintain accurate records.",
+              image: "/images/screenshot.png",
+            },
+            {
+              title: "Multi-Currency Support",
+              description: "Manage payments in multiple currencies with competitive FX rates and transparent fees.",
+              image: "/company/2.jpg",
+            },
+            {
+              title: "Real-Time Reporting",
+              description: "Get instant insights into your spending with comprehensive dashboards and analytics.",
+              image: "/company/1.jpg",
+            },
+            {
+              title: "Expense Management",
+              description: "Streamline expense tracking, receipt capture, and reimbursement workflows.",
+              image: "/company/4.jpg",
+            },
+          ]}
+          className="pt-24"
+        /> */}
         <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
           {/* <FeatureSection /> */}
-          <Team />
-          {/* <BentoSection /> */}
-          <DarkBentoSection />
+          {/* <Team /> */}
+          <BentoSection />
+          {/* <DarkBentoSection /> */}
         </div>
         
       </main>
