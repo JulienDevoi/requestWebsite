@@ -2,70 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState, useRef } from 'react'
+import Script from 'next/script'
 import { Logo } from '@/components/logo'
 
 export default function Demo() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const formRef = useRef(null)
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    const formData = new FormData(e.currentTarget)
-    const data = {
-      firstName: formData.get('first-name'),
-      lastName: formData.get('last-name'),
-      email: formData.get('email'),
-      linkedinProfile: formData.get('linkedin-profile'),
-      companySize: formData.get('company-size'),
-      comment: formData.get('comment'),
-    }
-
-    try {
-      console.log('Submitting form data:', data)
-      
-      // Use different webhook URLs based on environment
-      const isProduction = process.env.NODE_ENV === 'production' || !window.location.hostname.includes('localhost')
-      const webhookUrl = isProduction 
-        ? 'https://notanothermarketer.app.n8n.cloud/webhook/f98b76d1-614f-4665-b599-60b7afb339b6'
-        : 'https://notanothermarketer.app.n8n.cloud/webhook-test/f98b76d1-614f-4665-b599-60b7afb339b6'
-      
-      console.log('Using webhook URL:', webhookUrl, '(Production:', isProduction, ')')
-      
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-
-      console.log('Response status:', response.status)
-      console.log('Response headers:', Object.fromEntries(response.headers.entries()))
-
-      if (response.ok) {
-        const responseData = await response.text()
-        console.log('Success response:', responseData)
-        setIsSubmitted(true)
-        // Reset form
-        if (formRef.current) {
-          formRef.current.reset()
-        }
-      } else {
-        const errorText = await response.text()
-        console.error('Failed to submit form. Status:', response.status, 'Response:', errorText)
-        alert(`There was an error submitting the form. Status: ${response.status}. Please try again.`)
-      }
-    } catch (error) {
-      console.error('Network error submitting form:', error)
-      alert('There was a network error submitting the form. Please try again.')
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
     <>
@@ -187,122 +127,12 @@ export default function Demo() {
                   />
 
                   <div className="flex pt-12 lg:pt-0 lg:pl-12 xl:pl-20">
-                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white p-6 shadow-2xl">
-                      {/* Form */}
-                      <form ref={formRef} onSubmit={handleSubmit}>
-                        <h3 className="text-2xl font-bold text-slate-800 mb-6 text-left">Receive your invite now</h3>
-                        {isSubmitted && (
-                          <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
-                            Thank you! You've been successfully added to our waiting list.
-                          </div>
-                        )}
-                        <div className="space-y-4">
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0" htmlFor="first-name">
-                              First name
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <input 
-                                id="first-name" 
-                                name="first-name" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                type="text" 
-                                placeholder="John" 
-                                required 
-                              />
-                            </div>
-                          </div>
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0" htmlFor="last-name">
-                              Last name
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <input 
-                                id="last-name" 
-                                name="last-name" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                type="text" 
-                                placeholder="Doe" 
-                                required 
-                              />
-                            </div>
-                          </div>
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0" htmlFor="email">
-                              Work email
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <input 
-                                id="email" 
-                                name="email" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                type="email" 
-                                placeholder="johndoe@company.com" 
-                                required 
-                              />
-                            </div>
-                          </div>
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0" htmlFor="linkedin-profile">
-                              Linkedin Profile Url
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <input 
-                                id="linkedin-profile" 
-                                name="linkedin-profile" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                type="text" 
-                                placeholder="https://www.linkedin.com/in/johndoe/" 
-                                required 
-                              />
-                            </div>
-                          </div>
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label
-                              className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0"
-                              htmlFor="company-size"
-                            >
-                              Company size
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <select 
-                                id="company-size" 
-                                name="company-size" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                required
-                              >
-                                <option value="">Select company size</option>
-                                <option value="Less than 10">Less than 10</option>
-                                <option value="11-25">11-25</option>
-                                <option value="26-100">26-100</option>
-                                <option value="More than 100">More than 100</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="sm:flex items-start justify-between sm:space-x-4">
-                            <label className="block text-sm leading-5 mt-2.5 text-slate-800 font-[550] text-left mb-1.5 sm:mb-0" htmlFor="comment">
-                              Anything else?
-                            </label>
-                            <div className="sm:w-72 xl:w-80 shrink-0">
-                              <textarea 
-                                id="comment" 
-                                name="comment" 
-                                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                                rows={4} 
-                              />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mt-6 text-right">
-                          <button 
-                            type="submit" 
-                            disabled={isSubmitting}
-                            className="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-sm"
-                          >
-                            {isSubmitting ? 'Submitting...' : 'Receive my invite'}
-                          </button>
-                        </div>
-                      </form>
+                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden">
+                      {/* HubSpot Meetings Embed */}
+                      <div 
+                        className="meetings-iframe-container w-full" 
+                        data-src="https://content.request.finance/meetings/rf-team/demo-call?embed=true"
+                      ></div>
                     </div>
                   </div>
                 </div>
@@ -311,6 +141,10 @@ export default function Demo() {
           </div>
         </section>
       </main>
+      <Script
+        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+        strategy="afterInteractive"
+      />
     </>
   )
 }

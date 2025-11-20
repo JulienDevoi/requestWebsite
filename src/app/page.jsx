@@ -13,6 +13,7 @@ import { Map } from '@/components/map'
 import { Navbar } from '@/components/navbar'
 import { BeforeAfter } from '@/components/before-after'
 import { Solutions } from '@/components/solutions'
+import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -278,7 +279,7 @@ function BentoSection() {
     <Container>
       <Subheading>Get to know Request</Subheading>
       <Heading as="h3" className="mt-2 max-w-3xl">
-        Your alternative to banks who failed your business
+        The alternative to the banks who failed your business
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
       Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work. It's time for an upgrade.
@@ -526,11 +527,14 @@ export default function Home() {
           ]}
           className="pt-24"
         /> */}
-        <div className="bg-linear-to-b from-white from-50% to-gray-100 py-32">
-          {/* <FeatureSection /> */}
-          {/* <Team /> */}
-          <BentoSection />
-          {/* <DarkBentoSection /> */}
+        <div className="bg-linear-to-b from-white from-50% to-gray-100">
+          <div className="py-32">
+            {/* <FeatureSection /> */}
+            {/* <Team /> */}
+            <BentoSection />
+            {/* <DarkBentoSection /> */}
+          </div>
+          <Steps />
         </div>
         
       </main>
