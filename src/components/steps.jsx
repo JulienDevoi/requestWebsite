@@ -16,7 +16,7 @@ export function Steps() {
     },
     {
       number: '3',
-      title: 'You are setup!',
+      title: 'You are set up!',
       description: 'Your finance team is ready to go.',
     },
   ]

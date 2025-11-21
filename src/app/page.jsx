@@ -241,7 +241,7 @@ function Team() {
       The hidden cost of outdated spend management
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-      Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work.
+      Managing company spending with spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work.
       </Lead>
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
@@ -323,7 +323,7 @@ function BentoSection() {
         The alternative to the banks who failed your business
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      Managing company spending with spreadsheets, scattered tools, and slow banking systems creates chaos, blind spots, and unnecessary work. It's time for an upgrade.
+      Managing company spending with spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work. It's time for an upgrade.
         </p>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -381,7 +381,7 @@ function BentoSection() {
           key="source-reach"
           eyebrow="Integrations"
           title="Connect with your daily tools"
-          description="Connect to and from wallets, accounting software, and banks."
+          description="Connect to and from accounting softwares, banks, and all the other tools you use."
           graphic={
             // <LogoCluster />
             <LogoTimeline2 />
@@ -404,7 +404,7 @@ function BentoSection() {
 function UseCases() {
   const useCases = [
     {
-      title: 'Multi Payout',
+      title: 'Mass Payout',
       description: 'Streamline affiliate payments, content creator payouts, and bulk disbursements. Send payments to hundreds of recipients simultaneously with automated workflows and real-time tracking.',
       examples: ['Affiliate payments', 'Content creator payouts', 'Commission distributions'],
       image: '/company/1.jpg',
