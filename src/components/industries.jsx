@@ -17,45 +17,31 @@ import { Heading, Subheading } from './text'
 
 const industries = [
   {
-    img: '/images/web3.jpg',
-    name: 'David Norris',
-    title: 'Web3',
-    quote:
-      'It has improved the security of our stablecoin payment processes.',
-  },
-  {
-    img: '/testimonials/magdalena.jpeg',
-    name: 'Magdalena Fichtl',
-    title: 'Enterprise',
-    quote:
-      'It is a game-changer for any Web3 business looking to streamline their financial operations and take advantage of the benefits of stablecoins.',
-  },
-  {
-    img: '/testimonials/sebastien.jpg',
-    name: 'Sebastien Borget',
-    title: 'E-commerce',
-    quote:
-      'Other solutions we saw did not have all the functionalities we needed, like batch payments.',
-  },
-  {
-    img: '/testimonials/daniel.jpeg',
+    img: 'images/saas.jpg',
     name: 'Daniel Lustig',
     title: 'SaaS',
     quote:
       'It makes the whole invoicing process more efficient for all the parties involved.',
   },
   {
-    img: '/testimonials/juan.jpeg',
+    img: 'images/wholesalers.jpg',
     name: 'Juan Pablo Andersson',
     title: 'Wholesalers',
     quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
   },
   {
-    img: '/testimonials/rudy.png',
+    img: 'images/affiliates.jpg',
     name: 'Rudy Kadoch',
     title: 'Affiliates',
     quote:
       'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
+  },
+  {
+    img: '/images/web3.jpg',
+    name: 'David Norris',
+    title: 'Web3',
+    quote:
+      'It has improved the security of our stablecoin payment processes.',
   },
 ]
 
@@ -175,9 +161,9 @@ export function Industries() {
     <div className="bg-linear-to-b from-gray-100 to-white py-32 overflow-hidden">
       <Container>
         <div ref={setReferenceWindowRef}>
-          <Subheading>Use Cases</Subheading>
+          <Subheading>Who's it for?</Subheading>
           <Heading as="h3" className="mt-2">
-          Built for every business need
+          Built for every type of business
           </Heading>
           <CallToAction />
         </div>
