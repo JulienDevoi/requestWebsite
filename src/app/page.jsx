@@ -333,17 +333,11 @@ function BentoSection() {
           title="Each entity gets its own account"
           description="No more sharing cards or accounts. Each entity has its own budget, spending limits, and approvals. For a clean audit trail."
           graphic={
-            <div className="h-80 relative overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="/images/accounts-payable.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <img 
+              src="/images/virtual-account.png" 
+              alt="Virtual account" 
+              className="h-full w-full object-cover"
+            />
           }
           fade={['bottom']}
           className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
