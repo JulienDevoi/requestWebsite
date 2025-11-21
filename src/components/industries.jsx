@@ -15,51 +15,51 @@ import { Container } from './container'
 import { Link } from './link'
 import { Heading, Subheading } from './text'
 
-const testimonials = [
+const industries = [
   {
-    img: '/testimonials/david.jpeg',
+    img: '/images/web3.jpg',
     name: 'David Norris',
-    title: 'Head of Finance, Near Protocol',
+    title: 'Web3',
     quote:
       'It has improved the security of our stablecoin payment processes.',
   },
   {
     img: '/testimonials/magdalena.jpeg',
     name: 'Magdalena Fichtl',
-    title: 'Head of Finance & Operations, Gelato',
+    title: 'Enterprise',
     quote:
       'It is a game-changer for any Web3 business looking to streamline their financial operations and take advantage of the benefits of stablecoins.',
   },
   {
     img: '/testimonials/sebastien.jpg',
     name: 'Sebastien Borget',
-    title: 'COO & Co-founder, The Sandbox',
+    title: 'E-commerce',
     quote:
       'Other solutions we saw did not have all the functionalities we needed, like batch payments.',
   },
   {
     img: '/testimonials/daniel.jpeg',
     name: 'Daniel Lustig',
-    title: 'Founding Member, Ocean Protocol',
+    title: 'SaaS',
     quote:
       'It makes the whole invoicing process more efficient for all the parties involved.',
   },
   {
     img: '/testimonials/juan.jpeg',
     name: 'Juan Pablo Andersson',
-    title: 'Finance Operations, The Sandbox',
+    title: 'Wholesalers',
     quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
   },
   {
     img: '/testimonials/rudy.png',
     name: 'Rudy Kadoch',
-    title: 'CEO, Nested Finance',
+    title: 'Affiliates',
     quote:
       'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
   },
 ]
 
-function TestimonialCard({
+function IndustryCard({
   name,
   title,
   img,
@@ -118,27 +118,31 @@ function TestimonialCard({
         aria-hidden="true"
         className="absolute inset-0 rounded-3xl bg-linear-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
       />
-      <figure className="relative p-10">
+      {/* <div className="relative p-10 pt-10 pb-6">
+        <p className="text-sm/6 font-medium text-white">{name}</p>
+      </div> */}
+      {/* <figure className="relative flex-1 flex flex-col justify-center p-10 pt-0 pb-6">
         <blockquote>
           <p className="relative text-xl/7 text-white">
             <span aria-hidden="true" className="absolute -translate-x-full">
-              “
+              "
             </span>
             {children}
             <span aria-hidden="true" className="absolute">
-              ”
+              "
             </span>
           </p>
         </blockquote>
-        <figcaption className="mt-6 border-t border-white/20 pt-6">
-          <p className="text-sm/6 font-medium text-white">{name}</p>
-          <p className="text-sm/6 font-medium">
+      </figure> */}
+      <figcaption className="relative p-10 pt-0 pb-10">
+        <div className="border-t border-white/20 pt-6">
+          <p className="text-xl/7 font-medium">
             <span className="bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent">
               {title}
             </span>
           </p>
-        </figcaption>
-      </figure>
+        </div>
+      </figcaption>
     </motion.div>
   )
 }
@@ -146,12 +150,12 @@ function TestimonialCard({
 function CallToAction() {
   return (
     <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      We designed Request for CFOs, COOs, and founders who value clarity and control. <br />Discover how you can save time, save money, and stay in control.
+      Request adapts to your company's needs, whether you're managing affiliate payouts, processing international transactions, or automating vendor payments.
     </p>
   )
 }
 
-export function Testimonials() {
+export function Industries() {
   let scrollRef = useRef(null)
   let { scrollX } = useScroll({ container: scrollRef })
   let [setReferenceWindowRef, bounds] = useMeasure()
@@ -168,12 +172,12 @@ export function Testimonials() {
   }
 
   return (
-    <div className="overflow-hidden py-32">
+    <div className="bg-linear-to-b from-gray-100 to-white py-32 overflow-hidden">
       <Container>
         <div ref={setReferenceWindowRef}>
-          <Subheading>The finance platform your team will actually enjoy using</Subheading>
+          <Subheading>Use Cases</Subheading>
           <Heading as="h3" className="mt-2">
-          Already powering 1,500+ global teams
+          Built for every business need
           </Heading>
           <CallToAction />
         </div>
@@ -188,32 +192,32 @@ export function Testimonials() {
           '[--scroll-padding:max(--spacing(6),calc((100vw-(var(--container-2xl)))/2))] lg:[--scroll-padding:max(--spacing(8),calc((100vw-(var(--container-7xl)))/2))]',
         ])}
       >
-        {testimonials.map(({ img, name, title, quote }, testimonialIndex) => (
-          <TestimonialCard
-            key={testimonialIndex}
+        {industries.map(({ img, name, title, quote }, industryIndex) => (
+          <IndustryCard
+            key={industryIndex}
             name={name}
             title={title}
             img={img}
             bounds={bounds}
             scrollX={scrollX}
-            onClick={() => scrollTo(testimonialIndex)}
+            onClick={() => scrollTo(industryIndex)}
           >
             {quote}
-          </TestimonialCard>
+          </IndustryCard>
         ))}
         <div className="w-2xl shrink-0 sm:w-216" />
       </div>
       <Container className="mt-16">
         <div className="flex justify-center">
           <div className="hidden sm:flex sm:gap-2">
-            {testimonials.map(({ name }, testimonialIndex) => (
+            {industries.map(({ name }, industryIndex) => (
               <Headless.Button
-                key={testimonialIndex}
-                onClick={() => scrollTo(testimonialIndex)}
+                key={industryIndex}
+                onClick={() => scrollTo(industryIndex)}
                 data-active={
-                  activeIndex === testimonialIndex ? true : undefined
+                  activeIndex === industryIndex ? true : undefined
                 }
-                aria-label={`Scroll to testimonial from ${name}`}
+                aria-label={`Scroll to industry from ${name}`}
                 className={clsx(
                   'size-2.5 rounded-full border border-transparent bg-gray-300 transition',
                   'data-active:bg-gray-400 data-hover:bg-gray-400',
@@ -227,3 +231,4 @@ export function Testimonials() {
     </div>
   )
 }
+

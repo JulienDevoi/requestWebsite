@@ -16,6 +16,7 @@ import { BeforeAfter } from '@/components/before-after'
 import { Solutions } from '@/components/solutions'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
+import { Industries } from '@/components/industries'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { SmoothScrollButton } from '@/components/smooth-scroll-button'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -327,6 +328,27 @@ function BentoSection() {
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
+          key="accounts-payable"
+          eyebrow="Virtual account"
+          title="Each entity gets its own account"
+          description="No more sharing cards or accounts. Each entity has its own budget, spending limits, and approvals. For a clean audit trail."
+          graphic={
+            <div className="h-80 relative overflow-hidden">
+              <video
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+              >
+                <source src="/images/accounts-payable.mp4" type="video/mp4" />
+              </video>
+            </div>
+          }
+          fade={['bottom']}
+          className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
+        />
+        <BentoCard
           key="corporate-cards"
           eyebrow="Corporate cards"
           title="Control your spend"
@@ -339,10 +361,10 @@ function BentoSection() {
             />
           }
           fade={['bottom']}
-          className="max-lg:rounded-t-4xl lg:col-span-3 lg:rounded-tl-4xl"
+          className="lg:col-span-3 lg:rounded-tr-4xl"
         />
         <BentoCard
-          key="accounts-payable"
+          key="on-off-ramp"
           eyebrow="Accounts Payable"
           title="Process bills at lightning speed"
           description="Manage invoices, approvals, and payments all in one place with full audit trails. Whether you have 1 or 10,000 accounts payable per month."
@@ -359,33 +381,12 @@ function BentoSection() {
               </video>
             </div>
           }
-          fade={['bottom']}
-          className="lg:col-span-3 lg:rounded-tr-4xl"
-        />
-        <BentoCard
-          key="on-off-ramp"
-          eyebrow="Speed"
-          title="On and off ramp payments"
-          description="Pay in stablecoins and your beneficiaries receive fiat, seamlessly. Or the other way around."
-          graphic={
-            <div className="h-80 relative overflow-hidden">
-              <video
-                className="w-full h-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-              >
-                <source src="https://cheq-public.s3.eu-west-2.amazonaws.com/req-tech+(2).mp4" type="video/mp4" />
-              </video>
-            </div>
-          }
           className="lg:col-span-2 lg:rounded-bl-4xl"
         />
         <BentoCard
           key="source-reach"
           eyebrow="Integrations"
-          title="Connect with your daily tool"
+          title="Connect with your daily tools"
           description="Connect to and from wallets, accounting software, and banks."
           graphic={
             // <LogoCluster />
@@ -646,11 +647,14 @@ export default function Home() {
             {/* <Team /> */}
             <BentoSection />
           </div>
-          <Steps />
+          
         </div>
         
       </main>
       <Testimonials />
+      
+      <Steps />
+      <Industries />
       <UseCases />
       <Footer />
     </div>
