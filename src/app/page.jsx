@@ -641,13 +641,14 @@ export default function Home() {
             {/* <Team /> */}
             <BentoSection />
           </div>
-          
+          <Steps />  
         </div>
-        
+          
       </main>
+      
       <Testimonials />
       
-      <Steps />
+      
       <Industries />
       <UseCases />
       <Footer />

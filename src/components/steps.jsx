@@ -6,13 +6,13 @@ export function Steps() {
   const steps = [
     {
       number: '1',
-      title: 'KYB verification',
+      title: 'Create your account',
       description: 'Complete your Know Your Business verification quickly and securely.',
     },
     {
       number: '2',
       title: 'Top up your account',
-      description: 'Any currency: fiat or stablecoin. Flexible funding options for your business needs.',
+      description: 'Deposit any currency: fiat or stablecoin. Flexible funding options for your business needs.',
     },
     {
       number: '3',
