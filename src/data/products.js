@@ -5,7 +5,7 @@ export const products = [
     heroTitle: 'Corporate cards that work globally',
     heroDescription:
       'Issue virtual and physical cards instantly. Control spending in real-time. No hidden fees, no FX surprises.',
-    heroImage: '/screenshots/app.png',
+    heroImage: '/screenshots/corporate-cards.png',
     benefitsEyebrow: 'Why choose our corporate cards',
     benefitsTitle: 'Everything you need to manage spend',
     benefitsDescription:

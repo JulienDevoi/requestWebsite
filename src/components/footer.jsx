@@ -50,34 +50,37 @@ function Sitemap() {
   return (
     <>
       <div>
-        <SitemapHeading>Solutions</SitemapHeading>
+        <SitemapHeading>Products</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">For Startups</SitemapLink>
-          <SitemapLink href="#">For Agencies</SitemapLink>
-          <SitemapLink href="#">For SMBs</SitemapLink>
-          <SitemapLink href="#">For Big Organizations</SitemapLink>
+          <SitemapLink href="/products/virtual-account">Virtual Account</SitemapLink>
+          <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
+          <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>Use Cases</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/use-cases/affiliate-payments">Affiliate Payments</SitemapLink>
+          <SitemapLink href="/use-cases/recurring-payments">Recurring Payments</SitemapLink>
+          <SitemapLink href="/use-cases/import-export">Import/Export</SitemapLink>
+        </SitemapLinks>
+      </div>
+      <div>
+        <SitemapHeading>Industries</SitemapHeading>
+        <SitemapLinks>
+          <SitemapLink href="/industries/saas">SaaS</SitemapLink>
+          <SitemapLink href="/industries/ecommerce">E-commerce</SitemapLink>
+          <SitemapLink href="/industries/healthcare">Healthcare</SitemapLink>
+          <SitemapLink href="/industries/wholesalers">Wholesalers</SitemapLink>
+          <SitemapLink href="/industries/affiliates">Marketing Agencies</SitemapLink>
+          <SitemapLink href="/industries/web3">Web3</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="#">Careers</SitemapLink>
-          <SitemapLink href="#">Blog</SitemapLink>
-          <SitemapLink href="#">About us</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Support</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="#">Help center</SitemapLink>
-          <SitemapLink href="#">Community</SitemapLink>
-        </SitemapLinks>
-      </div>
-      <div>
-        <SitemapHeading>Company</SitemapHeading>
-        <SitemapLinks>
-          <SitemapLink href="#">Terms of service</SitemapLink>
-          <SitemapLink href="#">Privacy policy</SitemapLink>
+          <SitemapLink href="/pricing">Pricing</SitemapLink>
+          <SitemapLink href="/demo">Book a demo</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -149,23 +152,22 @@ export function Footer() {
         <Container>
           <CallToAction />
           <PlusGrid className="pb-16">
-            {/* <PlusGridRow>
+            <PlusGridRow>
               <div className="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
                 <div className="col-span-2 flex">
                   <PlusGridItem className="pt-6 lg:pb-6">
-                    <Logo className="h-9" />
+                    <Link href="/" title="Home">
+                      <Logo className="h-9" />
+                    </Link>
                   </PlusGridItem>
                 </div>
                 <div className="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
                   <Sitemap />
                 </div>
               </div>
-            </PlusGridRow> */}
+            </PlusGridRow>
             <PlusGridRow className="flex justify-between">
-              <div className="flex items-center gap-3">
-                <PlusGridItem className="py-3">
-                  <Logo className="h-9" />
-                </PlusGridItem>
+              <div className="flex items-center">
                 <PlusGridItem className="py-3">
                   <Copyright />
                 </PlusGridItem>
