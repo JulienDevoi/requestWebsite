@@ -17,26 +17,30 @@ import { Heading, Subheading } from './text'
 
 const industries = [
   {
-    img: 'images/saas.jpg',
+    slug: 'saas',
+    img: '/images/saas.jpg',
     name: 'Daniel Lustig',
     title: 'SaaS',
     quote:
       'It makes the whole invoicing process more efficient for all the parties involved.',
   },
   {
-    img: 'images/wholesalers.jpg',
+    slug: 'wholesalers',
+    img: '/images/wholesalers.jpg',
     name: 'Juan Pablo Andersson',
     title: 'Wholesalers',
     quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
   },
   {
-    img: 'images/affiliates.jpg',
+    slug: 'affiliates',
+    img: '/images/affiliates.jpg',
     name: 'Rudy Kadoch',
     title: 'Affiliates',
     quote:
       'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
   },
   {
+    slug: 'web3',
     img: '/images/web3.jpg',
     name: 'David Norris',
     title: 'Web3',
@@ -46,6 +50,7 @@ const industries = [
 ]
 
 function IndustryCard({
+  slug,
   name,
   title,
   img,
@@ -89,47 +94,33 @@ function IndustryCard({
   })
 
   return (
-    <motion.div
-      ref={ref}
-      style={{ opacity }}
-      {...props}
-      className="relative flex aspect-9/16 w-72 shrink-0 snap-start scroll-ml-(--scroll-padding) flex-col justify-end overflow-hidden rounded-3xl sm:aspect-3/4 sm:w-96"
-    >
-      <img
-        alt=""
-        src={img}
-        className="absolute inset-x-0 top-0 aspect-square w-full object-cover"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 rounded-3xl bg-linear-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
-      />
-      {/* <div className="relative p-10 pt-10 pb-6">
-        <p className="text-sm/6 font-medium text-white">{name}</p>
-      </div> */}
-      {/* <figure className="relative flex-1 flex flex-col justify-center p-10 pt-0 pb-6">
-        <blockquote>
-          <p className="relative text-xl/7 text-white">
-            <span aria-hidden="true" className="absolute -translate-x-full">
-              "
-            </span>
-            {children}
-            <span aria-hidden="true" className="absolute">
-              "
-            </span>
-          </p>
-        </blockquote>
-      </figure> */}
-      <figcaption className="relative p-10 pt-0 pb-10">
-        <div className="border-t border-white/20 pt-6">
-          <p className="text-xl/7 font-medium">
-            <span className="bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent">
-              {title}
-            </span>
-          </p>
-        </div>
-      </figcaption>
-    </motion.div>
+    <Link href={`/industries/${slug}`}>
+      <motion.div
+        ref={ref}
+        style={{ opacity }}
+        {...props}
+        className="group relative flex aspect-9/16 w-72 shrink-0 snap-start scroll-ml-(--scroll-padding) flex-col justify-end overflow-hidden rounded-3xl sm:aspect-3/4 sm:w-96"
+      >
+        <img
+          alt={title}
+          src={img}
+          className="absolute inset-x-0 top-0 aspect-square w-full object-cover transition duration-300 group-hover:scale-105"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 rounded-3xl bg-linear-to-t from-black from-[calc(7/16*100%)] ring-1 ring-gray-950/10 ring-inset sm:from-25%"
+        />
+        <figcaption className="relative p-10 pt-0 pb-10">
+          <div className="border-t border-white/20 pt-6">
+            <p className="text-xl/7 font-medium">
+              <span className="bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent">
+                {title}
+              </span>
+            </p>
+          </div>
+        </figcaption>
+      </motion.div>
+    </Link>
   )
 }
 
@@ -178,15 +169,15 @@ export function Industries() {
           '[--scroll-padding:max(--spacing(6),calc((100vw-(var(--container-2xl)))/2))] lg:[--scroll-padding:max(--spacing(8),calc((100vw-(var(--container-7xl)))/2))]',
         ])}
       >
-        {industries.map(({ img, name, title, quote }, industryIndex) => (
+        {industries.map(({ slug, img, name, title, quote }, industryIndex) => (
           <IndustryCard
             key={industryIndex}
+            slug={slug}
             name={name}
             title={title}
             img={img}
             bounds={bounds}
             scrollX={scrollX}
-            onClick={() => scrollTo(industryIndex)}
           >
             {quote}
           </IndustryCard>

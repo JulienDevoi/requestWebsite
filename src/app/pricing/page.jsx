@@ -21,87 +21,132 @@ export const metadata = {
 
 const tiers = [
   {
-    name: 'Starter',
-    slug: 'starter',
-    description: 'Everything you need to start selling.',
-    priceMonthly: 99,
+    name: 'Basic',
+    slug: 'basic',
+    description: 'Ideal for small businesses.',
+    priceMonthly: 500,
     href: '#',
     highlights: [
-      { description: 'Up to 3 team members' },
-      { description: 'Up to 5 deal progress boards' },
-      { description: 'Source leads from select platforms' },
-      { description: 'RadiantAI integrations', disabled: true },
-      { description: 'Competitor analysis', disabled: true },
+      { description: 'Accounts & Payments', isSection: true },
+      { description: 'Stablecoins & crypto transfers (up to $50,000/m in volume included)' },
+      { description: 'On-/Off-Ramp (0.45% to 1.00% fee)' },
+      { description: 'Cross-border payments' },
+      { description: 'Stablecoin account (Soon)' },
+      { description: 'Business Mastercards (Soon)', isSection: true },
+      { description: 'Unlimited cards' },
+      { description: 'Fund 1:1 in stablecoins' },
+      { description: 'Spending controls' },
+      { description: 'Accounts Payable', isSection: true },
+      { description: 'Bill management & import (OCR)' },
+      { description: 'Pay via stablecoins, ACH, SEPA, SWIFT, and more' },
+      { description: 'Payroll & Expenses', isSection: true },
+      { description: 'Payroll templates' },
+      { description: 'Reimbursement requests (via dedicated mobile app)' },
+      { description: 'Receivables', isSection: true },
+      { description: 'Unlimited invoices' },
+      { description: 'Automated reconciliation' },
+      { description: 'Accounting', isSection: true },
+      { description: 'Transaction import (for up to 50,000 transactions)' },
+      { description: 'QuickBooks Online and Xero integrations' },
+      { description: 'Treasury & portfolio views' },
+      { description: 'Support', isSection: true },
+      { description: 'Human support via Email & Chat (median response time 2h)' },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 3 },
-      { section: 'Features', name: 'Deal progress boards', value: 5 },
-      { section: 'Features', name: 'Sourcing platforms', value: 'Select' },
-      { section: 'Features', name: 'Contacts', value: 100 },
-      { section: 'Features', name: 'AI assisted outreach', value: false },
-      { section: 'Analysis', name: 'Competitor analysis', value: false },
-      { section: 'Analysis', name: 'Dashboard reporting', value: false },
-      { section: 'Analysis', name: 'Community insights', value: false },
-      { section: 'Analysis', name: 'Performance analysis', value: false },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: false },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
+      { section: 'Accounts & Payments', name: 'Stablecoins & crypto transfers', value: 'Up to $50,000/m' },
+      { section: 'Accounts & Payments', name: 'On-/Off-Ramp', value: '0.45% to 1.00% fee' },
+      { section: 'Accounts & Payments', name: 'Cross-border payments', value: true },
+      { section: 'Accounts & Payments', name: 'Stablecoin account', value: 'Soon' },
+      { section: 'Business Mastercards', name: 'Unlimited cards', value: 'Soon' },
+      { section: 'Business Mastercards', name: 'Fund 1:1 in stablecoins', value: 'Soon' },
+      { section: 'Business Mastercards', name: 'Spending controls', value: 'Soon' },
+      { section: 'Accounts Payable', name: 'Bill management & import (OCR)', value: true },
+      { section: 'Accounts Payable', name: 'Pay via stablecoins, ACH, SEPA, SWIFT, and more', value: true },
+      { section: 'Payroll & Expenses', name: 'Payroll templates', value: true },
+      { section: 'Payroll & Expenses', name: 'Reimbursement requests', value: true },
+      { section: 'Receivables', name: 'Unlimited invoices', value: true },
+      { section: 'Receivables', name: 'Automated reconciliation', value: true },
+      { section: 'Accounting', name: 'Transaction import', value: 'Up to 50,000' },
+      { section: 'Accounting', name: 'QuickBooks Online and Xero integrations', value: true },
+      { section: 'Accounting', name: 'Treasury & portfolio views', value: true },
+      { section: 'Support', name: 'Human support via Email & Chat', value: '2h response' },
     ],
   },
   {
-    name: 'Growth',
-    slug: 'growth',
-    description: 'All the extras for your growing team.',
-    priceMonthly: 149,
+    name: 'Pro',
+    slug: 'pro',
+    description: 'Ideal for medium businesses.',
+    priceMonthly: 'Custom',
     href: '#',
+    includesLabel: 'Everything in Basic, plus:',
     highlights: [
-      { description: 'Up to 10 team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 50 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: '5 competitor analyses per month' },
+      { description: 'Accounts & Payments', isSection: true },
+      { description: 'Stablecoins & crypto transfers (tailored volume)' },
+      { description: 'On-/Off-Ramp (0.4% to 0.95% fee)' },
+      { description: 'Business Mastercards (Soon)', isSection: true },
+      { description: 'Advanced spending controls' },
+      { description: 'Accounts Payable', isSection: true },
+      { description: 'Approval policies' },
+      { description: 'Accounting', isSection: true },
+      { description: 'Transaction import (tailored transaction limit)' },
+      { description: 'Advanced accounting rules' },
+      { description: 'NetSuite integration (Soon)' },
+      { description: 'Request a custom report' },
+      { description: 'Global', isSection: true },
+      { description: 'Custom currency' },
+      { description: 'Transaction insurance' },
+      { description: 'Test payments' },
+      { description: 'Support', isSection: true },
+      { description: 'Dedicated senior customer success manager' },
+      { description: 'White-glove onboarding priority' },
+      { description: 'Support via Slack' },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 10 },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 1000 },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: '5 / month' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: false },
+      { section: 'Accounts & Payments', name: 'Stablecoins & crypto transfers', value: 'Tailored volume' },
+      { section: 'Accounts & Payments', name: 'On-/Off-Ramp', value: '0.4% to 0.95% fee' },
+      { section: 'Business Mastercards', name: 'Advanced spending controls', value: 'Soon' },
+      { section: 'Accounts Payable', name: 'Approval policies', value: true },
+      { section: 'Accounting', name: 'Transaction import', value: 'Tailored limit' },
+      { section: 'Accounting', name: 'Advanced accounting rules', value: true },
+      { section: 'Accounting', name: 'NetSuite integration', value: 'Soon' },
+      { section: 'Accounting', name: 'Request a custom report', value: true },
+      { section: 'Global', name: 'Custom currency', value: true },
+      { section: 'Global', name: 'Transaction insurance', value: true },
+      { section: 'Global', name: 'Test payments', value: true },
+      { section: 'Support', name: 'Dedicated senior customer success manager', value: true },
+      { section: 'Support', name: 'White-glove onboarding priority', value: true },
+      { section: 'Support', name: 'Support via Slack', value: true },
     ],
   },
   {
-    name: 'Enterprise',
-    slug: 'enterprise',
-    description: 'Added flexibility to close deals at scale.',
-    priceMonthly: 299,
+    name: 'Premium',
+    slug: 'premium',
+    description: 'Managed services.',
+    priceMonthly: 7500,
     href: '#',
+    includesLabel: 'Everything in Pro, plus:',
     highlights: [
-      { description: 'Unlimited active team members' },
-      { description: 'Unlimited deal progress boards' },
-      { description: 'Source leads from over 100 verified platforms' },
-      { description: 'RadiantAI integrations' },
-      { description: 'Unlimited competitor analyses' },
+      { description: 'Accounts & Payments', isSection: true },
+      { description: 'Stablecoins & crypto transfers (unlimited)' },
+      { description: 'On-/Off-Ramp (custom fee)' },
+      { description: 'Accounting', isSection: true },
+      { description: 'Transaction import (unlimited transactions)' },
+      { description: 'Custom ERP integrations' },
+      { description: 'Custom Services', isSection: true },
+      { description: 'AP & AR management' },
+      { description: 'Accounting-ready' },
+      { description: 'Stablecoin account management' },
+      { description: 'Custom development' },
     ],
     features: [
-      { section: 'Features', name: 'Accounts', value: 'Unlimited' },
-      { section: 'Features', name: 'Deal progress boards', value: 'Unlimited' },
-      { section: 'Features', name: 'Sourcing platforms', value: '100+' },
-      { section: 'Features', name: 'Contacts', value: 'Unlimited' },
-      { section: 'Features', name: 'AI assisted outreach', value: true },
-      { section: 'Analysis', name: 'Competitor analysis', value: 'Unlimited' },
-      { section: 'Analysis', name: 'Dashboard reporting', value: true },
-      { section: 'Analysis', name: 'Community insights', value: true },
-      { section: 'Analysis', name: 'Performance analysis', value: true },
-      { section: 'Support', name: 'Email support', value: true },
-      { section: 'Support', name: '24 / 7 call center support', value: true },
-      { section: 'Support', name: 'Dedicated account manager', value: true },
+      { section: 'Accounts & Payments', name: 'Stablecoins & crypto transfers', value: 'Unlimited' },
+      { section: 'Accounts & Payments', name: 'On-/Off-Ramp', value: 'Custom fee' },
+      { section: 'Accounting', name: 'Transaction import', value: 'Unlimited' },
+      { section: 'Accounting', name: 'Custom ERP integrations', value: true },
+      { section: 'Custom Services', name: 'AP & AR management', value: true },
+      { section: 'Custom Services', name: 'Accounting-ready', value: true },
+      { section: 'Custom Services', name: 'Stablecoin account management', value: true },
+      { section: 'Custom Services', name: 'Custom development', value: true },
     ],
   },
 ]
@@ -109,10 +154,9 @@ const tiers = [
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Pricing that grows with your team size.</Heading>
+      <Heading as="h1">Pricing that grows with your needs.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Companies all over the world have closed millions of deals with Radiant.
-        Sign up today and start selling smarter.
+        Whether you’re a startup, global enterprise, or somewhere in between, Request Finance is designed to save you time and money.
       </Lead>
     </Container>
   )
@@ -142,20 +186,28 @@ function PricingCard({ tier }) {
           <Subheading>{tier.name}</Subheading>
           <p className="mt-2 text-sm/6 text-gray-950/75">{tier.description}</p>
           <div className="mt-8 flex items-center gap-4">
-            <div className="text-5xl font-medium text-gray-950">
-              ${tier.priceMonthly}
-            </div>
-            <div className="text-sm/5 text-gray-950/75">
-              <p>USD</p>
-              <p>per month</p>
-            </div>
+            {typeof tier.priceMonthly === 'number' ? (
+              <>
+                <div className="text-5xl font-medium text-gray-950">
+                  ${tier.priceMonthly}
+                </div>
+                <div className="text-sm/5 text-gray-950/75">
+                  <p>USD</p>
+                  <p>per month</p>
+                </div>
+              </>
+            ) : (
+              <div className="text-5xl font-medium text-gray-950">
+                {tier.priceMonthly}
+              </div>
+            )}
           </div>
           <div className="mt-8">
-            <Button href={tier.href}>Start a free trial</Button>
+            <Button href="/demo">Book a demo</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
-              Start selling with:
+              {tier.includesLabel || 'Includes:'}
             </h3>
             <ul className="mt-3 space-y-3">
               {tier.highlights.map((props, featureIndex) => (
@@ -238,14 +290,14 @@ function PricingTable({ selectedTier }) {
               </div>
             </td>
             <td colSpan={3} className="p-0 text-right">
-              <Button variant="outline" href={selectedTier.href}>
-                Get started
+              <Button variant="outline" href="/demo">
+                Book a demo
               </Button>
             </td>
           </tr>
           <tr className="max-sm:hidden">
             <th className="p-0" scope="row">
-              <span className="sr-only">Get started</span>
+              <span className="sr-only">Book a demo</span>
             </th>
             {tiers.map((tier) => (
               <td
@@ -253,8 +305,8 @@ function PricingTable({ selectedTier }) {
                 data-selected={selectedTier === tier ? true : undefined}
                 className="px-0 pt-4 pb-0 data-selected:table-cell max-sm:hidden"
               >
-                <Button variant="outline" href={tier.href}>
-                  Get started
+                <Button variant="outline" href="/demo">
+                  Book a demo
                 </Button>
               </td>
             ))}
@@ -331,17 +383,32 @@ function PricingTable({ selectedTier }) {
   )
 }
 
-function FeatureItem({ description, disabled = false }) {
+function FeatureItem({ description, isSection = false }) {
+  const hasSoon = description.includes('(Soon)')
+  const textWithoutSoon = description.replace(' (Soon)', '').replace('(Soon)', '')
+  
+  const SoonBadge = () => (
+    <span className="ml-1.5 bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent font-medium">
+      Soon
+    </span>
+  )
+  
+  if (isSection) {
+    return (
+      <li className="pt-4 first:pt-0 text-sm/6 font-semibold text-gray-950">
+        {textWithoutSoon}
+        {hasSoon && <SoonBadge />}
+      </li>
+    )
+  }
+  
   return (
-    <li
-      data-disabled={disabled ? true : undefined}
-      className="flex items-start gap-4 text-sm/6 text-gray-950/75 data-disabled:text-gray-950/25"
-    >
+    <li className="flex items-start gap-4 text-sm/6 text-gray-950/75">
       <span className="inline-flex h-6 items-center">
         <PlusIcon className="size-3.75 shrink-0 fill-gray-950/25" />
       </span>
-      {disabled && <span className="sr-only">Not included:</span>}
-      {description}
+      {textWithoutSoon}
+      {hasSoon && <SoonBadge />}
     </li>
   )
 }
@@ -365,7 +432,7 @@ function Testimonial() {
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                   <img
                     alt=""
-                    src="/testimonials/tina-yards.jpg"
+                    src="/testimonials/david.jpeg"
                     className="aspect-3/4 w-full object-cover"
                   />
                 </div>
@@ -375,16 +442,15 @@ function Testimonial() {
           <div className="flex max-lg:mt-16 lg:col-span-2 lg:px-16">
             <figure className="mx-auto flex max-w-xl flex-col gap-16 max-lg:text-center">
               <blockquote>
-                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['“'] after:absolute after:content-['”'] lg:text-4xl">
-                  Thanks to Radiant, we&apos;re finding new leads that we never
-                  would have found with legal methods.
+                <p className="relative text-3xl tracking-tight text-white before:absolute before:-translate-x-full before:content-['\201C'] after:absolute after:content-['\201D'] lg:text-4xl">
+                  Request Finance has improved the security of our stablecoin payment processes.
                 </p>
               </blockquote>
               <figcaption className="mt-auto">
-                <p className="text-sm/6 font-medium text-white">Tina Yards</p>
+                <p className="text-sm/6 font-medium text-white">David Norris</p>
                 <p className="text-sm/6 font-medium">
-                  <span className="bg-linear-to-r from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] bg-clip-text text-transparent">
-                    VP of Sales, Protocol
+                  <span className="bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent">
+                    Head of Finance, Near Protocol
                   </span>
                 </p>
               </figcaption>
@@ -409,67 +475,66 @@ function FrequentlyAskedQuestions() {
         <div className="mx-auto mt-16 mb-32 max-w-xl space-y-12">
           <dl>
             <dt className="text-sm font-semibold">
-              What measures are in place to ensure the security of our data?
+              Do you have a free trial?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Data security is a top priority for us, which is ironic given that
-              our business depends on others not taking it very seriously. We
-              understand that any breach could put both us and most of our
-              customers out of business—and behind bars. We employ robust
-              security measures, including data encryption, secure data centers,
-              and regular security audits to ensure this never happens.
+              Yes, you can use all paid plans entirely for free for 30 days — without commitments. You can switch to the Free plan at any time during your free trial to avoid paying fees. Note that we will bill for any excess payment volume that you incur during your free trial. Don&apos;t worry: the included volumes are more than enough to test the platform and we&apos;ll tell you when you&apos;re about to exceed your volume.
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              Is there a mobile app available for your platform?
+              Do you have a yearly payment option?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, we offer a mobile app that provides all the key
-              functionalities of our desktop platform, allowing sales reps to
-              manage deals on the go. Additionally, we have another app
-              pre-installed on most modern smartphones that allows us to track
-              your location, listen to your conversations, and access your
-              camera and microphone at any time. This app is not available for
-              download.
+              Yes! You can pay yearly and save 16% compared to paying monthly.
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              Can I customize the workflow to match our company’s deal process?
+              What are the fees for Crypto-to-Fiat transfers?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, our platform is highly customizable, although there should be
-              no need. Before you sign up, we discreetly gather information
-              about your company and its processes from a variety of sources. We
-              then use this information to pre-configure the platform to match
-              your existing workflows. This is why we ask for your social
-              security number and access to your email account during the
-              sign-up process.
+              It&apos;s important to us to offer the best rate in the market. We power SWIFT, SEPA and ACH payments to 170+ countries. Those banking systems can be costly. Despite that, we manage to offer fees starting at 1% (minimum fees apply) with subscription plans. We also offer tailored fees and automated discounts for high-value offramps, perfect for things like acquisitions, paying out investors, cashing out treasury funds, or settling big supplier invoices.
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              What kind of support do you offer?
+              How do I pay a Request Finance bill?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              We offer comprehensive support through multiple channels,
-              including 24/7 live chat, email, and phone support. However, since
-              we have full access to your internal network, we will know if
-              you’re having issues before you do.
+              Paying a Request Finance bill is as easy as paying any bill on the platform. Once you signed up, you can use your preferred wallet to pay.
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              Can I integrate the CRM with other sales intelligence tools?
+              What currencies do you accept?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, our solution integrates seamlessly with a variety of other
-              systems. However, be warned that most of these integrations are
-              short-lived. We have a dedicated team of engineers who
-              reverse-engineer the APIs of other tools, enabling us to build
-              their functionality into our product and eventually put them out
-              of business.
+              <p>Request Finance&apos;s AP, AR, Expenses, Payroll, and Accounting modules support +350 crypto and fiat currencies, and +18 payment networks.</p>
+              <p className="mt-3">As for your subscription, you can choose in which currency and on which network you want to pay. The available currencies and networks are:</p>
+              <ul className="mt-2 list-disc pl-5 space-y-1">
+                <li>Avalanche: USDC, USDT</li>
+                <li>BSC: USDC, USDT</li>
+                <li>Ethereum: USDC, USDT, DAI</li>
+                <li>Polygon: USDC, USDT, DAI</li>
+              </ul>
+              <p className="mt-3">You can change your preferred network and currency any time in your settings.</p>
+            </dd>
+          </dl>
+          <dl>
+            <dt className="text-sm font-semibold">
+              Is there a free plan available for Crypto-to-Fiat?
+            </dt>
+            <dd className="mt-4 text-sm/6 text-gray-600">
+              Yes, there&apos;s a limited option to use Crypto-to-Fiat as part of a Free plan at 1.5% fees on the volume. However, we recommend booking a demo first to assess if a subscription makes more sense due to reduced fees and added features for efficient financial operations.
+            </dd>
+          </dl>
+          <dl>
+            <dt className="text-sm font-semibold">
+              Can I switch to the Free plan during my free trial?
+            </dt>
+            <dd className="mt-4 text-sm/6 text-gray-600">
+              Yes, you can switch your plans in a few clicks once you signed up. If you switch to the Free plan during your free trial and did not exceed your payment volume, then you won&apos;t be billed.
             </dd>
           </dl>
         </div>
@@ -493,7 +558,7 @@ export default async function Pricing({ searchParams }) {
       </Container>
       <Header />
       <PricingCards />
-      <PricingTable selectedTier={tier} />
+      {/* <PricingTable selectedTier={tier} /> */}
       <Testimonial />
       <FrequentlyAskedQuestions />
       <Footer />
