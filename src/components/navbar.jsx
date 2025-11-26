@@ -55,13 +55,12 @@ function DesktopNav() {
   return (
     <nav className="relative hidden lg:flex items-center">
       <PlusGridItem className="relative flex items-center group">
-        <Link
-          href="/products"
-          className="flex items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
+        <span
+          className="flex cursor-pointer items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply"
         >
           Products
           <ChevronDownIcon className="size-4 transition-transform duration-200 group-hover:rotate-180" />
-        </Link>
+        </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
             {products.map(({ href, label, icon: Icon }) => (
@@ -78,13 +77,12 @@ function DesktopNav() {
         </div>
       </PlusGridItem>
       <PlusGridItem className="relative flex items-center group">
-        <Link
-          href="/industries"
-          className="flex items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
+        <span
+          className="flex cursor-pointer items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply"
         >
           Industries
           <ChevronDownIcon className="size-4 transition-transform duration-200 group-hover:rotate-180" />
-        </Link>
+        </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
             {industries.map(({ href, label, icon: Icon }) => (
@@ -101,13 +99,12 @@ function DesktopNav() {
         </div>
       </PlusGridItem>
       <PlusGridItem className="relative flex items-center group">
-        <Link
-          href="/use-cases"
-          className="flex items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
+        <span
+          className="flex cursor-pointer items-center gap-1 px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply"
         >
           Use Cases
           <ChevronDownIcon className="size-4 transition-transform duration-200 group-hover:rotate-180" />
-        </Link>
+        </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
             {useCases.map(({ href, label, icon: Icon }) => (
