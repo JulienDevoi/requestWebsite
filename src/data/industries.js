@@ -72,40 +72,40 @@ export const industries = {
       'Simplify cross-border transactions and maintain complete audit trails. Your account setup takes less than 5 minutes.',
   },
   affiliates: {
-    slug: 'affiliates',
-    name: 'Affiliates',
-    heroTitle: 'Run Your Marketing Agency with global precision',
+    slug: 'marketing-agencies',
+    name: 'Marketing Agencies',
+    heroTitle: 'Run your agency finances at the speed of campaigns',
     heroDescription:
-      'A modern spend & payments platform built for Marketing Agencies that want faster operations, lower costs, and full control.',
+      'A modern spend & payments platform built for marketing agencies that need to move fast, pay globally, and keep clients happy.',
     heroImage: '/images/affiliates.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
-    introTitle: "Payouts don't scale with your network.",
+    introTitle: "Your finances can't keep up with your campaigns.",
     introLead:
-      'Your affiliate network is growing, but your payment process is stuck in spreadsheets and manual bank transfers.',
+      'Marketing agencies juggle multiple clients, vendors, and freelancers across the globe. Traditional banking makes every payment a bottleneck.',
     introParagraphs: [],
     introBullets: [
-      'Paying hundreds of affiliates manually takes days every payment cycle',
-      'Affiliates in different countries need different currencies and payment methods',
-      'Commission tracking lives in spreadsheets prone to errors and disputes',
-      'Double payments and incorrect amounts damage partner relationships',
-      'No self-service portal, so affiliates constantly ask about payment status',
-      'Tax documentation and compliance varies by country and is hard to manage',
-      'Bank fees on international transfers eat into your payout budget',
-      'Reconciling payouts with campaign performance is a manual process',
+      'Paying freelancers and contractors across 20+ countries is slow and expensive',
+      'Ad spend across Google, Meta, and TikTok requires cards with high limits and real-time controls',
+      'Client billing and vendor payments live in different systems with no unified view',
+      'Chasing receipts from team members delays month-end close',
+      'FX fees eat into margins on international influencer and media payments',
+      'Scaling up campaigns means scaling up payment complexity',
+      'No visibility into spending until credit card statements arrive',
+      'Managing multiple client budgets requires constant manual reconciliation',
     ],
     introImage: '/images/affiliates.jpg',
     introButtonText: 'Book a demo',
     // Solution section
     solutionEyebrow: 'The Solution',
-    solutionTitle: 'Scale your payouts without scaling your team',
+    solutionTitle: 'One platform for all your agency payments',
     solutionDescription:
-      'Request automates mass payouts to your affiliate network with multi-currency support, transparent tracking, and self-service portals for partners.',
+      'Request gives marketing agencies corporate cards for ad spend, streamlined vendor payments, and real-time visibility across all client accounts.',
     // Footer CTA customization
     footerEyebrow: 'Built for Marketing Agencies',
-    footerTitle: 'Ready to automate your affiliate payouts?',
+    footerTitle: 'Ready to streamline your agency finances?',
     footerDescription:
-      'Pay hundreds of affiliates in one click with transparent tracking. Get started in less than 5 minutes.',
+      'Manage ad spend, pay vendors globally, and keep client budgets on track. Get started in less than 5 minutes.',
   },
   web3: {
     slug: 'web3',
@@ -225,11 +225,11 @@ export function getAllIndustries() {
 
 // Helper to get industry by slug
 export function getIndustryBySlug(slug) {
-  return industries[slug] || null
+  return Object.values(industries).find((industry) => industry.slug === slug) || null
 }
 
 // Helper to get all industry slugs (for static generation)
 export function getAllIndustrySlugs() {
-  return Object.keys(industries)
+  return Object.values(industries).map((industry) => industry.slug)
 }
 

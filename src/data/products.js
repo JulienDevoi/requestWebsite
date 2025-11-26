@@ -131,6 +131,50 @@ export const products = [
       },
     ],
   },
+  {
+    slug: 'accrual-accounting',
+    name: 'Accrual Accounting',
+    heroTitle: 'Close your books with confidence',
+    heroDescription:
+      'Automate accruals, deferrals, and prepaid expenses. Get accurate financials without the manual spreadsheet work.',
+    heroImage: '/screenshots/accrual-accounting.png',
+    benefitsEyebrow: 'Why choose our accrual accounting',
+    benefitsTitle: 'Financial accuracy on autopilot',
+    benefitsDescription:
+      'Stop wrestling with spreadsheets. Automate your accrual entries and get real-time visibility into your true financial position.',
+    benefits: [
+      {
+        name: 'Automated Accruals',
+        description: 'Set rules once and let the system handle recurring accrual entries',
+        icon: 'ArrowPathIcon',
+      },
+      {
+        name: 'Prepaid Management',
+        description: 'Track and amortize prepaid expenses automatically over time',
+        icon: 'CalendarIcon',
+      },
+      {
+        name: 'Deferred Revenue',
+        description: 'Recognize revenue accurately with automated deferral schedules',
+        icon: 'ClockIcon',
+      },
+      {
+        name: 'Real-time Reporting',
+        description: 'See your true financial position at any moment, not just month-end',
+        icon: 'ChartBarIcon',
+      },
+      {
+        name: 'Audit Trail',
+        description: 'Every adjustment is tracked and documented for compliance',
+        icon: 'DocumentTextIcon',
+      },
+      {
+        name: 'ERP Integration',
+        description: 'Sync seamlessly with your existing accounting software',
+        icon: 'ArrowsRightLeftIcon',
+      },
+    ],
+  },
 ]
 
 export function getAllProducts() {

@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -12,19 +15,17 @@ import {
   ChevronUpDownIcon,
   MinusIcon,
 } from '@heroicons/react/16/solid'
+import clsx from 'clsx'
 
-export const metadata = {
-  title: 'Pricing',
-  description:
-    'Companies all over the world have closed millions of deals with Radiant. Sign up today and start selling smarter.',
-}
+// Note: metadata moved to layout or handled via generateMetadata in a server component wrapper if needed
 
 const tiers = [
   {
     name: 'Basic',
     slug: 'basic',
     description: 'Ideal for small businesses.',
-    priceMonthly: 500,
+    priceMonthly: 600,
+    priceAnnually: 500,
     href: '#',
     highlights: [
       { description: 'Accounts & Payments', isSection: true },
@@ -54,7 +55,8 @@ const tiers = [
     ],
     features: [
       // Accounts
-      { section: 'Accounts', name: 'Stablecoin Account', value: 'Soon' },
+      { section: 'Accounts', name: 'Stablecoin Account', value: true },
+      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
       // Payments
       { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: '$50,000' },
       { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: '0.70%' },
@@ -136,6 +138,7 @@ const tiers = [
     slug: 'pro',
     description: 'Ideal for medium businesses.',
     priceMonthly: 'Custom',
+    priceAnnually: 'Custom',
     href: '#',
     includesLabel: 'Everything in Basic, plus:',
     highlights: [
@@ -162,7 +165,8 @@ const tiers = [
     ],
     features: [
       // Accounts
-      { section: 'Accounts', name: 'Stablecoin Account', value: 'Soon' },
+      { section: 'Accounts', name: 'Stablecoin Account', value: true },
+      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
       // Payments
       { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: 'Custom' },
       { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: '0.40%' },
@@ -243,7 +247,8 @@ const tiers = [
     name: 'Premium',
     slug: 'premium',
     description: 'Managed services.',
-    priceMonthly: 7500,
+    priceMonthly: 9000,
+    priceAnnually: 7500,
     href: '#',
     includesLabel: 'Everything in Pro, plus:',
     highlights: [
@@ -262,6 +267,7 @@ const tiers = [
     features: [
       // Accounts
       { section: 'Accounts', name: 'Stablecoin Account', value: true },
+      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
       // Payments
       { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: 'Unlimited' },
       { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: 'Free' },
@@ -340,25 +346,69 @@ const tiers = [
   },
 ]
 
+function BillingToggle({ billingPeriod, setBillingPeriod }) {
+  return (
+    <div className="mt-8 flex items-center justify-center gap-4">
+      <span
+        className={clsx(
+          'text-sm font-medium transition-colors',
+          billingPeriod === 'monthly' ? 'text-gray-950' : 'text-gray-500'
+        )}
+      >
+        Monthly
+      </span>
+      <button
+        type="button"
+        onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'annually' : 'monthly')}
+        className={clsx(
+          'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2',
+          billingPeriod === 'annually' ? 'bg-blue-600' : 'bg-gray-200'
+        )}
+        role="switch"
+        aria-checked={billingPeriod === 'annually'}
+      >
+        <span
+          className={clsx(
+            'pointer-events-none inline-block size-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out',
+            billingPeriod === 'annually' ? 'translate-x-5' : 'translate-x-0'
+          )}
+        />
+      </button>
+      <span
+        className={clsx(
+          'text-sm font-medium transition-colors',
+          billingPeriod === 'annually' ? 'text-gray-950' : 'text-gray-500'
+        )}
+      >
+        Annually
+        <span className="ml-1.5 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
+          Save 16%
+        </span>
+      </span>
+    </div>
+  )
+}
+
 function Header() {
   return (
     <Container className="mt-16">
       <Heading as="h1">Pricing that grows with your needs.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Whether you’re a startup, global enterprise, or somewhere in between, Request Finance is designed to save you time and money.
+        Whether you're a startup, global enterprise, or somewhere in between, Request Finance is designed to save you time and money.
       </Lead>
     </Container>
   )
 }
 
-function PricingCards() {
+function PricingCards({ billingPeriod, setBillingPeriod }) {
   return (
-    <div className="relative py-24">
+    <div className="relative pt-12 pb-24">
       <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <BillingToggle billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
+        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {tiers.map((tier, tierIndex) => (
-            <PricingCard key={tierIndex} tier={tier} />
+            <PricingCard key={tierIndex} tier={tier} billingPeriod={billingPeriod} />
           ))}
         </div>
         <LogoCloud className="mt-24" />
@@ -367,7 +417,9 @@ function PricingCards() {
   )
 }
 
-function PricingCard({ tier }) {
+function PricingCard({ tier, billingPeriod }) {
+  const price = billingPeriod === 'annually' ? tier.priceAnnually : tier.priceMonthly
+  
   return (
     <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md">
       <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
@@ -375,19 +427,19 @@ function PricingCard({ tier }) {
           <Subheading>{tier.name}</Subheading>
           <p className="mt-2 text-sm/6 text-gray-950/75">{tier.description}</p>
           <div className="mt-8 flex items-center gap-4">
-            {typeof tier.priceMonthly === 'number' ? (
+            {typeof price === 'number' ? (
               <>
                 <div className="text-5xl font-medium text-gray-950">
-                  ${tier.priceMonthly}
+                  ${price.toLocaleString()}
                 </div>
                 <div className="text-sm/5 text-gray-950/75">
                   <p>USD</p>
-                  <p>per month</p>
+                  <p>per month{billingPeriod === 'annually' ? ', billed annually' : ''}</p>
                 </div>
               </>
             ) : (
               <div className="text-5xl font-medium text-gray-950">
-                {tier.priceMonthly}
+                {price}
               </div>
             )}
           </div>
@@ -410,7 +462,7 @@ function PricingCard({ tier }) {
   )
 }
 
-function PricingTable({ selectedTier }) {
+function PricingTable({ selectedTier, setSelectedTier }) {
   return (
     <Container className="py-24">
       <table className="w-full text-left">
@@ -458,17 +510,17 @@ function PricingTable({ selectedTier }) {
                   >
                     {tiers.map((tier) => (
                       <MenuItem key={tier.slug}>
-                        <Link
-                          scroll={false}
-                          href={`/pricing?tier=${tier.slug}`}
+                        <button
+                          type="button"
+                          onClick={() => setSelectedTier(tier)}
                           data-selected={
                             tier === selectedTier ? true : undefined
                           }
-                          className="group flex items-center gap-2 rounded-md px-2 py-1 data-focus:bg-gray-200"
+                          className="group flex w-full items-center gap-2 rounded-md px-2 py-1 text-left data-focus:bg-gray-200"
                         >
                           {tier.name}
                           <CheckIcon className="hidden size-4 group-data-selected:block" />
-                        </Link>
+                        </button>
                       </MenuItem>
                     ))}
                   </MenuItems>
@@ -732,12 +784,9 @@ function FrequentlyAskedQuestions() {
   )
 }
 
-export default async function Pricing({ searchParams }) {
-  let params = await searchParams
-  let tier =
-    typeof params.tier === 'string'
-      ? tiers.find(({ slug }) => slug === params.tier)
-      : tiers[0]
+export default function Pricing() {
+  const [billingPeriod, setBillingPeriod] = useState('annually')
+  const [selectedTier, setSelectedTier] = useState(tiers[0])
 
   return (
     <main className="overflow-hidden">
@@ -746,8 +795,8 @@ export default async function Pricing({ searchParams }) {
         <Navbar />
       </Container>
       <Header />
-      <PricingCards />
-      <PricingTable selectedTier={tier} />
+      <PricingCards billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
+      <PricingTable selectedTier={selectedTier} setSelectedTier={setSelectedTier} />
       <Testimonial />
       <FrequentlyAskedQuestions />
       <Footer />

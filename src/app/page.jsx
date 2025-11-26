@@ -81,7 +81,7 @@ function HeroSaved() {
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.2] md:text-6xl/[0.8]">
+          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
             Spend management for modern companies
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
@@ -127,7 +127,7 @@ function HeroSavedVideoWhite() {
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.2] md:text-6xl/[0.8]">
+          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
             Spend management for modern companies
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
@@ -173,7 +173,7 @@ function Hero() {
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-white sm:text-6xl/[1.2] md:text-6xl/[0.8]">
+          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-white sm:text-6xl/[1.15] md:text-6xl/[1.15]">
             Spend management for modern companies
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-white/90 sm:text-2xl/8">

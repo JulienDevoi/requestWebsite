@@ -14,6 +14,8 @@ import {
   UserGroupIcon,
   LockClosedIcon,
   BuildingOfficeIcon,
+  CalendarIcon,
+  ArrowsRightLeftIcon,
 } from '@heroicons/react/24/outline'
 
 const iconMap = {
@@ -30,6 +32,8 @@ const iconMap = {
   UserGroupIcon,
   LockClosedIcon,
   BuildingOfficeIcon,
+  CalendarIcon,
+  ArrowsRightLeftIcon,
 }
 
 function Benefit({ name, description, icon }) {

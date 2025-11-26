@@ -19,6 +19,7 @@ import {
   UserGroupIcon,
   ArrowPathIcon,
   GlobeAltIcon,
+  CalculatorIcon,
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import { Link } from './link'
@@ -35,7 +36,7 @@ const industries = [
   { href: '/industries/ecommerce', label: 'E-commerce', icon: ShoppingCartIcon },
   { href: '/industries/healthcare', label: 'Healthcare', icon: HeartIcon },
   { href: '/industries/wholesalers', label: 'Wholesalers', icon: TruckIcon },
-  { href: '/industries/affiliates', label: 'Marketing Agencies', icon: MegaphoneIcon },
+  { href: '/industries/marketing-agencies', label: 'Marketing Agencies', icon: MegaphoneIcon },
   { href: '/industries/web3', label: 'Web3', icon: CubeTransparentIcon },
 ]
 
@@ -49,6 +50,7 @@ const products = [
   { href: '/products/virtual-account', label: 'Virtual Account', icon: BuildingOfficeIcon },
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
+  { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },
 ]
 
 function DesktopNav() {
@@ -84,17 +86,19 @@ function DesktopNav() {
           <ChevronDownIcon className="size-4 transition-transform duration-200 group-hover:rotate-180" />
         </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-          <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
-            {industries.map(({ href, label, icon: Icon }) => (
-              <Link
-                key={href}
-                href={href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50"
-              >
-                <Icon className="size-5 text-gray-500" />
-                {label}
-              </Link>
-            ))}
+          <div className="w-[26rem] origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
+            <div className="grid grid-cols-2 gap-1">
+              {industries.map(({ href, label, icon: Icon }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50 whitespace-nowrap"
+                >
+                  <Icon className="size-5 text-gray-500" />
+                  {label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </PlusGridItem>

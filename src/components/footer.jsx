@@ -55,6 +55,7 @@ function Sitemap() {
           <SitemapLink href="/products/virtual-account">Virtual Account</SitemapLink>
           <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
           <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
+          <SitemapLink href="/products/accrual-accounting">Accrual Accounting</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -72,7 +73,7 @@ function Sitemap() {
           <SitemapLink href="/industries/ecommerce">E-commerce</SitemapLink>
           <SitemapLink href="/industries/healthcare">Healthcare</SitemapLink>
           <SitemapLink href="/industries/wholesalers">Wholesalers</SitemapLink>
-          <SitemapLink href="/industries/affiliates">Marketing Agencies</SitemapLink>
+          <SitemapLink href="/industries/marketing-agencies">Marketing Agencies</SitemapLink>
           <SitemapLink href="/industries/web3">Web3</SitemapLink>
         </SitemapLinks>
       </div>
@@ -81,6 +82,9 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/demo">Book a demo</SitemapLink>
+          <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
+          <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
+          <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
