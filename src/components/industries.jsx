@@ -14,47 +14,18 @@ import useMeasure from 'react-use-measure'
 import { Container } from './container'
 import { Link } from './link'
 import { Heading, Subheading } from './text'
+import { getAllIndustries } from '@/data/industries'
 
-const industries = [
-  {
-    slug: 'saas',
-    img: '/images/saas.jpg',
-    name: 'Daniel Lustig',
-    title: 'SaaS',
-    quote:
-      'It makes the whole invoicing process more efficient for all the parties involved.',
-  },
-  {
-    slug: 'wholesalers',
-    img: '/images/wholesalers.jpg',
-    name: 'Juan Pablo Andersson',
-    title: 'Wholesalers',
-    quote: 'Request revolutionized our financial operations by simplifying cross-currency transactions, ensuring transparent and auditable records through a paper trail creation.',
-  },
-  {
-    slug: 'affiliates',
-    img: '/images/affiliates.jpg',
-    name: 'Rudy Kadoch',
-    title: 'Affiliates',
-    quote:
-      'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
-  },
-  {
-    slug: 'web3',
-    img: '/images/web3.jpg',
-    name: 'David Norris',
-    title: 'Web3',
-    quote:
-      'It has improved the security of our stablecoin payment processes.',
-  },
-]
+const industries = getAllIndustries().map((industry) => ({
+  slug: industry.slug,
+  img: industry.heroImage,
+  title: industry.name,
+}))
 
 function IndustryCard({
   slug,
-  name,
   title,
   img,
-  children,
   bounds,
   scrollX,
   ...props
@@ -169,32 +140,29 @@ export function Industries() {
           '[--scroll-padding:max(--spacing(6),calc((100vw-(var(--container-2xl)))/2))] lg:[--scroll-padding:max(--spacing(8),calc((100vw-(var(--container-7xl)))/2))]',
         ])}
       >
-        {industries.map(({ slug, img, name, title, quote }, industryIndex) => (
+        {industries.map(({ slug, img, title }, industryIndex) => (
           <IndustryCard
             key={industryIndex}
             slug={slug}
-            name={name}
             title={title}
             img={img}
             bounds={bounds}
             scrollX={scrollX}
-          >
-            {quote}
-          </IndustryCard>
+          />
         ))}
         <div className="w-2xl shrink-0 sm:w-216" />
       </div>
       <Container className="mt-16">
         <div className="flex justify-center">
           <div className="hidden sm:flex sm:gap-2">
-            {industries.map(({ name }, industryIndex) => (
+            {industries.map(({ title }, industryIndex) => (
               <Headless.Button
                 key={industryIndex}
                 onClick={() => scrollTo(industryIndex)}
                 data-active={
                   activeIndex === industryIndex ? true : undefined
                 }
-                aria-label={`Scroll to industry from ${name}`}
+                aria-label={`Scroll to ${title}`}
                 className={clsx(
                   'size-2.5 rounded-full border border-transparent bg-gray-300 transition',
                   'data-active:bg-gray-400 data-hover:bg-gray-400',
