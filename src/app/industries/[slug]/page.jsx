@@ -25,6 +25,16 @@ export async function generateMetadata({ params }) {
   return {
     title: `${industry.name} - Request Finance`,
     description: industry.heroDescription,
+    keywords: [
+      `${industry.name} spend management`,
+      `${industry.name} finance`,
+      'spend management',
+      'corporate cards',
+      'accounts payable',
+      'business finance',
+      'fintech',
+      industry.name.toLowerCase(),
+    ],
     openGraph: {
       title: `${industry.name} - Request Finance`,
       description: industry.heroDescription,
@@ -32,7 +42,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Request Finance',
       images: [
         {
-          url: industry.heroImage,
+          url: '/images/thumbnail.png',
           width: 1200,
           height: 630,
           alt: `Request Finance for ${industry.name}`,
@@ -45,7 +55,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${industry.name} - Request Finance`,
       description: industry.heroDescription,
-      images: [industry.heroImage],
+      images: ['/images/thumbnail.png'],
     },
     alternates: {
       canonical: `https://requestfinance.com/industries/${industry.slug}`,

@@ -137,7 +137,46 @@ The sales landscape is always evolving. Stay ahead by investing in continuous le
 
 export async function generateMetadata({ params }) {
   const post = mockPosts[(await params).slug]
-  return post ? { title: post.title, description: post.excerpt } : {}
+  if (!post) return {}
+  
+  return {
+    title: `${post.title} - Request Finance Blog`,
+    description: post.excerpt,
+    keywords: [
+      'business finance',
+      'spend management',
+      'corporate finance',
+      'fintech',
+      ...(post.categories?.map(cat => cat.title.toLowerCase()) || []),
+    ],
+    openGraph: {
+      title: `${post.title} - Request Finance Blog`,
+      description: post.excerpt,
+      url: `https://requestfinance.com/blog/${post.slug}`,
+      siteName: 'Request Finance',
+      images: [
+        {
+          url: '/images/thumbnail.png',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: post.author?.name ? [post.author.name] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} - Request Finance Blog`,
+      description: post.excerpt,
+      images: ['/images/thumbnail.png'],
+    },
+    alternates: {
+      canonical: `https://requestfinance.com/blog/${post.slug}`,
+    },
+  }
 }
 
 export default async function BlogPost({ params }) {

@@ -145,7 +145,49 @@ Having the right technology foundation was critical to Startup XYZ's success. Ou
 
 export async function generateMetadata({ params }) {
   const post = mockPosts[(await params).slug]
-  return post ? { title: post.title, description: post.excerpt } : {}
+  if (!post) return {}
+  
+  return {
+    title: `${post.title} - Request Finance`,
+    description: post.excerpt,
+    keywords: [
+      'customer success story',
+      'case study',
+      'spend management',
+      'business finance',
+      'corporate cards',
+      'accounts payable',
+      'fintech',
+      ...(post.categories?.map(cat => cat.title.toLowerCase()) || []),
+    ],
+    openGraph: {
+      title: `${post.title} - Request Finance`,
+      description: post.excerpt,
+      url: `https://requestfinance.com/customers/${post.slug}`,
+      siteName: 'Request Finance',
+      images: [
+        {
+          url: '/images/thumbnail.png',
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+      publishedTime: post.publishedAt,
+      authors: post.author?.name ? [post.author.name] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} - Request Finance`,
+      description: post.excerpt,
+      images: ['/images/thumbnail.png'],
+    },
+    alternates: {
+      canonical: `https://requestfinance.com/customers/${post.slug}`,
+    },
+  }
 }
 
 export default async function CustomerStory({ params }) {

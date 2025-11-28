@@ -25,6 +25,16 @@ export async function generateMetadata({ params }) {
   return {
     title: `${useCase.name} - Request Finance`,
     description: useCase.heroDescription,
+    keywords: [
+      useCase.name.toLowerCase(),
+      'spend management',
+      'business payments',
+      'corporate cards',
+      'accounts payable',
+      'payment automation',
+      'fintech',
+      'business finance',
+    ],
     openGraph: {
       title: `${useCase.name} - Request Finance`,
       description: useCase.heroDescription,
@@ -32,7 +42,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Request Finance',
       images: [
         {
-          url: useCase.heroImage,
+          url: '/images/thumbnail.png',
           width: 1200,
           height: 630,
           alt: `Request Finance for ${useCase.name}`,
@@ -45,7 +55,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${useCase.name} - Request Finance`,
       description: useCase.heroDescription,
-      images: [useCase.heroImage],
+      images: ['/images/thumbnail.png'],
     },
     alternates: {
       canonical: `https://requestfinance.com/use-cases/${useCase.slug}`,

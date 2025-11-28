@@ -7,9 +7,43 @@ import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
 
 export const metadata = {
-  title: 'Company',
+  title: 'Company - Request Finance',
   description:
-    'We’re on a mission to transform revenue organizations by harnessing vast amounts of illegally acquired customer data.',
+    'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+  keywords: [
+    'Request Finance company',
+    'fintech company',
+    'spend management company',
+    'corporate finance team',
+    'business payments company',
+  ],
+  openGraph: {
+    title: 'Company - Request Finance',
+    description:
+      'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+    url: 'https://requestfinance.com/company',
+    siteName: 'Request Finance',
+    images: [
+      {
+        url: '/images/thumbnail.png',
+        width: 1200,
+        height: 630,
+        alt: 'Request Finance - Company',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Company - Request Finance',
+    description:
+      'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+    images: ['/images/thumbnail.png'],
+  },
+  alternates: {
+    canonical: 'https://requestfinance.com/company',
+  },
 }
 
 function Header() {

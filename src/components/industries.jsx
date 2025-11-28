@@ -98,7 +98,7 @@ function IndustryCard({
 function CallToAction() {
   return (
     <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      Request adapts to your company's needs, whether you're managing affiliate payouts, processing international transactions, or automating vendor payments.
+      From SaaS to healthcare, e-commerce to Web3, Request Finance provides industry-specific solutions that streamline your financial operations.
     </p>
   )
 }

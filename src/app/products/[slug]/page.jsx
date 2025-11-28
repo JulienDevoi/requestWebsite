@@ -24,6 +24,15 @@ export async function generateMetadata({ params }) {
   return {
     title: `${product.name} - Request Finance`,
     description: product.heroDescription,
+    keywords: [
+      product.name.toLowerCase(),
+      'spend management',
+      'corporate cards',
+      'accounts payable',
+      'business finance',
+      'fintech',
+      'payment platform',
+    ],
     openGraph: {
       title: `${product.name} - Request Finance`,
       description: product.heroDescription,
@@ -31,7 +40,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Request Finance',
       images: [
         {
-          url: product.heroImage,
+          url: '/images/thumbnail.png',
           width: 1200,
           height: 630,
           alt: `Request Finance ${product.name}`,
@@ -44,7 +53,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${product.name} - Request Finance`,
       description: product.heroDescription,
-      images: [product.heroImage],
+      images: ['/images/thumbnail.png'],
     },
     alternates: {
       canonical: `https://requestfinance.com/products/${product.slug}`,
