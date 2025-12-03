@@ -29,10 +29,10 @@ export function BentoCard({
       <div className="relative h-80 shrink-0">
         {graphic}
         {fade.includes('top') && (
-          <div className="absolute inset-0 bg-linear-to-b from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+          <div key="fade-top" className="absolute inset-0 bg-linear-to-b from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
         )}
         {fade.includes('bottom') && (
-          <div className="absolute inset-0 bg-linear-to-t from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
+          <div key="fade-bottom" className="absolute inset-0 bg-linear-to-t from-white to-50% group-data-dark:from-gray-800 group-data-dark:from-[-25%]" />
         )}
       </div>
       <div className="relative p-10">

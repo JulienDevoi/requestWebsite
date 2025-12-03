@@ -20,6 +20,7 @@ import {
   ArrowPathIcon,
   GlobeAltIcon,
   CalculatorIcon,
+  BanknotesIcon,
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import { Link } from './link'
@@ -51,6 +52,7 @@ const products = [
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },
+  { href: '/products/yield-savings', label: 'Yield Savings', icon: BanknotesIcon, comingSoon: true },
 ]
 
 function DesktopNav() {
@@ -65,16 +67,42 @@ function DesktopNav() {
         </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
-            {products.map(({ href, label, icon: Icon }) => (
-              <Link
-                key={href}
-                href={href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50"
-              >
-                <Icon className="size-5 text-gray-500" />
-                {label}
-              </Link>
-            ))}
+            {products.map(({ href, label, icon: Icon, comingSoon }) => {
+              const content = (
+                <>
+                  <Icon className="size-5 text-gray-500" />
+                  <span className="flex items-center gap-1.5">
+                    {label}
+                    {comingSoon && (
+                      <span className="bg-gradient-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent font-medium text-xs">
+                        Soon
+                      </span>
+                    )}
+                  </span>
+                </>
+              )
+              
+              if (comingSoon) {
+                return (
+                  <div
+                    key={href}
+                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 cursor-not-allowed opacity-75"
+                  >
+                    {content}
+                  </div>
+                )
+              }
+              
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50"
+                >
+                  {content}
+                </Link>
+              )
+            })}
           </div>
         </div>
       </PlusGridItem>
@@ -164,12 +192,35 @@ function MobileNav() {
         >
           <p className="text-sm font-medium text-gray-500 mb-2">Products</p>
           <div className="flex flex-col gap-3 pl-3">
-            {products.map(({ href, label, icon: Icon }) => (
-              <Link key={href} href={href} className="flex items-center gap-2 text-base font-medium text-gray-950">
-                <Icon className="size-5 text-gray-500" />
-                {label}
-              </Link>
-            ))}
+            {products.map(({ href, label, icon: Icon, comingSoon }) => {
+              const content = (
+                <>
+                  <Icon className="size-5 text-gray-500" />
+                  <span className="flex items-center gap-1.5">
+                    {label}
+                    {comingSoon && (
+                      <span className="bg-gradient-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent font-medium text-xs">
+                        Soon
+                      </span>
+                    )}
+                  </span>
+                </>
+              )
+              
+              if (comingSoon) {
+                return (
+                  <div key={href} className="flex items-center gap-2 text-base font-medium text-gray-950 cursor-not-allowed opacity-75">
+                    {content}
+                  </div>
+                )
+              }
+              
+              return (
+                <Link key={href} href={href} className="flex items-center gap-2 text-base font-medium text-gray-950">
+                  {content}
+                </Link>
+              )
+            })}
           </div>
         </motion.div>
         <motion.div
