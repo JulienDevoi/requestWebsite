@@ -17,7 +17,7 @@ export const metadata = {
     'expense management',
     'fintech',
     'business payments',
-    'virtual account',
+    'Global USD Account',
     'accrual accounting',
   ],
   openGraph: {

@@ -47,7 +47,7 @@ const useCases = [
 ]
 
 const products = [
-  { href: '/products/virtual-account', label: 'Virtual Account', icon: BuildingOfficeIcon },
+  { href: '/products/global-usd-account', label: 'Global USD Account', icon: BuildingOfficeIcon },
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },

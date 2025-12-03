@@ -19,13 +19,13 @@ export function IndustrySolution({ eyebrow, title, description }) {
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
         <BentoCard
           key="accounts-payable"
-          eyebrow="Virtual account"
+          eyebrow="Global USD Account"
           title="Each entity gets its own account"
           description="No more sharing cards or accounts. Each entity has its own budget, spending limits, and approvals. For a clean audit trail."
           graphic={
             <img
               src="/images/virtual-account.png"
-              alt="Virtual account"
+              alt="Global USD Account"
               className="h-full w-full object-cover"
             />
           }

@@ -52,7 +52,7 @@ function Sitemap() {
       <div>
         <SitemapHeading>Products</SitemapHeading>
         <SitemapLinks>
-          <SitemapLink href="/products/virtual-account">Virtual Account</SitemapLink>
+          <SitemapLink href="/products/global-usd-account">Global USD Account</SitemapLink>
           <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
           <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
           <SitemapLink href="/products/accrual-accounting">Accrual Accounting</SitemapLink>
