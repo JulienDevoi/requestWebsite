@@ -409,7 +409,7 @@ function UseCases() {
       examples: [
         { text: 'Affiliate payments', href: '/use-cases/affiliate-payments' },
         { text: 'Content creator payouts', href: '/use-cases/content-creator-payouts' },
-        { text: 'Commission distributions', href: null },
+        { text: 'Commission distributions', href: '/use-cases/commission-distributions' },
       ],
       image: '/company/1.jpg',
     },
@@ -419,7 +419,7 @@ function UseCases() {
       examples: [
         { text: 'Import/export transactions', href: '/use-cases/import-export' },
         { text: 'Marketplace payments', href: '/use-cases/marketplace-payments' },
-        { text: 'Global supplier payments', href: null },
+        { text: 'Global supplier payments', href: '/use-cases/global-supplier-payments' },
       ],
       image: '/company/2.jpg',
     },
@@ -429,7 +429,7 @@ function UseCases() {
       examples: [
         { text: 'Vendor invoices', href: null },
         { text: 'Recurring payments', href: '/use-cases/recurring-payments' },
-        { text: 'Invoice automation', href: null },
+        { text: 'Invoice automation', href: '/use-cases/invoice-automation' },
       ],
       image: '/company/3.jpg',
     },

@@ -189,6 +189,120 @@ export const useCases = {
     footerDescription:
       'Pay vendors worldwide with speed and transparency. Get started in less than 5 minutes.',
   },
+  'global-supplier-payments': {
+    slug: 'global-supplier-payments',
+    name: 'Global Supplier Payments',
+    heroTitle: 'Pay suppliers worldwide with speed and transparency',
+    heroDescription:
+      'A modern payment platform built for businesses that need to pay suppliers across multiple countries quickly, affordably, and reliably.',
+    heroImage: '/images/wholesalers.jpg',
+    // Intro section - The Problem
+    introEyebrow: 'The Problem',
+    introTitle: 'Global supplier payments are slow, expensive, and complex.',
+    introLead:
+      'Paying suppliers across multiple countries and currencies creates operational challenges, high fees, and payment delays that impact your supply chain and relationships.',
+    introParagraphs: [],
+    introBullets: [
+      'Wire transfers take 3-5 business days, delaying inventory and fulfillment',
+      'Hidden FX fees and poor exchange rates eat into profit margins',
+      'No visibility into payment status, leaving suppliers asking "where is my money?"',
+      'Different payment methods required for different countries and suppliers',
+      'Compliance documentation for international transfers is complex and time-consuming',
+      'Managing multiple banking relationships across countries',
+      'Currency volatility creates uncertainty in payment costs',
+      'Reconciling payments with purchase orders and invoices is manual',
+      'Payment delays strain supplier relationships and can impact supply chain',
+      'High transaction fees reduce margins on international purchases',
+    ],
+    introImage: '/images/wholesalers.jpg',
+    introButtonText: 'Book a demo',
+    // Solution section
+    solutionEyebrow: 'The Solution',
+    solutionTitle: 'Pay suppliers worldwide with competitive rates and instant visibility',
+    solutionDescription:
+      'Request enables fast, transparent global supplier payments with competitive FX rates, real-time tracking, and complete audit trails. Pay suppliers in 190+ countries using stablecoins or fiat currencies.',
+    // Footer CTA customization
+    footerEyebrow: 'Built for Global Supplier Payments',
+    footerTitle: 'Ready to streamline your supplier payments?',
+    footerDescription:
+      'Pay suppliers worldwide with speed and transparency. Get started in less than 5 minutes.',
+  },
+  'commission-distributions': {
+    slug: 'commission-distributions',
+    name: 'Commission Distributions',
+    heroTitle: 'Distribute commissions at scale',
+    heroDescription:
+      'A modern payout platform built for businesses that need to pay commissions to sales teams, partners, and distributors quickly, accurately, and globally.',
+    heroImage: '/images/affiliates.jpg',
+    // Intro section - The Problem
+    introEyebrow: 'The Problem',
+    introTitle: 'Commission payments are complex and time-consuming.',
+    introLead:
+      'Calculating and distributing commissions across sales teams, partners, and distributors creates operational overhead, payment delays, and disputes that impact relationships and cash flow.',
+    introParagraphs: [],
+    introBullets: [
+      'Manual commission calculations take days or weeks every payment cycle',
+      'Complex commission structures with tiers, overrides, and splits are error-prone',
+      'Payment delays frustrate sales teams and partners who rely on commissions',
+      'Disputes over commission calculations damage relationships and require manual resolution',
+      'Different payment methods needed for different regions and recipients',
+      'FX fees on international commission payments reduce payouts',
+      'No visibility into commission payment status for recipients',
+      'Reconciling commission payments with sales data is manual and time-consuming',
+      'Tax withholding and compliance vary by country and are hard to manage',
+      'Commission tracking across multiple systems leads to errors and discrepancies',
+    ],
+    introImage: '/images/affiliates.jpg',
+    introButtonText: 'Book a demo',
+    // Solution section
+    solutionEyebrow: 'The Solution',
+    solutionTitle: 'Automate commission calculations and distributions',
+    solutionDescription:
+      'Request automates commission calculations and distributions with transparent tracking, multi-currency support, and real-time visibility. Pay commissions to sales teams, partners, and distributors across 190+ countries in one click.',
+    // Footer CTA customization
+    footerEyebrow: 'Built for Commission Distributions',
+    footerTitle: 'Ready to automate your commission payments?',
+    footerDescription:
+      'Pay commissions accurately and on time. Get started in less than 5 minutes.',
+  },
+  'invoice-automation': {
+    slug: 'invoice-automation',
+    name: 'Invoice Automation',
+    heroTitle: 'Automate invoice processing and payments',
+    heroDescription:
+      'A modern accounts payable platform built for businesses that need to process, approve, and pay invoices automatically with minimal manual intervention.',
+    heroImage: '/images/saas.jpg',
+    // Intro section - The Problem
+    introEyebrow: 'The Problem',
+    introTitle: 'Manual invoice processing is slow and error-prone.',
+    introLead:
+      'Processing invoices manually creates bottlenecks, delays payments, increases errors, and prevents finance teams from focusing on strategic work.',
+    introParagraphs: [],
+    introBullets: [
+      'Manual data entry from invoices into accounting systems takes hours',
+      'Invoice approval workflows are slow and require constant follow-ups',
+      'Duplicate payments and incorrect amounts due to manual errors',
+      'No visibility into invoice status until payment is processed',
+      'Matching invoices with purchase orders and receipts is time-consuming',
+      'Late payment fees and missed early payment discounts',
+      'Invoice data scattered across email, paper, and different systems',
+      'Reconciling invoices with vendor statements is manual and error-prone',
+      'Compliance and audit trails are incomplete or missing',
+      'Finance teams spend too much time on data entry instead of analysis',
+    ],
+    introImage: '/images/saas.jpg',
+    introButtonText: 'Book a demo',
+    // Solution section
+    solutionEyebrow: 'The Solution',
+    solutionTitle: 'Automate invoice processing from receipt to payment',
+    solutionDescription:
+      'Request automates invoice processing with OCR, AI-powered data extraction, automated approval workflows, and seamless payment execution. Process hundreds of invoices in minutes, not days.',
+    // Footer CTA customization
+    footerEyebrow: 'Built for Invoice Automation',
+    footerTitle: 'Ready to automate your invoice processing?',
+    footerDescription:
+      'Process invoices faster and reduce errors. Get started in less than 5 minutes.',
+  },
 }
 
 // Helper to get all use cases as an array

@@ -51,6 +51,9 @@ const useCases = [
   { href: '/use-cases/import-export', label: 'Import/Export', icon: GlobeAltIcon },
   { href: '/use-cases/content-creator-payouts', label: 'Content Creator Payouts', icon: UserGroupIcon },
   { href: '/use-cases/marketplace-payments', label: 'Marketplace Payments', icon: ShoppingCartIcon },
+  { href: '/use-cases/global-supplier-payments', label: 'Global Supplier Payments', icon: GlobeAltIcon },
+  { href: '/use-cases/commission-distributions', label: 'Commission Distributions', icon: ArrowPathIcon },
+  { href: '/use-cases/invoice-automation', label: 'Invoice Automation', icon: DocumentTextIcon },
 ]
 
 const products = [
@@ -151,7 +154,7 @@ function DesktopNav() {
                 href={href}
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50 whitespace-nowrap"
               >
-                <Icon className="size-5 text-gray-500" />
+                <Icon className="size-5 shrink-0 text-gray-500" />
                 {label}
               </Link>
             ))}
@@ -261,7 +264,7 @@ function MobileNav() {
           <div className="flex flex-col gap-3 pl-3">
             {useCases.map(({ href, label, icon: Icon }) => (
               <Link key={href} href={href} className="flex items-center gap-2 text-base font-medium text-gray-950">
-                <Icon className="size-5 text-gray-500" />
+                <Icon className="size-5 shrink-0 text-gray-500" />
                 {label}
               </Link>
             ))}

@@ -66,6 +66,9 @@ function Sitemap() {
           <SitemapLink href="/use-cases/import-export">Import/Export</SitemapLink>
           <SitemapLink href="/use-cases/content-creator-payouts">Content Creator Payouts</SitemapLink>
           <SitemapLink href="/use-cases/marketplace-payments">Marketplace Payments</SitemapLink>
+          <SitemapLink href="/use-cases/global-supplier-payments">Global Supplier Payments</SitemapLink>
+          <SitemapLink href="/use-cases/commission-distributions">Commission Distributions</SitemapLink>
+          <SitemapLink href="/use-cases/invoice-automation">Invoice Automation</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
