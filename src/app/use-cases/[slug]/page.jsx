@@ -2,6 +2,7 @@ import { UseCaseFooter } from '@/components/use-case-footer'
 import { UseCaseHero } from '@/components/use-case-hero'
 import { UseCaseIntro } from '@/components/use-case-intro'
 import { UseCaseSolution } from '@/components/use-case-solution'
+import { Industries } from '@/components/industries'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { getUseCaseBySlug, getAllUseCaseSlugs } from '@/data/use-cases'
@@ -101,6 +102,7 @@ export default async function UseCasePage({ params }) {
           <Steps />
         </div>
         <Testimonials />
+        <Industries />
       </main>
       <UseCaseFooter useCase={useCase} />
     </div>

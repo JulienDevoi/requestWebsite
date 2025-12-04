@@ -2,6 +2,7 @@ import { IndustryFooter } from '@/components/industry-footer'
 import { IndustryHero } from '@/components/industry-hero'
 import { IndustryIntro } from '@/components/industry-intro'
 import { IndustrySolution } from '@/components/industry-solution'
+import { IndustryWhyItWorks } from '@/components/industry-why-it-works'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { getIndustryBySlug, getAllIndustrySlugs } from '@/data/industries'
@@ -98,6 +99,13 @@ export default async function IndustryPage({ params }) {
               description={industry.solutionDescription}
             />
           </div>
+          {industry.whyItWorks && (
+            <IndustryWhyItWorks
+              title={industry.whyItWorks.title}
+              description={industry.whyItWorks.description}
+              reasons={industry.whyItWorks.reasons}
+            />
+          )}
           <Steps />
         </div>
         <Testimonials />

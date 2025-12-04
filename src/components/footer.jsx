@@ -64,6 +64,8 @@ function Sitemap() {
           <SitemapLink href="/use-cases/affiliate-payments">Affiliate Payments</SitemapLink>
           <SitemapLink href="/use-cases/recurring-payments">Recurring Payments</SitemapLink>
           <SitemapLink href="/use-cases/import-export">Import/Export</SitemapLink>
+          <SitemapLink href="/use-cases/content-creator-payouts">Content Creator Payouts</SitemapLink>
+          <SitemapLink href="/use-cases/marketplace-payments">Marketplace Payments</SitemapLink>
         </SitemapLinks>
       </div>
       <div>
@@ -75,6 +77,8 @@ function Sitemap() {
           <SitemapLink href="/industries/wholesalers">Wholesalers</SitemapLink>
           <SitemapLink href="/industries/marketing-agencies">Marketing Agencies</SitemapLink>
           <SitemapLink href="/industries/web3">Web3</SitemapLink>
+          <SitemapLink href="/industries/online-travel-agencies">Online Travel Agencies</SitemapLink>
+          <SitemapLink href="/industries/gaming-betting">Gaming & Betting</SitemapLink>
         </SitemapLinks>
       </div>
       <div>

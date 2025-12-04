@@ -21,6 +21,8 @@ import {
   GlobeAltIcon,
   CalculatorIcon,
   BanknotesIcon,
+  PaperAirplaneIcon,
+  SparklesIcon,
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import { Link } from './link'
@@ -39,12 +41,16 @@ const industries = [
   { href: '/industries/wholesalers', label: 'Wholesalers', icon: TruckIcon },
   { href: '/industries/marketing-agencies', label: 'Marketing Agencies', icon: MegaphoneIcon },
   { href: '/industries/web3', label: 'Web3', icon: CubeTransparentIcon },
+  { href: '/industries/online-travel-agencies', label: 'Online Travel Agencies', icon: PaperAirplaneIcon },
+  { href: '/industries/gaming-betting', label: 'Gaming & Betting', icon: SparklesIcon },
 ]
 
 const useCases = [
   { href: '/use-cases/affiliate-payments', label: 'Affiliate Payments', icon: UserGroupIcon },
   { href: '/use-cases/recurring-payments', label: 'Recurring Payments', icon: ArrowPathIcon },
   { href: '/use-cases/import-export', label: 'Import/Export', icon: GlobeAltIcon },
+  { href: '/use-cases/content-creator-payouts', label: 'Content Creator Payouts', icon: UserGroupIcon },
+  { href: '/use-cases/marketplace-payments', label: 'Marketplace Payments', icon: ShoppingCartIcon },
 ]
 
 const products = [
@@ -143,7 +149,7 @@ function DesktopNav() {
               <Link
                 key={href}
                 href={href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50 whitespace-nowrap"
               >
                 <Icon className="size-5 text-gray-500" />
                 {label}

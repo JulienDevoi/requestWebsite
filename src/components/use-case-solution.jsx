@@ -79,7 +79,7 @@ export function UseCaseSolution({ eyebrow, title, description }) {
           key="operate-globally"
           eyebrow="Worldwide"
           title="Operate globally"
-          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees."
+          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees. Support for ACH, Wire, SEPA, SWIFT, SPEI (MXN), Faster Payments (GBP), and stablecoins."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
