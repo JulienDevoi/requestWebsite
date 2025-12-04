@@ -406,19 +406,31 @@ function UseCases() {
     {
       title: 'Mass Payout',
       description: 'Streamline affiliate payments, content creator payouts, and bulk disbursements. Send payments to hundreds of recipients simultaneously with automated workflows and real-time tracking.',
-      examples: ['Affiliate payments', 'Content creator payouts', 'Commission distributions'],
+      examples: [
+        { text: 'Affiliate payments', href: '/use-cases/affiliate-payments' },
+        { text: 'Content creator payouts', href: '/use-cases/content-creator-payouts' },
+        { text: 'Commission distributions', href: null },
+      ],
       image: '/company/1.jpg',
     },
     {
       title: 'International Payments',
       description: 'Simplify international transactions for import/export, marketplaces, and global operations. Pay suppliers worldwide with competitive FX rates and transparent fees.',
-      examples: ['Import/export transactions', 'Marketplace payments', 'Global supplier payments'],
+      examples: [
+        { text: 'Import/export transactions', href: '/use-cases/import-export' },
+        { text: 'Marketplace payments', href: '/use-cases/marketplace-payments' },
+        { text: 'Global supplier payments', href: null },
+      ],
       image: '/company/2.jpg',
     },
     {
       title: 'Accounts Payable',
       description: 'Automate your accounts payable process with seamless vendor payments. Manage invoices, approvals, and payments all in one place with full audit trails.',
-      examples: ['Vendor invoices', 'Recurring payments', 'Invoice automation'],
+      examples: [
+        { text: 'Vendor invoices', href: null },
+        { text: 'Recurring payments', href: '/use-cases/recurring-payments' },
+        { text: 'Invoice automation', href: null },
+      ],
       image: '/company/3.jpg',
     },
   ]
@@ -430,10 +442,10 @@ function UseCases() {
         <Heading as="h2" className="mt-2">
           Built for every payment scenario.
         </Heading>
-        <Lead className="mt-6 max-w-3xl">
+        <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
           Request adapts to your business needs, whether you're managing affiliate payouts, 
           processing international transactions, or automating vendor payments.
-        </Lead>
+        </p>
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {useCases.map((useCase, index) => (
             <div
@@ -459,12 +471,22 @@ function UseCases() {
                     Common Use Cases
                   </p>
                   <ul className="mt-3 space-y-2">
-                    {useCase.examples.map((example, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm/6 text-gray-600">
-                        <span className="size-1.5 shrink-0 rounded-full bg-gray-400" />
-                        {example}
-                      </li>
-                    ))}
+                    {useCase.examples.map((example, i) => {
+                      const exampleText = typeof example === 'string' ? example : example.text
+                      const exampleHref = typeof example === 'string' ? null : example.href
+                      return (
+                        <li key={i} className="flex items-center gap-2 text-sm/6 text-gray-600">
+                          <span className="size-1.5 shrink-0 rounded-full bg-gray-400" />
+                          {exampleHref ? (
+                            <Link href={exampleHref} className="text-gray-950 data-hover:text-gray-950/75 font-medium">
+                              {exampleText}
+                            </Link>
+                          ) : (
+                            exampleText
+                          )}
+                        </li>
+                      )
+                    })}
                   </ul>
                 </div>
               </div>
