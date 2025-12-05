@@ -15,7 +15,7 @@ export const metadata = {
     'stablecoins',
     'business finance',
     'expense management',
-    'fintech',
+    'fintech startup',
     'business payments',
     'Global USD Account',
     'accrual accounting',
