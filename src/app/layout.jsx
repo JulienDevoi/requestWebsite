@@ -56,7 +56,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" translate="no">
       <head>
         <link
           rel="icon"
@@ -72,6 +72,31 @@ export default function RootLayout({ children }) {
           type="application/rss+xml"
           title="The Radiant Blog"
           href="/blog/feed.xml"
+        />
+        <Script
+          src="https://cdn.weglot.com/weglot.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="weglot-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if (typeof Weglot !== 'undefined') {
+                Weglot.initialize({
+                  api_key: 'wg_87c7a6f782faec80e6c5680db823a4295'
+                });
+              } else {
+                window.addEventListener('load', function() {
+                  if (typeof Weglot !== 'undefined') {
+                    Weglot.initialize({
+                      api_key: 'wg_87c7a6f782faec80e6c5680db823a4295'
+                    });
+                  }
+                });
+              }
+            `,
+          }}
         />
       </head>
       <body className="text-gray-950 antialiased">
