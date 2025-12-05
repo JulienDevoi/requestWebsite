@@ -73,28 +73,30 @@ export default function RootLayout({ children }) {
           title="The Radiant Blog"
           href="/blog/feed.xml"
         />
-        <Script
+        <script
           src="https://cdn.weglot.com/weglot.min.js"
-          strategy="beforeInteractive"
+          type="text/javascript"
         />
-        <Script
-          id="weglot-init"
-          strategy="beforeInteractive"
+        <script
+          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
-              if (typeof Weglot !== 'undefined') {
-                Weglot.initialize({
-                  api_key: 'wg_87c7a6f782faec80e6c5680db823a4295'
-                });
-              } else {
-                window.addEventListener('load', function() {
+              (function() {
+                var initWeglot = function() {
                   if (typeof Weglot !== 'undefined') {
                     Weglot.initialize({
                       api_key: 'wg_87c7a6f782faec80e6c5680db823a4295'
                     });
+                  } else {
+                    setTimeout(initWeglot, 50);
                   }
-                });
-              }
+                };
+                if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                  initWeglot();
+                } else {
+                  document.addEventListener('DOMContentLoaded', initWeglot);
+                }
+              })();
             `,
           }}
         />
