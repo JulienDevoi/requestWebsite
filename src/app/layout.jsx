@@ -1,5 +1,6 @@
 import '@/styles/tailwind.css'
 import Script from 'next/script'
+import { WeglotScript } from '@/components/weglot'
 
 export const metadata = {
   title: {
@@ -73,35 +74,9 @@ export default function RootLayout({ children }) {
           title="The Radiant Blog"
           href="/blog/feed.xml"
         />
-        <script
-          src="https://cdn.weglot.com/weglot.min.js"
-          type="text/javascript"
-        />
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var initWeglot = function() {
-                  if (typeof Weglot !== 'undefined') {
-                    Weglot.initialize({
-                      api_key: 'wg_87c7a6f782faec80e6c5680db823a4295'
-                    });
-                  } else {
-                    setTimeout(initWeglot, 50);
-                  }
-                };
-                if (document.readyState === 'complete' || document.readyState === 'interactive') {
-                  initWeglot();
-                } else {
-                  document.addEventListener('DOMContentLoaded', initWeglot);
-                }
-              })();
-            `,
-          }}
-        />
       </head>
       <body className="text-gray-950 antialiased">
+        <WeglotScript />
         {children}
         <Script
           src="https://beamanalytics.b-cdn.net/beam.min.js"
