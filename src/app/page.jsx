@@ -44,7 +44,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Spend Management Platform',
@@ -58,7 +58,7 @@ export const metadata = {
     title: 'Request Finance - Spend Management for Modern Companies',
     description:
       'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com',

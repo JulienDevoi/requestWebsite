@@ -19,7 +19,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Pricing Plans',
@@ -33,7 +33,7 @@ export const metadata = {
     title: 'Pricing - Request Finance',
     description:
       'Transparent pricing for spend management. Choose from Basic, Pro, or Premium plans. All plans include corporate cards, accounts payable, and global payments. Start with a 30-day free trial.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/pricing',

@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Request Finance',
       images: [
         {
-          url: '/images/thumbnail.png',
+          url: 'https://requestfinance.com/images/thumbnail.png',
           width: 1200,
           height: 630,
           alt: `Request Finance ${product.name}`,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${product.name} - Request Finance`,
       description: product.heroDescription,
-      images: ['/images/thumbnail.png'],
+      images: ['https://requestfinance.com/images/thumbnail.png'],
     },
     alternates: {
       canonical: `https://requestfinance.com/products/${product.slug}`,

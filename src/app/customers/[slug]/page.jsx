@@ -167,7 +167,7 @@ export async function generateMetadata({ params }) {
       siteName: 'Request Finance',
       images: [
         {
-          url: '/images/thumbnail.png',
+          url: 'https://requestfinance.com/images/thumbnail.png',
           width: 1200,
           height: 630,
           alt: post.title,
@@ -182,7 +182,7 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${post.title} - Request Finance`,
       description: post.excerpt,
-      images: ['/images/thumbnail.png'],
+      images: ['https://requestfinance.com/images/thumbnail.png'],
     },
     alternates: {
       canonical: `https://requestfinance.com/customers/${post.slug}`,

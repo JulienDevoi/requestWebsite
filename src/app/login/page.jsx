@@ -26,7 +26,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Login',
@@ -40,7 +40,7 @@ export const metadata = {
     title: 'Login - Request Finance',
     description:
       'Sign in to your Request Finance account to manage corporate cards, accounts payable, and global payments. Access your spend management dashboard.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/login',

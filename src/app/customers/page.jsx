@@ -38,7 +38,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Customer Success Stories',
@@ -52,7 +52,7 @@ export const metadata = {
     title: 'Customers - Request Finance',
     description:
       'Discover how leading companies are using Request Finance to transform their business spend management, streamline payments, and achieve remarkable results. Read success stories and case studies.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/customers',

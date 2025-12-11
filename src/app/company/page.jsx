@@ -25,7 +25,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Company',
@@ -39,7 +39,7 @@ export const metadata = {
     title: 'Company - Request Finance',
     description:
       'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/company',

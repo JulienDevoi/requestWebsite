@@ -37,7 +37,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance Blog',
@@ -51,7 +51,7 @@ export const metadata = {
     title: 'Blog - Request Finance',
     description:
       'Stay informed with product updates, company news, and insights on spend management, corporate finance, and business payments.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/blog',

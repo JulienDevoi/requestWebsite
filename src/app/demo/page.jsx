@@ -20,7 +20,7 @@ export const metadata = {
     siteName: 'Request Finance',
     images: [
       {
-        url: '/images/thumbnail.png',
+        url: 'https://requestfinance.com/images/thumbnail.png',
         width: 1200,
         height: 630,
         alt: 'Request Finance - Book a Demo',
@@ -34,7 +34,7 @@ export const metadata = {
     title: 'Book a Demo - Request Finance',
     description:
       'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
-    images: ['/images/thumbnail.png'],
+    images: ['https://requestfinance.com/images/thumbnail.png'],
   },
   alternates: {
     canonical: 'https://requestfinance.com/demo',
