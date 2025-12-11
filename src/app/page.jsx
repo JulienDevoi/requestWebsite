@@ -580,7 +580,7 @@ export default function Home() {
     '@type': 'Organization',
     name: 'Request Finance',
     url: 'https://requestfinance.com',
-    logo: 'https://requestfinance.com/images/request-finance.svg',
+    logo: 'https://requestfinance.com/images/icon2.png',
     description: 'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
     sameAs: [
       // Add social media links here when available
