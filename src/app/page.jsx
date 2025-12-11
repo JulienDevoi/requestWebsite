@@ -85,7 +85,8 @@ function HeroSaved() {
             Spend management for modern companies
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
+            Open global business accounts, accept payments, manage company spend, and much more. <br />
+            Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/demo">Book a demo</Button>
