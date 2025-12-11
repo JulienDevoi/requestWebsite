@@ -189,6 +189,21 @@ export function Footer() {
                 </PlusGridItem>
               </div>
             </PlusGridRow>
+            <PlusGridRow>
+              <PlusGridItem className="pt-6 pb-8">
+                <p className="text-xs/6 text-gray-950/60 max-w-4xl">
+                  Cryptocurrency and digital asset services are provided by Request Technologies UAB (Company No. 306291868), a subsidiary of Request Finance SAS, registered in Republic of Lithuania and operating as a Virtual Asset Service Provider (VASP) under the supervision of the Financial Crime Investigation Service (FCIS). The authority of Request Technologies UAB as a regulated VASP is listed and verifiable through the official and publicly available registers available{' '}
+                  <Link
+                    href="https://www.fntt.lt/en/virtual-asset-service-providers"
+                    target="_blank"
+                    className="font-medium text-gray-950 data-hover:text-gray-950/75 underline"
+                  >
+                    here
+                  </Link>
+                  .
+                </p>
+              </PlusGridItem>
+            </PlusGridRow>
           </PlusGrid>
         </Container>
       </Gradient>
