@@ -144,7 +144,14 @@ Having the right technology foundation was critical to Startup XYZ's success. Ou
 }
 
 export async function generateMetadata({ params }) {
-  const post = mockPosts[(await params).slug]
+  const { slug } = await params
+  
+  // Validate slug format
+  if (!/^[a-z0-9-_]+$/.test(slug) || slug.length > 100 || slug.length < 1) {
+    return {}
+  }
+  
+  const post = mockPosts[slug]
   if (!post) return {}
   
   return {
@@ -191,7 +198,24 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function CustomerStory({ params }) {
-  const post = mockPosts[(await params).slug]
+  const { slug } = await params
+  
+  // Validate slug format - alphanumeric, hyphens, underscores only
+  if (!/^[a-z0-9-_]+$/.test(slug)) {
+    notFound()
+  }
+  
+  // Length validation
+  if (slug.length > 100 || slug.length < 1) {
+    notFound()
+  }
+  
+  // Additional security: prevent path traversal attempts
+  if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    notFound()
+  }
+  
+  const post = mockPosts[slug]
   if (!post) notFound()
 
   return (

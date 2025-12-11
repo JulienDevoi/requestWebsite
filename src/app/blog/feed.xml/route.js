@@ -27,7 +27,20 @@ const mockPosts = [
 ]
 
 export async function GET(req) {
-  let siteUrl = new URL(req.url).origin
+  const url = new URL(req.url)
+  let origin = url.origin
+  
+  // Validate against allowed origins
+  const allowedOrigins = [
+    'https://requestfinance.com',
+    'https://www.requestfinance.com',
+    process.env.NEXT_PUBLIC_SITE_URL,
+  ].filter(Boolean)
+  
+  // Use environment variable or default to production URL
+  const siteUrl = allowedOrigins.includes(origin) 
+    ? origin 
+    : (process.env.NEXT_PUBLIC_SITE_URL || 'https://requestfinance.com')
 
   let feed = new Feed({
     title: 'The Radiant Blog',

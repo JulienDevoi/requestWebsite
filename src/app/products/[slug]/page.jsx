@@ -15,6 +15,12 @@ export async function generateStaticParams() {
 // Generate metadata for SEO
 export async function generateMetadata({ params }) {
   const { slug } = await params
+  
+  // Validate slug format
+  if (!/^[a-z0-9-_]+$/.test(slug) || slug.length > 100 || slug.length < 1) {
+    return {}
+  }
+  
   const product = getProductBySlug(slug)
 
   if (!product) {
@@ -63,6 +69,22 @@ export async function generateMetadata({ params }) {
 
 export default async function ProductPage({ params }) {
   const { slug } = await params
+  
+  // Validate slug format - alphanumeric, hyphens, underscores only
+  if (!/^[a-z0-9-_]+$/.test(slug)) {
+    notFound()
+  }
+  
+  // Length validation
+  if (slug.length > 100 || slug.length < 1) {
+    notFound()
+  }
+  
+  // Additional security: prevent path traversal attempts
+  if (slug.includes('..') || slug.includes('/') || slug.includes('\\')) {
+    notFound()
+  }
+  
   const product = getProductBySlug(slug)
 
   if (!product) {

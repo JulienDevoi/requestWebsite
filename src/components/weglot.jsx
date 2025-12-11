@@ -4,13 +4,20 @@ import { useEffect } from 'react'
 import Script from 'next/script'
 
 export function WeglotScript() {
+  const weglotApiKey = process.env.NEXT_PUBLIC_WEGLOT_API_KEY
+
   useEffect(() => {
+    if (!weglotApiKey) {
+      console.error('Weglot API key is missing. Please set NEXT_PUBLIC_WEGLOT_API_KEY in your environment variables.')
+      return
+    }
+
     // Initialize Weglot once the script is loaded
     const initWeglot = () => {
       if (typeof window !== 'undefined' && window.Weglot && !window.weglotInitialized) {
         try {
           window.Weglot.initialize({
-            api_key: 'wg_87c7a6f782faec80e6c5680db823a4295',
+            api_key: weglotApiKey,
           })
           window.weglotInitialized = true
         } catch (error) {
@@ -37,7 +44,11 @@ export function WeglotScript() {
         }
       }, 100)
     }
-  }, [])
+  }, [weglotApiKey])
+
+  if (!weglotApiKey) {
+    return null
+  }
 
   return (
     <Script
@@ -47,7 +58,7 @@ export function WeglotScript() {
         if (typeof window !== 'undefined' && window.Weglot && !window.weglotInitialized) {
           try {
             window.Weglot.initialize({
-              api_key: 'wg_87c7a6f782faec80e6c5680db823a4295',
+              api_key: weglotApiKey,
             })
             window.weglotInitialized = true
           } catch (error) {

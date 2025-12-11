@@ -61,6 +61,8 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  const beamAnalyticsToken = process.env.NEXT_PUBLIC_BEAM_ANALYTICS_TOKEN
+
   return (
     <html lang="en" translate="no">
       <head>
@@ -78,11 +80,13 @@ export default function RootLayout({ children }) {
       <body className="text-gray-950 antialiased">
         <WeglotScript />
         {children}
-        <Script
-          src="https://beamanalytics.b-cdn.net/beam.min.js"
-          data-token="4ca70d3b-e6aa-48ea-bdb2-1515a762fd66"
-          strategy="afterInteractive"
-        />
+        {beamAnalyticsToken && (
+          <Script
+            src="https://beamanalytics.b-cdn.net/beam.min.js"
+            data-token={beamAnalyticsToken}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   )
