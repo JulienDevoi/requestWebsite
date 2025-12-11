@@ -50,12 +50,12 @@ export const metadata = {
   },
   icons: {
     icon: [
-      { url: 'https://requestfinance.com/favicon.ico', sizes: 'any' },
-      { url: 'https://requestfinance.com/images/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/icon2.png', type: 'image/png' },
     ],
-    shortcut: 'https://requestfinance.com/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: [
-      { url: 'https://requestfinance.com/images/icon.svg', sizes: '180x180', type: 'image/svg+xml' },
+      { url: '/images/icon2.png', sizes: '180x180', type: 'image/png' },
     ],
   },
 }
