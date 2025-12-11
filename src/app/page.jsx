@@ -17,6 +17,7 @@ import { Solutions } from '@/components/solutions'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { Industries } from '@/components/industries'
+import { Security } from '@/components/security'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { SmoothScrollButton } from '@/components/smooth-scroll-button'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -671,8 +672,8 @@ export default function Home() {
       
       <Testimonials />
       
-      
       <Industries />
+      <Security />
       <UseCases />
       <Footer />
     </div>
