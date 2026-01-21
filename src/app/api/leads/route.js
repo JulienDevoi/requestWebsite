@@ -15,14 +15,43 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
   }
 })
 
+/**
+ * Trigger webhook for step5 completion
+ */
+async function triggerWebhook(data) {
+  const isLocal = process.env.NODE_ENV === 'development'
+  const webhookUrl = isLocal
+    ? 'https://notanothermarketer.app.n8n.cloud/webhook-test/2789d9ce-87a9-4508-9ca8-a797b62f661d'
+    : 'https://notanothermarketer.app.n8n.cloud/webhook/2789d9ce-87a9-4508-9ca8-a797b62f661d'
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+
+    if (!response.ok) {
+      console.error('Webhook returned non-OK status:', response.status)
+    }
+  } catch (error) {
+    // Log webhook error but don't block the save operation
+    console.error('Error triggering webhook:', error)
+  }
+}
+
 export async function POST(request) {
   try {
     const body = await request.json()
-    const { leadId, data } = body
+    const { leadId, data, step } = body
+
+    let savedLeadId = null
 
     if (leadId) {
-      // Update existing lead
-      const { data: updatedLead, error } = await supabaseAdmin
+      // Try to update existing lead
+      const { data: updatedLeads, error: updateError } = await supabaseAdmin
         .from('leads')
         .update({
           ...data,
@@ -30,17 +59,40 @@ export async function POST(request) {
         })
         .eq('id', leadId)
         .select()
-        .single()
 
-      if (error) {
-        console.error('Error updating lead:', error)
+      if (updateError) {
+        console.error('Error updating lead:', updateError)
         return Response.json(
-          { success: false, error: error.message },
+          { success: false, error: updateError.message },
           { status: 500 }
         )
       }
 
-      return Response.json({ success: true, leadId: updatedLead.id })
+      // If no rows were updated, the lead doesn't exist - create it
+      if (!updatedLeads || updatedLeads.length === 0) {
+        const { data: newLead, error: insertError } = await supabaseAdmin
+          .from('leads')
+          .insert({
+            id: leadId, // Use the existing leadId
+            ...data,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          })
+          .select()
+          .single()
+
+        if (insertError) {
+          console.error('Error creating lead with existing ID:', insertError)
+          return Response.json(
+            { success: false, error: insertError.message },
+            { status: 500 }
+          )
+        }
+
+        savedLeadId = newLead.id
+      } else {
+        savedLeadId = updatedLeads[0].id
+      }
     } else {
       // Create new lead
       const { data: newLead, error } = await supabaseAdmin
@@ -61,8 +113,20 @@ export async function POST(request) {
         )
       }
 
-      return Response.json({ success: true, leadId: newLead.id })
+      savedLeadId = newLead.id
     }
+
+    // Trigger webhook for step5 (only when step5 data is being saved)
+    if (step === 'step5' && data.first_name && data.last_name && data.company_name && data.linkedin_url) {
+      await triggerWebhook({
+        first_name: data.first_name,
+        last_name: data.last_name,
+        company_name: data.company_name,
+        linkedin_url: data.linkedin_url,
+      })
+    }
+
+    return Response.json({ success: true, leadId: savedLeadId })
   } catch (error) {
     console.error('Exception in API route:', error)
     return Response.json(

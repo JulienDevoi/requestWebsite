@@ -60,7 +60,7 @@ export default function OnboardingStep5() {
     setIsSubmitting(true)
 
     try {
-      // Save to database
+      // Save to database (webhook will be triggered server-side)
       await saveLead(
         {
           first_name: formData.firstName.trim(),
