@@ -19,8 +19,8 @@ function CallToAction() {
         Experience the simplicity and reliability of stablecoins. <br /> Your account setup takes less than 5 minutes.
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/demo">
-          Book a demo
+        <Button className="w-full sm:w-auto" href="/onboarding">
+          Open my account
         </Button>
       </div>
     </div>
@@ -88,7 +88,7 @@ function Sitemap() {
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="/demo">Book a demo</SitemapLink>
+          <SitemapLink href="/onboarding">Open my account</SitemapLink>
           <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>

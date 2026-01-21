@@ -444,7 +444,7 @@ function PricingCard({ tier, billingPeriod }) {
             )}
           </div>
           <div className="mt-8">
-            <Button href="/demo">Book a demo</Button>
+            <Button href="/onboarding">Open my account</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -531,14 +531,14 @@ function PricingTable({ selectedTier, setSelectedTier }) {
               </div>
             </td>
             <td colSpan={3} className="p-0 text-right">
-              <Button variant="outline" href="/demo">
-                Book a demo
+              <Button variant="outline" href="/onboarding">
+                Open my account
               </Button>
             </td>
           </tr>
           <tr className="max-sm:hidden">
             <th className="p-0" scope="row">
-              <span className="sr-only">Book a demo</span>
+              <span className="sr-only">Open my account</span>
             </th>
             {tiers.map((tier) => (
               <td
@@ -546,8 +546,8 @@ function PricingTable({ selectedTier, setSelectedTier }) {
                 data-selected={selectedTier === tier ? true : undefined}
                 className="px-0 pt-4 pb-0 data-selected:table-cell max-sm:hidden"
               >
-                <Button variant="outline" href="/demo">
-                  Book a demo
+                <Button variant="outline" href="/onboarding">
+                  Open my account
                 </Button>
               </td>
             ))}

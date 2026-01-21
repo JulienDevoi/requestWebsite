@@ -31,7 +31,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
-  { href: '/demo', label: 'Book a demo' }
+  { href: '/onboarding', label: 'Open my account' }
 ]
 
 const industries = [

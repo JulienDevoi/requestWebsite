@@ -111,7 +111,7 @@ export default async function IndustryPage({ params }) {
           image={industry.introImage}
           imageAlt={`${industry.name} industry illustration`}
           buttonText={industry.introButtonText}
-          buttonHref="/demo"
+          buttonHref="/onboarding"
         />
         <div className="bg-linear-to-b from-white from-50% to-gray-100">
           <div className="py-32">

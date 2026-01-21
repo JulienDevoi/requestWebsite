@@ -11,7 +11,7 @@ export function UseCaseIntro({
   image,
   imageAlt,
   buttonText,
-  buttonHref = '/demo',
+  buttonHref = '/onboarding',
 }) {
   return (
     <div className="bg-linear-to-b from-white from-50% to-gray-100 pt-32 pb-32">

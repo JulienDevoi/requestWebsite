@@ -24,7 +24,7 @@ export const useCases = {
       'Reconciling payouts with campaign performance is a manual process',
     ],
     introImage: '/images/affiliates.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Automate payouts to your entire network',
@@ -60,7 +60,7 @@ export const useCases = {
       'No alerts for price changes or contract renewals',
     ],
     introImage: '/images/saas.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Set it and forget it payments',
@@ -96,7 +96,7 @@ export const useCases = {
       'Reconciling payments with customs and shipping documents is manual',
     ],
     introImage: '/images/wholesalers.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Global payments at local speed',
@@ -139,7 +139,7 @@ export const useCases = {
       'PayPal and Payoneer payments to various countries create operational delays',
     ],
     introImage: '/images/affiliates.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Unite content creators and their clients on a unique financial platform',
@@ -177,7 +177,7 @@ export const useCases = {
       'All those examples create struggles about payments, disputes, and operational delays',
     ],
     introImage: '/images/e-commerce.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'A unique financial platform that serves both ends of the marketplace',
@@ -215,7 +215,7 @@ export const useCases = {
       'High transaction fees reduce margins on international purchases',
     ],
     introImage: '/images/wholesalers.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Pay suppliers worldwide with competitive rates and instant visibility',
@@ -253,7 +253,7 @@ export const useCases = {
       'Commission tracking across multiple systems leads to errors and discrepancies',
     ],
     introImage: '/images/affiliates.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Automate commission calculations and distributions',
@@ -291,7 +291,7 @@ export const useCases = {
       'Finance teams spend too much time on data entry instead of analysis',
     ],
     introImage: '/images/saas.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Automate invoice processing from receipt to payment',

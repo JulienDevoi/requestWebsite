@@ -23,7 +23,7 @@ export const industries = {
       'Month-end close takes days because data lives in too many places',
     ],
     introImage: '/images/saas.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'One platform for all your SaaS financial operations',
@@ -59,7 +59,7 @@ export const industries = {
       'Opening bank accounts in new markets takes weeks or months',
     ],
     introImage: '/images/wholesalers.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Global payments made simple and transparent',
@@ -118,7 +118,7 @@ export const industries = {
       'Managing multiple client budgets requires constant manual reconciliation',
     ],
     introImage: '/images/affiliates.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'One platform for all your agency payments',
@@ -178,7 +178,7 @@ export const industries = {
       'Finance team lacks centralized visibility, with payouts scattered across wallets and chains',
     ],
     introImage: '/images/web3.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Stablecoins and fiat, finally unified',
@@ -237,7 +237,7 @@ export const industries = {
       'Ad spend across Google, Meta, and TikTok needs better tracking and controls',
     ],
     introImage: '/images/e-commerce.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Financial operations built for e-commerce speed',
@@ -296,7 +296,7 @@ export const industries = {
       'Audit preparation takes weeks of gathering documentation and transaction records',
     ],
     introImage: '/images/healthcare.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Compliant payments, simplified operations',
@@ -356,7 +356,7 @@ export const industries = {
       'Reconciliation and multi-currency mismatches can pose significant challenges for the finance team',
     ],
     introImage: '/images/online-travel-agency.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Global payments made simple and transparent',
@@ -418,7 +418,7 @@ export const industries = {
       'Compliance overhead: KYB, AML checks, audit-ready reporting',
     ],
     introImage: '/images/gaming-betting.jpg',
-    introButtonText: 'Book a demo',
+    introButtonText: 'Open my account',
     // Solution section
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Automate mass payouts and vendor payments across 190+ countries',
