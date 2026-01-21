@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import { BookContent } from './book-content'
 
 export const metadata = {
@@ -68,15 +67,6 @@ export default function Book() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <Script id="google-ads-conversion" strategy="afterInteractive">
-        {`
-          gtag('event', 'conversion', {
-            'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
-            'value': 1.0,
-            'currency': 'EUR'
-          });
-        `}
-      </Script>
       <BookContent />
     </>
   )
