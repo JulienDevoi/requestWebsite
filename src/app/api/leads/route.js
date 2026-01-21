@@ -19,10 +19,19 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
  * Trigger webhook for step5 completion
  */
 async function triggerWebhook(data) {
-  const isLocal = process.env.NODE_ENV === 'development'
+  // Use explicit environment variable or fallback to NODE_ENV
+  // Default to production webhook if not explicitly development
+  const isLocal = process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENV === 'development'
   const webhookUrl = isLocal
     ? 'https://notanothermarketer.app.n8n.cloud/webhook-test/2789d9ce-87a9-4508-9ca8-a797b62f661d'
     : 'https://notanothermarketer.app.n8n.cloud/webhook/2789d9ce-87a9-4508-9ca8-a797b62f661d'
+
+  console.log('Triggering webhook:', {
+    environment: process.env.NODE_ENV,
+    isLocal,
+    webhookUrl,
+    data,
+  })
 
   try {
     const response = await fetch(webhookUrl, {
@@ -34,11 +43,24 @@ async function triggerWebhook(data) {
     })
 
     if (!response.ok) {
-      console.error('Webhook returned non-OK status:', response.status)
+      console.error('Webhook returned non-OK status:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: webhookUrl,
+      })
+    } else {
+      console.log('Webhook triggered successfully:', {
+        status: response.status,
+        url: webhookUrl,
+      })
     }
   } catch (error) {
     // Log webhook error but don't block the save operation
-    console.error('Error triggering webhook:', error)
+    console.error('Error triggering webhook:', {
+      error: error.message,
+      stack: error.stack,
+      url: webhookUrl,
+    })
   }
 }
 
@@ -118,11 +140,26 @@ export async function POST(request) {
 
     // Trigger webhook for step5 (only when step5 data is being saved)
     if (step === 'step5' && data.first_name && data.last_name && data.company_name && data.linkedin_url) {
+      console.log('Step5 detected, triggering webhook with data:', {
+        step,
+        hasFirstName: !!data.first_name,
+        hasLastName: !!data.last_name,
+        hasCompanyName: !!data.company_name,
+        hasLinkedInUrl: !!data.linkedin_url,
+      })
       await triggerWebhook({
         first_name: data.first_name,
         last_name: data.last_name,
         company_name: data.company_name,
         linkedin_url: data.linkedin_url,
+      })
+    } else {
+      console.log('Webhook not triggered:', {
+        step,
+        hasFirstName: !!data.first_name,
+        hasLastName: !!data.last_name,
+        hasCompanyName: !!data.company_name,
+        hasLinkedInUrl: !!data.linkedin_url,
       })
     }
 

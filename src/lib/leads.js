@@ -45,6 +45,7 @@ export async function saveLead(data, step) {
       body: JSON.stringify({
         leadId: existingLeadId,
         data,
+        step, // Include step so API route knows when to trigger webhook
       }),
     })
 
