@@ -80,15 +80,17 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         {/* Event snippet for ViewedPage Book conversion page */}
-        <Script id="google-ads-conversion" strategy="afterInteractive">
-          {`
-            gtag('event', 'conversion', {
-              'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
-              'value': 1.0,
-              'currency': 'EUR'
-            });
-          `}
-        </Script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('event', 'conversion', {
+                'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
+                'value': 1.0,
+                'currency': 'EUR'
+              });
+            `,
+          }}
+        />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
