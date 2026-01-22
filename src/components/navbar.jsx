@@ -61,7 +61,7 @@ const products = [
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },
-  { href: '/products/yield-savings', label: 'Yield Savings', icon: BanknotesIcon, comingSoon: true },
+  { href: '/products/yield-savings', label: 'Yield Rewards', icon: BanknotesIcon, comingSoon: true },
 ]
 
 function DesktopNav() {
