@@ -12,7 +12,7 @@ export function BookContent() {
     const triggerConversion = () => {
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
+          'send_to': 'AW-708726534/wuA_CJHprOobEIae-dEC',
           'value': 1.0,
           'currency': 'EUR'
         })
