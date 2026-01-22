@@ -67,18 +67,6 @@ export default function Book() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Event snippet for ViewedPage Book conversion page */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            gtag('event', 'conversion', {
-              'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
-              'value': 1.0,
-              'currency': 'EUR'
-            });
-          `,
-        }}
-      />
       <BookContent />
     </>
   )

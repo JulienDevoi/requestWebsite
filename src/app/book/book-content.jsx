@@ -8,6 +8,31 @@ import { Logo } from '@/components/logo'
 
 export function BookContent() {
   useEffect(() => {
+    // Google Ads conversion tracking - wait for gtag to be available
+    const triggerConversion = () => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-708726534/MrztCMTa-ukbEIae-dEC',
+          'value': 1.0,
+          'currency': 'EUR'
+        })
+        return true
+      }
+      return false
+    }
+
+    // Try immediately, then retry if gtag isn't ready yet
+    if (!triggerConversion()) {
+      const checkInterval = setInterval(() => {
+        if (triggerConversion()) {
+          clearInterval(checkInterval)
+        }
+      }, 100)
+
+      // Stop checking after 5 seconds
+      setTimeout(() => clearInterval(checkInterval), 5000)
+    }
+
     // HubSpot script should automatically initialize, but we can trigger it manually if needed
     const initHubSpot = () => {
       // The HubSpot script automatically finds elements with class 'meetings-iframe-container'
