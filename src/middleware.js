@@ -57,14 +57,20 @@ export async function middleware(request) {
   // Apply rate limiting to API routes and feeds
   if (pathname.endsWith('/feed.xml') || pathname.startsWith('/api/')) {
     const key = getRateLimitKey(request)
-    const { success, remaining, reset } = checkRateLimit(key, 10, 10000) // 10 requests per 10 seconds
+    
+    // Stricter rate limiting for leads API (5 requests per 10 seconds)
+    const isLeadsAPI = pathname === '/api/leads'
+    const limit = isLeadsAPI ? 5 : 10
+    const windowMs = isLeadsAPI ? 10000 : 10000
+    
+    const { success, remaining, reset } = checkRateLimit(key, limit, windowMs)
     
     if (!success) {
       const retryAfter = Math.ceil((reset - Date.now()) / 1000)
       return new NextResponse('Too Many Requests', { 
         status: 429,
         headers: {
-          'X-RateLimit-Limit': '10',
+          'X-RateLimit-Limit': limit.toString(),
           'X-RateLimit-Remaining': remaining.toString(),
           'X-RateLimit-Reset': reset.toString(),
           'Retry-After': retryAfter.toString(),
@@ -75,7 +81,7 @@ export async function middleware(request) {
     
     // Add rate limit headers to successful responses
     const response = NextResponse.next()
-    response.headers.set('X-RateLimit-Limit', '10')
+    response.headers.set('X-RateLimit-Limit', limit.toString())
     response.headers.set('X-RateLimit-Remaining', remaining.toString())
     response.headers.set('X-RateLimit-Reset', reset.toString())
     return response

@@ -20,6 +20,59 @@ export async function POST(request) {
     const body = await request.json()
     const { leadId, data, step } = body
 
+    // Validate input
+    if (!data || typeof data !== 'object') {
+      return Response.json(
+        { success: false, error: 'Invalid data: data must be an object' },
+        { status: 400 }
+      )
+    }
+
+    // Validate leadId format if provided (should be UUID)
+    if (leadId && typeof leadId !== 'string') {
+      return Response.json(
+        { success: false, error: 'Invalid leadId: must be a string' },
+        { status: 400 }
+      )
+    }
+
+    // Validate step if provided
+    if (step && typeof step !== 'string') {
+      return Response.json(
+        { success: false, error: 'Invalid step: must be a string' },
+        { status: 400 }
+      )
+    }
+
+    // Sanitize data - only allow expected fields
+    const allowedFields = [
+      'email',
+      'step1_venture_funding',
+      'step2_employee_count',
+      'step3_corporate_cards_spend',
+      'step4_stablecoin_volume',
+      'step5_company_name',
+      'step5_company_website',
+    ]
+    
+    const sanitizedData = {}
+    for (const [key, value] of Object.entries(data)) {
+      if (allowedFields.includes(key)) {
+        // Ensure values are strings and not too long (prevent abuse)
+        if (typeof value === 'string' && value.length <= 1000) {
+          sanitizedData[key] = value
+        }
+      }
+    }
+
+    // Ensure we have at least one field to save
+    if (Object.keys(sanitizedData).length === 0) {
+      return Response.json(
+        { success: false, error: 'No valid data fields provided' },
+        { status: 400 }
+      )
+    }
+
     let savedLeadId = null
 
     if (leadId) {
@@ -27,7 +80,7 @@ export async function POST(request) {
       const { data: updatedLeads, error: updateError } = await supabaseAdmin
         .from('leads')
         .update({
-          ...data,
+          ...sanitizedData,
           updated_at: new Date().toISOString(),
         })
         .eq('id', leadId)
@@ -47,7 +100,7 @@ export async function POST(request) {
           .from('leads')
           .insert({
             id: leadId, // Use the existing leadId
-            ...data,
+            ...sanitizedData,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString(),
           })
@@ -71,7 +124,7 @@ export async function POST(request) {
       const { data: newLead, error } = await supabaseAdmin
         .from('leads')
         .insert({
-          ...data,
+          ...sanitizedData,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
         })
