@@ -11,7 +11,7 @@ export function IndustryIntro({
   image,
   imageAlt,
   buttonText,
-  buttonHref = '/onboarding',
+  buttonHref = '/open',
 }) {
   return (
     <div className="bg-linear-to-b from-white from-50% to-gray-100 pt-32 pb-32">

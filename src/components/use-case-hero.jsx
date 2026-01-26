@@ -13,7 +13,7 @@ export function UseCaseHero({ title, description, image }) {
         <Navbar
           banner={
             <Link
-              href="/onboarding"
+              href="/open"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -29,7 +29,7 @@ export function UseCaseHero({ title, description, image }) {
             {description}
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/onboarding">Open my account</Button>
+            <Button href="/open">Open my account</Button>
             <Button variant="secondary" href="/pricing">
               See pricing
             </Button>

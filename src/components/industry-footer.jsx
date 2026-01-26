@@ -19,7 +19,7 @@ function CallToAction({ eyebrow, title, description }) {
         {description}
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/onboarding">
+        <Button className="w-full sm:w-auto" href="/open">
           Open my account
         </Button>
       </div>
@@ -88,7 +88,7 @@ function Sitemap() {
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="/onboarding">Open my account</SitemapLink>
+          <SitemapLink href="/open">Open my account</SitemapLink>
           <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>

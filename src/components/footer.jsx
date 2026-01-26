@@ -19,7 +19,7 @@ function CallToAction() {
         Experience the simplicity and reliability of stablecoins. <br /> Your account setup takes less than 5 minutes.
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/onboarding">
+        <Button className="w-full sm:w-auto" href="/open">
           Open my account
         </Button>
       </div>
@@ -54,6 +54,7 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/products/global-usd-account">Global USD Account</SitemapLink>
           <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
+          <SitemapLink href="/products/stablecoin-payments">Stablecoin Payments</SitemapLink>
           <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
           <SitemapLink href="/products/accrual-accounting">Accrual Accounting</SitemapLink>
         </SitemapLinks>
@@ -88,7 +89,7 @@ function Sitemap() {
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
-          <SitemapLink href="/onboarding">Open my account</SitemapLink>
+          <SitemapLink href="/open">Open my account</SitemapLink>
           <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
           <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>

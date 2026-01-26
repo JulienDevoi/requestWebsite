@@ -10,19 +10,28 @@ import { useState } from 'react'
 export default function OnboardingStep4() {
   const router = useRouter()
   const [selected, setSelected] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const handleOptionClick = async (optionId) => {
+    if (loading) return // Prevent multiple clicks
+    
     setSelected(optionId)
+    setLoading(true)
     
-    // Save to database
-    await saveLead(
-      {
-        step4_stablecoin_volume: optionId,
-      },
-      'step4'
-    )
-    
-    router.push('/onboarding/step-5')
+    try {
+      // Save to database
+      await saveLead(
+        {
+          step4_stablecoin_volume: optionId,
+        },
+        'step4'
+      )
+      
+      router.push('/book')
+    } catch (error) {
+      console.error('Error saving lead:', error)
+      setLoading(false)
+    }
   }
 
   const options = [
@@ -94,24 +103,53 @@ export default function OnboardingStep4() {
 
             {/* Options */}
             <div className="space-y-3">
-              {options.map((option) => (
-                <button
-                  key={option.id}
-                  type="button"
-                  onClick={() => handleOptionClick(option.id)}
-                  className={clsx(
-                    'flex w-full cursor-pointer rounded-lg border border-transparent',
-                    'bg-white px-4 py-4 transition-all duration-200',
-                    selected === option.id ? 'ring-0' : 'ring-1 ring-black/10',
-                    'hover:bg-[#fafafa] hover:ring-black/15',
-                    'focus:outline-2 focus:outline-offset-2 focus:outline-black',
-                  )}
-                >
-                  <span className="text-sm/6 font-semibold text-gray-950">
-                    {option.label}
-                  </span>
-                </button>
-              ))}
+              {options.map((option) => {
+                const isSelected = selected === option.id
+                const isLoading = loading && isSelected
+                
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    onClick={() => handleOptionClick(option.id)}
+                    disabled={loading}
+                    className={clsx(
+                      'flex w-full items-center justify-center gap-2 rounded-lg border border-transparent',
+                      'bg-white px-4 py-4 transition-all duration-200',
+                      selected === option.id ? 'ring-0' : 'ring-1 ring-black/10',
+                      loading ? 'cursor-not-allowed opacity-60' : 'cursor-pointer',
+                      !loading && 'hover:bg-[#fafafa] hover:ring-black/15',
+                      'focus:outline-2 focus:outline-offset-2 focus:outline-black',
+                    )}
+                  >
+                    {isLoading && (
+                      <svg
+                        className="size-4 animate-spin text-gray-950"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        />
+                      </svg>
+                    )}
+                    <span className="text-sm/6 font-semibold text-gray-950">
+                      {option.label}
+                    </span>
+                  </button>
+                )
+              })}
             </div>
 
             {/* Back Link */}

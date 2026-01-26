@@ -15,29 +15,6 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
   }
 })
 
-/**
- * Trigger webhook for step5 completion
- */
-async function triggerWebhook(data) {
-  const webhookUrl = 'https://notanothermarketer.app.n8n.cloud/webhook/2789d9ce-87a9-4508-9ca8-a797b62f661d'
-
-  try {
-    const response = await fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-
-    if (!response.ok) {
-      console.error('Webhook error:', response.status, response.statusText)
-    }
-  } catch (error) {
-    console.error('Webhook failed:', error.message)
-  }
-}
-
 export async function POST(request) {
   try {
     const body = await request.json()
@@ -110,16 +87,6 @@ export async function POST(request) {
       }
 
       savedLeadId = newLead.id
-    }
-
-    // Trigger webhook for step5
-    if (step === 'step5') {
-      await triggerWebhook({
-        first_name: data.first_name,
-        last_name: data.last_name,
-        company_name: data.company_name,
-        linkedin_url: data.linkedin_url,
-      })
     }
 
     return Response.json({ success: true, leadId: savedLeadId })

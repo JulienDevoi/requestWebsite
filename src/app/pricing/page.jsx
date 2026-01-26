@@ -444,7 +444,7 @@ function PricingCard({ tier, billingPeriod }) {
             )}
           </div>
           <div className="mt-8">
-            <Button href="/onboarding">Open my account</Button>
+            <Button href="/open">Open my account</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -531,7 +531,7 @@ function PricingTable({ selectedTier, setSelectedTier }) {
               </div>
             </td>
             <td colSpan={3} className="p-0 text-right">
-              <Button variant="outline" href="/onboarding">
+              <Button variant="outline" href="/open">
                 Open my account
               </Button>
             </td>
@@ -546,7 +546,7 @@ function PricingTable({ selectedTier, setSelectedTier }) {
                 data-selected={selectedTier === tier ? true : undefined}
                 className="px-0 pt-4 pb-0 data-selected:table-cell max-sm:hidden"
               >
-                <Button variant="outline" href="/onboarding">
+                <Button variant="outline" href="/open">
                   Open my account
                 </Button>
               </td>

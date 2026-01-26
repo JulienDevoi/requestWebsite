@@ -1,4 +1,5 @@
 import { Footer } from '@/components/footer'
+import { FAQ } from '@/components/faq'
 import { Industries } from '@/components/industries'
 import { ProductBenefits } from '@/components/product-benefits'
 import { ProductHero } from '@/components/product-hero'
@@ -107,6 +108,13 @@ export default async function ProductPage({ params }) {
         />
         <Testimonials />
         <Industries />
+        {product.faq && (
+          <FAQ
+            eyebrow={product.faq.eyebrow}
+            title={product.faq.title}
+            items={product.faq.items}
+          />
+        )}
       </main>
       <Footer />
     </div>

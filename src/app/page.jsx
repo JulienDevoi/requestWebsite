@@ -73,7 +73,7 @@ function HeroSaved() {
         <Navbar
           banner={
             <Link
-              href="/onboarding"
+              href="/open"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -90,7 +90,7 @@ function HeroSaved() {
             Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/onboarding">Open my account</Button>
+            <Button href="/open">Open my account</Button>
             <SmoothScrollButton variant="secondary" href="#get-to-know-request">
               Discover how it works
             </SmoothScrollButton>
@@ -120,7 +120,7 @@ function HeroSavedVideoWhite() {
         <Navbar
           banner={
             <Link
-              href="/onboarding"
+              href="/open"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -136,7 +136,7 @@ function HeroSavedVideoWhite() {
             Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/onboarding">Open my account</Button>
+            <Button href="/open">Open my account</Button>
             <SmoothScrollButton variant="secondary" href="#get-to-know-request">
               Discover how it works
             </SmoothScrollButton>
@@ -166,7 +166,7 @@ function Hero() {
         <Navbar
           banner={
             <Link
-              href="/onboarding"
+              href="/open"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
               Ready to Simplify Your Business Spend Management?
@@ -183,7 +183,7 @@ function Hero() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button 
-              href="/onboarding"
+              href="/open"
               className="bg-white text-gray-950 data-hover:bg-gray-100"
             >
               Open my account

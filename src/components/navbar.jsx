@@ -23,6 +23,7 @@ import {
   BanknotesIcon,
   PaperAirplaneIcon,
   SparklesIcon,
+  CurrencyDollarIcon,
 } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
 import { Link } from './link'
@@ -31,7 +32,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
-  { href: '/onboarding', label: 'Open my account' }
+  { href: '/open', label: 'Open Account' }
 ]
 
 const industries = [
@@ -59,6 +60,7 @@ const useCases = [
 const products = [
   { href: '/products/global-usd-account', label: 'Global USD Account', icon: BuildingOfficeIcon },
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
+  { href: '/products/stablecoin-payments', label: 'Stablecoin Payments', icon: CurrencyDollarIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },
   { href: '/products/yield-savings', label: 'Yield Rewards', icon: BanknotesIcon, comingSoon: true },

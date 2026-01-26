@@ -44,6 +44,80 @@ export const products = [
     ],
   },
   {
+    slug: 'stablecoin-payments',
+    name: 'Stablecoin Payments',
+    heroTitle: 'Stablecoins, simplified',
+    heroDescription:
+      'Now, you can send and receive USDC and USDT through the same platform you use for business banking and spending. Forget managing an account at an exchange or having to hold funds in crypto — use Request\'s stablecoin payments to send and receive stables without having to hold them.',
+    heroImage: '/screenshots/virtual-account.png',
+    benefitsEyebrow: 'Why choose our stablecoin payments',
+    benefitsTitle: 'Seamless crypto payments, zero complexity',
+    benefitsDescription:
+      'Send and receive USDC and USDT directly from your business banking platform. No exchange accounts needed, no crypto holdings required.',
+    benefits: [
+      {
+        name: 'No Exchange Account',
+        description: 'Send and receive stablecoins without managing a separate exchange account',
+        icon: 'BoltIcon',
+      },
+      {
+        name: 'USDC & USDT Support',
+        description: 'Send and receive the most popular stablecoins directly from your platform',
+        icon: 'CurrencyDollarIcon',
+      },
+      {
+        name: 'No Crypto Holdings',
+        description: 'Use stablecoins for payments without having to hold them yourself',
+        icon: 'ShieldCheckIcon',
+      },
+      {
+        name: 'Integrated Platform',
+        description: 'Manage stablecoin payments alongside your regular business banking',
+        icon: 'GlobeAltIcon',
+      },
+      {
+        name: 'Real-time Processing',
+        description: 'Fast and reliable stablecoin transfers with instant confirmation',
+        icon: 'ChartBarIcon',
+      },
+      {
+        name: 'Secure & Compliant',
+        description: 'Bank-grade security with full regulatory compliance for crypto transactions',
+        icon: 'ShieldCheckIcon',
+      },
+    ],
+    faq: {
+      eyebrow: 'Frequently asked questions',
+      title: 'Everything you need to know about stablecoin payments',
+      items: [
+        {
+          question: 'What stablecoins are supported?',
+          answer: 'We support USDC and USDT, the two most widely used stablecoins in the market. You can send and receive both directly from your Request Finance platform.',
+        },
+        {
+          question: 'Do I need to hold crypto to use stablecoin payments?',
+          answer: 'No, you don\'t need to hold any crypto. Request Finance handles the stablecoin transactions for you, so you can send and receive stablecoins without managing a crypto wallet or exchange account.',
+        },
+        {
+          question: 'How fast are stablecoin payments processed?',
+          answer: 'Stablecoin payments are processed in real-time, typically completing within seconds. This is much faster than traditional bank transfers, especially for international payments.',
+        },
+        {
+          question: 'Are there any fees for stablecoin payments?',
+          answer: 'Our stablecoin payment fees are transparent and competitive. Contact our team for specific pricing details based on your transaction volume and needs.',
+        },
+        {
+          question: 'Is it safe to use stablecoins for business payments?',
+          answer: 'Yes, stablecoins are designed to maintain a stable value and are backed by reserves. Request Finance provides bank-grade security and full regulatory compliance for all crypto transactions.',
+        },
+        {
+          question: 'Can I use stablecoin payments alongside my regular banking?',
+          answer: 'Absolutely. Stablecoin payments are fully integrated into your Request Finance platform, so you can manage both traditional banking and stablecoin payments from the same dashboard.',
+        },
+      ],
+    },
+  },
+  {
     slug: 'global-usd-account',
     name: 'Global USD Account',
     heroTitle: 'One account per entity, zero complexity',
