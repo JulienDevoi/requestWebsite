@@ -46,14 +46,14 @@ export const products = [
   {
     slug: 'stablecoin-payments',
     name: 'Stablecoin Payments',
-    heroTitle: 'Stablecoins, simplified',
+    heroTitle: 'Stablecoins payments, simplified',
     heroDescription:
-      'Now, you can send and receive USDC and USDT through the same platform you use for business banking and spending. Forget managing an account at an exchange or having to hold funds in crypto — use Request\'s stablecoin payments to send and receive stables without having to hold them.',
+      'Send and receive USDT through the same platform you use for business account and spending. Forget managing an account at an exchange or having to hold funds in crypto.',
     heroImage: '/screenshots/virtual-account.png',
     benefitsEyebrow: 'Why choose our stablecoin payments',
     benefitsTitle: 'Seamless crypto payments, zero complexity',
     benefitsDescription:
-      'Send and receive USDC and USDT directly from your business banking platform. No exchange accounts needed, no crypto holdings required.',
+      'Send and receive USDT directly from your business platform. No exchange accounts needed, no crypto holdings required.',
     benefits: [
       {
         name: 'No Exchange Account',
@@ -61,7 +61,7 @@ export const products = [
         icon: 'BoltIcon',
       },
       {
-        name: 'USDC & USDT Support',
+        name: 'USDT Support',
         description: 'Send and receive the most popular stablecoins directly from your platform',
         icon: 'CurrencyDollarIcon',
       },
@@ -92,7 +92,7 @@ export const products = [
       items: [
         {
           question: 'What stablecoins are supported?',
-          answer: 'We support USDC and USDT, the two most widely used stablecoins in the market. You can send and receive both directly from your Request Finance platform.',
+          answer: 'We support USDT, the most widely used stablecoins in the market. You can send and receive them directly from your Request Finance platform.',
         },
         {
           question: 'Do I need to hold crypto to use stablecoin payments?',
