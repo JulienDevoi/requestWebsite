@@ -4,15 +4,25 @@
  * Sends only email information to the webhook
  */
 
+// Get webhook URL from environment variables
 // Use test webhook URL in development, production URL in production
 const webhookUrl = process.env.NODE_ENV === 'development'
-  ? 'https://notanothermarketer.app.n8n.cloud/webhook-test/2789d9ce-87a9-4508-9ca8-a797b62f661d'
-  : 'https://notanothermarketer.app.n8n.cloud/webhook/2789d9ce-87a9-4508-9ca8-a797b62f661d'
+  ? process.env.WEBHOOK_SIGNUP_URL_TEST
+  : process.env.WEBHOOK_SIGNUP_URL
+
+if (!webhookUrl) {
+  console.error('Webhook URL is missing. Please set WEBHOOK_SIGNUP_URL (production) or WEBHOOK_SIGNUP_URL_TEST (development) in your environment variables.')
+}
 
 /**
  * Trigger webhook with email information
  */
 async function triggerSignupWebhook(email) {
+  if (!webhookUrl) {
+    console.error('Cannot trigger webhook: URL is not configured')
+    return false
+  }
+
   try {
     const response = await fetch(webhookUrl, {
       method: 'POST',
