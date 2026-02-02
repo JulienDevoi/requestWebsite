@@ -11,6 +11,60 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
 
+// Personal email domains that are not allowed for signup (business email only)
+const PERSONAL_EMAIL_DOMAINS = [
+  'gmail.com',
+  'googlemail.com',
+  'yahoo.com',
+  'yahoo.co.uk',
+  'yahoo.fr',
+  'outlook.com',
+  'hotmail.com',
+  'hotmail.co.uk',
+  'hotmail.fr',
+  'live.com',
+  'msn.com',
+  'icloud.com',
+  'me.com',
+  'mac.com',
+  'aol.com',
+  'protonmail.com',
+  'proton.me',
+  'mail.com',
+  'zoho.com',
+  'yandex.com',
+  'gmx.com',
+  'gmx.net',
+  'web.de',
+  't-online.de',
+  'orange.fr',
+  'free.fr',
+  'laposte.net',
+  'sfr.fr',
+  'wanadoo.fr',
+  'sky.com',
+  'btinternet.com',
+  'virginmedia.com',
+  'comcast.net',
+  'att.net',
+  'verizon.net',
+  'qq.com',
+  '163.com',
+  '126.com',
+  'mail.ru',
+  'inbox.com',
+  'fastmail.com',
+  'tutanota.com',
+  'pm.me',
+]
+
+function isPersonalEmail(email) {
+  if (!email || typeof email !== 'string') return true
+  const domain = email.split('@')[1]?.toLowerCase().trim()
+  if (!domain) return true
+  return PERSONAL_EMAIL_DOMAINS.includes(domain)
+}
+
 export default function Open() {
   const router = useRouter()
   const [email, setEmail] = useState('')
@@ -22,6 +76,12 @@ export default function Open() {
     e.preventDefault()
     setLoading(true)
     setError(null)
+
+    if (isPersonalEmail(email)) {
+      setError('Please use a company email only. Personal email addresses (e.g. Gmail, Yahoo, Outlook) are not accepted.')
+      setLoading(false)
+      return
+    }
 
     if (!supabase) {
       setError('Authentication service is not configured. Please contact support.')
@@ -105,7 +165,7 @@ export default function Open() {
               </div>
             )}
             <Field className="mt-8 space-y-3">
-              <Label className="text-sm/5 font-medium">Email</Label>
+              <Label className="text-sm/5 font-medium">Your company email</Label>
               <Input
                 required
                 autoFocus
