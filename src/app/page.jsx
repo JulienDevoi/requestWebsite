@@ -83,15 +83,15 @@ function HeroSaved() {
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
           <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Spend management for modern companies
+            Take Control of Company Spend
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Open global business accounts, accept payments, manage company spend, and much more. <br />
+            One platform to control, approve, and monitor business spend in real time. <br />
             Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/open">Open my account</Button>
-            <SmoothScrollButton variant="secondary" href="#get-to-know-request">
+            <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
               Discover how it works
             </SmoothScrollButton>
           </div>
@@ -130,14 +130,14 @@ function HeroSavedVideoWhite() {
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
           <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Spend management for modern companies
+            Take Control of Company Spend
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
+            One platform to control, approve, and monitor business spend in real time. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="/open">Open my account</Button>
-            <SmoothScrollButton variant="secondary" href="#get-to-know-request">
+            <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
               Discover how it works
             </SmoothScrollButton>
           </div>
@@ -176,10 +176,10 @@ function Hero() {
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
           <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-white sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Spend management for modern companies
+            Take Control of Company Spend
           </h1>
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-white/90 sm:text-2xl/8">
-            Empower your finance team with corporate cards, accounts payable, and accrual accounting. <br />Powered by stablecoins, simplified for everyone.
+            One platform to control, approve, and monitor business spend in real time. <br />Powered by stablecoins, simplified for everyone.
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button 
@@ -190,7 +190,7 @@ function Hero() {
             </Button>
             <SmoothScrollButton 
               variant="secondary" 
-              href="#get-to-know-request"
+              href="#proactive-spend-control"
               className="bg-white/15 text-white border-white/20 ring-white/20 data-hover:bg-white/20"
             >
               Discover how it works
@@ -319,8 +319,8 @@ function Team() {
 
 function BentoSection() {
   return (
-    <Container id="get-to-know-request">
-      <Subheading>Get to know Request</Subheading>
+    <Container id="proactive-spend-control">
+      <Subheading>Proactive spend control, not reactive expense tracking</Subheading>
       <Heading as="h3" className="mt-2 max-w-6xl">
         The alternative to the banks who failed your business
       </Heading>

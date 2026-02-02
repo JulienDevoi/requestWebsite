@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: `${product.name} - Request Finance`,
+    title: `${product.metaTitle || product.name} - Request Finance`,
     description: product.heroDescription,
     keywords: [
       product.name.toLowerCase(),
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       'payment platform',
     ],
     openGraph: {
-      title: `${product.name} - Request Finance`,
+      title: `${product.metaTitle || product.name} - Request Finance`,
       description: product.heroDescription,
       url: `https://requestfinance.com/products/${product.slug}`,
       siteName: 'Request Finance',
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.name} - Request Finance`,
+      title: `${product.metaTitle || product.name} - Request Finance`,
       description: product.heroDescription,
       images: ['https://requestfinance.com/images/thumbnail.png'],
     },
@@ -96,6 +96,7 @@ export default async function ProductPage({ params }) {
     <div className="overflow-hidden">
       <ProductHero
         title={product.heroTitle}
+        subtitle={product.heroSubtitle}
         description={product.heroDescription}
         image={product.heroImage}
       />

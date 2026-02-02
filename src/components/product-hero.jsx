@@ -28,6 +28,7 @@ export function ProductHero({ title, description, image }) {
           <Heading as="h1" className="max-w-4xl">
             {title}
           </Heading>
+          
           <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
             {description}
           </p>

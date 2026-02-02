@@ -46,12 +46,15 @@ export const products = [
   {
     slug: 'stablecoin-payments',
     name: 'Stablecoin Payments',
-    heroTitle: 'Stablecoins payments, simplified',
+    metaTitle: 'Enterprise Stablecoin Payments',
+    heroTitle: 'Enterprise Stablecoin Payments',
+    heroSubtitle:
+      'Move money globally in real time using stablecoins: faster settlement, lower costs, full control.',
     heroDescription:
-      'Send and receive USDT through the same platform you use for business account and spending. Forget managing an account at an exchange or having to hold funds in crypto.',
+      'Move money globally in real time using stablecoins: faster settlement, lower costs, full control.',
     heroImage: '/screenshots/virtual-account.png',
-    benefitsEyebrow: 'Why choose our stablecoin payments',
-    benefitsTitle: 'Seamless crypto payments, zero complexity',
+    benefitsEyebrow: 'A modern payment rail for global B2B transactions',
+    benefitsTitle: 'Use stablecoins as a settlement layer, not a speculative asset.',
     benefitsDescription:
       'Send and receive USDT directly from your business platform. No exchange accounts needed, no crypto holdings required.',
     benefits: [
