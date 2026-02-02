@@ -59,12 +59,12 @@ export async function POST(request) {
       )
     }
 
-    // Trigger webhook (fire and forget - don't block the response)
-    triggerSignupWebhook(email).catch((error) => {
+    // Await webhook so it runs before the serverless function exits
+    // (fire-and-forget would be killed after response in serverless)
+    await triggerSignupWebhook(email).catch((error) => {
       console.error('Error triggering signup webhook:', error)
     })
 
-    // Return success immediately (webhook is async)
     return Response.json({ success: true })
   } catch (error) {
     console.error('Exception in signup webhook route:', error)
