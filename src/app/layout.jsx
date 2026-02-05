@@ -1,6 +1,7 @@
 import '@/styles/tailwind.css'
 import Script from 'next/script'
 import { WeglotScript } from '@/components/weglot'
+import { OpenAccountConversionTracker } from '@/components/open-account-conversion'
 
 export const metadata = {
   title: {
@@ -92,6 +93,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className="text-gray-950 antialiased">
         <WeglotScript />
+        <OpenAccountConversionTracker />
         {children}
         {beamAnalyticsToken && (
           <Script
