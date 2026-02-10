@@ -173,7 +173,7 @@ export function Testimonials() {
         <div ref={setReferenceWindowRef}>
           <Subheading>The finance platform your team will actually enjoy using</Subheading>
           <Heading as="h3" className="mt-2">
-          Already powering 1,500+ global teams
+          Time saving, efficient, compliant, less stressful... and much more!
           </Heading>
           <CallToAction />
         </div>

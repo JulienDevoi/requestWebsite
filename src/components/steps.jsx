@@ -6,8 +6,8 @@ export function Steps() {
   const steps = [
     {
       number: '1',
-      title: 'Create your account',
-      description: 'Complete your Know Your Business verification quickly and securely.',
+      title: 'Open your account',
+      description: 'Complete your Know Your Business verification quickly and securely or do it later.',
     },
     {
       number: '2',
@@ -17,7 +17,7 @@ export function Steps() {
     {
       number: '3',
       title: 'You are set up!',
-      description: 'Your finance team is ready to go.',
+      description: 'Your finance team is ready to go. Control, approve, and monitor business spend in real time.',
     },
   ]
 

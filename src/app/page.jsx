@@ -82,18 +82,67 @@ function HeroSaved() {
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Take Control of Company Spend
-          </h1>
-          <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            One platform to control, approve, and monitor business spend in real time. <br />
-            Powered by stablecoins, simplified for everyone.
-          </p>
-          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="/open">Open my account</Button>
-            <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
-              Discover how it works
-            </SmoothScrollButton>
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+            <div className="min-w-0 flex-1">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex items-center gap-1 text-amber-500" aria-hidden="true">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="size-5 sm:size-6" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <Link
+                  href="https://www.capterra.com/p/246076/Request-Finance/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <img src="/images/capterra.svg" alt="Capterra" className="h-6 sm:h-7" />
+                </Link>
+              </div>
+              <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
+                Take Control of Company Spend
+              </h1>
+              <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
+                One platform to control, approve, and monitor business spend in real time. <br />
+                Powered by stablecoins, simplified for everyone.
+              </p>
+              <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
+                <Button href="/open">Open my account</Button>
+                <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
+                  Discover how it works
+                </SmoothScrollButton>
+              </div>
+              <div className="mt-10 flex flex-wrap items-center justify-start gap-4 sm:gap-6">
+                <div className="flex -space-x-3 sm:-space-x-4">
+                  {[
+                    '/testimonials/david.jpeg',
+                    '/testimonials/magdalena.jpeg',
+                    '/testimonials/sebastien.jpg',
+                    '/testimonials/daniel.jpeg',
+                    '/testimonials/juan.jpeg',
+                  ].map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt=""
+                      className="size-10 w-10 rounded-full border-2 border-white bg-gray-200 object-cover shadow-sm sm:size-12 sm:w-12"
+                    />
+                  ))}
+                </div>
+                <p className="text-sm font-medium text-gray-950/80 sm:text-base">
+                  Join 1,500+ finance leaders processing $1B+ in payments
+                </p>
+              </div>
+            </div>
+            <div className="flex shrink-0 justify-center lg:w-[420px] lg:justify-end">
+              <img
+                src="/images/corporate-cards-2.png"
+                alt="Request Finance corporate cards"
+                className="w-full max-w-[280px] object-contain lg:max-w-none"
+              />
+            </div>
           </div>
         </div>
       </Container>
