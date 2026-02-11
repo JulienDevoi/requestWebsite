@@ -1,43 +1,36 @@
 import { Container } from '@/components/container'
 import { Heading, Subheading } from '@/components/text'
-import {
-  ShieldCheckIcon,
-  LockClosedIcon,
-  CheckBadgeIcon,
-  EyeSlashIcon,
-  ServerIcon,
-} from '@heroicons/react/24/outline'
 
 const securityFeatures = [
   {
     title: 'Insurance',
     description: 'We partnered with OpenCover to protect you against hacks and protocol issues.',
-    icon: ShieldCheckIcon,
+    image: '/images/insurance.svg',
   },
   {
     title: 'SOC 2 Type 1 audited',
     description:
       'We work with sensitive financial data and therefore follow the best standards to ensure their protection.',
-    icon: LockClosedIcon,
+    image: '/images/soc2.png',
   },
   {
     title: 'Double payment detection',
     description:
       "We detect on chain behaviors to prevent double payments so that you're in full confidence.",
-    icon: CheckBadgeIcon,
+    image: '/images/double-payment.svg',
   },
   {
     title: 'Scam vigilance',
     description: 'We do extra work so that no scammer can reach you.',
-    icon: EyeSlashIcon,
+    image: '/images/scam-vigilance.svg',
   },
 ]
 
-function SecurityFeature({ title, description, icon: Icon }) {
+function SecurityFeature({ title, description, image }) {
   return (
     <div className="flex flex-col sm:flex-row gap-4 p-6 rounded-3xl bg-white shadow-md ring-1 shadow-black/5 ring-black/5">
-      <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gray-950">
-        <Icon className="size-6 text-white" />
+      <div className="flex size-12 shrink-0 items-center justify-center overflow-hidden">
+        <img src={image} alt="" className="size-full object-contain" />
       </div>
       <div className="flex-1">
         <h3 className="text-lg font-medium tracking-tight text-gray-950">
@@ -67,15 +60,15 @@ export function Security() {
               key={index}
               title={feature.title}
               description={feature.description}
-              icon={feature.icon}
+              image={feature.image}
             />
           ))}
         </div>
 
         <div className="mt-12 pt-12 border-t border-gray-200">
           <div className="flex items-start gap-4">
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gray-950">
-              <ServerIcon className="size-6 text-white" />
+            <div className="flex size-12 shrink-0 items-center justify-center overflow-hidden">
+              <img src="/images/cybersecurity.svg" alt="" className="size-full object-contain" />
             </div>
             <div className="flex-1">
               <h3 className="text-lg font-medium tracking-tight text-gray-950">

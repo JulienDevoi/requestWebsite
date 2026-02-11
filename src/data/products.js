@@ -49,9 +49,9 @@ export const products = [
     metaTitle: 'Enterprise Stablecoin Payments',
     heroTitle: 'Enterprise Stablecoin Payments',
     heroSubtitle:
-      'Move money globally in real time using stablecoins: faster settlement, lower costs, full control.',
+      'Move money globally in real time using USDT: faster settlement, lower costs, full control.',
     heroDescription:
-      'Move money globally in real time using stablecoins: faster settlement, lower costs, full control.',
+      'Move money globally in real time using USDT: faster settlement, lower costs, full control.',
     heroImage: '/screenshots/virtual-account.png',
     benefitsEyebrow: 'A modern payment rail for global B2B transactions',
     benefitsTitle: 'Use stablecoins as a settlement layer, not a speculative asset.',
@@ -123,7 +123,7 @@ export const products = [
   {
     slug: 'global-usd-account',
     name: 'Global USD Account',
-    heroTitle: 'One account per entity, zero complexity',
+    heroTitle: 'A modern USD account for your business',
     heroDescription:
       'Get a dedicated Global USD Account when you sign up. Top up instantly, manage multiple entities, and keep your finances organized.',
     heroImage: '/screenshots/virtual-account.png',
