@@ -127,6 +127,14 @@ function SocialIconLinkedIn(props) {
   )
 }
 
+function SocialIconYouTube(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  )
+}
+
 function SocialLinks() {
   return (
     <>
@@ -143,6 +151,15 @@ function SocialLinks() {
         className="text-gray-950 data-hover:text-gray-950/75"
       >
         <SocialIconLinkedIn className="size-4" />
+      </Link>
+      <Link
+        href="https://www.youtube.com/channel/UCdDStnkvGv3898LKk4Mzklg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit us on YouTube"
+        className="text-gray-950 data-hover:text-gray-950/75"
+      >
+        <SocialIconYouTube className="size-4" />
       </Link>
     </>
   )
@@ -189,21 +206,6 @@ export function Footer() {
                   <SocialLinks />
                 </PlusGridItem>
               </div>
-            </PlusGridRow>
-            <PlusGridRow>
-              <PlusGridItem className="pt-6 pb-8">
-                <p className="text-xs/6 text-gray-950/60 max-w-4xl">
-                  Cryptocurrency and digital asset services are provided by Request Technologies UAB (Company No. 306291868), a subsidiary of Request Finance SAS, registered in Republic of Lithuania and operating as a Virtual Asset Service Provider (VASP) under the supervision of the Financial Crime Investigation Service (FCIS). The authority of Request Technologies UAB as a regulated VASP is listed and verifiable through the official and publicly available registers available{' '}
-                  <Link
-                    href="https://www.fntt.lt/en/virtual-asset-service-providers"
-                    target="_blank"
-                    className="font-medium text-gray-950 data-hover:text-gray-950/75 underline"
-                  >
-                    here
-                  </Link>
-                  .
-                </p>
-              </PlusGridItem>
             </PlusGridRow>
           </PlusGrid>
         </Container>
