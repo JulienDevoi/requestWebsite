@@ -11,128 +11,143 @@ import { notFound } from 'next/navigation'
 
 // Mock blog posts data
 const mockPosts = {
-  'introducing-radiant-2-0': {
-    slug: 'introducing-radiant-2-0',
-    title: 'Introducing Radiant 2.0',
-    excerpt: 'We are excited to announce the launch of Radiant 2.0, packed with new features to help you close deals faster.',
-    publishedAt: '2024-01-15',
-    author: { name: 'Sarah Johnson', image: null },
-    mainImage: null,
-    categories: [{ slug: 'product-updates', title: 'Product Updates' }],
-    body: `We are thrilled to announce the launch of Radiant 2.0, our biggest update yet. This release brings a host of new features and improvements designed to help sales teams close deals faster and more efficiently.
+  'stablecoins-how-they-work-and-what-they-mean-for-your-business': {
+    slug: 'stablecoins-how-they-work-and-what-they-mean-for-your-business',
+    title: 'Stablecoins: How They Work and What They Mean for Your Business',
+    excerpt:
+      'Learn about the pros and cons of the different types of stablecoins, and what it means for your business.',
+    publishedAt: new Date().toISOString().slice(0, 10),
+    author: { name: 'Request Finance', image: null },
+    mainImage: '/blog/stablecoins-how-they-work-and-what-they-mean-for-your-business.png',
+    categories: [{ slug: 'stablecoins', title: 'Stablecoins' }],
+    body: `Cryptocurrencies are increasingly popular among businesses, especially for cross-border payments. A recent [survey](https://www.pymnts.com/wp-content/uploads/2022/06/PYMNTS-Paying-With-Cryptocurrency-June-2022.pdf) found that 85% of businesses with more than $1 billion in annual sales see crypto payments as a way to reach new customers, while 77% are using crypto for lower transaction fees.
 
-**What's New**
+But one major concern that has hampered their adoption is their extreme volatility.
 
-Our team has been working tirelessly to bring you features that matter most. Radiant 2.0 includes improved analytics, better integrations, and a completely redesigned user interface that makes it easier than ever to manage your sales pipeline.
+Amidst the volatility that characterizes many cryptocurrencies, stablecoins have emerged as a crucial financial instrument. They have all the benefits of blockchain-based currencies, without the volatility.
 
-**Enhanced Analytics**
+As businesses increasingly integrate these stablecoins into their financial operations, it's essential to understand how they work, the types available, and their pros and cons.
 
-Get deeper insights into your sales performance with our new analytics dashboard. Track key metrics, identify trends, and make data-driven decisions to improve your sales process.
+**What Are Stablecoins?**
 
-**Seamless Integrations**
+Stablecoins, as the name suggests, are a class of cryptocurrencies designed to maintain price stability. Unlike highly volatile cryptocurrencies, stablecoins are pegged to the price of more stable assets like fiat currencies, or commodities like gold.
 
-Connect Radiant with all your favorite tools including Salesforce, HubSpot, Slack, and more. Our new integration marketplace makes it easy to extend Radiant's functionality.
+This reduced volatility makes them ideal for enterprise payments, or as cash management instruments in corporate treasuries. The pegging mechanisms vary, but they all share a common goal: ensuring that their value remains relatively constant, thereby minimizing the price fluctuations typically associated with the crypto market.
 
-**Getting Started**
+What are the key differences in stablecoin designs, and how do they matter for enterprises? Below, we explore three primary types: fiat-collateralized, crypto-collateralized, and algorithmic stablecoins.
 
-Existing customers can upgrade to Radiant 2.0 right away from their account dashboard. New to Radiant? Sign up for a free trial and see how we can help transform your sales process.`,
+**1. Fiat-Collateralized Stablecoins**
+
+The most prevalent type, fiat-collateralized stablecoins, are backed by reserves of fiat currency. For instance, if a stablecoin is pegged to the US Dollar, the issuer must hold a corresponding amount of USD to uphold the stablecoin's value.
+
+Prominent examples include [Tether (USDT)](https://tether.to/) and [USD Coin (USDC)](https://www.circle.com/en/usdc). Tether, the most widely recognized and utilized stablecoin, is tethered to the US Dollar, with each USDT token supposedly backed by one USD held in reserve. Tether is commonly used as a trading pair on cryptocurrency exchanges and as a means of transferring value between different platforms.
+
+USD Coin, a project from Circle and Coinbase, is also pegged to the USD. The companies behind USDC claim to maintain a 1:1 collateralization ratio, providing regular attestation reports from top auditing firms to ensure transparency and trust.
+
+**2. Crypto-Collateralized Stablecoins**
+
+In contrast, crypto-collateralized stablecoins are backed by other cryptocurrencies. These stablecoins operate through smart contracts, and users need to lock up a certain amount of cryptocurrency as collateral. The system then generates an equivalent value of stablecoins.
+
+Examples include [Dai (DAI)](https://makerdao.com/) and [sUSD (sUSD)](https://synthetix.io/). Dai, operating on the MakerDAO platform, is backed by various cryptocurrencies, primarily Ether (ETH). The system allows users to lock up their ETH as collateral and generate Dai tokens, which they can later unlock by repaying the locked ETH.
+
+sUSD is the stablecoin of the Synthetix platform, which enables users to create synthetic assets on the Ethereum blockchain. It is backed by SNX, the native utility token of the Synthetix platform, which users stake as collateral to mint sUSD.
+
+**3. Algorithmic Stablecoins**
+
+Unlike the above two, algorithmic stablecoins operate without direct collateral backing. They depend on algorithms to adjust their supply, ensuring their value remains stable. When the price of the stablecoin rises, the algorithm mints new coins to reduce the price. Conversely, if the price falls, the algorithm buys back stablecoins to increase their value. While this model theoretically maintains stability, it can be affected by market sentiment and user adoption.
+
+Notable algorithmic stablecoins include [Ampleforth (AMPL)](https://www.ampleforth.org/) and [Frax (FRAX)](https://frax.finance/). Ampleforth adjusts its supply based on demand, giving an elastic supply model that aims to maintain a stable price of approximately $1. Frax takes an interesting approach where it combines elements of both algorithmic and collateralized stablecoins. It uses a fractional-algorithmic approach, meaning that it's partially backed by collateral (USDC) while also utilizing algorithms to maintain its peg to the US Dollar.
+
+**Pros and Cons of Different Stablecoins for Businesses**
+
+Each type of stablecoin carries advantages and potential challenges for businesses. Here, we explore the pros and cons of each stablecoin type concerning businesses.
+
+**1. Fiat-Collateralized Stablecoins**
+
+Tether has faced its share of controversies, with concerns over its actual fiat reserves and allegations of market manipulation. However, it remains a dominant stablecoin in the crypto market, with [a massive daily trading volume of nearly $18 billion](https://coinmarketcap.com/currencies/tether/), indicating widespread adoption and usage.
+
+USD Coin, on the other hand, has gained a reputation for its regulatory compliance efforts and the transparency it provides through regular audits. Its growing popularity further emphasizes the demand for fiat-collateralized stablecoins as a reliable means of preserving value.
+
+**Pros**
+
+- Transparency and trust: issuers hold an equivalent amount of fiat in reserve
+- Stability: value is tied to established fiat currencies
+- Widely accepted across exchanges and platforms, making them [easily accessible to businesses to on-ramp and off-ramp](https://www.request.finance/post/methods-and-best-practices-for-on-ramp-and-off-ramp)
+
+**Cons**
+
+- Centralization: these stablecoins depend on centralized entities to manage reserves
+- Auditing requirements: ensuring proper collateralization requires regular auditing, which can be resource-intensive
+
+**2. Crypto-Collateralized Stablecoins**
+
+Crypto-collateralized stablecoins are celebrated for their decentralized nature and the ability to operate without direct reliance on central entities. The fluctuating prices of the underlying collateral, however, can expose these stablecoins to volatility. In times of extreme market turbulence, the value of the collateral may drop significantly, potentially leading to under-collateralization. The MakerDAO platform experienced such an issue during the ["Black Thursday" event in March 2020](https://www.cryptoeq.io/corereports/maker-abridged), when the rapid decline of Ether's price led to a system-wide liquidation of collateralized positions.
+
+**Pros**
+
+- Decentralization gives companies security and autonomy of their financial assets
+- Decentralization offers a layer of protection against sudden political upheavals or changes in policy that might jeopardize your assets (e.g. [sudden changes in regulations](https://www.scmp.com/economy/china-economy/article/3114552/chinas-small-exporters-see-bank-accounts-frozen-amid-massive), or [frozen accounts](https://www.engadget.com/paypal-lawsuit-freezing-customer-accounts-funds-073128563.html) and [$2,500 deductions](https://twitter.com/GayRepublicSwag/status/1585151345610600448) by payment processors)
+- No banking dependencies: as these stablecoins don't rely on fiat reserves, they eliminate the need for banking partnerships
+
+**Cons**
+
+- Volatility risk: exposure to the price fluctuations of underlying cryptocurrencies
+- Overcollateralization: a significant amount of cryptocurrency is often locked up as collateral, which can tie up capital for businesses
+
+**3. Algorithmic Stablecoins**
+
+Algorithmic stablecoins offer an intriguing approach to maintaining stability without relying on direct collateral. However, their effectiveness can be influenced by factors like market sentiment and user adoption. The price dynamics can sometimes lead to periods of instability, and in extreme cases they may temporarily deviate significantly from their intended peg. Users and businesses should carefully consider the mechanisms of these stablecoins and assess their risk appetite before engaging with them.
+
+**Pros**
+
+- Decentralization: they don't rely on centralized collateral reserves
+- Innovation potential: this model opens up possibilities for unique DeFi applications and innovative financial solutions for businesses
+
+**Cons**
+
+- Complexity: the algorithms can be complex, making it challenging for businesses to grasp their underlying mechanisms fully
+- Market sentiment vulnerability: algorithmic stablecoins can be influenced by market sentiment, potentially leading to price fluctuations
+
+**Implementing Stablecoin Payments to Your Web3 Business**
+
+Depending on your specific needs and risk tolerance, you must carefully choose the most suitable stablecoin for your financial operations.
+
+[IMAGE:/blog/most-popular-payment-currency.png]
+
+At Request Finance, USDC stands out as the cryptocurrency of choice, accounting for [over 33% of all crypto payments](https://www.request.finance/post/request-finance-in-numbers-july-2023-new-ath-in-crypto-payments) made predominantly by our enterprise clientele. USD-pegged stablecoins remain a favored option for enterprise crypto payments, representing 57% of all crypto payments processed.
+
+As one of the largest crypto payroll solutions with [nearly $350 million in total crypto payments volume](https://www.request.finance/post/request-finance-in-numbers-june-2023), Request Finance [supports over 10 types of stablecoins](https://app.gitbook.com/@request-network/s/support/currencies-supported) to help Web3 businesses send and receive stablecoins easily. Learn how you can simplify and automate your stablecoin payments with Request Finance [here](https://www.request.finance/post/we-just-made-crypto-payroll-better).`,
   },
-  'how-to-improve-sales-process': {
-    slug: 'how-to-improve-sales-process',
-    title: 'How to Improve Your Sales Process',
-    excerpt: 'Learn the best practices for streamlining your sales process and closing more deals.',
-    publishedAt: '2024-01-10',
-    author: { name: 'Michael Chen', image: null },
-    mainImage: null,
-    categories: [{ slug: 'insights', title: 'Insights' }],
-    body: `A well-defined sales process is crucial for consistent success. Here are our top tips for improving your sales workflow.
+}
 
-**Define Clear Stages**
-
-Start by mapping out each stage of your sales process. From initial contact to closed deal, every step should be clearly defined with specific actions and goals.
-
-**Use the Right Tools**
-
-Invest in technology that supports your sales process. A good CRM like Radiant can help you track leads, manage follow-ups, and analyze performance.
-
-**Train Your Team**
-
-Regular training ensures your team stays sharp and up-to-date with best practices. Hold weekly coaching sessions and share success stories across the team.
-
-**Measure and Optimize**
-
-Track key metrics like conversion rates, average deal size, and sales cycle length. Use this data to identify bottlenecks and opportunities for improvement.`,
-  },
-  'radiant-raises-series-b': {
-    slug: 'radiant-raises-series-b',
-    title: 'Radiant Raises $50M Series B',
-    excerpt: 'We are thrilled to announce our Series B funding round to accelerate our growth.',
-    publishedAt: '2024-01-05',
-    author: { name: 'Emily Davis', image: null },
-    mainImage: null,
-    categories: [{ slug: 'company-news', title: 'Company News' }],
-    body: `Today marks an exciting milestone in Radiant's journey. We are thrilled to announce that we have raised $50 million in Series B funding led by top-tier investors.
-
-**Our Mission**
-
-Since founding Radiant, our mission has been to help sales teams close every deal. This funding will enable us to accelerate product development, expand our team, and better serve our growing customer base.
-
-**What This Means for Customers**
-
-This investment allows us to double down on innovation. Expect more features, better support, and continued improvements to the platform you rely on every day.
-
-**Looking Ahead**
-
-We are just getting started. With this funding, we are positioned to become the leading sales platform for teams of all sizes. Thank you to our customers, team, and investors for believing in our vision.`,
-  },
-  'new-integrations-available': {
-    slug: 'new-integrations-available',
-    title: 'New Integrations Now Available',
-    excerpt: 'Connect Radiant with your favorite tools including Salesforce, HubSpot, and more.',
-    publishedAt: '2023-12-20',
-    author: { name: 'David Wilson', image: null },
-    mainImage: null,
-    categories: [{ slug: 'product-updates', title: 'Product Updates' }],
-    body: `We are excited to announce new integrations that make Radiant even more powerful as part of your sales tech stack.
-
-**New Integrations**
-
-We have added support for Salesforce, HubSpot, Microsoft Teams, Slack, and Gmail. These integrations allow you to sync data, automate workflows, and stay connected across all your tools.
-
-**How It Works**
-
-Setting up integrations is simple. Just visit the integrations page in your Radiant dashboard, select the tools you use, and follow the setup wizard. Most integrations can be configured in minutes.
-
-**What's Next**
-
-We are constantly adding new integrations based on customer feedback. Let us know what tools you would like to see supported next.`,
-  },
-  'sales-best-practices-2024': {
-    slug: 'sales-best-practices-2024',
-    title: 'Sales Best Practices for 2024',
-    excerpt: 'Discover the top sales strategies and tactics that will help you succeed in 2024.',
-    publishedAt: '2023-12-15',
-    author: { name: 'Jennifer Brown', image: null },
-    mainImage: null,
-    categories: [{ slug: 'insights', title: 'Insights' }],
-    body: `As we head into 2024, sales teams need to adapt to changing buyer behaviors and market conditions. Here are the strategies that will set you apart.
-
-**Personalization at Scale**
-
-Today's buyers expect personalized experiences. Use data and automation to deliver tailored messaging without sacrificing efficiency.
-
-**Multi-Channel Engagement**
-
-Don't rely on a single channel. Successful sales teams use email, phone, social media, and video to reach prospects where they are.
-
-**Value-First Selling**
-
-Lead with value, not features. Understand your prospect's challenges and demonstrate how you can solve their specific problems.
-
-**Continuous Learning**
-
-The sales landscape is always evolving. Stay ahead by investing in continuous learning and development for your team.`,
-  },
+// Parse [text](url) in paragraphs and return React nodes (text + <a>)
+function parseParagraphWithLinks(text) {
+  const parts = []
+  let lastIndex = 0
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g
+  let match
+  let key = 0
+  while ((match = re.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index))
+    }
+    parts.push(
+      <a
+        key={`link-${key++}`}
+        href={match[2]}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-gray-950 underline data-hover:text-gray-950/75"
+      >
+        {match[1]}
+      </a>
+    )
+    lastIndex = re.lastIndex
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex))
+  }
+  return parts.length ? parts : [text]
 }
 
 export async function generateMetadata({ params }) {
@@ -260,19 +275,44 @@ export default async function BlogPost({ params }) {
               {post.body && (
                 <div className="prose prose-gray max-w-none">
                   {post.body.split('\n\n').map((paragraph, index) => {
-                    // Check if it's a heading
-                    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                      const headingText = paragraph.slice(2, -2)
+                    const trimmed = paragraph.trim()
+                    // Inline image: [IMAGE:/path/to/image.png]
+                    if (trimmed.startsWith('[IMAGE:') && trimmed.endsWith(']')) {
+                      const src = trimmed.slice(7, -1).trim()
                       return (
-                        <h2 key={index} className="mt-12 mb-10 text-2xl/8 font-medium tracking-tight text-gray-950 first:mt-0">
+                        <figure key={index} className="my-8">
+                          <img
+                            src={src}
+                            alt=""
+                            className="w-full rounded-2xl"
+                          />
+                        </figure>
+                      )
+                    }
+                    // Check if it's a heading
+                    if (trimmed.startsWith('**') && trimmed.endsWith('**') && !trimmed.slice(2, -2).includes('**')) {
+                      const headingText = trimmed.slice(2, -2)
+                      return (
+                        <h2 key={index} className="mt-12 mb-6 text-2xl/8 font-medium tracking-tight text-gray-950 first:mt-0">
                           {headingText}
                         </h2>
                       )
                     }
-                    // Regular paragraph
+                    // List: every line starts with "- "
+                    const lines = trimmed.split('\n').map(l => l.trim()).filter(Boolean)
+                    if (lines.length > 0 && lines.every(l => l.startsWith('- '))) {
+                      return (
+                        <ul key={index} className="my-6 list-disc space-y-2 pl-6 text-base/8 first:mt-0">
+                          {lines.map((line, i) => (
+                            <li key={i}>{parseParagraphWithLinks(line.slice(2))}</li>
+                          ))}
+                        </ul>
+                      )
+                    }
+                    // Regular paragraph (may contain [text](url) links)
                     return (
-                      <p key={index} className="my-10 text-base/8 first:mt-0 last:mb-0">
-                        {paragraph}
+                      <p key={index} className="my-6 text-base/8 first:mt-0 last:mb-0">
+                        {parseParagraphWithLinks(trimmed)}
                       </p>
                     )
                   })}

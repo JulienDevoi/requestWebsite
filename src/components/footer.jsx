@@ -171,7 +171,7 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm/6 text-gray-950">
+    <div className="flex flex-col gap-y-2 text-sm/6 text-gray-950">
       <span>&copy; {new Date().getFullYear()} Request Finance. All rights reserved.</span>
       <span className="flex items-center gap-x-4">
         <Link

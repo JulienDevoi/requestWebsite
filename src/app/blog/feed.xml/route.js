@@ -4,25 +4,12 @@ import assert from 'node:assert'
 // Mock data
 const mockPosts = [
   {
-    slug: 'introducing-radiant-2-0',
-    title: 'Introducing Radiant 2.0',
-    excerpt: 'We are excited to announce the launch of Radiant 2.0, packed with new features to help you close deals faster.',
-    publishedAt: '2024-01-15',
-    author: { name: 'Sarah Johnson' },
-  },
-  {
-    slug: 'how-to-improve-sales-process',
-    title: 'How to Improve Your Sales Process',
-    excerpt: 'Learn the best practices for streamlining your sales process and closing more deals.',
-    publishedAt: '2024-01-10',
-    author: { name: 'Michael Chen' },
-  },
-  {
-    slug: 'radiant-raises-series-b',
-    title: 'Radiant Raises $50M Series B',
-    excerpt: 'We are thrilled to announce our Series B funding round to accelerate our growth.',
-    publishedAt: '2024-01-05',
-    author: { name: 'Emily Davis' },
+    slug: 'stablecoins-how-they-work-and-what-they-mean-for-your-business',
+    title: 'Stablecoins: How They Work and What They Mean for Your Business',
+    excerpt:
+      'Learn about the pros and cons of the different types of stablecoins, and what it means for your business.',
+    publishedAt: new Date().toISOString().slice(0, 10),
+    author: { name: 'Request Finance' },
   },
 ]
 
