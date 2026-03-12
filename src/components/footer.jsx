@@ -12,11 +12,15 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-        Ready to Upgrade Your Business Spend Management?
+          Still running finance across 6 different tools?
         </p>
       </hgroup>
-      <p className="mx-auto mt-6 max-w-l text-sm/6 text-gray-500">
-        Experience the simplicity and reliability of stablecoins. <br /> Your account setup takes less than 5 minutes.
+      <p className="mx-auto mt-6 max-w-2xl text-sm/6 text-gray-500">
+        Manage payments, spend, cards, and accounting in one platform.
+        <br />
+        Built for modern companies operating globally like yours.
+        <br />
+        Your account takes less than 5 minutes to create.
       </p>
       <div className="mt-6">
         <Button className="w-full sm:w-auto" href="/open">
@@ -88,11 +92,10 @@ function Sitemap() {
       <div>
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
+          <SitemapLink href="/company">About us</SitemapLink>
+          <SitemapLink href="/guide">The Stablecoin Guide</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/open">Open my account</SitemapLink>
-          <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
-          <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
-          <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -167,8 +170,31 @@ function SocialLinks() {
 
 function Copyright() {
   return (
-    <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Request Finance. All rights reserved.
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm/6 text-gray-950">
+      <span>&copy; {new Date().getFullYear()} Request Finance. All rights reserved.</span>
+      <span className="flex items-center gap-x-4">
+        <Link
+          href="https://help.request.finance/en/"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Help Center
+        </Link>
+        <Link
+          href="https://support.request.finance/legal/terms-and-conditions"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Terms &amp; Conditions
+        </Link>
+        <Link
+          href="https://support.request.finance/legal/privacy"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Privacy
+        </Link>
+      </span>
     </div>
   )
 }

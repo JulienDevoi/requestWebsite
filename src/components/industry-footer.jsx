@@ -54,6 +54,7 @@ function Sitemap() {
         <SitemapLinks>
           <SitemapLink href="/products/global-usd-account">Global USD Account</SitemapLink>
           <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
+          <SitemapLink href="/products/stablecoin-payments">Stablecoin Payments</SitemapLink>
           <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
           <SitemapLink href="/products/accrual-accounting">Accrual Accounting</SitemapLink>
         </SitemapLinks>
@@ -87,11 +88,10 @@ function Sitemap() {
       <div>
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
+          <SitemapLink href="/company">About us</SitemapLink>
+          <SitemapLink href="/guide">The Stablecoin Guide</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/open">Open my account</SitemapLink>
-          <SitemapLink href="https://help.request.finance/en/" target="_blank">Help Center</SitemapLink>
-          <SitemapLink href="https://support.request.finance/legal/terms-and-conditions" target="_blank">Terms & Conditions</SitemapLink>
-          <SitemapLink href="https://support.request.finance/legal/privacy" target="_blank">Privacy</SitemapLink>
         </SitemapLinks>
       </div>
     </>
@@ -114,6 +114,14 @@ function SocialIconLinkedIn(props) {
   )
 }
 
+function SocialIconYouTube(props) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  )
+}
+
 function SocialLinks() {
   return (
     <>
@@ -131,14 +139,46 @@ function SocialLinks() {
       >
         <SocialIconLinkedIn className="size-4" />
       </Link>
+      <Link
+        href="https://www.youtube.com/channel/UCdDStnkvGv3898LKk4Mzklg"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit us on YouTube"
+        className="text-gray-950 data-hover:text-gray-950/75"
+      >
+        <SocialIconYouTube className="size-4" />
+      </Link>
     </>
   )
 }
 
 function Copyright() {
   return (
-    <div className="text-sm/6 text-gray-950">
-      &copy; {new Date().getFullYear()} Request Finance. All rights reserved.
+    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm/6 text-gray-950">
+      <span>&copy; {new Date().getFullYear()} Request Finance. All rights reserved.</span>
+      <span className="flex items-center gap-x-4">
+        <Link
+          href="https://help.request.finance/en/"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Help Center
+        </Link>
+        <Link
+          href="https://support.request.finance/legal/terms-and-conditions"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Terms &amp; Conditions
+        </Link>
+        <Link
+          href="https://support.request.finance/legal/privacy"
+          target="_blank"
+          className="font-medium text-gray-950 data-hover:text-gray-950/75"
+        >
+          Privacy
+        </Link>
+      </span>
     </div>
   )
 }

@@ -49,28 +49,32 @@ export const metadata = {
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Helping companies generate revenue.</Heading>
+      <Heading as="h1">Giving finance teams the tools they need to operate globally without friction.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        We’re on a mission to transform revenue organizations by harnessing vast
-        amounts of illegally acquired customer data.
+      That means faster payments. Clearer visibility. Better control. And financial infrastructure designed for the internet economy.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-lg">
           <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
           <p className="mt-6 text-sm/6 text-gray-600">
-            At Radiant, we are dedicated to transforming the way revenue
-            organizations source and close deals. Our mission is to provide our
-            customers with an unfair advantage over both their competitors and
-            potential customers through insight and analysis. We’ll stop at
-            nothing to get you the data you need to close a deal.
+          Companies should not adapt to outdated financial systems. Financial systems should adapt to modern companies. Request Finance is building that future.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            We’re customer-obsessed — putting the time in to build a detailed
-            financial picture of every one of our customers so that we know more
-            about your business than you do. We are in this together, mostly
-            because we are all implicated in large-scale financial crime. In our
-            history as a company, we’ve never lost a customer, because if any
-            one of us talks, we all go down.
+          Request Finance is a modern financial operations platform.
+
+It helps companies manage spend, pay vendors, and control finances in one place.
+
+The platform combines global USD accounts, corporate cards, accounts payable, and accrual accounting.
+
+Stablecoins power the infrastructure behind it.
+
+The result is faster, clearer, and more global financial operations.
+
+No fragmented tools.
+
+No slow banking rails.
+
+One system for modern finance teams.
           </p>
         </div>
         <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
@@ -85,21 +89,21 @@ function Header() {
             <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
               <img
                 alt=""
-                src="/company/2.jpg"
+                src="/company/2.png"
                 className="block size-full object-cover"
               />
             </div>
             <div className="aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
               <img
                 alt=""
-                src="/company/3.jpg"
+                src="/company/3.png"
                 className="block size-full object-cover"
               />
             </div>
             <div className="-mt-8 aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 lg:-mt-32">
               <img
                 alt=""
-                src="/company/4.jpg"
+                src="/company/4.png"
                 className="block size-full object-cover"
               />
             </div>
@@ -110,27 +114,27 @@ function Header() {
           <hr className="mt-6 border-t border-gray-200" />
           <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Raised</dt>
+              <dt className="text-sm/6 text-gray-600">Founded in</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                $<AnimatedNumber start={100} end={150} />M
+                2017
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Companies</dt>
+              <dt className="text-sm/6 text-gray-600">Companies we helped</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={15} end={30} />K
+                <AnimatedNumber start={5} end={10} />K
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-              <dt className="text-sm/6 text-gray-600">Deals Closed</dt>
+              <dt className="text-sm/6 text-gray-600">Payments processed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={0.9} end={1.5} decimals={1} />M
+                <AnimatedNumber start={0.1} end={1} decimals={1} />M+
               </dd>
             </div>
             <div className="flex flex-col gap-y-2">
-              <dt className="text-sm/6 text-gray-600">Leads Generated</dt>
+              <dt className="text-sm/6 text-gray-600">Amount processed</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={150} end={200} />M
+                $1B+
               </dd>
             </div>
           </dl>
@@ -155,46 +159,58 @@ function Person({ name, description, img }) {
 function Team() {
   return (
     <Container className="mt-32">
-      <Subheading>Meet the team</Subheading>
+      <Subheading>Go global</Subheading>
       <Heading as="h3" className="mt-2">
-        Founded by an all-star team.
+        Global finance for every business.
       </Heading>
       <Lead className="mt-6 max-w-3xl">
-        Radiant is founded by two of the best sellers in the business and backed
-        by investors who look the other way.
+      At Request, we make sure anyone, anywhere, can pay and get paid with confidence.
       </Lead>
       <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="max-w-lg">
           <p className="text-sm/6 text-gray-600">
-            Years ago, while working as sales associates at rival companies,
-            Thomas, Ben, and Natalie were discussing a big client they had all
-            been competing for. Joking about seeing the terms of each other’s
-            offers, they had an idea: what if they shared data to win deals and
-            split the commission behind their companies’ backs? It turned out to
-            be an incredible success, and that idea became the kernel for
-            Radiant.
+          Financial operations should be simple.
+
+Finance teams should see every dollar in real time.
+
+Global payments should not take 3 days.
+
+Spend should not require 5 approvals and 4 tools.
+
+And finance leaders should not rely on spreadsheets to understand company cash flow.
+
+
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-            Today, Radiant transforms revenue organizations by harnessing
-            illegally acquired customer and competitor data, using it to provide
-            extraordinary leverage. More than 30,000 companies rely on Radiant
-            to undercut their competitors and extort their customers, all
-            through a single integrated platform.
+          Stablecoins and modern financial infrastructure make this possible.
+
+They enable global payments in minutes.
+
+They remove banking limitations.
+
+They create programmable financial workflows.
+
+Request Finance turns that infrastructure into a practical platform for finance teams.
           </p>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <Button className="w-full sm:w-auto" href="#">
               Join us
             </Button>
-          </div>
+          </div> */}
         </div>
         <div className="max-lg:order-first max-lg:max-w-lg">
-          <div className="aspect-3/2 overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
+          <a
+            href="https://www.youtube.com/watch?v=7MRd0ZAXJVU"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10 transition opacity-90 hover:opacity-100"
+          >
             <img
-              alt=""
-              src="/company/5.jpg"
-              className="block size-full object-cover"
+              src="/company/video-thumbnail.png"
+              alt="Watch on YouTube"
+              className="block size-full object-cover aspect-video"
             />
-          </div>
+          </a>
         </div>
       </div>
       <Subheading as="h3" className="mt-24">
@@ -206,55 +222,131 @@ function Team() {
         className="mx-auto mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
       >
         <Person
-          name="Michael Foster"
-          description="Co-Founder / CTO"
-          img="/team/michael-foster.jpg"
+          name="Adam"
+          description="Full Stack Engineer"
+          img="/team/Adam.png"
         />
         <Person
-          name="Dries Vincent"
-          description="Business Relations"
-          img="/team/dries-vincent.jpg"
+          name="Alejo"
+          description="QA Engineer"
+          img="/team/Alejo.png"
         />
         <Person
-          name="Celeste Vandermark"
-          description="Front-end Developer"
-          img="/team/celeste-vandermark.jpg"
+          name="Alex"
+          description="Full-Stack Engineer"
+          img="/team/Alex.png"
         />
         <Person
-          name="Courtney Henry"
-          description="Designer"
-          img="/team/courtney-henry.jpg"
+          name="Carolina"
+          description="Customer Success Manager"
+          img="/team/Carolina.png"
         />
         <Person
-          name="Marcus Eldridge"
-          description="Director of Product"
-          img="/team/marcus-eldridge.jpg"
+          name="Christophe"
+          description="Co-Founder & CEO"
+          img="/team/Christophe.png"
         />
         <Person
-          name="Whitney Francis"
-          description="Copywriter"
-          img="/team/whitney-francis.jpg"
+          name="David"
+          description="Customer Success Manager"
+          img="/team/David.png"
         />
         <Person
-          name="Leonard Krasner"
-          description="Senior Designer"
-          img="/team/leonard-krasner.jpg"
+          name="Jakub"
+          description="Full Stack Engineer"
+          img="/team/Jakub.png"
         />
         <Person
-          name="Nolan Sheffield"
-          description="Principal Designer"
-          img="/team/nolan-sheffield.jpg"
+          name="Jean-Baptiste"
+          description="CFO"
+          img="/team/Jean-Baptiste.png"
         />
         <Person
-          name="Emily Selman"
-          description="VP, User Experience"
-          img="/team/emily-selman.jpg"
+          name="Julien"
+          description="CMO"
+          img="/team/Julien.png"
+        />
+        <Person
+          name="Kevin"
+          description="Software Engineer"
+          img="/team/Kevin.png"
+        />
+        <Person
+          name="Laura"
+          description="Growth & Sales Operations Manager"
+          img="/team/Laura.png"
+        />
+        <Person
+          name="Laure"
+          description="HR Manager"
+          img="/team/Laure.png"
+        />
+        <Person
+          name="Ludovic"
+          description="Chief of Staff"
+          img="/team/Ludovic.png"
+        />
+        <Person
+          name="Léo"
+          description="DeFi Engineer"
+          img="/team/Leo.png"
+        />
+        <Person
+          name="Mashudi"
+          description="Account Executive"
+          img="/team/Mashudi.png"
+        />
+        <Person
+          name="Max"
+          description="Head of Product"
+          img="/team/Max.png"
+        />
+        <Person
+          name="Michael"
+          description="Senior Product Designer"
+          img="/team/Michael.png"
+        />
+        <Person
+          name="Paul"
+          description="Mobile Developer"
+          img="/team/Paul.png"
+        />
+        <Person
+          name="Simran"
+          description="Ecosystem Manager"
+          img="/team/Simran.png"
+        />
+        <Person
+          name="Stojan"
+          description="Full stack developer"
+          img="/team/Stojan.png"
+        />
+        <Person
+          name="Thomas"
+          description="Account Executive"
+          img="/team/Thomas.png"
+        />
+        <Person
+          name="Uyen"
+          description="Digital Assets Accounting"
+          img="/team/Uyen.png"
+        />
+        <Person
+          name="Vincent"
+          description="Finance Associate"
+          img="/team/placeholder.png"
+        />
+        <Person
+          name="Yoann"
+          description="CTO"
+          img="/team/Yoann.png"
         />
       </ul>
     </Container>
   )
 }
 
+/* Investors section - hidden
 function Investors() {
   return (
     <Container className="mt-32">
@@ -341,6 +433,7 @@ function Investors() {
     </Container>
   )
 }
+*/
 
 function Testimonial() {
   return (
@@ -374,6 +467,7 @@ function Testimonial() {
   )
 }
 
+/* Careers section - hidden
 function Careers() {
   return (
     <Container className="my-32">
@@ -480,6 +574,7 @@ function Careers() {
     </Container>
   )
 }
+*/
 
 export default function Company() {
   return (
@@ -489,9 +584,11 @@ export default function Company() {
         <Navbar />
       </Container>
       <Header />
-      <Team />
-      <Investors />
-      <Careers />
+      <div className="pb-16 sm:pb-24">
+        <Team />
+      </div>
+      {/* <Investors /> */}
+      {/* <Careers /> */}
       <Footer />
     </main>
   )
