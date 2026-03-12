@@ -68,61 +68,34 @@ const mockCategories = [
 
 const mockPosts = [
   {
-    slug: 'acme-corp-transformation',
-    title: 'How Acme Corp Increased Revenue by 150%',
-    excerpt: 'Learn how Acme Corp transformed their sales process and achieved record-breaking growth using our platform.',
-    publishedAt: '2024-01-15',
-    author: { name: 'Sarah Johnson', image: null },
-    mainImage: null,
+    slug: 'streamlining-crypto-accounting-at-scale',
+    title: 'Streamlining Crypto Accounting at Scale',
+    excerpt: 'How a decentralised governance research group simplified crypto reconciliation and month-end reporting with Request Accounting.',
+    publishedAt: '2025-03-07',
+    author: { name: 'Governance research group', image: null },
+    mainImage: '/customers/web3.png',
     featured: true,
     categories: ['case-studies'],
   },
   {
-    slug: 'techstart-success-story',
-    title: 'TechStart Scales from 10 to 100 Customers',
-    excerpt: 'Discover how TechStart leveraged our tools to scale their customer base tenfold in just 12 months.',
-    publishedAt: '2024-01-10',
-    author: { name: 'Michael Chen', image: null },
-    mainImage: null,
+    slug: 'polemos',
+    title: 'Polemos - Powering Web3 Gaming at Scale',
+    excerpt: 'How Request Finance helps Polemos streamline fiat and crypto payments to power the next generation of blockchain gaming.',
+    publishedAt: '2025-03-12',
+    author: { name: 'Polemos', image: null },
+    mainImage: '/customers/polemos.png',
     featured: true,
-    categories: ['success-stories'],
-  },
-  {
-    slug: 'global-solutions-testimonial',
-    title: 'Global Solutions: A Partnership Built on Trust',
-    excerpt: 'Why Global Solutions chose us as their long-term partner for business growth and innovation.',
-    publishedAt: '2024-01-05',
-    author: { name: 'Emily Davis', image: null },
-    mainImage: null,
-    featured: true,
-    categories: ['testimonials'],
-  },
-  {
-    slug: 'innovate-inc-case-study',
-    title: 'Innovate Inc Reduces Costs by 40%',
-    excerpt: 'See how Innovate Inc streamlined operations and significantly reduced operational costs with our solution.',
-    publishedAt: '2023-12-20',
-    author: { name: 'David Wilson', image: null },
-    mainImage: null,
-    featured: false,
     categories: ['case-studies'],
-  },
-  {
-    slug: 'startup-xyz-growth',
-    title: 'Startup XYZ: From Idea to Market Leader',
-    excerpt: 'The inspiring journey of how Startup XYZ became an industry leader with the right tools and support.',
-    publishedAt: '2023-12-15',
-    author: { name: 'Jennifer Brown', image: null },
-    mainImage: null,
-    featured: false,
-    categories: ['success-stories'],
   },
 ]
 
 const postsPerPage = 5
 
 async function FeaturedPosts() {
-  let featuredPosts = mockPosts.filter(post => post.featured).slice(0, 3)
+  let featuredPosts = [...mockPosts]
+    .filter(post => post.featured)
+    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .slice(0, 3)
 
   if (featuredPosts.length === 0) {
     return
@@ -233,13 +206,15 @@ async function Categories({ selected }) {
 }
 
 async function Posts({ page, category }) {
-  let posts = mockPosts
-  
+  let posts = [...mockPosts].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  )
+
   // Filter by category if provided
   if (category) {
     posts = posts.filter(post => post.categories.includes(category))
   }
-  
+
   // Paginate
   const start = (page - 1) * postsPerPage
   const end = page * postsPerPage
@@ -309,9 +284,12 @@ async function Pagination({ page, category }) {
     return params.size !== 0 ? `/customers?${params.toString()}` : '/customers'
   }
 
-  let allPosts = category 
-    ? mockPosts.filter(post => post.categories.includes(category))
-    : mockPosts
+  let allPosts = [...mockPosts].sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  )
+  if (category) {
+    allPosts = allPosts.filter(post => post.categories.includes(category))
+  }
   
   let totalPosts = allPosts.length
   let hasPreviousPage = page - 1

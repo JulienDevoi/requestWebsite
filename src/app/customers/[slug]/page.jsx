@@ -11,135 +11,110 @@ import { notFound } from 'next/navigation'
 
 // Mock customer stories data
 const mockPosts = {
-  'acme-corp-transformation': {
-    slug: 'acme-corp-transformation',
-    title: 'How Acme Corp Increased Revenue by 150%',
-    excerpt: 'Learn how Acme Corp transformed their sales process and achieved record-breaking growth using our platform.',
-    publishedAt: '2024-01-15',
-    author: { name: 'Sarah Johnson', image: null },
-    mainImage: null,
+  'streamlining-crypto-accounting-at-scale': {
+    slug: 'streamlining-crypto-accounting-at-scale',
+    title: 'Streamlining Crypto Accounting at Scale',
+    excerpt:
+      'How a decentralised governance research group simplified crypto reconciliation and month-end reporting with Request Accounting.',
+    publishedAt: '2025-03-07',
+    author: { name: 'Governance research group', image: null },
+    mainImage: '/customers/web3.png',
     categories: [{ slug: 'case-studies', title: 'Case Studies' }],
-    body: `Acme Corp came to us with a challenge: their sales process was inefficient, and revenue growth had stagnated. Within 12 months of implementing our platform, they increased their revenue by 150%.
+    body: `Managing cryptocurrency payments and accounting across 200 wallets, multiple entities, and various blockchains sounds like chaos. For this research-driven group focused on governance, decentralisation, and technology, it was—until they adopted Request Accounting. The platform helped them reduce month-end close time by 90%, provided a unified portfolio view across blockchains, and streamlined vendor payments. With seamless ERP integration, flexible reporting, and strong customer support, Request became their all-in-one solution for crypto finance operations.
 
-**The Challenge**
+**The Complexity of Decentralised Operations**
 
-Acme Corp's sales team was spending too much time on manual tasks and not enough time selling. Their outdated systems made it difficult to track leads, manage pipelines, and close deals efficiently.
+This research collective operates at the cutting edge of decentralised governance and emerging technologies. By nature, their work spans multiple projects, each with different legal entities, operational teams, and financial structures. But this flexibility came at a cost: at one point, the team was managing up to 200 active wallets across a variety of blockchains, resulting in a manual, fragmented, and time-consuming month-end close process.
 
-**The Solution**
+They needed more than just visibility. They needed:
 
-We worked closely with Acme Corp to implement our comprehensive sales platform. The solution included automated workflows, intelligent lead scoring, and real-time analytics that gave their team the insights they needed to succeed.
+- A single source of truth across all wallets and chains
+- A way to standardise crypto accounting and outputs
+- Reliable, fast, and accurate reconciliation workflows
+- A solution for working with vendors not yet crypto-native
 
-**The Results**
+**Solution**
 
-The impact was immediate and dramatic. Within the first quarter, Acme Corp saw a 40% increase in sales productivity. By the end of the year, their revenue had grown by 150%, and their sales team was closing deals 60% faster.
+Request Accounting delivered exactly what the team was looking for. With its multi-chain support, real-time portfolio dashboard, and automated reconciliation features, it became the backbone of their crypto finance operations. In particular, it helped them:
 
-**Key Takeaways**
+- Reduce manual work by 90% during month-end close
+- Gain a real-time portfolio view to monitor liquidity
+- Automatically reconcile transactions with control accounts
+- Standardise cryptocurrency reports for internal and external needs
+- Streamline vendor payments in multiple fiat and crypto currencies
 
-This success story demonstrates the power of the right tools and processes. By automating routine tasks and providing actionable insights, we helped Acme Corp unlock their full potential.`,
+**Why Request Accounting?**
+
+When comparing tools, the team chose Request for several reasons:
+
+- Exchange support: unified views across wallet and exchange accounts
+- Flexible reporting: custom outputs tailored to project, legal, or accounting needs
+- Great support: a responsive team that collaborates on real feature needs
+- Fair pricing: a structure that works well for project-based organisations
+- ERP integration: plug-and-play compatibility with their systems
+
+The platform is simple and intuitive. After a brief onboarding session and demo, the team was fully operational: managing reporting and payments with greater speed and accuracy than ever before.
+
+**Results**
+
+The impact was immediate and measurable:
+
+- 90% reduction in monthly close time
+- Streamlined cross-border vendor payments
+- Consolidated visibility across 200+ wallets and exchange accounts
+- Unified crypto reporting for decision-makers
+- Increased trust in financial data to inform critical strategic decisions
+
+Today, the team relies exclusively on Request for all crypto reporting and the majority of its crypto payments.
+
+**About the Organisation**
+
+This governance and decentralisation research collective works at the intersection of technology, policy, and crypto ecosystems. With a portfolio of global projects and decentralised teams, they help design future-ready systems across Web3. By turning to Request Accounting and Request Finance, they've brought order to the chaos of multi-chain financial operations: gaining the clarity and control needed to operate at the speed of innovation.`,
   },
-  'techstart-success-story': {
-    slug: 'techstart-success-story',
-    title: 'TechStart Scales from 10 to 100 Customers',
-    excerpt: 'Discover how TechStart leveraged our tools to scale their customer base tenfold in just 12 months.',
-    publishedAt: '2024-01-10',
-    author: { name: 'Michael Chen', image: null },
-    mainImage: null,
-    categories: [{ slug: 'success-stories', title: 'Success Stories' }],
-    body: `TechStart is a rapidly growing SaaS company that needed to scale quickly without sacrificing quality. Our platform helped them grow from 10 to 100 customers in just one year.
-
-**The Journey**
-
-When TechStart first approached us, they had a great product but struggled with customer acquisition and retention. They needed a scalable solution that could grow with them.
-
-**Our Approach**
-
-We implemented a comprehensive customer success platform that included automated onboarding, customer health monitoring, and proactive engagement tools. This allowed TechStart to provide excellent service at scale.
-
-**Impressive Growth**
-
-The results speak for themselves. TechStart's customer base grew 10x in 12 months, while maintaining a 95% customer satisfaction rate. Their team was able to manage this growth without proportionally increasing headcount.
-
-**Looking Forward**
-
-TechStart continues to use our platform as they scale even further. They're now positioned to become a market leader in their space.`,
-  },
-  'global-solutions-testimonial': {
-    slug: 'global-solutions-testimonial',
-    title: 'Global Solutions: A Partnership Built on Trust',
-    excerpt: 'Why Global Solutions chose us as their long-term partner for business growth and innovation.',
-    publishedAt: '2024-01-05',
-    author: { name: 'Emily Davis', image: null },
-    mainImage: null,
-    categories: [{ slug: 'testimonials', title: 'Testimonials' }],
-    body: `Global Solutions has been our partner for over three years, and our relationship continues to grow stronger. Here's why they chose us and why they continue to trust us with their business.
-
-**Why They Chose Us**
-
-Global Solutions evaluated multiple vendors before selecting our platform. They chose us because of our commitment to innovation, excellent customer support, and proven track record of success.
-
-**The Partnership**
-
-Over the past three years, we've worked closely with Global Solutions to understand their evolving needs. We've customized our platform to fit their unique requirements and provided dedicated support every step of the way.
-
-**The Impact**
-
-Global Solutions has seen consistent growth in productivity and efficiency. More importantly, they've found a partner they can trust to support their long-term business goals.
-
-**Customer Voice**
-
-"Choosing this platform was one of the best decisions we've made. The team truly cares about our success and goes above and beyond to ensure we get the most value from their solution." - CEO, Global Solutions`,
-  },
-  'innovate-inc-case-study': {
-    slug: 'innovate-inc-case-study',
-    title: 'Innovate Inc Reduces Costs by 40%',
-    excerpt: 'See how Innovate Inc streamlined operations and significantly reduced operational costs with our solution.',
-    publishedAt: '2023-12-20',
-    author: { name: 'David Wilson', image: null },
-    mainImage: null,
+  polemos: {
+    slug: 'polemos',
+    title: 'Polemos - Powering Web3 Gaming at Scale',
+    excerpt:
+      'How Request Finance helps Polemos streamline fiat and crypto payments to power the next generation of blockchain gaming.',
+    publishedAt: '2025-03-12',
+    author: { name: 'Polemos', image: null },
+    mainImage: '/customers/polemos.png',
     categories: [{ slug: 'case-studies', title: 'Case Studies' }],
-    body: `Innovate Inc was facing rising operational costs and inefficiencies across their organization. Our platform helped them reduce costs by 40% while improving overall productivity.
+    body: `Polemos is building the infrastructure layer for the future of blockchain gaming. From asset management to cross-chain tools and community engagement features, Polemos aims to remove friction for players, guilds, and developers alike. With a global team and a growing list of ecosystem partners, managing payments in both fiat and crypto became a logistical hurdle—manual payments through platforms like Fireblocks and Safe were slowing down operations and draining valuable time from the finance team.
 
-**The Problem**
+**Problem**
 
-Manual processes and disconnected systems were costing Innovate Inc time and money. They needed a unified solution that could streamline operations and reduce overhead.
+Before adopting Request Finance, Polemos faced a set of recurring challenges:
 
-**Implementation**
+- Manual crypto payments through Fireblocks and other wallets made payment operations time-consuming
+- Recurring fiat invoice payments were especially painful, with no streamlined way to collect, validate, and process them
+- Batch payments and handling a growing number of B2B partners added more operational complexity
+- As the team scaled across multiple chains, the need for a single, professional platform became critical
 
-We conducted a thorough analysis of their workflows and implemented our platform with custom integrations to their existing systems. The transition was smooth, with minimal disruption to their operations.
+**Solution**
 
-**Cost Savings**
+As an early supporter of the platform (thanks to a personal connection with co-founder Christophe), Polemos adopted Request Finance more than two years ago to streamline its payment workflows. The platform quickly became indispensable for the company's finance and operations team. Today, Polemos uses Request Finance primarily to:
 
-The financial impact was significant. Innovate Inc reduced operational costs by 40% through automation and improved efficiency. They also freed up resources to focus on strategic initiatives.
+- Receive and validate invoices from B2B partners
+- Pay both crypto and fiat invoices quickly and reliably
+- Eliminate manual workflows while improving visibility and traceability
 
-**Beyond Cost Savings**
+What the team appreciated most was the simplicity and stability of the platform. In just a few clicks, they could validate an invoice and trigger fiat payments—something that used to take hours through legacy systems.
 
-While cost reduction was important, Innovate Inc also gained better visibility into their operations, improved collaboration across teams, and increased employee satisfaction.`,
-  },
-  'startup-xyz-growth': {
-    slug: 'startup-xyz-growth',
-    title: 'Startup XYZ: From Idea to Market Leader',
-    excerpt: 'The inspiring journey of how Startup XYZ became an industry leader with the right tools and support.',
-    publishedAt: '2023-12-15',
-    author: { name: 'Jennifer Brown', image: null },
-    mainImage: null,
-    categories: [{ slug: 'success-stories', title: 'Success Stories' }],
-    body: `Startup XYZ's journey from a small startup to an industry leader is truly inspiring. Our platform played a crucial role in enabling their rapid growth and success.
+**Results**
 
-**The Beginning**
+Request Finance has significantly improved Polemos's ability to operate at scale. By eliminating manual crypto operations and streamlining fiat payments, the platform saves time, reduces errors, and enables a more agile finance operation. The dashboard gives the team the visibility it needs to stay on top of monthly operations and plan confidently as they prepare for major milestones, such as:
 
-When Startup XYZ launched, they knew they needed the right infrastructure to support their ambitious goals. They chose our platform from day one, allowing them to focus on product development and customer acquisition.
+- Onboarding 18+ million Web2 gamers into Web3
+- Launching a multi-chain master wallet
+- Introducing staking, governance, and social features into their ecosystem
+- Preparing for their token generation event (TGE)
 
-**Rapid Growth**
+As Polemos accelerates toward the next chapter in Web3 gaming, Request Finance remains a key enabler of its operational success.
 
-With our platform handling their operational needs, Startup XYZ was able to scale quickly. They went from 0 to 1000 customers in 18 months, a remarkable achievement for any startup.
+**About Polemos**
 
-**Market Leadership**
-
-Today, Startup XYZ is recognized as a leader in their industry. They've raised significant funding, expanded their team, and continue to innovate at a rapid pace.
-
-**The Role of Technology**
-
-Having the right technology foundation was critical to Startup XYZ's success. Our platform gave them enterprise-grade capabilities from day one, allowing them to compete with much larger competitors.`,
+Polemos is a leading Web3 gaming infrastructure platform, supporting seamless onboarding, asset lending, strategic guild operations, and cross-chain engagement tools. Backed by $14M+ in funding and strategic partnerships with networks like Immutable X, Ronin, and Base, Polemos powers major titles like Illuvium and Guild of Guardians, and is preparing to onboard millions of traditional gamers into the Web3 world. Their platform features tools to buy crypto with credit cards (via Stripe), swap assets (via SwapKit), and bridge chains (via ThorSwap), while supporting chains like Ethereum, Polygon, IMX, zkEVM, Root, and more. With a global team and growing ecosystem, Polemos is shaping the future of blockchain gaming, one transaction at a time.`,
   },
 }
 
@@ -270,20 +245,31 @@ export default async function CustomerStory({ params }) {
               )}
               {post.body && (
                 <div className="prose prose-gray max-w-none">
-                  {post.body.split('\n\n').map((paragraph, index) => {
-                    // Check if it's a heading
-                    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
-                      const headingText = paragraph.slice(2, -2)
+                  {post.body.split('\n\n').map((block, index) => {
+                    const trimmed = block.trim()
+                    // Section heading: **Heading**
+                    if (trimmed.startsWith('**') && trimmed.endsWith('**') && !trimmed.slice(2, -2).includes('**')) {
                       return (
-                        <h2 key={index} className="mt-12 mb-10 text-2xl/8 font-medium tracking-tight text-gray-950 first:mt-0">
-                          {headingText}
+                        <h2 key={index} className="mt-12 mb-6 text-2xl/8 font-medium tracking-tight text-gray-950 first:mt-0">
+                          {trimmed.slice(2, -2)}
                         </h2>
+                      )
+                    }
+                    // List: every line starts with "- "
+                    const lines = trimmed.split('\n').map(l => l.trim()).filter(Boolean)
+                    if (lines.length > 0 && lines.every(l => l.startsWith('- '))) {
+                      return (
+                        <ul key={index} className="my-6 list-disc space-y-2 pl-6 text-base/8 first:mt-0">
+                          {lines.map((line, i) => (
+                            <li key={i}>{line.slice(2)}</li>
+                          ))}
+                        </ul>
                       )
                     }
                     // Regular paragraph
                     return (
-                      <p key={index} className="my-10 text-base/8 first:mt-0 last:mb-0">
-                        {paragraph}
+                      <p key={index} className="my-6 text-base/8 first:mt-0 last:mb-0">
+                        {trimmed}
                       </p>
                     )
                   })}

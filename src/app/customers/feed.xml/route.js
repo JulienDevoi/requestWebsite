@@ -4,25 +4,20 @@ import assert from 'node:assert'
 // Mock data
 const mockPosts = [
   {
-    slug: 'acme-corp-transformation',
-    title: 'How Acme Corp Increased Revenue by 150%',
-    excerpt: 'Learn how Acme Corp transformed their sales process and achieved record-breaking growth using our platform.',
-    publishedAt: '2024-01-15',
-    author: { name: 'Sarah Johnson' },
+    slug: 'streamlining-crypto-accounting-at-scale',
+    title: 'Streamlining Crypto Accounting at Scale',
+    excerpt:
+      'How a decentralised governance research group simplified crypto reconciliation and month-end reporting with Request Accounting.',
+    publishedAt: '2025-03-07',
+    author: { name: 'Governance research group' },
   },
   {
-    slug: 'techstart-success-story',
-    title: 'TechStart Scales from 10 to 100 Customers',
-    excerpt: 'Discover how TechStart leveraged our tools to scale their customer base tenfold in just 12 months.',
-    publishedAt: '2024-01-10',
-    author: { name: 'Michael Chen' },
-  },
-  {
-    slug: 'global-solutions-testimonial',
-    title: 'Global Solutions: A Partnership Built on Trust',
-    excerpt: 'Why Global Solutions chose us as their long-term partner for business growth and innovation.',
-    publishedAt: '2024-01-05',
-    author: { name: 'Emily Davis' },
+    slug: 'polemos',
+    title: 'Polemos - Powering Web3 Gaming at Scale',
+    excerpt:
+      'How Request Finance helps Polemos streamline fiat and crypto payments to power the next generation of blockchain gaming.',
+    publishedAt: '2025-03-12',
+    author: { name: 'Polemos' },
   },
 ]
 
