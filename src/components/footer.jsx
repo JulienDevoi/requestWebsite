@@ -93,6 +93,7 @@ function Sitemap() {
         <SitemapHeading>Company</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/company">About us</SitemapLink>
+          <SitemapLink href="/blog">Blog</SitemapLink>
           <SitemapLink href="/guide">The Stablecoin Guide</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/customers">Customer Stories</SitemapLink>

@@ -5,6 +5,12 @@ import { GradientBackground } from '@/components/gradient'
 import { Link } from '@/components/link'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
+import {
+  getAllCategories,
+  getFeaturedPosts,
+  getAllPosts,
+  getPostsByCategory,
+} from '@/lib/blog'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
   CheckIcon,
@@ -58,32 +64,10 @@ export const metadata = {
   },
 }
 
-// Mock data
-const mockCategories = [
-  { slug: 'product-updates', title: 'Product Updates' },
-  { slug: 'company-news', title: 'Company News' },
-  { slug: 'insights', title: 'Insights' },
-  { slug: 'stablecoins', title: 'Stablecoins' },
-]
-
-const mockPosts = [
-  {
-    slug: 'stablecoins-how-they-work-and-what-they-mean-for-your-business',
-    title: 'Stablecoins: How They Work and What They Mean for Your Business',
-    excerpt:
-      'Learn about the pros and cons of the different types of stablecoins, and what it means for your business.',
-    publishedAt: new Date().toISOString().slice(0, 10),
-    author: { name: 'Request Finance', image: null },
-    mainImage: '/blog/stablecoins-how-they-work-and-what-they-mean-for-your-business.png',
-    featured: true,
-    categories: ['stablecoins'],
-  },
-]
-
 const postsPerPage = 5
 
 async function FeaturedPosts() {
-  let featuredPosts = mockPosts.filter(post => post.featured).slice(0, 3)
+  let featuredPosts = getFeaturedPosts()
 
   if (featuredPosts.length === 0) {
     return
@@ -143,7 +127,7 @@ async function FeaturedPosts() {
 }
 
 async function Categories({ selected }) {
-  let categories = mockCategories
+  let categories = getAllCategories()
 
   if (categories.length === 0) {
     return
@@ -194,17 +178,9 @@ async function Categories({ selected }) {
 }
 
 async function Posts({ page, category }) {
-  let posts = mockPosts
-  
-  // Filter by category if provided
-  if (category) {
-    posts = posts.filter(post => post.categories.includes(category))
-  }
-  
-  // Paginate
+  let posts = category ? getPostsByCategory(category) : getAllPosts()
   const start = (page - 1) * postsPerPage
-  const end = page * postsPerPage
-  posts = posts.slice(start, end)
+  posts = posts.slice(start, start + postsPerPage)
 
   if (posts.length === 0 && (page > 1 || category)) {
     notFound()
@@ -270,9 +246,7 @@ async function Pagination({ page, category }) {
     return params.size !== 0 ? `/blog?${params.toString()}` : '/blog'
   }
 
-  let allPosts = category 
-    ? mockPosts.filter(post => post.categories.includes(category))
-    : mockPosts
+  let allPosts = category ? getPostsByCategory(category) : getAllPosts()
   
   let totalPosts = allPosts.length
   let hasPreviousPage = page - 1
@@ -337,13 +311,14 @@ export default async function Blog({ searchParams }) {
       <GradientBackground />
       <Container>
         <Navbar />
-        <Subheading className="mt-16">Blog</Subheading>
+        <Subheading className="mt-16">Resources</Subheading>
         <Heading as="h1" className="mt-2">
-          What's happening at Radiant.
+          Resources Hub for Finance Leaders.
         </Heading>
         <Lead className="mt-6 max-w-3xl">
-          Stay informed with product updates, company news, and insights on how
-          to sell smarter at your company.
+          Practical guides, expert insights, and industry news to help finance
+          leaders navigate stablecoins, streamline operations, and stay
+          ahead in the evolving world of global finance.
         </Lead>
       </Container>
       {page === 1 && !category && <FeaturedPosts />}

@@ -462,7 +462,7 @@ function UseCases() {
         { text: 'Content creator payouts', href: '/use-cases/content-creator-payouts' },
         { text: 'Commission distributions', href: '/use-cases/commission-distributions' },
       ],
-      image: '/company/1.jpg',
+      image: '/company/mass-payout.jpg',
     },
     {
       title: 'International Payments',
@@ -472,7 +472,7 @@ function UseCases() {
         { text: 'Marketplace payments', href: '/use-cases/marketplace-payments' },
         { text: 'Global supplier payments', href: '/use-cases/global-supplier-payments' },
       ],
-      image: '/company/2.jpg',
+      image: '/company/international-payments.jpg',
     },
     {
       title: 'Accounts Payable',
@@ -482,7 +482,7 @@ function UseCases() {
         { text: 'Recurring payments', href: '/use-cases/recurring-payments' },
         { text: 'Invoice automation', href: '/use-cases/invoice-automation' },
       ],
-      image: '/company/3.jpg',
+      image: '/company/account-payable.jpg',
     },
   ]
 
