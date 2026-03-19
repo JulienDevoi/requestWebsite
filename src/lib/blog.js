@@ -1,8 +1,12 @@
+import { virtualCardGuideBody } from './posts/virtual-credit-card-business-guide'
+
 export const categories = [
   { slug: 'product-updates', title: 'Product Updates' },
   { slug: 'company-news', title: 'Company News' },
   { slug: 'insights', title: 'Insights' },
   { slug: 'stablecoins', title: 'Stablecoins' },
+  { slug: 'corporate-cards', title: 'Corporate Cards' },
+  { slug: 'guides', title: 'Guides' },
 ]
 
 export const posts = [
@@ -113,6 +117,18 @@ Depending on your specific needs and risk tolerance, you must carefully choose t
 At Request Finance, USDC stands out as the cryptocurrency of choice, accounting for [over 33% of all crypto payments](https://www.request.finance/post/request-finance-in-numbers-july-2023-new-ath-in-crypto-payments) made predominantly by our enterprise clientele. USD-pegged stablecoins remain a favored option for enterprise crypto payments, representing 57% of all crypto payments processed.
 
 As one of the largest crypto payroll solutions with [nearly $350 million in total crypto payments volume](https://www.request.finance/post/request-finance-in-numbers-june-2023), Request Finance [supports over 10 types of stablecoins](https://app.gitbook.com/@request-network/s/support/currencies-supported) to help Web3 businesses send and receive stablecoins easily. Learn how you can simplify and automate your stablecoin payments with Request Finance [here](https://www.request.finance/post/we-just-made-crypto-payroll-better).`,
+  },
+  {
+    slug: 'virtual-credit-card-business-guide',
+    title: 'Virtual Credit Cards for Business: A Practical Guide for Finance Teams',
+    excerpt:
+      'What is a virtual credit card, how does it work, and when does it actually make sense for your finance team? A practical, no-fluff guide for CFOs, controllers, and AP/AR teams.',
+    publishedAt: '2026-03-19',
+    author: { name: 'Request Finance', image: null },
+    mainImage: null,
+    featured: true,
+    categories: ['insights', 'corporate-cards'],
+    body: virtualCardGuideBody,
   },
 ]
 

@@ -8,6 +8,7 @@ import { Heading, Subheading } from '@/components/text'
 import { getPostBySlug, resolveCategories } from '@/lib/blog'
 import { ChevronLeftIcon } from '@heroicons/react/16/solid'
 import { TableOfContents } from './TableOfContents'
+import { blogComponents } from '@/components/blog/blog-components'
 import dayjs from 'dayjs'
 import { notFound } from 'next/navigation'
 
@@ -37,28 +38,35 @@ function getTocFromBody(body) {
     })
 }
 
-// Parse [text](url) in paragraphs and return React nodes (text + <a>)
 function parseParagraphWithLinks(text) {
   const parts = []
   let lastIndex = 0
-  const re = /\[([^\]]+)\]\(([^)]+)\)/g
+  const re = /(\*\*(.+?)\*\*)|(\[([^\]]+)\]\(([^)]+)\))/g
   let match
   let key = 0
   while ((match = re.exec(text)) !== null) {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index))
     }
-    parts.push(
-      <a
-        key={`link-${key++}`}
-        href={match[2]}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-medium text-gray-950 underline data-hover:text-gray-950/75"
-      >
-        {match[1]}
-      </a>
-    )
+    if (match[1]) {
+      parts.push(
+        <strong key={`bold-${key++}`} className="font-semibold text-gray-950">
+          {match[2]}
+        </strong>
+      )
+    } else if (match[3]) {
+      parts.push(
+        <a
+          key={`link-${key++}`}
+          href={match[5]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-gray-950 underline data-hover:text-gray-950/75"
+        >
+          {match[4]}
+        </a>
+      )
+    }
     lastIndex = re.lastIndex
   }
   if (lastIndex < text.length) {
@@ -185,6 +193,35 @@ export default async function BlogPost({ params }) {
                             className="w-full rounded-2xl"
                           />
                         </figure>
+                      )
+                    }
+                    // Custom embedded component
+                    if (trimmed.startsWith('[COMPONENT:') && trimmed.endsWith(']')) {
+                      const componentName = trimmed.slice(11, -1).trim()
+                      const Component = blogComponents[componentName]
+                      if (Component) return <Component key={index} />
+                      return null
+                    }
+                    // Blockquote
+                    if (trimmed.startsWith('> ')) {
+                      const lines = trimmed.split('\n')
+                      const quoteLines = []
+                      let attribution = null
+                      for (const line of lines) {
+                        const content = line.replace(/^>\s?/, '')
+                        if (content.startsWith('\u2014 ')) {
+                          attribution = content
+                        } else {
+                          quoteLines.push(content)
+                        }
+                      }
+                      return (
+                        <blockquote key={index} className="my-8 border-l-[3px] border-gray-300 pl-5">
+                          <p className="text-base/7 italic text-gray-600">{quoteLines.join(' ')}</p>
+                          {attribution && (
+                            <footer className="mt-2 text-sm not-italic text-gray-500">{attribution}</footer>
+                          )}
+                        </blockquote>
                       )
                     }
                     // h2

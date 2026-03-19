@@ -313,7 +313,7 @@ export default async function Blog({ searchParams }) {
         <Navbar />
         <Subheading className="mt-16">Resources</Subheading>
         <Heading as="h1" className="mt-2">
-          Resources Hub for Finance Leaders.
+          Education Hub for Finance Leaders.
         </Heading>
         <Lead className="mt-6 max-w-3xl">
           Practical guides, expert insights, and industry news to help finance
