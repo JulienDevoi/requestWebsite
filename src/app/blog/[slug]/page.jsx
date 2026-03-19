@@ -153,7 +153,7 @@ export default async function BlogPost({ params }) {
           {post.title}
         </Heading>
         <div className="mt-16 grid grid-cols-1 gap-8 pb-24 lg:grid-cols-[15rem_1fr] xl:grid-cols-[15rem_1fr_15rem]">
-          <div className="flex flex-wrap items-center gap-8 max-lg:justify-between lg:self-start lg:sticky lg:top-8 lg:max-h-[calc(100vh-2rem)] lg:flex-col lg:items-start lg:overflow-y-auto">
+          <div className="flex flex-col items-start gap-4 lg:self-start lg:sticky lg:top-8 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
             {resolvedCategories.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {resolvedCategories.map((category) => (
