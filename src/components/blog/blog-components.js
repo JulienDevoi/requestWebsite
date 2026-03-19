@@ -6,6 +6,7 @@ import { VirtualCardFitTables } from './virtual-cards/VirtualCardFitTables'
 import { VirtualCardScenarios } from './virtual-cards/VirtualCardScenarios'
 import { VirtualCardTestimonials } from './virtual-cards/VirtualCardTestimonials'
 import { VirtualCardFAQ } from './virtual-cards/VirtualCardFAQ'
+import { VirtualCardFramework } from './virtual-cards/VirtualCardFramework'
 
 export const blogComponents = {
   'virtual-card-bar-chart': VirtualCardBarChart,
@@ -16,4 +17,5 @@ export const blogComponents = {
   'virtual-card-scenarios': VirtualCardScenarios,
   'virtual-card-testimonials': VirtualCardTestimonials,
   'virtual-card-faq': VirtualCardFAQ,
+  'virtual-card-framework': VirtualCardFramework,
 }

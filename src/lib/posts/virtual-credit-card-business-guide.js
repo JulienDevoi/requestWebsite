@@ -170,37 +170,7 @@ Look for: instant card freeze and termination, transaction notifications, and th
 
 The right tool depends on your operational context. Here is a framework based on common company profiles.
 
-### Early-stage startup (under 20 people, simple spend)
-
-**Primary need**: Track a handful of subscriptions, give founders and key hires a simple way to pay for tools.
-
-**What matters most**: Ease of issuance, basic spend limits, simple accounting sync.
-
-**Practical approach**: A fintech-native spend management tool will likely cover everything. Focus on accounting integration quality and monthly cost.
-
-### Growing company (20 to 200 people, multiple budget owners)
-
-**Primary need**: Give department heads autonomy without losing visibility. Manage a growing subscription stack.
-
-**What matters most**: Approval workflows, per-card limits, department-level reporting, solid accounting integration.
-
-**Practical approach**: Look for clear request-and-approve flows, the ability to attach cards to cost centres, and a strong accounting software integration.
-
-### Mid-market or enterprise (200+ people, multiple entities)
-
-**Primary need**: Control across entities, clean data for finance systems, international payment capabilities.
-
-**What matters most**: Multi-entity support, ERP integration (NetSuite, SAP), multi-currency support, robust user permissions.
-
-**Practical approach**: Evaluate seriously whether your ERP has a native virtual card integration. Fragmented setups create the reconciliation problem you were trying to solve.
-
-### Crypto-native or internationally distributed team
-
-**Primary need**: Pay vendors across multiple countries, manage multi-currency spend, minimise FX friction.
-
-**What matters most**: Multi-currency issuance, international acceptance, low FX fees.
-
-**Practical approach**: Look for platforms built for international operations from the ground up, not adapted from a domestic product.
+[COMPONENT:virtual-card-framework]
 
 ## Real Finance Scenarios
 
