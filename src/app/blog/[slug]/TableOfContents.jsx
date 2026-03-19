@@ -32,7 +32,7 @@ export function TableOfContents({ toc }) {
 
   return (
     <nav className="w-full lg:min-w-[14rem]" aria-label="On this page">
-      <h3 className="text-sm/6 font-medium text-gray-950/80">In this blog post</h3>
+      <p className="text-sm/6 font-medium text-gray-950/80">In this blog post</p>
       <ul className="mt-3 space-y-1 border-l border-gray-200 pl-4 text-sm/6">
         {toc.map(({ id, text, level }) => {
           const isActive = id === activeId

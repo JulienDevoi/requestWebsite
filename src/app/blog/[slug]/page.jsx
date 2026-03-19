@@ -146,7 +146,7 @@ export default async function BlogPost({ params }) {
       <GradientBackground />
       <Container>
         <Navbar />
-        <Subheading className="mt-16">
+        <Subheading as="p" className="mt-16">
           {dayjs(post.publishedAt).format('dddd, MMMM D, YYYY')}
         </Subheading>
         <Heading as="h1" className="mt-2">
