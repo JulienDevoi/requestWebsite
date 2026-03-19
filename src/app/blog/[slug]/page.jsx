@@ -182,16 +182,24 @@ export default async function BlogPost({ params }) {
                 <div className="prose prose-gray max-w-none">
                   {post.body.split('\n\n').map((paragraph, index) => {
                     const trimmed = paragraph.trim()
-                    // Inline image: [IMAGE:/path/to/image.png]
+                    // Inline image: [IMAGE:/path/to/image.png] or [IMAGE:/path/to/image.png|caption text]
                     if (trimmed.startsWith('[IMAGE:') && trimmed.endsWith(']')) {
-                      const src = trimmed.slice(7, -1).trim()
+                      const inner = trimmed.slice(7, -1).trim()
+                      const pipeIdx = inner.indexOf('|')
+                      const src = pipeIdx > -1 ? inner.slice(0, pipeIdx).trim() : inner
+                      const caption = pipeIdx > -1 ? inner.slice(pipeIdx + 1).trim() : null
                       return (
                         <figure key={index} className="my-8">
                           <img
                             src={src}
-                            alt=""
+                            alt={caption || ''}
                             className="w-full rounded-2xl"
                           />
+                          {caption && (
+                            <figcaption className="mt-2 text-center text-sm italic text-gray-500">
+                              {caption}
+                            </figcaption>
+                          )}
                         </figure>
                       )
                     }

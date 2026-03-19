@@ -22,6 +22,8 @@ These numbers reflect a real operational shift: companies are replacing shared p
 
 A virtual credit card is a card that exists only as a number: no plastic, no physical delivery. It has the same components as a standard card: a 16-digit card number, an expiration date, and a CVV. The difference is that it is generated on demand, usually within seconds, through a card management platform or banking portal.
 
+[IMAGE:/blog/not-a-virtual-card.png|This is NOT a virtual card]
+
 From a payment network perspective, virtual cards run on the same rails as physical cards. A Visa virtual card is processed as a Visa transaction. The merchant's payment terminal or checkout does not know, and does not care, whether the card number came from a piece of plastic in someone's wallet or was generated programmatically an hour ago.
 
 What makes virtual cards operationally interesting for finance teams is not the "no plastic" part. It is the ability to:
