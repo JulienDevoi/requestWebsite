@@ -123,7 +123,7 @@ As one of the largest crypto payroll solutions with [nearly $350 million in tota
     title: 'Virtual Credit Cards for Business: A Practical Guide for Finance Teams',
     excerpt:
       'What is a virtual credit card, how does it work, and when does it actually make sense for your finance team? A practical, no-fluff guide for CFOs, controllers, and AP/AR teams.',
-    publishedAt: '2026-03-19',
+    publishedAt: '2026-03-20',
     author: { name: 'Request Finance', image: null },
     mainImage: '/blog/virtual-cards-for-businesses.png',
     featured: true,
