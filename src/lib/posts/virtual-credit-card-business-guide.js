@@ -70,25 +70,9 @@ The honest answer is that neither is universally better. They solve different pr
 
 [COMPONENT:virtual-card-comparison-table]
 
-### Where virtual cards are stronger
+Virtual cards are the stronger choice for most finance-controlled spending: online payments, SaaS subscriptions, vendor payments, and distributed team expenses. They offer instant issuance, precise per-card limits, single-use security, and built-in audit trails that physical cards cannot match. For any workflow where the goal is to control who spends what, where, and for how much, virtual cards give finance teams a level of granularity that is simply not possible with plastic.
 
-**Speed of issuance**. A virtual card is ready in seconds. A physical card takes days, sometimes over a week with international shipping.
-
-**Security**. A virtual card cannot be lost or stolen in the physical sense. Single-use cards expose essentially no reusable credentials. If a card number is compromised, it can be frozen or voided instantly.
-
-**Spend control precision**. You can lock a virtual card to a specific dollar amount and a specific merchant. You cannot do that with a physical card once it is in someone's wallet.
-
-**Subscription management**. Using a unique virtual card per subscription means you always know what is running and who authorised it. Cancelling a service is as simple as deactivating the card.
-
-**Audit trail**. Each card has a clear owner, purpose, and spend history. This makes audits significantly cleaner.
-
-### Where physical cards are still useful
-
-In-person purchases. Not every point-of-sale terminal supports mobile wallets, and some contexts (field operations, trade events, physical purchasing) still require a card you can hand over or tap.
-
-Cash withdrawals. Virtual cards cannot access ATMs. For teams that ever need petty cash or are operating in markets with limited card acceptance, physical cards still have a role.
-
-Relationship-driven vendor payments. Some suppliers, particularly in certain industries or regions, prefer or require physical card payments or do not have a clean online payment flow.
+Physical cards still earn their place in specific contexts. In-person purchasing, field operations, trade events, and markets where mobile wallet acceptance is spotty all require something you can tap or hand over. Cash access is another gap: virtual cards cannot reach an ATM. For companies where a meaningful share of spend happens offline or in regions with limited digital payment infrastructure, physical cards remain a necessary part of the mix.
 
 ## Why Finance Teams Use Virtual Cards
 
@@ -106,7 +90,7 @@ Subscription sprawl is a real problem. Tools get signed up on personal cards, mo
 
 ### Vendor payments and contractor fees
 
-Paying a contractor or a one-off vendor with a virtual card limits exposure. You issue a card for the exact invoice amount, the vendor charges it once, and the card expires. No ongoing access, no potential for a second charge.
+[Paying a contractor or a one-off vendor](https://www.requestfinance.com/products/accounts-payable) with a virtual card limits exposure. You issue a card for the exact invoice amount, the vendor charges it once, and the card expires. No ongoing access, no potential for a second charge.
 
 ### Remote and distributed teams
 
@@ -115,9 +99,6 @@ Virtual cards eliminate the need to physically hand over a card. A team member i
 ### Month-end reconciliation
 
 When each card has a clear purpose and owner, reconciliation becomes a matching exercise rather than a detective exercise. The finance team is not chasing receipts or trying to figure out which department bought which Adobe licence.
-
-> "We no longer have to comb through expense records for the whole month. Having everything in one spot has been really convenient. It's been a night-and-day difference."
-> \u2014 Fahem Islam, Accounting Associate, Snapdocs \u2014 reconciliation went from 5\u20136 hours/month to under 30 minutes
 
 ## When Virtual Cards Are a Great Fit, and When They Are Not
 
@@ -133,6 +114,8 @@ Not all virtual card platforms are built for finance operations. Some are design
 
 Does the platform support an approval step before a card is issued, or are cards issued on demand? For most companies above a certain size, a request-and-approve workflow is non-negotiable.
 
+[COMPONENT:testimonial-laura]
+
 ### Spend limits and merchant controls
 
 Can you set limits per card? Can you restrict a card to a specific merchant category (MCCs) or even a specific vendor? Hard limits that cannot be overridden by the cardholder are meaningfully different from soft limits that just send an alert.
@@ -145,8 +128,9 @@ Single-use cards are best for one-off vendor payments or high-security situation
 
 This is frequently underweighted in evaluation. A virtual card platform that does not integrate with your accounting software (QuickBooks, Xero, NetSuite, Sage, etc.) creates a manual data entry step that erodes much of the efficiency gain.
 
-> "Taking corporate credit card transactions away from the traditional banks to a product that directly integrates with NetSuite was a game changer. Now we save time and make better decisions."
-> \u2014 David Watson, Group Financial Controller, State of Play Hospitality
+[COMPONENT:testimonial-brad]
+
+[COMPONENT:testimonial-david]
 
 ### Multi-entity support
 
@@ -154,7 +138,7 @@ If your company operates across multiple legal entities, check whether the platf
 
 ### International payments and FX
 
-If your team makes payments in multiple currencies, understand the FX fees involved. Some platforms charge spreads on top of the exchange rate. For companies with meaningful international spend, FX costs can outweigh convenience benefits if not evaluated carefully.
+If your team [makes payments in multiple currencies](https://www.requestfinance.com/products/stablecoin-payments), understand the FX fees involved. Some platforms charge spreads on top of the exchange rate. For companies with meaningful international spend, FX costs can outweigh convenience benefits if not evaluated carefully.
 
 ### User permissions and role management
 
@@ -163,6 +147,8 @@ Can you control who can issue cards, who can approve requests, and who can see s
 ### Reporting and audit trail
 
 Real-time transaction visibility is table stakes. What matters beyond that is whether the reporting is actually useful for month-end close, budget tracking, and internal audit. Can you filter by department, project, vendor, card?
+
+[COMPONENT:testimonial-g2-user]
 
 ### Security controls
 

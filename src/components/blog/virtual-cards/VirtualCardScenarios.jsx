@@ -22,8 +22,18 @@ export function VirtualCardScenarios() {
       title: 'Scenario 3 — Paying international contractors',
       problem:
         'A finance team pays eight contractors in five countries. Each invoices differently, and reconciliation at month-end is a spreadsheet exercise.',
-      solution:
-        'Issue a single-use virtual card per contractor payment, for the exact invoice amount, after the invoice is approved. The contractor charges it once. The card expires.',
+      solution: (
+        <>
+          Issue a single-use virtual card per contractor payment, for the exact invoice amount,{' '}
+          <a
+            href="https://www.requestfinance.com/products/accounts-payable"
+            className="font-medium text-gray-950 underline data-hover:text-gray-950/75"
+          >
+            after the invoice is approved
+          </a>
+          . The contractor charges it once. The card expires.
+        </>
+      ),
       caveat:
         'Not all contractors have the infrastructure to charge a card. Verify payment method preferences before building the workflow around virtual cards.',
     },
@@ -48,28 +58,38 @@ export function VirtualCardScenarios() {
   ]
 
   return (
-    <div className="my-10 space-y-4">
-      {scenarios.map((scenario) => (
-        <div key={scenario.title} className="overflow-hidden rounded-xl border border-gray-200">
-          <div className="bg-gray-900 px-5 py-3">
-            <p className="text-sm font-semibold text-white">{scenario.title}</p>
+    <div className="my-10 overflow-hidden rounded-xl border border-gray-200 bg-white">
+      <div className="px-5 pt-5 sm:px-7 sm:pt-7">
+        <p className="text-sm font-semibold leading-snug text-gray-950">
+          Real finance scenarios — how virtual cards solve specific problems
+        </p>
+        <p className="mt-1 text-xs text-gray-400">
+          Five practical examples from common finance workflows
+        </p>
+      </div>
+      <div className="space-y-3 px-5 pb-5 pt-4 sm:px-7 sm:pb-7">
+        {scenarios.map((scenario) => (
+          <div key={scenario.title} className="overflow-hidden rounded-lg border border-gray-200">
+            <div className="bg-gray-50 px-4 py-2.5">
+              <p className="text-sm font-semibold text-gray-950">{scenario.title}</p>
+            </div>
+            <div className="space-y-2.5 px-4 py-3">
+              <div>
+                <span className="text-sm font-semibold text-gray-950">The problem: </span>
+                <span className="text-sm text-gray-700">{scenario.problem}</span>
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-gray-950">How a virtual card helps: </span>
+                <span className="text-sm text-gray-700">{scenario.solution}</span>
+              </div>
+              <div>
+                <span className="text-sm font-semibold text-gray-500">Caveat: </span>
+                <span className="text-sm italic text-gray-500">{scenario.caveat}</span>
+              </div>
+            </div>
           </div>
-          <div className="space-y-3 px-5 py-4">
-            <div>
-              <span className="text-sm font-semibold text-gray-950">The problem: </span>
-              <span className="text-sm text-gray-700">{scenario.problem}</span>
-            </div>
-            <div>
-              <span className="text-sm font-semibold text-gray-950">How a virtual card helps: </span>
-              <span className="text-sm text-gray-700">{scenario.solution}</span>
-            </div>
-            <div>
-              <span className="text-sm font-semibold text-gray-500">Caveat: </span>
-              <span className="text-sm italic text-gray-500">{scenario.caveat}</span>
-            </div>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

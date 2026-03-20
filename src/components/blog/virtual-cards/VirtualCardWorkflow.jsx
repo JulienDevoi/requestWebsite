@@ -13,7 +13,7 @@ export function VirtualCardWorkflow() {
       <div className="overflow-x-auto px-5 pb-2 sm:px-7">
         <svg
           width="100%"
-          viewBox="0 0 680 560"
+          viewBox="0 0 740 560"
           xmlns="http://www.w3.org/2000/svg"
           className="mt-4 min-w-[480px]"
         >
@@ -69,17 +69,17 @@ export function VirtualCardWorkflow() {
           <text x="340" y="162" textAnchor="middle" dominantBaseline="central" fontSize="14" fontWeight="500" fill="#78350f">Approval?</text>
 
           {/* Arrow right to rejected */}
-          <line x1="440" y1="162" x2="466" y2="162" stroke="#ef4444" strokeWidth="1.5" markerEnd="url(#wf-arr-red)" />
-          <text x="453" y="153" textAnchor="middle" fontSize="11" fill="#b91c1c">Rejected</text>
+          <line x1="440" y1="162" x2="480" y2="162" stroke="#ef4444" strokeWidth="1.5" markerEnd="url(#wf-arr-red)" />
+          <text x="460" y="150" textAnchor="middle" fontSize="11" fill="#b91c1c">Rejected</text>
 
           {/* Rejected box */}
-          <rect x="468" y="134" width="186" height="56" rx="8" fill="#fef2f2" stroke="#ef4444" strokeWidth="1.5" />
-          <text x="561" y="157" textAnchor="middle" dominantBaseline="central" fontSize="14" fontWeight="500" fill="#7f1d1d">Request declined</text>
-          <text x="561" y="176" textAnchor="middle" dominantBaseline="central" fontSize="12" fill="#b91c1c">Requester notified</text>
+          <rect x="482" y="134" width="186" height="56" rx="8" fill="#fef2f2" stroke="#ef4444" strokeWidth="1.5" />
+          <text x="575" y="157" textAnchor="middle" dominantBaseline="central" fontSize="14" fontWeight="500" fill="#7f1d1d">Request declined</text>
+          <text x="575" y="176" textAnchor="middle" dominantBaseline="central" fontSize="12" fill="#b91c1c">Requester notified</text>
 
           {/* Rejected loop back */}
-          <path d="M655 162 L655 40 L472 40" fill="none" stroke="#ef4444" strokeWidth="1" strokeDasharray="4 3" markerEnd="url(#wf-arr-red)" />
-          <text x="662" y="104" textAnchor="start" fontSize="11" fill="#b91c1c">Resubmit</text>
+          <path d="M669 162 L700 162 L700 40 L472 40" fill="none" stroke="#ef4444" strokeWidth="1" strokeDasharray="4 3" markerEnd="url(#wf-arr-red)" />
+          <text x="700" y="104" textAnchor="middle" fontSize="11" fill="#b91c1c">Resubmit</text>
 
           {/* Arrow down from diamond: Approved */}
           <line x1="340" y1="206" x2="340" y2="232" stroke="#9ca3af" strokeWidth="1.5" markerEnd="url(#wf-arr-gray)" />

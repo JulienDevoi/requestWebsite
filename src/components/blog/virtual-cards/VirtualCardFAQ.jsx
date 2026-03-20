@@ -58,18 +58,28 @@ export function VirtualCardFAQ() {
   ]
 
   return (
-    <div className="my-10 space-y-2">
-      {items.map((item, index) => (
-        <Disclosure key={index} as="div" defaultOpen={index === 0}>
-          <DisclosureButton className="flex w-full cursor-pointer items-center justify-between rounded-lg bg-gray-50 px-5 py-3.5 text-left text-sm font-semibold text-gray-950 transition hover:bg-gray-100">
-            <span>{item.question}</span>
-            <ChevronDownIcon className="size-4 shrink-0 text-gray-400 transition-transform duration-200 data-[open]:rotate-180" />
-          </DisclosureButton>
-          <DisclosurePanel className="px-5 py-4 text-sm leading-relaxed text-gray-600">
-            {item.answer}
-          </DisclosurePanel>
-        </Disclosure>
-      ))}
+    <div className="my-10 overflow-hidden rounded-xl border border-gray-200 bg-white">
+      <div className="px-5 pt-5 sm:px-7 sm:pt-7">
+        <p className="text-sm font-semibold leading-snug text-gray-950">
+          Frequently asked questions about virtual cards for business
+        </p>
+        <p className="mt-1 text-xs text-gray-400">
+          Answers to the most common questions from finance teams
+        </p>
+      </div>
+      <div className="space-y-1 px-5 pb-5 pt-4 sm:px-7 sm:pb-7">
+        {items.map((item, index) => (
+          <Disclosure key={index} as="div" defaultOpen={index === 0}>
+            <DisclosureButton className="flex w-full cursor-pointer items-center justify-between rounded-lg bg-gray-50 px-4 py-3 text-left text-sm font-semibold text-gray-950 transition hover:bg-gray-100">
+              <span>{item.question}</span>
+              <ChevronDownIcon className="size-4 shrink-0 text-gray-400 transition-transform duration-200 data-[open]:rotate-180" />
+            </DisclosureButton>
+            <DisclosurePanel className="px-4 py-3 text-sm leading-relaxed text-gray-600">
+              {item.answer}
+            </DisclosurePanel>
+          </Disclosure>
+        ))}
+      </div>
     </div>
   )
 }

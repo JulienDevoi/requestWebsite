@@ -7,6 +7,12 @@ import { VirtualCardScenarios } from './virtual-cards/VirtualCardScenarios'
 import { VirtualCardTestimonials } from './virtual-cards/VirtualCardTestimonials'
 import { VirtualCardFAQ } from './virtual-cards/VirtualCardFAQ'
 import { VirtualCardFramework } from './virtual-cards/VirtualCardFramework'
+import {
+  TestimonialLaura,
+  TestimonialBrad,
+  TestimonialG2User,
+  TestimonialDavid,
+} from './virtual-cards/VirtualCardInlineTestimonial'
 
 export const blogComponents = {
   'virtual-card-bar-chart': VirtualCardBarChart,
@@ -18,4 +24,8 @@ export const blogComponents = {
   'virtual-card-testimonials': VirtualCardTestimonials,
   'virtual-card-faq': VirtualCardFAQ,
   'virtual-card-framework': VirtualCardFramework,
+  'testimonial-laura': TestimonialLaura,
+  'testimonial-brad': TestimonialBrad,
+  'testimonial-g2-user': TestimonialG2User,
+  'testimonial-david': TestimonialDavid,
 }

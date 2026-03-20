@@ -15,7 +15,7 @@ const profiles = [
   },
   {
     label: 'Growing company',
-    size: '20–200 people, multiple budget owners',
+    size: '20\u2013200 people, multiple budget owners',
     color: 'emerald',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -61,25 +61,21 @@ const profiles = [
 
 const colorMap = {
   blue: {
-    badge: 'bg-blue-50 text-blue-700 ring-blue-200',
     icon: 'bg-blue-100 text-blue-600',
     accent: 'border-t-blue-500',
     label: 'text-blue-600',
   },
   emerald: {
-    badge: 'bg-emerald-50 text-emerald-700 ring-emerald-200',
     icon: 'bg-emerald-100 text-emerald-600',
     accent: 'border-t-emerald-500',
     label: 'text-emerald-600',
   },
   violet: {
-    badge: 'bg-violet-50 text-violet-700 ring-violet-200',
     icon: 'bg-violet-100 text-violet-600',
     accent: 'border-t-violet-500',
     label: 'text-violet-600',
   },
   amber: {
-    badge: 'bg-amber-50 text-amber-700 ring-amber-200',
     icon: 'bg-amber-100 text-amber-600',
     accent: 'border-t-amber-500',
     label: 'text-amber-600',
@@ -88,16 +84,24 @@ const colorMap = {
 
 export function VirtualCardFramework() {
   return (
-    <div className="my-10">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div className="my-10 overflow-hidden rounded-xl border border-gray-200 bg-white">
+      <div className="px-5 pt-5 sm:px-7 sm:pt-7">
+        <p className="text-sm font-semibold leading-snug text-gray-950">
+          Choosing the right virtual card setup — by company profile
+        </p>
+        <p className="mt-1 text-xs text-gray-400">
+          A framework based on size, complexity, and operational context
+        </p>
+      </div>
+      <div className="grid grid-cols-1 gap-3 px-5 pb-5 pt-4 sm:grid-cols-2 sm:px-7 sm:pb-7">
         {profiles.map((profile) => {
           const c = colorMap[profile.color]
           return (
             <div
               key={profile.label}
-              className={`relative overflow-hidden rounded-xl border border-gray-200 border-t-[3px] ${c.accent} bg-white`}
+              className={`overflow-hidden rounded-lg border border-gray-200 border-t-[3px] ${c.accent}`}
             >
-              <div className="px-5 pb-5 pt-4">
+              <div className="px-4 pb-4 pt-3">
                 <div className="flex items-center gap-3">
                   <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${c.icon}`}>
                     {profile.icon}
@@ -107,8 +111,7 @@ export function VirtualCardFramework() {
                     <p className="text-xs text-gray-400">{profile.size}</p>
                   </div>
                 </div>
-
-                <div className="mt-4 space-y-3">
+                <div className="mt-3 space-y-2.5">
                   <div>
                     <p className={`text-[11px] font-semibold uppercase tracking-wider ${c.label}`}>
                       Primary need
