@@ -19,7 +19,7 @@ function CallToAction({ eyebrow, title, description }) {
         {description}
       </p>
       <div className="mt-6">
-        <Button className="w-full sm:w-auto" href="/open">
+        <Button className="w-full sm:w-auto" href="https://app.request.finance/signup" target="_blank">
           Open my account
         </Button>
       </div>
@@ -93,7 +93,9 @@ function Sitemap() {
           <SitemapLink href="/guide">The Stablecoin Guide</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/customers">Customer Stories</SitemapLink>
-          <SitemapLink href="/open">Open my account</SitemapLink>
+          <SitemapLink href="/alternative-to">Why Switch to Request?</SitemapLink>
+          <SitemapLink href="https://app.request.finance/signup" target="_blank">Open my account</SitemapLink>
+          <SitemapLink href="https://app.request.finance/login" target="_blank">Log in</SitemapLink>
         </SitemapLinks>
       </div>
     </>

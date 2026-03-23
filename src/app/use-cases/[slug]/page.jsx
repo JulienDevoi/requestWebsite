@@ -111,7 +111,7 @@ export default async function UseCasePage({ params }) {
           image={useCase.introImage}
           imageAlt={`${useCase.name} illustration`}
           buttonText={useCase.introButtonText}
-          buttonHref="/open"
+          buttonHref="https://app.request.finance/signup"
         />
         <div className="bg-linear-to-b from-white from-50% to-gray-100">
           <div className="py-32">

@@ -1,4 +1,6 @@
 import { virtualCardGuideBody } from './posts/virtual-credit-card-business-guide'
+import { cryptoTreasuryGuideBody } from './posts/crypto-treasury-management-guide'
+import { stablecoinDecisionBody } from './posts/b2b-stablecoin-payments-decision-framework'
 
 export const categories = [
   { slug: 'product-updates', title: 'Product Updates' },
@@ -7,9 +9,34 @@ export const categories = [
   { slug: 'stablecoins', title: 'Stablecoins' },
   { slug: 'corporate-cards', title: 'Corporate Cards' },
   { slug: 'guides', title: 'Guides' },
+  { slug: 'crypto-treasury', title: 'Crypto Treasury' },
 ]
 
 export const posts = [
+  {
+    slug: 'b2b-stablecoin-payments-decision-framework',
+    title: 'Should Your Company Use Stablecoins? A Decision Framework for B2B Payments',
+    excerpt:
+      'Not every company needs stablecoins. Use this decision framework to determine when B2B stablecoin payments actually make sense for your finance operations, and when they do not.',
+    publishedAt: '2026-03-22',
+    author: { name: 'Request Finance', image: null },
+    mainImage: '/blog/b2b-stablecoin-payments.png',
+    featured: true,
+    categories: ['stablecoins', 'guides'],
+    body: stablecoinDecisionBody,
+  },
+  {
+    slug: 'crypto-treasury-management-guide',
+    title: 'Crypto Treasury Management: The Ultimate Guide for Modern CFOs',
+    excerpt:
+      'A practical, no-fluff guide to managing your organization\'s crypto treasury, covering liquidity, risk, funding, DAO operations, wallet infrastructure, and the tools that make it work.',
+    publishedAt: '2026-03-23',
+    author: { name: 'Request Finance', image: null },
+    mainImage: '/blog/crypto-treasury-management.png',
+    featured: true,
+    categories: ['crypto-treasury', 'guides'],
+    body: cryptoTreasuryGuideBody,
+  },
   {
     slug: 'stablecoins-how-they-work-and-what-they-mean-for-your-business',
     title: 'Stablecoins: How They Work and What They Mean for Your Business',

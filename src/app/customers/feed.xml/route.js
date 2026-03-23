@@ -19,6 +19,14 @@ const mockPosts = [
     publishedAt: '2025-03-12',
     author: { name: 'Polemos' },
   },
+  {
+    slug: 'tokenizing-a-real-estate-empire-with-realt',
+    title: 'Tokenizing a Real Estate Empire with RealT',
+    excerpt:
+      'How RealT used Request Finance on Gnosis Chain for USDC payouts, xDAI billing, and a WooCommerce checkout gateway—plus results and the full RealT story.',
+    publishedAt: '2025-03-13',
+    author: { name: 'RealT' },
+  },
 ]
 
 export async function GET(req) {

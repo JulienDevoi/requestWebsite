@@ -32,7 +32,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
-  { href: '/open', label: 'Open Account' }
+  { href: 'https://app.request.finance/signup', label: 'Open Account', target: '_blank' }
 ]
 
 const industries = [
@@ -163,10 +163,11 @@ function DesktopNav() {
           </div>
         </div>
       </PlusGridItem>
-      {links.map(({ href, label }) => (
+      {links.map(({ href, label, target }) => (
         <PlusGridItem key={href} className="relative flex items-center">
           <Link
             href={href}
+            target={target}
             className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5"
           >
             {label}
@@ -272,7 +273,7 @@ function MobileNav() {
             ))}
           </div>
         </motion.div>
-        {links.map(({ href, label }, linkIndex) => (
+        {links.map(({ href, label, target }, linkIndex) => (
           <motion.div
             initial={{ opacity: 0, rotateX: -90 }}
             animate={{ opacity: 1, rotateX: 0 }}
@@ -283,7 +284,7 @@ function MobileNav() {
             }}
             key={href}
           >
-            <Link href={href} className="text-base font-medium text-gray-950">
+            <Link href={href} target={target} className="text-base font-medium text-gray-950">
               {label}
             </Link>
           </motion.div>

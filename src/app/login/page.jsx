@@ -133,7 +133,7 @@ export default function Login() {
           </form>
           <div className="m-1.5 rounded-lg bg-gray-50 py-4 text-center text-sm/5 ring-1 ring-black/5">
             Not a member?{' '}
-            <Link href="/open" className="font-medium hover:text-gray-600">
+            <Link href="https://app.request.finance/signup" target="_blank" className="font-medium hover:text-gray-600">
               Create an account
             </Link>
           </div>

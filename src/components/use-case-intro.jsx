@@ -11,7 +11,7 @@ export function UseCaseIntro({
   image,
   imageAlt,
   buttonText,
-  buttonHref = '/open',
+  buttonHref = 'https://app.request.finance/signup',
 }) {
   return (
     <div className="bg-linear-to-b from-white from-50% to-gray-100 pt-32 pb-32">
@@ -45,7 +45,7 @@ export function UseCaseIntro({
             )}
             {buttonText && (
               <div className="mt-6">
-                <Button className="w-full sm:w-auto" href={buttonHref}>
+                <Button className="w-full sm:w-auto" href={buttonHref} target="_blank">
                   {buttonText}
                 </Button>
               </div>

@@ -87,6 +87,16 @@ const mockPosts = [
     featured: true,
     categories: ['case-studies'],
   },
+  {
+    slug: 'tokenizing-a-real-estate-empire-with-realt',
+    title: 'Tokenizing a Real Estate Empire with RealT',
+    excerpt: 'How RealT used Request Finance on Gnosis Chain for USDC payouts, xDAI billing, and a WooCommerce checkout gateway—plus results and the full RealT story.',
+    publishedAt: '2025-03-13',
+    author: { name: 'RealT', image: 'https://cdn.prod.website-files.com/606beb3c434b8b5fced72854/627e67b9c939f344a667d0a5_Icon%20realT.jpeg' },
+    mainImage: '/customers/realt/realt.png',
+    featured: true,
+    categories: ['case-studies'],
+  },
 ]
 
 const postsPerPage = 5
