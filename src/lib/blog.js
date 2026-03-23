@@ -167,8 +167,8 @@ export function getAllCategories() {
 
 /** All posts sorted newest-first, without body (for listings). */
 export function getAllPosts() {
-  return posts
-    .map(({ body: _body, ...rest }) => rest)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- body intentionally omitted for listings
+  return posts.map(({ body, ...rest }) => rest)
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
 }
 

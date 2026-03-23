@@ -3,9 +3,6 @@ import NextLink from 'next/link'
 import { forwardRef } from 'react'
 
 export const Link = forwardRef(function Link(props, ref) {
-  return (
-    <Headless.DataInteractive>
-      <NextLink ref={ref} {...props} />
-    </Headless.DataInteractive>
-  )
+  // DataInteractive defaults to Fragment; `as` must be a real element/component so Headless UI can forward ref + event props.
+  return <Headless.DataInteractive as={NextLink} ref={ref} {...props} />
 })
