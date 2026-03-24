@@ -71,11 +71,14 @@ export function DemoContent() {
               <div className="lg:flex lg:space-x-12 xl:space-x-16">
                 {/* Left side */}
                 <div className="grow lg:mt-16 mb-16 lg:mb-0 text-center lg:text-left">
-                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-8 sm:text-5xl">The new standard in business spend management</h1>
+                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-4 sm:text-5xl">Your AP process is costing you more than you think</h1>
+                  <p className="text-lg text-gray-600 mb-4 max-w-xl mx-auto lg:mx-0">
+                  Book a 15-min demo and see what fixing it actually looks like:
+                  </p>
 
                   <div className="mb-12">
-                    <ul className="inline-flex flex-col text-slate-500 space-y-2.5">
-                      <li className="flex items-center text-left">
+                    <ul className="inline-flex flex-col text-slate-500 space-y-2.5 max-w-xl mx-auto lg:mx-0 text-left w-full">
+                      <li className="flex items-center text-left w-full">
                         <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
@@ -83,9 +86,9 @@ export function DemoContent() {
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>Payments without delays</span>
+                        <span>Automate invoice capture, approval, and payment in one workflow</span>
                       </li>
-                      <li className="flex items-center text-left">
+                      <li className="flex items-center text-left w-full">
                         <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
@@ -93,9 +96,9 @@ export function DemoContent() {
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>No hidden fees, ever</span>
+                        <span>Save 20+ hours a month your team is currently doing manually</span>
                       </li>
-                      <li className="flex items-center text-left">
+                      <li className="flex items-center text-left w-full">
                         <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
@@ -103,17 +106,7 @@ export function DemoContent() {
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>Simple to use, seamless to integrate</span>
-                      </li>
-                      <li className="flex items-center text-left">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <span>Built for global operations</span>
+                        <span>Pay vendors in any currency, including stablecoins, without wire fees</span>
                       </li>
                     </ul>
                   </div>
