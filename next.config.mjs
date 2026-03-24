@@ -38,9 +38,9 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://*.beamanalytics.com https://beamanalytics.com https://api.fontshare.com https://static.hsappstatic.net https://js.hs-scripts.com https://js.hsforms.net https://plausible.io",
-              "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.weglot.com https://weglot.com",
+              "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.weglot.com https://weglot.com https://static.hsappstatic.net https://js.hsforms.net https://fonts.googleapis.com",
               "img-src 'self' data: https: https://cdn.weglot.com https://weglot.com https://cdn-api-weglot.com",
-              "font-src 'self' https://api.fontshare.com data:",
+              "font-src 'self' https://api.fontshare.com data: https://static.hsappstatic.net https://js.hsforms.net https://fonts.gstatic.com",
               "connect-src 'self' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https: https://beamanalytics.b-cdn.net https://beamanalytics.com https://api.hubapi.com https://api.hubspot.com https://content.request.finance https://plausible.io",
               "frame-src 'self' https://content.request.finance https://app.hubspot.com",
               "frame-ancestors 'self'",
