@@ -80,6 +80,17 @@ export default function RootLayout({ children }) {
             gtag('config', 'AW-708726534');
           `}
         </Script>
+        {/* Privacy-friendly analytics by Plausible — https://plausible.io/docs/integration-guides */}
+        <Script
+          src="https://plausible.io/js/pa-cGM-QYfVbusT8oUQwySvd.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`
+            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+            plausible.init()
+          `}
+        </Script>
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
