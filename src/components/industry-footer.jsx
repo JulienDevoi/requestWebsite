@@ -18,9 +18,12 @@ function CallToAction({ eyebrow, title, description }) {
       <p className="mx-auto mt-6 max-w-xl text-sm/6 text-gray-500">
         {description}
       </p>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <Button className="w-full sm:w-auto" href="https://app.request.finance/signup" target="_blank">
           Open my account
+        </Button>
+        <Button variant="secondary" className="w-full sm:w-auto" href="/demo">
+          Book a demo
         </Button>
       </div>
     </div>
@@ -96,6 +99,7 @@ function Sitemap() {
           <SitemapLink href="/alternative-to">Why Switch to Request?</SitemapLink>
           <SitemapLink href="https://app.request.finance/signup" target="_blank">Open my account</SitemapLink>
           <SitemapLink href="https://app.request.finance/login" target="_blank">Log in</SitemapLink>
+          <SitemapLink href="/demo">Book a demo</SitemapLink>
         </SitemapLinks>
       </div>
     </>

@@ -19,7 +19,6 @@ import { Testimonials } from '@/components/testimonials'
 import { Industries } from '@/components/industries'
 import { Security } from '@/components/security'
 import { Heading, Lead, Subheading } from '@/components/text'
-import { SmoothScrollButton } from '@/components/smooth-scroll-button'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
@@ -110,9 +109,9 @@ function HeroSaved() {
               </p>
               <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
                 <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
-                <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
-                  Discover how it works
-                </SmoothScrollButton>
+                <Button variant="secondary" href="/demo">
+                  Book a demo
+                </Button>
               </div>
               <div className="mt-10 flex flex-wrap items-center justify-start gap-4 sm:gap-6">
                 <div className="flex -space-x-3 sm:-space-x-4">
@@ -186,9 +185,9 @@ function HeroSavedVideoWhite() {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
-            <SmoothScrollButton variant="secondary" href="#proactive-spend-control">
-              Discover how it works
-            </SmoothScrollButton>
+            <Button variant="secondary" href="/demo">
+              Book a demo
+            </Button>
           </div>
         </div>
       </Container>
@@ -237,13 +236,13 @@ function Hero() {
             >
               Open my account
             </Button>
-            <SmoothScrollButton 
-              variant="secondary" 
-              href="#proactive-spend-control"
-              className="bg-white/15 text-white border-white/20 ring-white/20 data-hover:bg-white/20"
+            <Button
+              variant="secondary"
+              href="/demo"
+              className="bg-white/15 text-white ring-white/20 data-hover:bg-white/20"
             >
-              Discover how it works
-            </SmoothScrollButton>
+              Book a demo
+            </Button>
           </div>
         </div>
       </Container>

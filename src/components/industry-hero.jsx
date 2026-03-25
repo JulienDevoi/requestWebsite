@@ -30,8 +30,8 @@ export function IndustryHero({ title, description, image }) {
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
             <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
-            <Button variant="secondary" href="/pricing">
-              See pricing
+            <Button variant="secondary" href="/demo">
+              Book a demo
             </Button>
           </div>
         </div>

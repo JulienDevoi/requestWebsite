@@ -22,9 +22,12 @@ function CallToAction() {
         <br />
         Your account takes less than 5 minutes to create.
       </p>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <Button className="w-full sm:w-auto" href="https://app.request.finance/signup" target="_blank">
           Open my account
+        </Button>
+        <Button variant="secondary" className="w-full sm:w-auto" href="/demo">
+          Book a demo
         </Button>
       </div>
     </div>
@@ -100,6 +103,7 @@ function Sitemap() {
           <SitemapLink href="/alternative-to">Why Switch to Request?</SitemapLink>
           <SitemapLink href="https://app.request.finance/signup" target="_blank">Open my account</SitemapLink>
           <SitemapLink href="https://app.request.finance/login" target="_blank">Log in</SitemapLink>
+          <SitemapLink href="/demo">Book a demo</SitemapLink>
         </SitemapLinks>
       </div>
     </>

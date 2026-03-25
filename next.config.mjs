@@ -1,5 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    const app = 'https://app.request.finance'
+    return [
+      { source: '/login', destination: `${app}/login`, permanent: true },
+      { source: '/login/:path*', destination: `${app}/login`, permanent: true },
+      { source: '/book', destination: `${app}/signup`, permanent: true },
+      { source: '/book/:path*', destination: `${app}/signup`, permanent: true },
+      { source: '/onboarding', destination: `${app}/signup`, permanent: true },
+      { source: '/onboarding/:path*', destination: `${app}/signup`, permanent: true },
+      { source: '/open', destination: `${app}/signup`, permanent: true },
+      { source: '/open/:path*', destination: `${app}/signup`, permanent: true },
+    ]
+  },
   async headers() {
     return [
       {

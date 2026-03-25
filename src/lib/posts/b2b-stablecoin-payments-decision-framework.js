@@ -96,7 +96,7 @@ If the answer to all three is yes, stablecoins will likely reduce your costs and
 
 Start with one corridor, one payment type, one small batch. Measure the actual cost and settlement time against what you are doing today. The data will tell you whether to scale.
 
-[Request Finance](https://www.requestfinance.com/products/stablecoin-payments) lets companies send stablecoin payments to contractors, vendors, and affiliates worldwide, with built-in approval workflows, accounting integrations, and support for USDC and other major stablecoins. No wallet management required on the recipient side. [See how stablecoin payments work](https://www.requestfinance.com/products/stablecoin-payments) or [open your account in under 5 minutes](https://www.requestfinance.com/open).
+[Request Finance](https://www.requestfinance.com/products/stablecoin-payments) lets companies send stablecoin payments to contractors, vendors, and affiliates worldwide, with built-in approval workflows, accounting integrations, and support for USDC and other major stablecoins. No wallet management required on the recipient side. [See how stablecoin payments work](https://www.requestfinance.com/products/stablecoin-payments) or [open your account in under 5 minutes](https://app.request.finance/signup).
 
 ## FAQ
 

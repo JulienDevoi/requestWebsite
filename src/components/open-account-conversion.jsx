@@ -3,9 +3,7 @@
 import { useEffect } from 'react'
 
 /**
- * Tracks outbound clicks on Open account links (/open) for Google Ads conversion.
- * Listens for clicks on header, footer, homepage, and any other /open links.
- * Fires the conversion and lets the link navigate normally so /open always works.
+ * Tracks clicks that open a Request account (app signup) for Google Ads conversion.
  */
 export function OpenAccountConversionTracker() {
   useEffect(() => {
@@ -19,6 +17,19 @@ export function OpenAccountConversionTracker() {
       }
     }
 
+    function isOpenAccountHref(href) {
+      try {
+        const base = href.startsWith('http') ? href : new URL(href, window.location.origin).href
+        const u = new URL(base)
+        const isSignup =
+          u.hostname === 'app.request.finance' &&
+          (u.pathname === '/signup' || u.pathname.startsWith('/signup/'))
+        return isSignup
+      } catch {
+        return false
+      }
+    }
+
     function handleClick(e) {
       const anchor = e.target.closest('a[href]')
       if (!anchor) return
@@ -26,19 +37,8 @@ export function OpenAccountConversionTracker() {
       const href = anchor.getAttribute('href')
       if (!href) return
 
-      const pathname = href.startsWith('/')
-        ? new URL(href, window.location.origin).pathname
-        : (() => {
-            try {
-              return new URL(href).pathname
-            } catch {
-              return ''
-            }
-          })()
-
-      if (pathname === '/open' || pathname === '/open/') {
+      if (isOpenAccountHref(href)) {
         fireConversion()
-        // Let the default link behavior happen so navigation always works
       }
     }
 
