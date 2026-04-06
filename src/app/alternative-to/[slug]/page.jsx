@@ -8,6 +8,7 @@ import { Navbar } from '@/components/navbar'
 import { Heading, Subheading } from '@/components/text'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
+import { siteUrl } from '@/lib/config'
 import { getAlternativeBySlug, getAllAlternativeSlugs } from '@/data/alternatives'
 import { CheckIcon, XMarkIcon, MinusIcon } from '@heroicons/react/20/solid'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
@@ -61,11 +62,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: alt.metaTitle,
       description: alt.metaDescription,
-      url: `https://requestfinance.com/alternative-to/${alt.slug}`,
+      url: `${siteUrl}/alternative-to/${alt.slug}`,
       siteName: 'Request Finance',
       images: [
         {
-          url: 'https://requestfinance.com/images/thumbnail.png',
+          url: `${siteUrl}/images/thumbnail.png`,
           width: 1200,
           height: 630,
           alt: alt.metaTitle,
@@ -78,10 +79,10 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: alt.metaTitle,
       description: alt.metaDescription,
-      images: ['https://requestfinance.com/images/thumbnail.png'],
+      images: [`${siteUrl}/images/thumbnail.png`],
     },
     alternates: {
-      canonical: `https://requestfinance.com/alternative-to/${alt.slug}`,
+      canonical: `${siteUrl}/alternative-to/${alt.slug}`,
     },
   }
 }
@@ -280,12 +281,22 @@ export default async function AlternativePage({ params }) {
     '@type': 'WebPage',
     name: alt.metaTitle,
     description: alt.metaDescription,
-    url: `https://requestfinance.com/alternative-to/${alt.slug}`,
+    url: `${siteUrl}/alternative-to/${alt.slug}`,
     publisher: {
       '@type': 'Organization',
       name: 'Request Finance',
-      url: 'https://requestfinance.com',
+      url: siteUrl,
     },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Alternatives', item: `${siteUrl}/alternative-to` },
+      { '@type': 'ListItem', position: 3, name: `Request Finance vs ${alt.name}`, item: `${siteUrl}/alternative-to/${alt.slug}` },
+    ],
   }
 
   return (
@@ -293,6 +304,10 @@ export default async function AlternativePage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero */}

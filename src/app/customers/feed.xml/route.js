@@ -50,8 +50,8 @@ export async function GET(req) {
     description:
       'Discover how leading companies are using our platform to transform their business and achieve remarkable results.',
     author: {
-      name: 'Michael Foster',
-      email: 'michael.foster@example.com',
+      name: 'Request Finance',
+      email: 'hello@requestfinance.com',
     },
     id: siteUrl,
     link: siteUrl,

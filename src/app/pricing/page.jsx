@@ -17,331 +17,191 @@ import {
 } from '@heroicons/react/16/solid'
 import clsx from 'clsx'
 
-// Note: metadata moved to layout or handled via generateMetadata in a server component wrapper if needed
-
 const tiers = [
   {
     name: 'Basic',
     slug: 'basic',
-    description: 'Ideal for small businesses.',
-    priceMonthly: 600,
-    priceAnnually: 500,
-    href: '#',
+    description: 'For small teams getting started.',
+    priceMonthly: 300,
+    priceAnnually: 250,
+    href: 'https://app.request.finance/signup',
     highlights: [
-      { description: 'Accounts & Payments', isSection: true },
-      { description: 'Stablecoins & crypto transfers (up to $50,000/m in volume included)' },
-      { description: 'On-/Off-Ramp (0.45% to 1.00% fee)' },
-      { description: 'Cross-border payments' },
-      { description: 'Stablecoin account (Soon)' },
-      { description: 'Business Mastercards (Soon)', isSection: true },
-      { description: 'Unlimited cards' },
-      { description: 'Fund 1:1 in stablecoins' },
-      { description: 'Spending controls' },
-      { description: 'Accounts Payable', isSection: true },
-      { description: 'Bill management & import (OCR)' },
-      { description: 'Pay via stablecoins, ACH, SEPA, SWIFT, and more' },
-      { description: 'Payroll & Expenses', isSection: true },
-      { description: 'Payroll templates' },
-      { description: 'Reimbursement requests (via dedicated mobile app)' },
-      { description: 'Receivables', isSection: true },
-      { description: 'Unlimited invoices' },
+      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Up to 5 team members' },
+      { description: 'Up to 5 corporate cards' },
+      { description: 'Spend limits & controls' },
+      { description: 'One Virtual Account' },
+      { description: 'Bill Payments', isSection: true },
+      { description: 'Bill approval workflows' },
+      { description: 'Bill import & OCR' },
+      { description: 'Pay via ACH, SEPA, SWIFT, stablecoins & more' },
+      { description: 'Finance & Accounting', isSection: true },
       { description: 'Automated reconciliation' },
-      { description: 'Accounting', isSection: true },
-      { description: 'Transaction import (for up to 50,000 transactions)' },
-      { description: 'QuickBooks Online and Xero integrations' },
+      { description: 'QuickBooks Online & Xero integrations' },
       { description: 'Treasury & portfolio views' },
+      { description: 'Payroll & Expenses', isSection: true },
+      { description: 'Payroll templates & bulk upload' },
+      { description: 'Mobile expense claims' },
       { description: 'Support', isSection: true },
-      { description: 'Human support via Email & Chat (median response time 2h)' },
+      { description: 'Email & chat support (median response 2h)' },
     ],
     features: [
-      // Accounts
-      { section: 'Accounts', name: 'Stablecoin Account', value: true },
-      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
-      // Payments
-      { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: '$50,000' },
-      { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: '0.70%' },
-      { section: 'Payments', name: 'On-Ramp to stablecoins', value: 'Starting at 1%' },
-      { section: 'Payments', name: 'Off-Ramp to fiat (e.g. USD, EUR, ...)', value: 'Starting at 1%' },
-      { section: 'Payments', name: 'Global, cross-border bank payments', value: true },
-      { section: 'Payments', name: 'Fee-saving batch payments', value: true },
-      // Business Mastercards
-      { section: 'Business Mastercards', name: 'Virtual Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Physical Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Fund cards 1:1 in stablecoins', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Spending controls', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Advanced spending controls', value: false },
-      // Payables
-      { section: 'Payables', name: 'Pay bills via stablecoins, ACH, SEPA, SWIFT, and more', value: true },
-      { section: 'Payables', name: 'Double payment protection', value: true },
-      { section: 'Payables', name: 'Approval policies', value: false },
-      { section: 'Payables', name: 'Scam protection', value: true },
-      { section: 'Payables', name: 'Bills import/forwarding', value: true },
-      { section: 'Payables', name: 'Direct Payments (Single)', value: true },
-      { section: 'Payables', name: 'Direct Payments (Bulk Upload)', value: true },
-      // Payroll
-      { section: 'Payroll', name: 'Payroll templates', value: true },
-      { section: 'Payroll', name: 'Pay fiat compensation, using stablecoins', value: true },
-      { section: 'Payroll', name: 'One-off payments', value: true },
-      { section: 'Payroll', name: 'Automatic sending of salary receipts to employees', value: true },
-      { section: 'Payroll', name: 'Bulk upload for payroll', value: true },
-      // Expenses
-      { section: 'Expenses', name: 'Mobile app to let employees submit expense claims', value: true },
-      { section: 'Expenses', name: 'Pay fiat expenses, using stablecoins', value: true },
-      { section: 'Expenses', name: 'Approval workflows', value: true },
-      // Receivables
+      { section: 'Spend Management', name: 'Team members included', value: '5' },
+      { section: 'Spend Management', name: 'Corporate cards', value: '5' },
+      { section: 'Spend Management', name: 'Virtual Accounts', value: '1' },
+      { section: 'Spend Management', name: 'Physical cards', value: false },
+      { section: 'Spend Management', name: 'Spend limits & controls', value: true },
+      { section: 'Spend Management', name: 'Advanced spending controls', value: false },
+      { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
+      { section: 'Bill Payments & Payables', name: 'Advanced approval workflows', value: false },
+      { section: 'Bill Payments & Payables', name: 'Bill import & OCR', value: true },
+      { section: 'Bill Payments & Payables', name: 'Pay via ACH, SEPA, SWIFT, stablecoins & more', value: true },
+      { section: 'Bill Payments & Payables', name: 'Double payment protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Scam protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Batch payments', value: true },
+      { section: 'Payroll & Expenses', name: 'Payroll templates', value: true },
+      { section: 'Payroll & Expenses', name: 'Expense claims via mobile app', value: true },
+      { section: 'Payroll & Expenses', name: 'Automatic salary receipts', value: true },
+      { section: 'Payroll & Expenses', name: 'Bulk payroll upload', value: true },
       { section: 'Receivables', name: 'Create, send & track invoices', value: true },
-      { section: 'Receivables', name: 'Denominate invoices in fiat, get paid in crypto or fiat', value: true },
-      { section: 'Receivables', name: 'Automatic invoice payment detection', value: true },
-      { section: 'Receivables', name: 'Automatic recurring invoices', value: true },
-      { section: 'Receivables', name: 'Number of invoices included', value: 'Unlimited' },
+      { section: 'Receivables', name: 'Automatic payment detection', value: true },
+      { section: 'Receivables', name: 'Recurring invoices', value: true },
+      { section: 'Receivables', name: 'Unlimited invoices', value: true },
       { section: 'Receivables', name: 'Client management', value: true },
-      { section: 'Receivables', name: 'Invoice templates', value: true },
-      // Accounting
-      { section: 'Accounting', name: 'Number of transactions included', value: '50,000' },
-      { section: 'Accounting', name: 'Accounting integrations', value: 'QuickBooks Online, Xero' },
-      { section: 'Accounting', name: 'Treasury & portfolio views', value: true },
-      { section: 'Accounting', name: 'Data exports in standard CSV format', value: true },
-      { section: 'Accounting', name: 'Data exports in accounting-ready CSVs', value: true },
-      { section: 'Accounting', name: 'PDF exports', value: true },
-      { section: 'Accounting', name: 'Custom labels for invoices and bills', value: true },
-      { section: 'Accounting', name: 'Accounting rules', value: true },
-      { section: 'Accounting', name: 'Advanced accounting rules', value: false },
-      { section: 'Accounting', name: 'Request a custom report', value: false },
-      { section: 'Accounting', name: 'Custom Accounting integration', value: false },
-      { section: 'Accounting', name: 'Accounting-ready', value: false },
-      // Services
-      { section: 'Services', name: 'Human support', value: true },
-      { section: 'Services', name: 'Add your own custom currency', value: false },
-      { section: 'Services', name: 'Premium support', value: false },
-      { section: 'Services', name: 'White-glove onboarding priority', value: false },
-      { section: 'Services', name: 'CFO-as-a-Service', value: false },
-      { section: 'Services', name: 'Accounts Receivable & Accounts Payable management', value: false },
-      { section: 'Services', name: 'Stablecoin Account management', value: false },
-      { section: 'Services', name: 'Custom development', value: false },
-      // Employee Management
-      { section: 'Employee Management', name: 'Add & manage employees', value: true },
-      { section: 'Employee Management', name: 'Import employees via CSV', value: true },
-      // Team & Organization Management
-      { section: 'Team & Organization Management', name: 'Number of seats included', value: '5' },
-      { section: 'Team & Organization Management', name: 'Number of entities included', value: '3' },
-      // Platform
-      { section: 'Platform', name: 'Over 350 cryptocurrencies and 20 networks supported', value: true },
-      { section: 'Platform', name: 'Over 20 fiat currencies supported', value: true },
-      { section: 'Platform', name: 'Email notifications', value: true },
-      { section: 'Platform', name: 'In-app notifications', value: true },
-      { section: 'Platform', name: 'Transaction insurance', value: false },
-      { section: 'Platform', name: 'Test payments', value: false },
+      { section: 'Accounting & Integrations', name: 'Automated reconciliation', value: true },
+      { section: 'Accounting & Integrations', name: 'Accounting integrations', value: 'QuickBooks, Xero' },
+      { section: 'Accounting & Integrations', name: 'ERP integration', value: false },
+      { section: 'Accounting & Integrations', name: 'Treasury & portfolio views', value: true },
+      { section: 'Accounting & Integrations', name: 'CSV & PDF exports', value: true },
+      { section: 'Accounting & Integrations', name: 'Custom accounting rules', value: false },
+      { section: 'Support & Services', name: 'Email & chat support', value: true },
+      { section: 'Support & Services', name: 'Dedicated CSM', value: false },
+      { section: 'Support & Services', name: 'Priority routing', value: false },
+      { section: 'Support & Services', name: 'Slack support', value: false },
+      { section: 'Support & Services', name: 'White-glove onboarding', value: false },
+      { section: 'Team & Organization', name: 'Number of seats', value: '5' },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: false },
     ],
   },
   {
     name: 'Pro',
     slug: 'pro',
-    description: 'Ideal for medium businesses.',
-    priceMonthly: 'Custom',
-    priceAnnually: 'Custom',
-    href: '#',
+    description: 'For growing finance teams.',
+    priceMonthly: 800,
+    priceAnnually: 670,
+    href: 'https://app.request.finance/signup',
+    featured: true,
     includesLabel: 'Everything in Basic, plus:',
     highlights: [
-      { description: 'Accounts & Payments', isSection: true },
-      { description: 'Stablecoins & crypto transfers (tailored volume)' },
-      { description: 'On-/Off-Ramp (0.4% to 0.95% fee)' },
-      { description: 'Business Mastercards (Soon)', isSection: true },
-      { description: 'Advanced spending controls' },
-      { description: 'Accounts Payable', isSection: true },
-      { description: 'Approval policies' },
-      { description: 'Accounting', isSection: true },
-      { description: 'Transaction import (tailored transaction limit)' },
-      { description: 'Advanced accounting rules' },
-      { description: 'NetSuite integration (Soon)' },
-      { description: 'Request a custom report' },
-      { description: 'Global', isSection: true },
-      { description: 'Custom currency' },
-      { description: 'Transaction insurance' },
-      { description: 'Test payments' },
+      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Up to 20 users' },
+      { description: 'Up to 20 cards, including physical' },
+      { description: 'Up to 3 Virtual Accounts' },
+      { description: 'Bill Payments', isSection: true },
+      { description: 'Advanced approval workflows' },
+      { description: 'Accounting & Integrations', isSection: true },
+      { description: 'ERP integration' },
+      { description: 'Custom accounting rules' },
+      { description: 'Multi-entity', isSection: true },
+      { description: 'Manage multiple entities from one dashboard' },
       { description: 'Support', isSection: true },
-      { description: 'Dedicated senior customer success manager' },
-      { description: 'White-glove onboarding priority' },
-      { description: 'Support via Slack' },
+      { description: 'Dedicated senior CSM' },
+      { description: 'Slack support' },
     ],
     features: [
-      // Accounts
-      { section: 'Accounts', name: 'Stablecoin Account', value: true },
-      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
-      // Payments
-      { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: 'Custom' },
-      { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: '0.40%' },
-      { section: 'Payments', name: 'On-Ramp to stablecoins', value: 'Starting at 0.95%' },
-      { section: 'Payments', name: 'Off-Ramp to fiat (e.g. USD, EUR, ...)', value: 'Starting at 0.95%' },
-      { section: 'Payments', name: 'Global, cross-border bank payments', value: true },
-      { section: 'Payments', name: 'Fee-saving batch payments', value: true },
-      // Business Mastercards
-      { section: 'Business Mastercards', name: 'Virtual Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Physical Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Fund cards 1:1 in stablecoins', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Spending controls', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Advanced spending controls', value: true },
-      // Payables
-      { section: 'Payables', name: 'Pay bills via stablecoins, ACH, SEPA, SWIFT, and more', value: true },
-      { section: 'Payables', name: 'Double payment protection', value: true },
-      { section: 'Payables', name: 'Approval policies', value: true },
-      { section: 'Payables', name: 'Scam protection', value: true },
-      { section: 'Payables', name: 'Bills import/forwarding', value: true },
-      { section: 'Payables', name: 'Direct Payments (Single)', value: true },
-      { section: 'Payables', name: 'Direct Payments (Bulk Upload)', value: true },
-      // Payroll
-      { section: 'Payroll', name: 'Payroll templates', value: true },
-      { section: 'Payroll', name: 'Pay fiat compensation, using stablecoins', value: true },
-      { section: 'Payroll', name: 'One-off payments', value: true },
-      { section: 'Payroll', name: 'Automatic sending of salary receipts to employees', value: true },
-      { section: 'Payroll', name: 'Bulk upload for payroll', value: true },
-      // Expenses
-      { section: 'Expenses', name: 'Mobile app to let employees submit expense claims', value: true },
-      { section: 'Expenses', name: 'Pay fiat expenses, using stablecoins', value: true },
-      { section: 'Expenses', name: 'Approval workflows', value: true },
-      // Receivables
+      { section: 'Spend Management', name: 'Team members included', value: '20' },
+      { section: 'Spend Management', name: 'Corporate cards', value: '20' },
+      { section: 'Spend Management', name: 'Virtual Accounts', value: '3' },
+      { section: 'Spend Management', name: 'Physical cards', value: true },
+      { section: 'Spend Management', name: 'Spend limits & controls', value: true },
+      { section: 'Spend Management', name: 'Advanced spending controls', value: true },
+      { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
+      { section: 'Bill Payments & Payables', name: 'Advanced approval workflows', value: true },
+      { section: 'Bill Payments & Payables', name: 'Bill import & OCR', value: true },
+      { section: 'Bill Payments & Payables', name: 'Pay via ACH, SEPA, SWIFT, stablecoins & more', value: true },
+      { section: 'Bill Payments & Payables', name: 'Double payment protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Scam protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Batch payments', value: true },
+      { section: 'Payroll & Expenses', name: 'Payroll templates', value: true },
+      { section: 'Payroll & Expenses', name: 'Expense claims via mobile app', value: true },
+      { section: 'Payroll & Expenses', name: 'Automatic salary receipts', value: true },
+      { section: 'Payroll & Expenses', name: 'Bulk payroll upload', value: true },
       { section: 'Receivables', name: 'Create, send & track invoices', value: true },
-      { section: 'Receivables', name: 'Denominate invoices in fiat, get paid in crypto or fiat', value: true },
-      { section: 'Receivables', name: 'Automatic invoice payment detection', value: true },
-      { section: 'Receivables', name: 'Automatic recurring invoices', value: true },
-      { section: 'Receivables', name: 'Number of invoices included', value: 'Unlimited' },
+      { section: 'Receivables', name: 'Automatic payment detection', value: true },
+      { section: 'Receivables', name: 'Recurring invoices', value: true },
+      { section: 'Receivables', name: 'Unlimited invoices', value: true },
       { section: 'Receivables', name: 'Client management', value: true },
-      { section: 'Receivables', name: 'Invoice templates', value: true },
-      // Accounting
-      { section: 'Accounting', name: 'Number of transactions included', value: 'Custom' },
-      { section: 'Accounting', name: 'Accounting integrations', value: '... and NetSuite (Soon)' },
-      { section: 'Accounting', name: 'Treasury & portfolio views', value: true },
-      { section: 'Accounting', name: 'Data exports in standard CSV format', value: true },
-      { section: 'Accounting', name: 'Data exports in accounting-ready CSVs', value: true },
-      { section: 'Accounting', name: 'PDF exports', value: true },
-      { section: 'Accounting', name: 'Custom labels for invoices and bills', value: true },
-      { section: 'Accounting', name: 'Accounting rules', value: true },
-      { section: 'Accounting', name: 'Advanced accounting rules', value: true },
-      { section: 'Accounting', name: 'Request a custom report', value: true },
-      { section: 'Accounting', name: 'Custom Accounting integration', value: false },
-      { section: 'Accounting', name: 'Accounting-ready', value: false },
-      // Services
-      { section: 'Services', name: 'Human support', value: true },
-      { section: 'Services', name: 'Add your own custom currency', value: true },
-      { section: 'Services', name: 'Premium support', value: true },
-      { section: 'Services', name: 'White-glove onboarding priority', value: true },
-      { section: 'Services', name: 'CFO-as-a-Service', value: false },
-      { section: 'Services', name: 'Accounts Receivable & Accounts Payable management', value: false },
-      { section: 'Services', name: 'Stablecoin Account management', value: false },
-      { section: 'Services', name: 'Custom development', value: false },
-      // Employee Management
-      { section: 'Employee Management', name: 'Add & manage employees', value: true },
-      { section: 'Employee Management', name: 'Import employees via CSV', value: true },
-      // Team & Organization Management
-      { section: 'Team & Organization Management', name: 'Number of seats included', value: '10' },
-      { section: 'Team & Organization Management', name: 'Number of entities included', value: '5' },
-      // Platform
-      { section: 'Platform', name: 'Over 350 cryptocurrencies and 20 networks supported', value: true },
-      { section: 'Platform', name: 'Over 20 fiat currencies supported', value: true },
-      { section: 'Platform', name: 'Email notifications', value: true },
-      { section: 'Platform', name: 'In-app notifications', value: true },
-      { section: 'Platform', name: 'Transaction insurance', value: true },
-      { section: 'Platform', name: 'Test payments', value: true },
+      { section: 'Accounting & Integrations', name: 'Automated reconciliation', value: true },
+      { section: 'Accounting & Integrations', name: 'Accounting integrations', value: 'QuickBooks, Xero' },
+      { section: 'Accounting & Integrations', name: 'ERP integration', value: true },
+      { section: 'Accounting & Integrations', name: 'Treasury & portfolio views', value: true },
+      { section: 'Accounting & Integrations', name: 'CSV & PDF exports', value: true },
+      { section: 'Accounting & Integrations', name: 'Custom accounting rules', value: true },
+      { section: 'Support & Services', name: 'Email & chat support', value: true },
+      { section: 'Support & Services', name: 'Dedicated CSM', value: true },
+      { section: 'Support & Services', name: 'Priority routing', value: false },
+      { section: 'Support & Services', name: 'Slack support', value: true },
+      { section: 'Support & Services', name: 'White-glove onboarding', value: false },
+      { section: 'Team & Organization', name: 'Number of seats', value: '20' },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: true },
     ],
   },
   {
     name: 'Premium',
     slug: 'premium',
-    description: 'Managed services.',
-    priceMonthly: 9000,
-    priceAnnually: 7500,
-    href: '#',
+    description: 'For mature or high-volume teams.',
+    priceMonthly: 2000,
+    priceAnnually: 1680,
+    href: 'https://app.request.finance/signup',
     includesLabel: 'Everything in Pro, plus:',
     highlights: [
-      { description: 'Accounts & Payments', isSection: true },
-      { description: 'Stablecoins & crypto transfers (unlimited)' },
-      { description: 'On-/Off-Ramp (custom fee)' },
-      { description: 'Accounting', isSection: true },
-      { description: 'Transaction import (unlimited transactions)' },
-      { description: 'Custom ERP integrations' },
-      { description: 'Custom Services', isSection: true },
-      { description: 'AP & AR management' },
-      { description: 'Accounting-ready' },
-      { description: 'Stablecoin account management' },
-      { description: 'Custom development' },
+      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Unlimited users' },
+      { description: 'Unlimited cards' },
+      { description: 'Up to 5 Virtual Accounts' },
+      { description: 'Operations', isSection: true },
+      { description: 'Priority routing on all payouts' },
+      { description: 'Custom development available' },
+      { description: 'Support', isSection: true },
+      { description: 'Dedicated CSM' },
+      { description: 'White-glove onboarding' },
     ],
     features: [
-      // Accounts
-      { section: 'Accounts', name: 'Stablecoin Account', value: true },
-      { section: 'Accounts', name: 'Receive, hold, and pay in stablecoins', value: true },
-      // Payments
-      { section: 'Payments', name: 'Outgoing payment volume included (crypto-to-crypto)', value: 'Unlimited' },
-      { section: 'Payments', name: 'Fee on overage payment volume (crypto-to-crypto)', value: 'Free' },
-      { section: 'Payments', name: 'On-Ramp to stablecoins', value: 'Custom fee' },
-      { section: 'Payments', name: 'Off-Ramp to fiat (e.g. USD, EUR, ...)', value: 'Custom fee' },
-      { section: 'Payments', name: 'Global, cross-border bank payments', value: true },
-      { section: 'Payments', name: 'Fee-saving batch payments', value: true },
-      // Business Mastercards
-      { section: 'Business Mastercards', name: 'Virtual Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Physical Mastercards', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Fund cards 1:1 in stablecoins', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Spending controls', value: 'Soon' },
-      { section: 'Business Mastercards', name: 'Advanced spending controls', value: true },
-      // Payables
-      { section: 'Payables', name: 'Pay bills via stablecoins, ACH, SEPA, SWIFT, and more', value: true },
-      { section: 'Payables', name: 'Double payment protection', value: true },
-      { section: 'Payables', name: 'Approval policies', value: true },
-      { section: 'Payables', name: 'Scam protection', value: true },
-      { section: 'Payables', name: 'Bills import/forwarding', value: true },
-      { section: 'Payables', name: 'Direct Payments (Single)', value: true },
-      { section: 'Payables', name: 'Direct Payments (Bulk Upload)', value: true },
-      // Payroll
-      { section: 'Payroll', name: 'Payroll templates', value: true },
-      { section: 'Payroll', name: 'Pay fiat compensation, using stablecoins', value: true },
-      { section: 'Payroll', name: 'One-off payments', value: true },
-      { section: 'Payroll', name: 'Automatic sending of salary receipts to employees', value: true },
-      { section: 'Payroll', name: 'Bulk upload for payroll', value: true },
-      // Expenses
-      { section: 'Expenses', name: 'Mobile app to let employees submit expense claims', value: true },
-      { section: 'Expenses', name: 'Pay fiat expenses, using stablecoins', value: true },
-      { section: 'Expenses', name: 'Approval workflows', value: true },
-      // Receivables
+      { section: 'Spend Management', name: 'Team members included', value: 'Unlimited' },
+      { section: 'Spend Management', name: 'Corporate cards', value: 'Unlimited' },
+      { section: 'Spend Management', name: 'Virtual Accounts', value: '5' },
+      { section: 'Spend Management', name: 'Physical cards', value: true },
+      { section: 'Spend Management', name: 'Spend limits & controls', value: true },
+      { section: 'Spend Management', name: 'Advanced spending controls', value: true },
+      { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
+      { section: 'Bill Payments & Payables', name: 'Advanced approval workflows', value: true },
+      { section: 'Bill Payments & Payables', name: 'Bill import & OCR', value: true },
+      { section: 'Bill Payments & Payables', name: 'Pay via ACH, SEPA, SWIFT, stablecoins & more', value: true },
+      { section: 'Bill Payments & Payables', name: 'Double payment protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Scam protection', value: true },
+      { section: 'Bill Payments & Payables', name: 'Batch payments', value: true },
+      { section: 'Payroll & Expenses', name: 'Payroll templates', value: true },
+      { section: 'Payroll & Expenses', name: 'Expense claims via mobile app', value: true },
+      { section: 'Payroll & Expenses', name: 'Automatic salary receipts', value: true },
+      { section: 'Payroll & Expenses', name: 'Bulk payroll upload', value: true },
       { section: 'Receivables', name: 'Create, send & track invoices', value: true },
-      { section: 'Receivables', name: 'Denominate invoices in fiat, get paid in crypto or fiat', value: true },
-      { section: 'Receivables', name: 'Automatic invoice payment detection', value: true },
-      { section: 'Receivables', name: 'Automatic recurring invoices', value: true },
-      { section: 'Receivables', name: 'Number of invoices included', value: 'Unlimited' },
+      { section: 'Receivables', name: 'Automatic payment detection', value: true },
+      { section: 'Receivables', name: 'Recurring invoices', value: true },
+      { section: 'Receivables', name: 'Unlimited invoices', value: true },
       { section: 'Receivables', name: 'Client management', value: true },
-      { section: 'Receivables', name: 'Invoice templates', value: true },
-      // Accounting
-      { section: 'Accounting', name: 'Number of transactions included', value: 'Unlimited' },
-      { section: 'Accounting', name: 'Accounting integrations', value: false },
-      { section: 'Accounting', name: 'Treasury & portfolio views', value: true },
-      { section: 'Accounting', name: 'Data exports in standard CSV format', value: true },
-      { section: 'Accounting', name: 'Data exports in accounting-ready CSVs', value: true },
-      { section: 'Accounting', name: 'PDF exports', value: true },
-      { section: 'Accounting', name: 'Custom labels for invoices and bills', value: true },
-      { section: 'Accounting', name: 'Accounting rules', value: true },
-      { section: 'Accounting', name: 'Advanced accounting rules', value: true },
-      { section: 'Accounting', name: 'Request a custom report', value: true },
-      { section: 'Accounting', name: 'Custom Accounting integration', value: true },
-      { section: 'Accounting', name: 'Accounting-ready', value: true },
-      // Services
-      { section: 'Services', name: 'Human support', value: true },
-      { section: 'Services', name: 'Add your own custom currency', value: true },
-      { section: 'Services', name: 'Premium support', value: true },
-      { section: 'Services', name: 'White-glove onboarding priority', value: true },
-      { section: 'Services', name: 'CFO-as-a-Service', value: true },
-      { section: 'Services', name: 'Accounts Receivable & Accounts Payable management', value: true },
-      { section: 'Services', name: 'Stablecoin Account management', value: true },
-      { section: 'Services', name: 'Custom development', value: true },
-      // Employee Management
-      { section: 'Employee Management', name: 'Add & manage employees', value: true },
-      { section: 'Employee Management', name: 'Import employees via CSV', value: true },
-      // Team & Organization Management
-      { section: 'Team & Organization Management', name: 'Number of seats included', value: 'Unlimited' },
-      { section: 'Team & Organization Management', name: 'Number of entities included', value: 'Unlimited' },
-      // Platform
-      { section: 'Platform', name: 'Over 350 cryptocurrencies and 20 networks supported', value: true },
-      { section: 'Platform', name: 'Over 20 fiat currencies supported', value: true },
-      { section: 'Platform', name: 'Email notifications', value: true },
-      { section: 'Platform', name: 'In-app notifications', value: true },
-      { section: 'Platform', name: 'Transaction insurance', value: true },
-      { section: 'Platform', name: 'Test payments', value: true },
+      { section: 'Accounting & Integrations', name: 'Automated reconciliation', value: true },
+      { section: 'Accounting & Integrations', name: 'Accounting integrations', value: 'QuickBooks, Xero & more' },
+      { section: 'Accounting & Integrations', name: 'ERP integration', value: true },
+      { section: 'Accounting & Integrations', name: 'Treasury & portfolio views', value: true },
+      { section: 'Accounting & Integrations', name: 'CSV & PDF exports', value: true },
+      { section: 'Accounting & Integrations', name: 'Custom accounting rules', value: true },
+      { section: 'Support & Services', name: 'Email & chat support', value: true },
+      { section: 'Support & Services', name: 'Dedicated CSM', value: true },
+      { section: 'Support & Services', name: 'Priority routing', value: true },
+      { section: 'Support & Services', name: 'Slack support', value: true },
+      { section: 'Support & Services', name: 'White-glove onboarding', value: true },
+      { section: 'Team & Organization', name: 'Number of seats', value: 'Unlimited' },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: true },
     ],
   },
 ]
@@ -392,9 +252,9 @@ function BillingToggle({ billingPeriod, setBillingPeriod }) {
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Pricing that grows with your needs.</Heading>
+      <Heading as="h1">Simple pricing for global spend and corporate cards.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Whether you're a startup, global enterprise, or somewhere in between, Request Finance is designed to save you time and money.
+        Bill payments, corporate cards, and global payouts on a single platform. Predictable subscriptions. Transparent, volume-based transaction fees.
       </Lead>
     </Container>
   )
@@ -405,6 +265,9 @@ function PricingCards({ billingPeriod, setBillingPeriod }) {
     <div className="relative pt-12 pb-24">
       <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
+        <div className="flex items-center justify-center">
+          <Subheading>Spend Management & Corporate Cards</Subheading>
+        </div>
         <BillingToggle billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {tiers.map((tier, tierIndex) => (
@@ -419,12 +282,22 @@ function PricingCards({ billingPeriod, setBillingPeriod }) {
 
 function PricingCard({ tier, billingPeriod }) {
   const price = billingPeriod === 'annually' ? tier.priceAnnually : tier.priceMonthly
-  
+
   return (
-    <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md">
+    <div className={clsx(
+      '-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md',
+      tier.featured && 'ring-2 ring-blue-600'
+    )}>
       <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
         <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">
-          <Subheading>{tier.name}</Subheading>
+          <div className="flex items-center gap-3">
+            <Subheading>{tier.name}</Subheading>
+            {tier.featured && (
+              <span className="inline-flex items-center rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-blue-600/20 ring-inset">
+                Most popular
+              </span>
+            )}
+          </div>
           <p className="mt-2 text-sm/6 text-gray-950/75">{tier.description}</p>
           <div className="mt-8 flex items-center gap-4">
             {typeof price === 'number' ? (
@@ -444,7 +317,7 @@ function PricingCard({ tier, billingPeriod }) {
             )}
           </div>
           <div className="mt-8">
-            <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
+            <Button href="https://app.request.finance/signup" target="_blank">Start free trial</Button>
           </div>
           <div className="mt-8">
             <h3 className="text-sm/6 font-medium text-gray-950">
@@ -458,6 +331,177 @@ function PricingCard({ tier, billingPeriod }) {
           </div>
         </div>
       </div>
+    </div>
+  )
+}
+
+function TransactionPricing() {
+  return (
+    <div className="relative py-24">
+      <Container>
+        <div className="text-center">
+          <Subheading>Transaction Pricing</Subheading>
+          <Heading as="h2" className="mt-2">
+            Volume-based fees that scale with you
+          </Heading>
+          <Lead className="mx-auto mt-6 max-w-3xl">
+            Your subscription covers the platform. Transaction fees are separate, transparent, and decrease as your volume grows.
+          </Lead>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {/* Stablecoin Payouts — FREE anchor */}
+          <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+            <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
+              <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5">
+                <p className="text-sm font-semibold text-gray-950">Stablecoin Payouts</p>
+                <p className="mt-1 text-sm/6 text-gray-950/75">
+                  Send crypto to vendors, employees, or partners directly from your treasury.
+                </p>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="text-4xl font-semibold text-gray-950">Free</span>
+                  <span className="text-sm text-gray-950/75">unlimited volume</span>
+                </div>
+                <div className="mt-6 rounded-xl bg-green-50 px-4 py-3 text-sm/6 text-green-800 ring-1 ring-green-200/80 ring-inset">
+                  Zero processing fees on all stablecoin payouts, regardless of volume.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* USD Payouts */}
+          <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+            <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
+              <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5">
+                <p className="text-sm font-semibold text-gray-950">USD Payouts</p>
+                <p className="mt-1 text-sm/6 text-gray-950/75">
+                  No FX needed. Competitive with neobanks.
+                </p>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="text-4xl font-semibold text-gray-950">0.20%</span>
+                  <span className="text-sm text-gray-950/75">as low as</span>
+                </div>
+                <table className="mt-6 w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-100">
+                      <th className="pb-2 text-left font-medium text-gray-500">Monthly volume</th>
+                      <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-50">
+                      <td className="py-2.5 text-gray-700">Up to $500k</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.30%</td>
+                    </tr>
+                    <tr className="border-b border-gray-50">
+                      <td className="py-2.5 text-gray-700">$500k – $2m</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.25%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 text-gray-700">Over $2m</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.20%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="mt-4 text-xs text-gray-500">
+                  Banking rails: Local (ACH, Wire) $10 · SWIFT $30
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* International Payouts */}
+          <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
+            <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
+              <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5">
+                <p className="text-sm font-semibold text-gray-950">International Payouts</p>
+                <p className="mt-1 text-sm/6 text-gray-950/75">
+                  FX included. No hidden markups.
+                </p>
+                <div className="mt-6 flex items-baseline gap-2">
+                  <span className="text-4xl font-semibold text-gray-950">0.25%</span>
+                  <span className="text-sm text-gray-950/75">as low as</span>
+                </div>
+                <table className="mt-6 w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-gray-100">
+                      <th className="pb-2 text-left font-medium text-gray-500">Monthly volume</th>
+                      <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-50">
+                      <td className="py-2.5 text-gray-700">Up to $500k</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.60%</td>
+                    </tr>
+                    <tr className="border-b border-gray-50">
+                      <td className="py-2.5 text-gray-700">$500k – $2m</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.40%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2.5 text-gray-700">Over $2m</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.25%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="mt-4 text-xs text-gray-500">
+                  Banking rails: Local (SEPA, Fast, domestic) $10 · SWIFT $30
+                </p>
+                <p className="mt-2 text-xs text-gray-500">
+                  Some low-liquidity corridors may require a quoted rate, confirmed upfront before execution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Funding Fees */}
+        <div className="mx-auto mt-16 max-w-2xl">
+          <div className="rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200/80 ring-inset">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-8">
+              <div className="mb-6 sm:mb-0">
+                <p className="text-sm font-semibold text-gray-950">Global USD Account — Funding Fees</p>
+                <p className="mt-1 text-sm/6 text-gray-600">
+                  Fees apply only when adding money to your account.
+                </p>
+              </div>
+            </div>
+            <table className="mt-4 w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200">
+                  <th className="pb-2 text-left font-medium text-gray-500">Funding method</th>
+                  <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2.5 text-gray-700">Stablecoin top-up (USDC / USDT)</td>
+                  <td className="py-2.5 text-right font-medium text-gray-950">0.10%</td>
+                </tr>
+                <tr className="border-b border-gray-100">
+                  <td className="py-2.5 text-gray-700">Fiat top-up (USD — local & international)</td>
+                  <td className="py-2.5 text-right font-medium text-gray-950">0.20%</td>
+                </tr>
+                <tr>
+                  <td className="py-2.5 text-gray-700">Fiat top-up (EUR, BRL, MXN & GBP)</td>
+                  <td className="py-2.5 text-right font-medium text-gray-950">0.60%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Enterprise callout */}
+        <div className="mt-12 text-center">
+          <p className="text-sm/6 text-gray-600">
+            <span className="font-semibold text-gray-950">Enterprise needs?</span>{' '}
+            Custom contracts, dedicated CSM, and tailored pricing available.{' '}
+            <Link href="https://app.request.finance/signup" className="font-medium text-blue-600 hover:text-blue-500">
+              Talk to sales &rarr;
+            </Link>
+          </p>
+        </div>
+      </Container>
     </div>
   )
 }
@@ -532,13 +576,13 @@ function PricingTable({ selectedTier, setSelectedTier }) {
             </td>
             <td colSpan={3} className="p-0 text-right">
               <Button variant="outline" href="https://app.request.finance/signup" target="_blank">
-                Open my account
+                Start free trial
               </Button>
             </td>
           </tr>
           <tr className="max-sm:hidden">
             <th className="p-0" scope="row">
-              <span className="sr-only">Open my account</span>
+              <span className="sr-only">Start free trial</span>
             </th>
             {tiers.map((tier) => (
               <td
@@ -547,7 +591,7 @@ function PricingTable({ selectedTier, setSelectedTier }) {
                 className="px-0 pt-4 pb-0 data-selected:table-cell max-sm:hidden"
               >
                 <Button variant="outline" href="https://app.request.finance/signup" target="_blank">
-                  Open my account
+                  Start free trial
                 </Button>
               </td>
             ))}
@@ -627,13 +671,13 @@ function PricingTable({ selectedTier, setSelectedTier }) {
 function FeatureItem({ description, isSection = false }) {
   const hasSoon = description.includes('(Soon)')
   const textWithoutSoon = description.replace(' (Soon)', '').replace('(Soon)', '')
-  
+
   const SoonBadge = () => (
     <span className="ml-1.5 bg-linear-to-r from-[#60d5ff] from-28% via-[#2b6ff4] via-70% to-[#1e40af] bg-clip-text text-transparent font-medium">
       Soon
     </span>
   )
-  
+
   if (isSection) {
     return (
       <li className="pt-4 first:pt-0 text-sm/6 font-semibold text-gray-950">
@@ -642,7 +686,7 @@ function FeatureItem({ description, isSection = false }) {
       </li>
     )
   }
-  
+
   return (
     <li className="flex items-start gap-4 text-sm/6 text-gray-950/75">
       <span className="inline-flex h-6 items-center">
@@ -672,7 +716,7 @@ function Testimonial() {
               <div className="rounded-4xl p-2 shadow-md shadow-black/5">
                 <div className="overflow-hidden rounded-3xl shadow-2xl outline outline-1 -outline-offset-1 outline-black/10">
                   <img
-                    alt=""
+                    alt="David Norris, Head of Finance at Near Protocol"
                     src="/testimonials/david.jpeg"
                     className="aspect-3/4 w-full object-cover"
                   />
@@ -703,23 +747,106 @@ function Testimonial() {
   )
 }
 
+const faqItems = [
+  {
+    question: 'Do you offer a free trial?',
+    answer:
+      'Yes. Every paid plan comes with a 30-day free trial — no commitments. You get full access to all features so you can see the value before you pay. If you decide it\'s not for you, you can cancel anytime during the trial.',
+  },
+  {
+    question: 'How does the pricing work? What do I pay for?',
+    answer:
+      'Your pricing has two parts: a monthly subscription that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more — and transaction fees that apply only when you actually move money. These are volume-based and decrease as you grow. Stablecoin payouts are always free, regardless of volume.',
+  },
+  {
+    question: 'Do fees decrease as my volume grows?',
+    answer:
+      'Yes. Transaction fees are tiered by monthly volume. For example, USD payout fees drop from 0.30% to 0.20% as your volume exceeds $2m/month. International payout fees drop from 0.60% to 0.25%. The more you transact, the less you pay per transaction.',
+  },
+  {
+    question: 'What are funding fees?',
+    answer:
+      'Funding fees are a small, one-time cost that applies only when you add money to your Global USD Account. Stablecoin top-ups are just 0.10%, and fiat USD top-ups are 0.20%. These are not recurring — you only pay when you fund your account.',
+  },
+  {
+    question: 'Do you have a yearly payment option?',
+    answer: 'Yes! You can pay yearly and save 16% compared to paying monthly.',
+  },
+  {
+    question: 'What payment rails and currencies do you support?',
+    answer:
+      'Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin transfers across 20+ networks. You can pay vendors and employees in 350+ crypto and 20+ fiat currencies worldwide. For your subscription, you can pay with USDC, USDT, or DAI on Ethereum, Polygon, Avalanche, or BSC.',
+  },
+  {
+    question: 'Can I switch plans later?',
+    answer:
+      'Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle. If you need a custom arrangement for higher volumes or more entities, our sales team is happy to help.',
+  },
+]
+
 function FrequentlyAskedQuestions() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+
   return (
     <Container>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <section id="faqs" className="scroll-mt-8">
         <Subheading className="text-center">
           Frequently asked questions
         </Subheading>
-        <Heading as="div" className="mt-2 text-center">
+        <Heading as="h2" className="mt-2 text-center">
           Your questions answered.
         </Heading>
         <div className="mx-auto mt-16 mb-32 max-w-xl space-y-12">
           <dl>
             <dt className="text-sm font-semibold">
-              Do you have a free trial?
+              Do you offer a free trial?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, you can use all paid plans entirely for free for 30 days — without commitments. You can switch to the Free plan at any time during your free trial to avoid paying fees. Note that we will bill for any excess payment volume that you incur during your free trial. Don&apos;t worry: the included volumes are more than enough to test the platform and we&apos;ll tell you when you&apos;re about to exceed your volume.
+              Yes. Every paid plan comes with a 30-day free trial — no commitments. You get full access to all features so you can see the value before you pay. If you decide it&apos;s not for you, you can cancel anytime during the trial.
+            </dd>
+          </dl>
+          <dl>
+            <dt className="text-sm font-semibold">
+              How does the pricing work? What do I pay for?
+            </dt>
+            <dd className="mt-4 text-sm/6 text-gray-600">
+              <p>Your pricing has two parts:</p>
+              <ul className="mt-2 list-disc space-y-1 pl-5">
+                <li><strong>A monthly subscription</strong> that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more.</li>
+                <li><strong>Transaction fees</strong> that apply only when you actually move money. These are volume-based and decrease as you grow.</li>
+              </ul>
+              <p className="mt-3">Stablecoin payouts are always free, regardless of volume. USD and international payout fees start low and get even lower as your monthly volume increases.</p>
+            </dd>
+          </dl>
+          <dl>
+            <dt className="text-sm font-semibold">
+              Do fees decrease as my volume grows?
+            </dt>
+            <dd className="mt-4 text-sm/6 text-gray-600">
+              Yes. Transaction fees are tiered by monthly volume. For example, USD payout fees drop from 0.30% to 0.20% as your volume exceeds $2m/month. International payout fees drop from 0.60% to 0.25%. The more you transact, the less you pay per transaction.
+            </dd>
+          </dl>
+          <dl>
+            <dt className="text-sm font-semibold">
+              What are funding fees?
+            </dt>
+            <dd className="mt-4 text-sm/6 text-gray-600">
+              Funding fees are a small, one-time cost that applies only when you add money to your Global USD Account. Stablecoin top-ups are just 0.10%, and fiat USD top-ups are 0.20%. These are not recurring — you only pay when you fund your account.
             </dd>
           </dl>
           <dl>
@@ -732,50 +859,19 @@ function FrequentlyAskedQuestions() {
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              What are the fees for Crypto-to-Fiat transfers?
+              What payment rails and currencies do you support?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              It&apos;s important to us to offer the best rate in the market. We power SWIFT, SEPA and ACH payments to 170+ countries. Those banking systems can be costly. Despite that, we manage to offer fees starting at 1% (minimum fees apply) with subscription plans. We also offer tailored fees and automated discounts for high-value offramps, perfect for things like acquisitions, paying out investors, cashing out treasury funds, or settling big supplier invoices.
+              <p>Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin transfers across 20+ networks. You can pay vendors and employees in 350+ crypto and 20+ fiat currencies worldwide.</p>
+              <p className="mt-3">For your subscription, you can pay with USDC, USDT, or DAI on Ethereum, Polygon, Avalanche, or BSC.</p>
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              How do I pay a Request Finance bill?
+              Can I switch plans later?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Paying a Request Finance bill is as easy as paying any bill on the platform. Once you signed up, you can use your preferred wallet to pay.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              What currencies do you accept?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              <p>Request Finance&apos;s AP, AR, Expenses, Payroll, and Accounting modules support +350 crypto and fiat currencies, and +18 payment networks.</p>
-              <p className="mt-3">As for your subscription, you can choose in which currency and on which network you want to pay. The available currencies and networks are:</p>
-              <ul className="mt-2 list-disc pl-5 space-y-1">
-                <li>Avalanche: USDC, USDT</li>
-                <li>BSC: USDC, USDT</li>
-                <li>Ethereum: USDC, USDT, DAI</li>
-                <li>Polygon: USDC, USDT, DAI</li>
-              </ul>
-              <p className="mt-3">You can change your preferred network and currency any time in your settings.</p>
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              Is there a free plan available for Crypto-to-Fiat?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, there&apos;s a limited option to use Crypto-to-Fiat as part of a Free plan at 1.5% fees on the volume. However, we recommend booking a demo first to assess if a subscription makes more sense due to reduced fees and added features for efficient financial operations.
-            </dd>
-          </dl>
-          <dl>
-            <dt className="text-sm font-semibold">
-              Can I switch to the Free plan during my free trial?
-            </dt>
-            <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes, you can switch your plans in a few clicks once you signed up. If you switch to the Free plan during your free trial and did not exceed your payment volume, then you won&apos;t be billed.
+              Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle. If you need a custom arrangement for higher volumes or more entities, our sales team is happy to help.
             </dd>
           </dl>
         </div>
@@ -796,6 +892,7 @@ export default function Pricing() {
       </Container>
       <Header />
       <PricingCards billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
+      <TransactionPricing />
       <PricingTable selectedTier={selectedTier} setSelectedTier={setSelectedTier} />
       <Testimonial />
       <FrequentlyAskedQuestions />

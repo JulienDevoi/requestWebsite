@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -30,11 +31,11 @@ export const metadata = {
     title: 'Switch to Request Finance — vs Ramp, Brex & Airwallex',
     description:
       'See how Request Finance compares to other spend management platforms. Built for global companies, powered by stablecoins, simplified for everyone.',
-    url: 'https://requestfinance.com/alternative-to',
+    url: `${siteUrl}/alternative-to`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Switch to Request Finance',
@@ -43,8 +44,15 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Switch to Request Finance — vs Ramp, Brex & Airwallex',
+    description:
+      'See how Request Finance compares to other spend management platforms. Built for global companies, powered by stablecoins, simplified for everyone.',
+    images: [`${siteUrl}/images/thumbnail.png`],
+  },
   alternates: {
-    canonical: 'https://requestfinance.com/alternative-to',
+    canonical: `${siteUrl}/alternative-to`,
   },
 }
 
@@ -458,11 +466,11 @@ export default function AlternativeTo() {
     name: 'Switch to Request Finance — vs Ramp, Brex & Airwallex',
     description:
       'See how Request Finance compares to other spend management platforms. Built for global companies, powered by stablecoins, simplified for everyone.',
-    url: 'https://requestfinance.com/alternative-to',
+    url: `${siteUrl}/alternative-to`,
     publisher: {
       '@type': 'Organization',
       name: 'Request Finance',
-      url: 'https://requestfinance.com',
+      url: siteUrl,
     },
   }
 

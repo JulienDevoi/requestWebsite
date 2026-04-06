@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -39,11 +40,11 @@ export const metadata = {
     title: 'Blog - Request Finance',
     description:
       'Stay informed with product updates, company news, and insights on spend management, corporate finance, and business payments.',
-    url: 'https://requestfinance.com/blog',
+    url: `${siteUrl}/blog`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance Blog',
@@ -57,10 +58,10 @@ export const metadata = {
     title: 'Blog - Request Finance',
     description:
       'Stay informed with product updates, company news, and insights on spend management, corporate finance, and business payments.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/blog',
+    canonical: `${siteUrl}/blog`,
   },
 }
 

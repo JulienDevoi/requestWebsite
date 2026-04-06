@@ -1,25 +1,28 @@
+import { siteUrl } from '@/lib/config'
+
 export const metadata = {
   title: 'Pricing - Request Finance',
   description:
-    'Transparent pricing for spend management. Choose from Basic, Pro, or Premium plans. All plans include corporate cards, accounts payable, and global payments. Start with a 30-day free trial.',
+    'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow. Start with a 30-day free trial.',
   keywords: [
     'spend management pricing',
     'corporate cards pricing',
-    'accounts payable pricing',
+    'bill payments pricing',
+    'global payouts pricing',
+    'stablecoin payments',
     'business finance pricing',
-    'fintech pricing',
     'payment platform pricing',
     'expense management pricing',
   ],
   openGraph: {
     title: 'Pricing - Request Finance',
     description:
-      'Transparent pricing for spend management. Choose from Basic, Pro, or Premium plans. All plans include corporate cards, accounts payable, and global payments. Start with a 30-day free trial.',
-    url: 'https://requestfinance.com/pricing',
+      'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow.',
+    url: `${siteUrl}/pricing`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Pricing Plans',
@@ -32,15 +35,14 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Pricing - Request Finance',
     description:
-      'Transparent pricing for spend management. Choose from Basic, Pro, or Premium plans. All plans include corporate cards, accounts payable, and global payments. Start with a 30-day free trial.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+      'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow.',
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/pricing',
+    canonical: `${siteUrl}/pricing`,
   },
 }
 
 export default function PricingLayout({ children }) {
   return children
 }
-

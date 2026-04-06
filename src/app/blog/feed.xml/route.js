@@ -1,17 +1,6 @@
 import { Feed } from 'feed'
 import assert from 'node:assert'
-
-// Mock data
-const mockPosts = [
-  {
-    slug: 'stablecoins-how-they-work-and-what-they-mean-for-your-business',
-    title: 'Stablecoins: How They Work and What They Mean for Your Business',
-    excerpt:
-      'Learn about the pros and cons of the different types of stablecoins, and what it means for your business.',
-    publishedAt: new Date().toISOString().slice(0, 10),
-    author: { name: 'Request Finance' },
-  },
-]
+import { getAllPosts } from '@/lib/blog'
 
 export async function GET(req) {
   const url = new URL(req.url)
@@ -29,13 +18,15 @@ export async function GET(req) {
     ? origin 
     : (process.env.NEXT_PUBLIC_SITE_URL || 'https://requestfinance.com')
 
+  const posts = getAllPosts()
+
   let feed = new Feed({
-    title: 'The Radiant Blog',
+    title: 'Request Finance Blog',
     description:
-      'Stay informed with product updates, company news, and insights on how to sell smarter at your company.',
+      'Stay informed with product updates, company news, and insights on spend management, corporate finance, and stablecoins.',
     author: {
-      name: 'Michael Foster',
-      email: 'michael.foster@example.com',
+      name: 'Request Finance',
+      email: 'hello@requestfinance.com',
     },
     id: siteUrl,
     link: siteUrl,
@@ -47,7 +38,7 @@ export async function GET(req) {
     },
   })
 
-  mockPosts.forEach((post) => {
+  posts.forEach((post) => {
     try {
       assert(typeof post.title === 'string')
       assert(typeof post.slug === 'string')

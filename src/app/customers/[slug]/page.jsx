@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { siteUrl } from '@/lib/config'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -267,11 +269,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${post.title} - Request Finance`,
       description: post.excerpt,
-      url: `https://requestfinance.com/customers/${post.slug}`,
+      url: `${siteUrl}/customers/${post.slug}`,
       siteName: 'Request Finance',
       images: [
         {
-          url: 'https://requestfinance.com/images/thumbnail.png',
+          url: `${siteUrl}/images/thumbnail.png`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -286,10 +288,10 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${post.title} - Request Finance`,
       description: post.excerpt,
-      images: ['https://requestfinance.com/images/thumbnail.png'],
+      images: [`${siteUrl}/images/thumbnail.png`],
     },
     alternates: {
-      canonical: `https://requestfinance.com/customers/${post.slug}`,
+      canonical: `${siteUrl}/customers/${post.slug}`,
     },
   }
 }
@@ -315,8 +317,22 @@ export default async function CustomerStory({ params }) {
   const post = mockPosts[slug]
   if (!post) notFound()
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Customers', item: `${siteUrl}/customers` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${siteUrl}/customers/${post.slug}` },
+    ],
+  }
+
   return (
     <main className="overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <GradientBackground />
       <Container>
         <Navbar />
@@ -359,11 +375,16 @@ export default async function CustomerStory({ params }) {
           <div className="text-gray-700">
             <div className="max-w-2xl xl:mx-auto">
               {post.mainImage && (
-                <img
-                  alt={post.mainImage.alt || ''}
-                  src={post.mainImage}
-                  className="mb-10 aspect-3/2 w-full rounded-2xl object-cover shadow-xl"
-                />
+                <div className="relative mb-10 aspect-3/2 w-full overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    alt={post.title}
+                    src={post.mainImage}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 672px"
+                  />
+                </div>
               )}
               {post.body && (
                 <div className="prose prose-gray max-w-none">

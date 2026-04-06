@@ -4,9 +4,9 @@
 User-agent: *
 Allow: /
 
-# Disallow admin/internal pages if any
+# Disallow admin/internal pages and API routes
 # Disallow: /admin/
-# Disallow: /api/
+Disallow: /api/
 
 # Sitemap location
 Sitemap: https://requestfinance.com/sitemap.xml

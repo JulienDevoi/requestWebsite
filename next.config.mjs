@@ -46,15 +46,18 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
           },
+          // CSP is set per-request by src/middleware.js (with a nonce).
+          // The middleware overrides this header for all page requests.
+          // This fallback covers any routes the middleware may not match (e.g. static assets).
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://*.beamanalytics.com https://beamanalytics.com https://api.fontshare.com https://static.hsappstatic.net https://js.hs-scripts.com https://js.hsforms.net https://plausible.io",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://*.beamanalytics.com https://beamanalytics.com https://api.fontshare.com https://static.hsappstatic.net https://js.hs-scripts.com https://js.hsforms.net https://plausible.io https://www.googletagmanager.com",
               "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.weglot.com https://weglot.com https://static.hsappstatic.net https://js.hsforms.net https://fonts.googleapis.com",
-              "img-src 'self' data: https: https://cdn.weglot.com https://weglot.com https://cdn-api-weglot.com",
+              "img-src 'self' data: https://cdn.weglot.com https://weglot.com https://cdn-api-weglot.com https:",
               "font-src 'self' https://api.fontshare.com data: https://static.hsappstatic.net https://js.hsforms.net https://fonts.gstatic.com",
-              "connect-src 'self' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https: https://beamanalytics.b-cdn.net https://beamanalytics.com https://api.hubapi.com https://api.hubspot.com https://content.request.finance https://plausible.io",
+              "connect-src 'self' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://beamanalytics.com https://*.beamanalytics.com https://api.hubapi.com https://api.hubspot.com https://content.request.finance https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com",
               "frame-src 'self' https://content.request.finance https://app.hubspot.com",
               "frame-ancestors 'self'",
               "base-uri 'self'",

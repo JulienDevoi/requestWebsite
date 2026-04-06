@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { siteUrl } from '@/lib/config'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -100,11 +102,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${post.title} - Request Finance Blog`,
       description: post.excerpt,
-      url: `https://requestfinance.com/blog/${post.slug}`,
+      url: `${siteUrl}/blog/${post.slug}`,
       siteName: 'Request Finance',
       images: [
         {
-          url: 'https://requestfinance.com/images/thumbnail.png',
+          url: `${siteUrl}/images/thumbnail.png`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -119,10 +121,10 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${post.title} - Request Finance Blog`,
       description: post.excerpt,
-      images: ['https://requestfinance.com/images/thumbnail.png'],
+      images: [`${siteUrl}/images/thumbnail.png`],
     },
     alternates: {
-      canonical: `https://requestfinance.com/blog/${post.slug}`,
+      canonical: `${siteUrl}/blog/${post.slug}`,
     },
   }
 }
@@ -141,8 +143,56 @@ export default async function BlogPost({ params }) {
   const toc = post.body ? getTocFromBody(post.body) : []
   let tocIndex = -1
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${siteUrl}/blog/${post.slug}` },
+    ],
+  }
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: post.author?.name || 'Request Finance',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Request Finance',
+      url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/images/icon2.png`,
+      },
+    },
+    url: `${siteUrl}/blog/${post.slug}`,
+    image: post.mainImage
+      ? `${siteUrl}${post.mainImage}`
+      : `${siteUrl}/images/thumbnail.png`,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${siteUrl}/blog/${post.slug}`,
+    },
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <GradientBackground />
       <Container>
         <Navbar />
@@ -172,11 +222,16 @@ export default async function BlogPost({ params }) {
           <div className="text-gray-700">
             <div className="max-w-2xl xl:mx-auto">
               {post.mainImage && (
-                <img
-                  alt={post.mainImage.alt || ''}
-                  src={post.mainImage}
-                  className="mb-10 aspect-3/2 w-full rounded-2xl object-cover shadow-xl"
-                />
+                <div className="relative mb-10 aspect-3/2 w-full overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    alt={post.title}
+                    src={post.mainImage}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 672px"
+                  />
+                </div>
               )}
               {post.body && (
                 <div className="prose prose-gray max-w-none">

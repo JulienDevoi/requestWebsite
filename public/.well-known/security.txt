@@ -1,0 +1,5 @@
+Contact: mailto:security@request.finance
+Expires: 2027-04-06T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://requestfinance.com/.well-known/security.txt
+Policy: https://requestfinance.com/security

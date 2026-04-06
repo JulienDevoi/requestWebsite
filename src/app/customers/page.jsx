@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
@@ -34,11 +35,11 @@ export const metadata = {
     title: 'Customers - Request Finance',
     description:
       'Discover how leading companies are using Request Finance to transform their business spend management, streamline payments, and achieve remarkable results. Read success stories and case studies.',
-    url: 'https://requestfinance.com/customers',
+    url: `${siteUrl}/customers`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Customer Success Stories',
@@ -52,10 +53,10 @@ export const metadata = {
     title: 'Customers - Request Finance',
     description:
       'Discover how leading companies are using Request Finance to transform their business spend management, streamline payments, and achieve remarkable results. Read success stories and case studies.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/customers',
+    canonical: `${siteUrl}/customers`,
   },
 }
 

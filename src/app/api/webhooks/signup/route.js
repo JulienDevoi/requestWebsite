@@ -48,6 +48,16 @@ async function triggerSignupWebhook(email) {
 
 export async function POST(request) {
   try {
+    // Verify shared secret to reject unauthenticated callers
+    const secret = process.env.WEBHOOK_SIGNUP_SECRET
+    const incoming = request.headers.get('x-webhook-secret')
+    if (!secret || !incoming || incoming !== secret) {
+      return Response.json(
+        { success: false, error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+
     const body = await request.json()
     const { email } = body
 

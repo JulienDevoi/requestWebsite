@@ -15,6 +15,8 @@ const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey, {
   }
 })
 
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+
 export async function POST(request) {
   try {
     const body = await request.json()
@@ -28,12 +30,14 @@ export async function POST(request) {
       )
     }
 
-    // Validate leadId format if provided (should be UUID)
-    if (leadId && typeof leadId !== 'string') {
-      return Response.json(
-        { success: false, error: 'Invalid leadId: must be a string' },
-        { status: 400 }
-      )
+    // Validate leadId format if provided — must be a UUID string
+    if (leadId !== undefined) {
+      if (typeof leadId !== 'string' || !UUID_REGEX.test(leadId)) {
+        return Response.json(
+          { success: false, error: 'Invalid leadId: must be a valid UUID' },
+          { status: 400 }
+        )
+      }
     }
 
     // Validate step if provided
@@ -89,7 +93,7 @@ export async function POST(request) {
       if (updateError) {
         console.error('Error updating lead:', updateError)
         return Response.json(
-          { success: false, error: updateError.message },
+          { success: false, error: 'An internal error occurred. Please try again.' },
           { status: 500 }
         )
       }
@@ -110,7 +114,7 @@ export async function POST(request) {
         if (insertError) {
           console.error('Error creating lead with existing ID:', insertError)
           return Response.json(
-            { success: false, error: insertError.message },
+            { success: false, error: 'An internal error occurred. Please try again.' },
             { status: 500 }
           )
         }
@@ -134,7 +138,7 @@ export async function POST(request) {
       if (error) {
         console.error('Error creating lead:', error)
         return Response.json(
-          { success: false, error: error.message },
+          { success: false, error: 'An internal error occurred. Please try again.' },
           { status: 500 }
         )
       }
@@ -146,7 +150,7 @@ export async function POST(request) {
   } catch (error) {
     console.error('Exception in API route:', error)
     return Response.json(
-      { success: false, error: error.message || 'Internal server error' },
+      { success: false, error: 'An internal error occurred. Please try again.' },
       { status: 500 }
     )
   }

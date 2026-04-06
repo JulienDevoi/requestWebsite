@@ -20,7 +20,7 @@ export function Heading({
 
 export function Subheading({
   className,
-  as: Element = 'h2',
+  as: Element = 'p',
   dark = false,
   ...props
 }) {

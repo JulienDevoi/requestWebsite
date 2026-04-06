@@ -5,6 +5,7 @@ import { IndustrySolution } from '@/components/industry-solution'
 import { IndustryWhyItWorks } from '@/components/industry-why-it-works'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
+import { siteUrl } from '@/lib/config'
 import { getIndustryBySlug, getAllIndustrySlugs } from '@/data/industries'
 import { notFound } from 'next/navigation'
 
@@ -45,11 +46,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${industry.name} - Request Finance`,
       description: industry.heroDescription,
-      url: `https://requestfinance.com/industries/${industry.slug}`,
+      url: `${siteUrl}/industries/${industry.slug}`,
       siteName: 'Request Finance',
       images: [
         {
-          url: 'https://requestfinance.com/images/thumbnail.png',
+          url: `${siteUrl}/images/thumbnail.png`,
           width: 1200,
           height: 630,
           alt: `Request Finance for ${industry.name}`,
@@ -62,10 +63,10 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${industry.name} - Request Finance`,
       description: industry.heroDescription,
-      images: ['https://requestfinance.com/images/thumbnail.png'],
+      images: [`${siteUrl}/images/thumbnail.png`],
     },
     alternates: {
-      canonical: `https://requestfinance.com/industries/${industry.slug}`,
+      canonical: `${siteUrl}/industries/${industry.slug}`,
     },
   }
 }
@@ -94,8 +95,22 @@ export default async function IndustryPage({ params }) {
     notFound()
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Industries', item: `${siteUrl}/industries` },
+      { '@type': 'ListItem', position: 3, name: industry.name, item: `${siteUrl}/industries/${industry.slug}` },
+    ],
+  }
+
   return (
     <div className="overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <IndustryHero
         title={industry.heroTitle}
         description={industry.heroDescription}

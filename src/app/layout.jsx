@@ -1,7 +1,9 @@
 import '@/styles/tailwind.css'
+import { headers } from 'next/headers'
 import Script from 'next/script'
 import { WeglotScript } from '@/components/weglot'
 import { OpenAccountConversionTracker } from '@/components/open-account-conversion'
+import { siteUrl } from '@/lib/config'
 
 export const metadata = {
   title: {
@@ -26,11 +28,11 @@ export const metadata = {
     title: 'Request Finance - Spend Management for Modern Companies',
     description:
       'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
-    url: 'https://requestfinance.com',
+    url: siteUrl,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Spend Management Platform',
@@ -41,27 +43,29 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@RequestFinance',
     title: 'Request Finance - Spend Management for Modern Companies',
     description:
       'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com',
+    canonical: siteUrl,
   },
   icons: {
     icon: [
-      { url: 'https://requestfinance.com/favicon.ico', sizes: 'any' },
-      { url: 'https://requestfinance.com/images/icon2.png', type: 'image/png' },
+      { url: `${siteUrl}/favicon.ico`, sizes: 'any' },
+      { url: `${siteUrl}/images/icon2.png`, type: 'image/png' },
     ],
-    shortcut: 'https://requestfinance.com/favicon.ico',
+    shortcut: `${siteUrl}/favicon.ico`,
     apple: [
-      { url: 'https://requestfinance.com/images/icon2.png', sizes: '180x180', type: 'image/png' },
+      { url: `${siteUrl}/images/icon2.png`, sizes: '180x180', type: 'image/png' },
     ],
   },
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const nonce = (await headers()).get('x-nonce') ?? undefined
   const beamAnalyticsToken = process.env.NEXT_PUBLIC_BEAM_ANALYTICS_TOKEN
 
   return (
@@ -71,8 +75,9 @@ export default function RootLayout({ children }) {
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-708726534"
           strategy="afterInteractive"
+          nonce={nonce}
         />
-        <Script id="google-ads" strategy="afterInteractive">
+        <Script id="google-ads" strategy="afterInteractive" nonce={nonce}>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -84,13 +89,15 @@ export default function RootLayout({ children }) {
         <Script
           src="https://plausible.io/js/pa-cGM-QYfVbusT8oUQwySvd.js"
           strategy="afterInteractive"
+          nonce={nonce}
         />
-        <Script id="plausible-init" strategy="afterInteractive">
+        <Script id="plausible-init" strategy="afterInteractive" nonce={nonce}>
           {`
             window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
             plausible.init()
           `}
         </Script>
+        <link rel="preconnect" href="https://api.fontshare.com" />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/css?f%5B%5D=switzer@400,500,600,700&amp;display=swap"
@@ -98,7 +105,7 @@ export default function RootLayout({ children }) {
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="The Radiant Blog"
+          title="Request Finance Blog"
           href="/blog/feed.xml"
         />
       </head>
@@ -111,6 +118,7 @@ export default function RootLayout({ children }) {
             src="https://beamanalytics.b-cdn.net/beam.min.js"
             data-token={beamAnalyticsToken}
             strategy="afterInteractive"
+            nonce={nonce}
           />
         )}
       </body>

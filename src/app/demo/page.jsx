@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { DemoContent } from './demo-content'
 
 export const metadata = {
@@ -16,11 +17,11 @@ export const metadata = {
     title: 'Book a Demo - Request Finance',
     description:
       'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
-    url: 'https://requestfinance.com/demo',
+    url: `${siteUrl}/demo`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Book a Demo',
@@ -34,10 +35,10 @@ export const metadata = {
     title: 'Book a Demo - Request Finance',
     description:
       'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/demo',
+    canonical: `${siteUrl}/demo`,
   },
 }
 
@@ -49,7 +50,7 @@ export default function Demo() {
     provider: {
       '@type': 'Organization',
       name: 'Request Finance',
-      url: 'https://requestfinance.com',
+      url: siteUrl,
     },
     areaServed: 'Worldwide',
     description:
@@ -57,7 +58,7 @@ export default function Demo() {
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      url: 'https://requestfinance.com/demo',
+      url: `${siteUrl}/demo`,
     },
   }
 

@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { AnimatedNumber } from '@/components/animated-number'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
@@ -21,11 +22,11 @@ export const metadata = {
     title: 'Company - Request Finance',
     description:
       'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
-    url: 'https://requestfinance.com/company',
+    url: `${siteUrl}/company`,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Company',
@@ -39,10 +40,10 @@ export const metadata = {
     title: 'Company - Request Finance',
     description:
       'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/company',
+    canonical: `${siteUrl}/company`,
   },
 }
 

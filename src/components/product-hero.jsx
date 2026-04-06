@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
 import { Gradient } from '@/components/gradient'
@@ -55,10 +56,13 @@ export function ProductHero({ title, description, image }) {
                 className="w-full"
               />
             ) : (
-              <img
+              <Image
                 src={image}
-                alt=""
+                alt={`${title} — Request Finance`}
+                width={1200}
+                height={675}
                 className="w-full"
+                priority
               />
             )}
           </div>

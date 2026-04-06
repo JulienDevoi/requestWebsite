@@ -1,3 +1,4 @@
+import { siteUrl } from '@/lib/config'
 import { Container } from '@/components/container'
 import { Footer } from '@/components/footer'
 import { GradientBackground } from '@/components/gradient'
@@ -19,8 +20,16 @@ export const metadata = {
     title: 'Download guide - Request Finance',
     description:
       'Download our guide: Global finance for every business. Learn how Request Finance helps anyone, anywhere pay and get paid with confidence.',
-    url: 'https://requestfinance.com/guide',
+    url: `${siteUrl}/guide`,
     siteName: 'Request Finance',
+    images: [
+      {
+        url: `${siteUrl}/images/thumbnail.png`,
+        width: 1200,
+        height: 630,
+        alt: 'Request Finance - Stablecoins Guide for CFOs',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
@@ -29,9 +38,10 @@ export const metadata = {
     title: 'Download guide - Request Finance',
     description:
       'Download our guide: Global finance for every business. Learn how Request Finance helps anyone, anywhere pay and get paid with confidence.',
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com/guide',
+    canonical: `${siteUrl}/guide`,
   },
 }
 

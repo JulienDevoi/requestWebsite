@@ -4,6 +4,7 @@ import { Industries } from '@/components/industries'
 import { ProductBenefits } from '@/components/product-benefits'
 import { ProductHero } from '@/components/product-hero'
 import { Testimonials } from '@/components/testimonials'
+import { siteUrl } from '@/lib/config'
 import { getProductBySlug, getAllProductSlugs } from '@/data/products'
 import { notFound } from 'next/navigation'
 
@@ -43,11 +44,11 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${product.metaTitle || product.name} - Request Finance`,
       description: product.heroDescription,
-      url: `https://requestfinance.com/products/${product.slug}`,
+      url: `${siteUrl}/products/${product.slug}`,
       siteName: 'Request Finance',
       images: [
         {
-          url: 'https://requestfinance.com/images/thumbnail.png',
+          url: `${siteUrl}/images/thumbnail.png`,
           width: 1200,
           height: 630,
           alt: `Request Finance ${product.name}`,
@@ -60,10 +61,10 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       title: `${product.metaTitle || product.name} - Request Finance`,
       description: product.heroDescription,
-      images: ['https://requestfinance.com/images/thumbnail.png'],
+      images: [`${siteUrl}/images/thumbnail.png`],
     },
     alternates: {
-      canonical: `https://requestfinance.com/products/${product.slug}`,
+      canonical: `${siteUrl}/products/${product.slug}`,
     },
   }
 }
@@ -92,8 +93,22 @@ export default async function ProductPage({ params }) {
     notFound()
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `${siteUrl}/products` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${siteUrl}/products/${product.slug}` },
+    ],
+  }
+
   return (
     <div className="overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ProductHero
         title={product.heroTitle}
         subtitle={product.heroSubtitle}

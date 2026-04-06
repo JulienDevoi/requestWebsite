@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import { siteUrl } from '@/lib/config'
 import { BentoCard } from '@/components/bento-card'
 import { Button } from '@/components/button'
 import { Container } from '@/components/container'
@@ -39,11 +41,11 @@ export const metadata = {
     title: 'Request Finance - Spend Management for Modern Companies',
     description:
       'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
-    url: 'https://requestfinance.com',
+    url: siteUrl,
     siteName: 'Request Finance',
     images: [
       {
-        url: 'https://requestfinance.com/images/thumbnail.png',
+        url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
         alt: 'Request Finance - Spend Management Platform',
@@ -57,10 +59,10 @@ export const metadata = {
     title: 'Request Finance - Spend Management for Modern Companies',
     description:
       'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
-    images: ['https://requestfinance.com/images/thumbnail.png'],
+    images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
-    canonical: 'https://requestfinance.com',
+    canonical: siteUrl,
   },
 }
 
@@ -136,10 +138,13 @@ function HeroSaved() {
               </div>
             </div>
             <div className="flex shrink-0 justify-center lg:w-[420px] lg:justify-end">
-              <img
+              <Image
                 src="/images/corporate-cards-2.png"
-                alt="Request Finance corporate cards"
+                alt="Request Finance corporate cards dashboard"
+                width={420}
+                height={560}
                 className="w-full max-w-[280px] object-contain lg:max-w-none"
+                priority
               />
             </div>
           </div>
@@ -149,106 +154,6 @@ function HeroSaved() {
   )
 }
 
-function HeroSavedVideoWhite() {
-  return (
-    <div className="relative">
-      <div className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/images/request-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-blue-100/70" />
-      </div>
-      <Container className="relative">
-        <Navbar
-          banner={
-            <Link
-              href="https://app.request.finance/signup" target="_blank"
-              className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
-            >
-              Ready to Simplify Your Business Spend Management?
-              <ChevronRightIcon className="size-4" />
-            </Link>
-          }
-        />
-        <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Take Control of Company Spend
-          </h1>
-          <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-            One platform to control, approve, and monitor business spend in real time. <br />Powered by stablecoins, simplified for everyone.
-          </p>
-          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
-            <Button variant="secondary" href="/demo">
-              Book a demo
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
-  )
-}
-
-function Hero() {
-  return (
-    <div className="relative">
-      <div className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset overflow-hidden">
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source src="/images/request-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/65" />
-      </div>
-      <Container className="relative">
-        <Navbar
-          banner={
-            <Link
-              href="https://app.request.finance/signup" target="_blank"
-              className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
-            >
-              Ready to Simplify Your Business Spend Management?
-              <ChevronRightIcon className="size-4" />
-            </Link>
-          }
-        />
-        <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-white sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-            Take Control of Company Spend
-          </h1>
-          <p className="mt-8 max-w-5xl text-xl/7 font-medium text-white/90 sm:text-2xl/8">
-            One platform to control, approve, and monitor business spend in real time. <br />Powered by stablecoins, simplified for everyone.
-          </p>
-          <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button 
-              href="https://app.request.finance/signup" target="_blank"
-              className="bg-white text-gray-950 data-hover:bg-gray-100"
-            >
-              Open my account
-            </Button>
-            <Button
-              variant="secondary"
-              href="/demo"
-              className="bg-white/15 text-white ring-white/20 data-hover:bg-white/20"
-            >
-              Book a demo
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
-  )
-}
 
 {/*function FeatureSection() {
   return (
@@ -627,18 +532,18 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Request Finance',
-    url: 'https://requestfinance.com',
-    logo: 'https://requestfinance.com/images/icon2.png',
+    url: siteUrl,
+    logo: `${siteUrl}/images/icon2.png`,
     description: 'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
     sameAs: [
-      // Add social media links here when available
-      // 'https://twitter.com/requestfinance',
-      // 'https://linkedin.com/company/requestfinance',
+      'https://twitter.com/requestfinance',
+      'https://linkedin.com/company/request-finance',
+      'https://github.com/RequestNetwork',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      url: 'https://requestfinance.com/demo',
+      url: `${siteUrl}/demo`,
     },
   }
 
@@ -646,11 +551,38 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Request Finance',
-    url: 'https://requestfinance.com',
+    url: siteUrl,
     description: 'Spend management for modern companies. Corporate cards, accounts payable, and accrual accounting powered by stablecoins.',
     publisher: {
       '@type': 'Organization',
       name: 'Request Finance',
+    },
+  }
+
+  const softwareAppStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Request Finance',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: siteUrl,
+    description:
+      'Spend management platform for modern companies. Corporate cards, accounts payable automation, and accrual accounting powered by stablecoins.',
+    offers: {
+      '@type': 'Offer',
+      price: '300',
+      priceCurrency: 'USD',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        price: '300',
+        priceCurrency: 'USD',
+        unitText: 'MONTH',
+      },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Request Finance',
+      url: siteUrl,
     },
   }
 
@@ -663,6 +595,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppStructuredData) }}
       />
       <HeroSaved />
       <main>

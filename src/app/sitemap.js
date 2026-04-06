@@ -1,116 +1,115 @@
 import { getAllProducts } from '@/data/products'
 import { getAllUseCases } from '@/data/use-cases'
 import { getAllIndustries } from '@/data/industries'
+import { getAllAlternatives } from '@/data/alternatives'
+import { getAllPosts } from '@/lib/blog'
+import { siteUrl } from '@/lib/config'
 
 export default function sitemap() {
-  const baseUrl = 'https://requestfinance.com'
-  const currentDate = new Date()
+  const baseUrl = siteUrl
 
-  // Static pages
   const staticPages = [
     {
       url: baseUrl,
-      lastModified: currentDate,
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/demo`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/pricing`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-04-01'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/company`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-01-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-  ]
-
-  // Product pages
-  const products = getAllProducts().map((product) => ({
-    url: `${baseUrl}/products/${product.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
-  // Use case pages
-  const useCases = getAllUseCases().map((useCase) => ({
-    url: `${baseUrl}/use-cases/${useCase.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
-  // Industry pages
-  const industries = getAllIndustries().map((industry) => ({
-    url: `${baseUrl}/industries/${industry.slug}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly',
-    priority: 0.8,
-  }))
-
-  // Blog pages
-  const blogPages = [
+    {
+      url: `${baseUrl}/guide`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/alternative-to`,
+      lastModified: new Date('2026-01-01'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
     {
       url: `${baseUrl}/blog`,
-      lastModified: currentDate,
+      lastModified: new Date('2026-03-23'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
-    // Blog posts - using mock data slugs
     {
-      url: `${baseUrl}/blog/introducing-radiant-2-0`,
-      lastModified: new Date('2024-01-15'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/how-to-improve-sales-process`,
-      lastModified: new Date('2024-01-10'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/radiant-raises-series-b`,
-      lastModified: new Date('2024-01-05'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
+      url: `${baseUrl}/customers`,
+      lastModified: new Date('2025-03-13'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
     },
   ]
 
-  // Customer pages
-  const customerPages = [
+  const products = getAllProducts().map((product) => ({
+    url: `${baseUrl}/products/${product.slug}`,
+    lastModified: new Date('2026-01-01'),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const useCases = getAllUseCases().map((useCase) => ({
+    url: `${baseUrl}/use-cases/${useCase.slug}`,
+    lastModified: new Date('2026-01-01'),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const industries = getAllIndustries().map((industry) => ({
+    url: `${baseUrl}/industries/${industry.slug}`,
+    lastModified: new Date('2026-01-01'),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const alternatives = getAllAlternatives().map((alt) => ({
+    url: `${baseUrl}/alternative-to/${alt.slug}`,
+    lastModified: new Date('2026-01-01'),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const blogPosts = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: 'yearly',
+    priority: 0.6,
+  }))
+
+  const customerStories = [
     {
-      url: `${baseUrl}/customers`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    // Customer stories - using mock data slugs
-    {
-      url: `${baseUrl}/customers/acme-corp-transformation`,
-      lastModified: new Date('2024-01-15'),
+      url: `${baseUrl}/customers/streamlining-crypto-accounting-at-scale`,
+      lastModified: new Date('2025-03-07'),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/customers/techstart-success-story`,
-      lastModified: new Date('2024-01-10'),
+      url: `${baseUrl}/customers/polemos`,
+      lastModified: new Date('2025-03-12'),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/customers/global-solutions-testimonial`,
-      lastModified: new Date('2024-01-05'),
+      url: `${baseUrl}/customers/tokenizing-a-real-estate-empire-with-realt`,
+      lastModified: new Date('2025-03-13'),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
@@ -121,7 +120,8 @@ export default function sitemap() {
     ...products,
     ...useCases,
     ...industries,
-    ...blogPages,
-    ...customerPages,
+    ...alternatives,
+    ...blogPosts,
+    ...customerStories,
   ]
 }
