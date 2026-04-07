@@ -314,7 +314,7 @@ function PlatformCards() {
             {platform.highlight && (
               <div className="mt-4">
                 <Button href="https://app.request.finance/signup" target="_blank" className="w-full bg-white! text-gray-950! data-hover:bg-gray-100!">
-                  Open my account
+                  Start for free
                 </Button>
               </div>
             )}
@@ -504,7 +504,7 @@ export default function AlternativeTo() {
               See how Request Finance compares to other spend management platforms. Built for global companies, powered by stablecoins, simplified for everyone.
             </p>
             <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-              <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
+              <Button href="https://app.request.finance/signup" target="_blank">Start for free</Button>
               <Button variant="secondary" href="/demo">
                 Book a demo
               </Button>

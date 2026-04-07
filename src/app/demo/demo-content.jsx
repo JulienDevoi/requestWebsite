@@ -71,44 +71,89 @@ export function DemoContent() {
               <div className="lg:flex lg:space-x-12 xl:space-x-16">
                 {/* Left side */}
                 <div className="grow lg:mt-16 mb-16 lg:mb-0 text-center lg:text-left">
+                  {/* Dual-audience pill badge */}
+                  <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-700 text-sm font-medium">
+                    <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
+                    Built for crypto-native companies &amp; traditional finance teams
+                  </div>
+
                   <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-4 sm:text-5xl">Your AP process is costing you more than you think</h1>
                   <p className="text-lg text-gray-600 mb-4 max-w-xl mx-auto lg:mx-0">
                   Book a 15-min demo and see what fixing it actually looks like:
                   </p>
 
                   <div className="mb-12">
-                    <ul className="inline-flex flex-col text-slate-500 space-y-2.5 max-w-xl mx-auto lg:mx-0 text-left w-full">
-                      <li className="flex items-center text-left w-full">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                    <ul className="inline-flex flex-col text-slate-500 space-y-4 max-w-xl mx-auto lg:mx-0 text-left w-full">
+                      <li className="flex items-start text-left w-full">
+                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
                             className="fill-blue-500"
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>Automate invoice capture, approval, and payment in one workflow</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Cut invoice cycles from 14+ hours to under 2</span>
+                          <span className="block text-sm text-gray-500 mt-0.5">Based on analysis of 600+ AP teams processing 100+ invoices/month.</span>
+                        </div>
                       </li>
-                      <li className="flex items-center text-left w-full">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <li className="flex items-start text-left w-full">
+                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
                             className="fill-blue-500"
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>Save 20+ hours a month your team is currently doing manually</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Save 20+ hours a month your team is currently doing manually</span>
+                          <span className="block text-sm text-gray-500 mt-0.5">Automate capture, multi-level approval, and payment in one connected workflow.</span>
+                        </div>
                       </li>
-                      <li className="flex items-center text-left w-full">
-                        <svg className="shrink-0 mr-3" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <li className="flex items-start text-left w-full">
+                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
                           <circle className="fill-blue-100" cx="10" cy="10" r="10" />
                           <path
                             className="fill-blue-500"
                             d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
                           />
                         </svg>
-                        <span>Pay vendors in any currency, including stablecoins, without wire fees</span>
+                        <div>
+                          <span className="font-medium text-gray-900">Eliminate $3–8 per-invoice processing costs</span>
+                          <span className="block text-sm text-gray-500 mt-0.5">Replace fragmented tools with a single platform — no more spreadsheet handoffs.</span>
+                        </div>
                       </li>
                     </ul>
+                  </div>
+
+                  {/* What to expect */}
+                  <div className="mb-10 max-w-xl mx-auto lg:mx-0 text-left bg-gray-50 rounded-xl p-5 border border-gray-100">
+                    <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+                      What happens in your 15 minutes
+                    </h3>
+                    <ol className="space-y-3">
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">01</span>
+                        <div>
+                          <span className="text-sm font-semibold text-gray-900">We map your current AP workflow</span>
+                          <span className="block text-sm text-gray-500">Identify your biggest time drains and cost leaks, no prep required from you.</span>
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">02</span>
+                        <div>
+                          <span className="text-sm font-semibold text-gray-900">You see a live walkthrough of your exact use case</span>
+                          <span className="block text-sm text-gray-500">Not a generic product tour, a session tailored to how your team actually works.</span>
+                        </div>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">03</span>
+                        <div>
+                          <span className="text-sm font-semibold text-gray-900">You leave with a custom ROI estimate</span>
+                          <span className="block text-sm text-gray-500">Hours saved, costs reduced, and a clear picture of payback time for your team size.</span>
+                        </div>
+                      </li>
+                    </ol>
                   </div>
 
                   {/* Press logos */}
@@ -160,7 +205,21 @@ export function DemoContent() {
                   />
 
                   <div className="flex pt-12 lg:pt-0 lg:pl-12 xl:pl-20">
-                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden">
+                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden rounded-t-2xl">
+                      {/* Above-form urgency + CTA framing */}
+                      <div className="px-6 pt-6 pb-4 border-b border-gray-100">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="w-2 h-2 rounded-full animate-pulse flex-shrink-0" style={{backgroundColor: '#ffc124'}} />
+                          <span className="text-xs font-medium" style={{color: '#ffc124'}}>Demo slots this week are filling fast</span>
+                        </div>
+                        <h2 className="text-lg font-semibold text-gray-900 mb-0.5">
+                          Get your custom AP savings estimate
+                        </h2>
+                        <p className="text-sm text-gray-500">
+                          15 minutes. No prep required. Cancel anytime.
+                        </p>
+                      </div>
+
                       {/* HubSpot Meetings Embed */}
                       <div 
                         className="meetings-iframe-container w-full min-h-[600px]" 

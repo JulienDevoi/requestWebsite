@@ -29,7 +29,7 @@ export function UseCaseHero({ title, description, image }) {
             {description}
           </p>
           <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-            <Button href="https://app.request.finance/signup" target="_blank">Open my account</Button>
+            <Button href="https://app.request.finance/signup" target="_blank">Start for free</Button>
             <Button variant="secondary" href="/demo">
               Book a demo
             </Button>

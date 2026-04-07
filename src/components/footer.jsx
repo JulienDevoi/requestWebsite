@@ -24,7 +24,7 @@ function CallToAction() {
       </p>
       <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
         <Button className="w-full sm:w-auto" href="https://app.request.finance/signup" target="_blank">
-          Open my account
+          Start for free
         </Button>
         <Button variant="secondary" className="w-full sm:w-auto" href="/demo">
           Book a demo
@@ -101,7 +101,7 @@ function Sitemap() {
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/customers">Customer Stories</SitemapLink>
           <SitemapLink href="/alternative-to">Why Switch to Request?</SitemapLink>
-          <SitemapLink href="https://app.request.finance/signup" target="_blank">Open my account</SitemapLink>
+          <SitemapLink href="https://app.request.finance/signup" target="_blank">Start for free</SitemapLink>
           <SitemapLink href="https://app.request.finance/login" target="_blank">Log in</SitemapLink>
           <SitemapLink href="/demo">Book a demo</SitemapLink>
         </SitemapLinks>
