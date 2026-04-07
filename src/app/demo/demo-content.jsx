@@ -120,7 +120,7 @@ export function DemoContent() {
                         </svg>
                         <div>
                           <span className="font-medium text-gray-900">Eliminate $3–8 per-invoice processing costs</span>
-                          <span className="block text-sm text-gray-500 mt-0.5">Replace fragmented tools with a single platform — no more spreadsheet handoffs.</span>
+                          <span className="block text-sm text-gray-500 mt-0.5">Replace fragmented tools with a single platform, no more spreadsheet handoffs.</span>
                         </div>
                       </li>
                     </ul>
@@ -225,6 +225,30 @@ export function DemoContent() {
                         className="meetings-iframe-container w-full min-h-[600px]" 
                         data-src="https://content.request.finance/meetings/rf-team/demo-call?embed=true"
                       ></div>
+
+                      {/* Below-form micro-copy */}
+                      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                        <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-gray-500">
+                          <li className="flex items-center gap-1.5">
+                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            No spam, ever.
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            Confirmed within 1 business hour
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                            Working session, not a sales pitch
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
