@@ -159,7 +159,7 @@ export function DemoContent() {
                   {/* Press logos */}
                   <div className="w-full">
                     <div className="text-xs text-slate-400 font-[350] uppercase tracking-wider text-center lg:text-left mb-5">
-                      Trusted by the best
+                      Trusted by 600+ finance teams processing $100M+ monthly
                     </div>
 
                     <div className="flex flex-nowrap items-center justify-center lg:justify-start -m-4 lg:-m-2 xl:-m-4">
