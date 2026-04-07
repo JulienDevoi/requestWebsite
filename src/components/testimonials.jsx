@@ -31,6 +31,13 @@ const testimonials = [
       'It is a game-changer for any Web3 business looking to streamline their financial operations and take advantage of the benefits of stablecoins.',
   },
   {
+    img: '/testimonials/yurtofun.jpg',
+    name: 'Vitality',
+    title: 'Founder, Yurtofun',
+    quote:
+      'Request Finance onboarded our Delaware C-corp in just 11 days over the New Year holiday. This was hands-down the most efficient crypto fundraising experience possible given all the KYB, AML and compliance requirements.',
+  },
+  {
     img: '/testimonials/sebastien.jpg',
     name: 'Sebastien Borget',
     title: 'COO & Co-founder, The Sandbox',
@@ -56,6 +63,34 @@ const testimonials = [
     title: 'CEO, Nested Finance',
     quote:
       'Request Finance makes it easy for our accountants to manage our payments, and simplifies payroll for our global team.',
+  },
+  {
+    img: '/testimonials/ryan-kris.jpg',
+    name: 'Ryan Kris',
+    title: 'COO, Verida',
+    quote:
+      'Request gave me structure. It gave me a workflow to manage supplier payments connected to the contacts of those suppliers along with their wallet addresses. It gave me confidence knowing that I would be sending funds to a supplier\'s wallet address they have entered directly into their invoice.',
+  },
+  {
+    img: '/testimonials/jaime-berriga.jpeg',
+    name: 'Jaime Barriga',
+    title: 'CEO VP Finance, OpenZeppelin',
+    quote:
+      'The app has essentially eradicated risks associated with human error, such as payments sent to incorrect wallet addresses. Furthermore, it has enhanced our capability to monitor our crypto payroll history, providing improved transparency and oversight.',
+  },
+  {
+    img: '/testimonials/Vitalij-Aleksandrov.jpeg',
+    name: 'Vitalij Aleksandrov',
+    title: 'Head of Finance, Merit Circle',
+    quote:
+      'Request Invoicing and Expenses features have streamlined our processes, providing time-efficient management of payables both in crypto and FIAT. With their intuitive interface and robust functionalities, we\'ve seen a remarkable improvement in tracking, managing, and optimizing our financial workflows.',
+  },
+  {
+    img: '/testimonials/michael-kong.jpg',
+    name: 'Michael Kong',
+    title: 'CEO, Sonic',
+    quote:
+      'The team at Sonic Labs used to spend many hours a month just on managing and accounting for crypto payments. With Request, we now spend only far fewer hours processing almost US$100k in payments monthly, and we anticipate that this number will go up.',
   },
 ]
 
