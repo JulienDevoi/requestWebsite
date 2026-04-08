@@ -46,7 +46,7 @@ export function StablecoinComparisonTable() {
           Stablecoins vs. traditional rails by payment scenario
         </p>
         <p className="mt-1 text-xs text-gray-400">
-          Compared against wire/SWIFT and <a href="https://www.requestfinance.com/blog/virtual-credit-card-business-guide" className="underline hover:text-gray-600">card payments</a> across common B2B use cases
+          Compared against wire/SWIFT and <a href="https://www.requestfinance.com/blog/virtual-credit-card-for-business" className="underline hover:text-gray-600">card payments</a> across common B2B use cases
         </p>
       </div>
       <div className="mt-4 overflow-x-auto px-5 pb-5 sm:px-7 sm:pb-7">

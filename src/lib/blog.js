@@ -26,7 +26,7 @@ export const posts = [
     body: stablecoinDecisionBody,
   },
   {
-    slug: 'crypto-treasury-management-guide',
+    slug: 'crypto-treasury-management',
     title: 'Crypto Treasury Management: The Ultimate Guide for Modern CFOs',
     excerpt:
       'A practical, no-fluff guide to managing your organization\'s crypto treasury, covering liquidity, risk, funding, DAO operations, wallet infrastructure, and the tools that make it work.',
@@ -146,7 +146,7 @@ At Request Finance, USDC stands out as the cryptocurrency of choice, accounting 
 As one of the largest crypto payroll solutions with [nearly $350 million in total crypto payments volume](https://www.request.finance/post/request-finance-in-numbers-june-2023), Request Finance [supports over 10 types of stablecoins](https://app.gitbook.com/@request-network/s/support/currencies-supported) to help Web3 businesses send and receive stablecoins easily. Learn how you can simplify and automate your stablecoin payments with Request Finance [here](https://www.request.finance/post/we-just-made-crypto-payroll-better).`,
   },
   {
-    slug: 'virtual-credit-card-business-guide',
+    slug: 'virtual-credit-card-for-business',
     title: 'Virtual Credit Cards for Business: A Practical Guide for Finance Teams',
     excerpt:
       'What is a virtual credit card, how does it work, and when does it actually make sense for your finance team? A practical, no-fluff guide for CFOs, controllers, and AP/AR teams.',

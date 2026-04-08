@@ -3,6 +3,8 @@ const nextConfig = {
   async redirects() {
     const app = 'https://app.request.finance'
     return [
+      { source: '/blog/crypto-treasury-management-guide', destination: '/blog/crypto-treasury-management', permanent: true },
+      { source: '/blog/virtual-credit-card-business-guide', destination: '/blog/virtual-credit-card-for-business', permanent: true },
       { source: '/login', destination: `${app}/login`, permanent: true },
       { source: '/login/:path*', destination: `${app}/login`, permanent: true },
       { source: '/book', destination: `${app}/signup`, permanent: true },

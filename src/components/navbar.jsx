@@ -32,7 +32,7 @@ import { PlusGrid, PlusGridItem, PlusGridRow } from './plus-grid'
 
 const links = [
   { href: '/pricing', label: 'Pricing' },
-  { href: 'https://app.request.finance/signup', label: 'Open Account', target: '_blank' }
+  { href: 'https://app.request.finance/login', label: 'Log in', target: '_blank' }
 ]
 
 const industries = [
