@@ -87,8 +87,8 @@ const tiers = [
     name: 'Pro',
     slug: 'pro',
     description: 'For growing finance teams.',
-    priceMonthly: 800,
-    priceAnnually: 670,
+    priceMonthly: 600,
+    priceAnnually: 500,
     href: 'https://app.request.finance/signup',
     featured: true,
     includesLabel: 'Everything in Basic, plus:',
@@ -150,8 +150,8 @@ const tiers = [
     name: 'Premium',
     slug: 'premium',
     description: 'For mature or high-volume teams.',
-    priceMonthly: 2000,
-    priceAnnually: 1680,
+    priceMonthly: 1500,
+    priceAnnually: 1250,
     href: 'https://app.request.finance/signup',
     includesLabel: 'Everything in Pro, plus:',
     highlights: [
@@ -242,7 +242,7 @@ function BillingToggle({ billingPeriod, setBillingPeriod }) {
       >
         Annually
         <span className="ml-1.5 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-700">
-          Save 16%
+          Save 17%
         </span>
       </span>
     </div>
@@ -369,40 +369,21 @@ function TransactionPricing() {
             </div>
           </div>
 
-          {/* USD Payouts */}
+          {/* Fiat Payouts */}
           <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
             <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
               <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5">
-                <p className="text-sm font-semibold text-gray-950">USD Payouts</p>
+                <p className="text-sm font-semibold text-gray-950">Fiat Payouts</p>
                 <p className="mt-1 text-sm/6 text-gray-950/75">
                   No FX needed. Competitive with neobanks.
                 </p>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-4xl font-semibold text-gray-950">0.20%</span>
-                  <span className="text-sm text-gray-950/75">as low as</span>
+                  <span className="text-4xl font-semibold text-gray-950">0.5%</span>
+                  <span className="text-sm text-gray-950/75">flat fee</span>
                 </div>
-                <table className="mt-6 w-full text-sm">
-                  <thead>
-                    <tr className="border-b border-gray-100">
-                      <th className="pb-2 text-left font-medium text-gray-500">Monthly volume</th>
-                      <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-gray-50">
-                      <td className="py-2.5 text-gray-700">Up to $500k</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.30%</td>
-                    </tr>
-                    <tr className="border-b border-gray-50">
-                      <td className="py-2.5 text-gray-700">$500k – $2m</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.25%</td>
-                    </tr>
-                    <tr>
-                      <td className="py-2.5 text-gray-700">Over $2m</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.20%</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="mt-6 rounded-xl bg-gray-50 px-4 py-3 text-sm/6 text-gray-700 ring-1 ring-gray-200/80 ring-inset">
+                  Single flat rate on all fiat payouts, regardless of volume.
+                </div>
                 <p className="mt-4 text-xs text-gray-500">
                   Banking rails: Local (ACH, Wire) $10 · SWIFT $30
                 </p>
@@ -410,84 +391,42 @@ function TransactionPricing() {
             </div>
           </div>
 
-          {/* International Payouts */}
+          {/* Global USD Account */}
           <div className="-m-2 grid grid-cols-1 rounded-4xl shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5">
             <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
               <div className="rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5">
-                <p className="text-sm font-semibold text-gray-950">International Payouts</p>
+                <p className="text-sm font-semibold text-gray-950">Global USD Account</p>
                 <p className="mt-1 text-sm/6 text-gray-950/75">
-                  FX included. No hidden markups.
+                  Fees apply only when adding money to your account.
                 </p>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-4xl font-semibold text-gray-950">0.25%</span>
+                  <span className="text-4xl font-semibold text-gray-950">0.10%</span>
                   <span className="text-sm text-gray-950/75">as low as</span>
                 </div>
                 <table className="mt-6 w-full text-sm">
                   <thead>
                     <tr className="border-b border-gray-100">
-                      <th className="pb-2 text-left font-medium text-gray-500">Monthly volume</th>
+                      <th className="pb-2 text-left font-medium text-gray-500">Funding method</th>
                       <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-gray-50">
-                      <td className="py-2.5 text-gray-700">Up to $500k</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.60%</td>
+                      <td className="py-2.5 text-gray-700">Stablecoin top-up (USDC / USDT)</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.10%</td>
                     </tr>
                     <tr className="border-b border-gray-50">
-                      <td className="py-2.5 text-gray-700">$500k – $2m</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.40%</td>
+                      <td className="py-2.5 text-gray-700">Fiat top-up (USD, local & international)</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.20%</td>
                     </tr>
                     <tr>
-                      <td className="py-2.5 text-gray-700">Over $2m</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.25%</td>
+                      <td className="py-2.5 text-gray-700">Fiat top-up (EUR, BRL, MXN & GBP)</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.60%</td>
                     </tr>
                   </tbody>
                 </table>
-                <p className="mt-4 text-xs text-gray-500">
-                  Banking rails: Local (SEPA, Fast, domestic) $10 · SWIFT $30
-                </p>
-                <p className="mt-2 text-xs text-gray-500">
-                  Some low-liquidity corridors may require a quoted rate, confirmed upfront before execution.
-                </p>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Funding Fees */}
-        <div className="mx-auto mt-16 max-w-2xl">
-          <div className="rounded-2xl bg-gray-50 p-8 ring-1 ring-gray-200/80 ring-inset">
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-8">
-              <div className="mb-6 sm:mb-0">
-                <p className="text-sm font-semibold text-gray-950">Global USD Account — Funding Fees</p>
-                <p className="mt-1 text-sm/6 text-gray-600">
-                  Fees apply only when adding money to your account.
-                </p>
-              </div>
-            </div>
-            <table className="mt-4 w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="pb-2 text-left font-medium text-gray-500">Funding method</th>
-                  <th className="pb-2 text-right font-medium text-gray-500">Fee</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-100">
-                  <td className="py-2.5 text-gray-700">Stablecoin top-up (USDC / USDT)</td>
-                  <td className="py-2.5 text-right font-medium text-gray-950">0.10%</td>
-                </tr>
-                <tr className="border-b border-gray-100">
-                  <td className="py-2.5 text-gray-700">Fiat top-up (USD — local & international)</td>
-                  <td className="py-2.5 text-right font-medium text-gray-950">0.20%</td>
-                </tr>
-                <tr>
-                  <td className="py-2.5 text-gray-700">Fiat top-up (EUR, BRL, MXN & GBP)</td>
-                  <td className="py-2.5 text-right font-medium text-gray-950">0.60%</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
 
@@ -770,7 +709,7 @@ const faqItems = [
   },
   {
     question: 'Do you have a yearly payment option?',
-    answer: 'Yes! You can pay yearly and save 16% compared to paying monthly.',
+    answer: 'Yes! You can pay yearly and save 17% compared to paying monthly.',
   },
   {
     question: 'What payment rails and currencies do you support?',
@@ -854,7 +793,7 @@ function FrequentlyAskedQuestions() {
               Do you have a yearly payment option?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes! You can pay yearly and save 16% compared to paying monthly.
+              Yes! You can pay yearly and save 17% compared to paying monthly.
             </dd>
           </dl>
           <dl>
