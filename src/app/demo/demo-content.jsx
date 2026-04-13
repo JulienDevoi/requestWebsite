@@ -6,7 +6,25 @@ import Script from 'next/script'
 import { useEffect } from 'react'
 import { Logo } from '@/components/logo'
 
+// Replace this label with the one from your Google Ads conversion action (Tools → Conversions → Demo Booked)
+const DEMO_BOOKED_CONVERSION_LABEL = 'Bye1CNz-oZscEIae-dEC'
+
 export function DemoContent() {
+  // Fire Google Ads conversion when HubSpot meeting is successfully booked
+  useEffect(() => {
+    function handleMeetingBooked(event) {
+      if (event.data?.meetingBookSucceeded) {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'conversion', {
+            send_to: `AW-708726534/${DEMO_BOOKED_CONVERSION_LABEL}`,
+          })
+        }
+      }
+    }
+    window.addEventListener('message', handleMeetingBooked)
+    return () => window.removeEventListener('message', handleMeetingBooked)
+  }, [])
+
   useEffect(() => {
     // HubSpot script should automatically initialize, but we can trigger it manually if needed
     const initHubSpot = () => {
