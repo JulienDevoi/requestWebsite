@@ -254,7 +254,7 @@ function Header() {
     <Container className="mt-16">
       <Heading as="h1">Simple pricing for global spend and corporate cards.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Bill payments, corporate cards, and global payouts on a single platform. Predictable subscriptions. Transparent, volume-based transaction fees.
+        Bill payments, corporate cards, and global payouts on a single platform. Predictable subscriptions. Simple, transparent transaction fees.
       </Lead>
     </Container>
   )
@@ -342,10 +342,10 @@ function TransactionPricing() {
         <div className="text-center">
           <Subheading>Transaction Pricing</Subheading>
           <Heading as="h2" className="mt-2">
-            Volume-based fees that scale with you
+            Simple, flat transaction fees
           </Heading>
           <Lead className="mx-auto mt-6 max-w-3xl">
-            Your subscription covers the platform. Transaction fees are separate, transparent, and decrease as your volume grows.
+            Your subscription covers the platform. Transaction fees are separate, transparent, and always flat — no tiers, no surprises.
           </Lead>
         </div>
 
@@ -695,12 +695,12 @@ const faqItems = [
   {
     question: 'How does the pricing work? What do I pay for?',
     answer:
-      'Your pricing has two parts: a monthly subscription that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more — and transaction fees that apply only when you actually move money. These are volume-based and decrease as you grow. Stablecoin payouts are always free, regardless of volume.',
+      'Your pricing has two parts: a monthly subscription that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more — and transaction fees that apply only when you actually move money. Fees are flat and simple: stablecoin payouts are always free, and fiat payouts are a flat 0.5% regardless of volume.',
   },
   {
-    question: 'Do fees decrease as my volume grows?',
+    question: 'How are transaction fees calculated?',
     answer:
-      'Yes. Transaction fees are tiered by monthly volume. For example, USD payout fees drop from 0.30% to 0.20% as your volume exceeds $2m/month. International payout fees drop from 0.60% to 0.25%. The more you transact, the less you pay per transaction.',
+      'Transaction fees are flat and straightforward. Stablecoin payouts are always free, regardless of volume. Fiat payouts are a flat 0.5% — no tiers, no volume thresholds, no surprises. Banking rail fees (ACH, Wire, SWIFT) apply on top where applicable.',
   },
   {
     question: 'What are funding fees?',
@@ -767,17 +767,17 @@ function FrequentlyAskedQuestions() {
               <p>Your pricing has two parts:</p>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li><strong>A monthly subscription</strong> that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more.</li>
-                <li><strong>Transaction fees</strong> that apply only when you actually move money. These are volume-based and decrease as you grow.</li>
+                <li><strong>Transaction fees</strong> that apply only when you actually move money. Fees are flat — no tiers, no volume thresholds.</li>
               </ul>
-              <p className="mt-3">Stablecoin payouts are always free, regardless of volume. USD and international payout fees start low and get even lower as your monthly volume increases.</p>
+              <p className="mt-3">Stablecoin payouts are always free. Fiat payouts are a flat 0.5% regardless of volume.</p>
             </dd>
           </dl>
           <dl>
             <dt className="text-sm font-semibold">
-              Do fees decrease as my volume grows?
+              How are transaction fees calculated?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Yes. Transaction fees are tiered by monthly volume. For example, USD payout fees drop from 0.30% to 0.20% as your volume exceeds $2m/month. International payout fees drop from 0.60% to 0.25%. The more you transact, the less you pay per transaction.
+              Transaction fees are flat and straightforward. Stablecoin payouts are always free, regardless of volume. Fiat payouts are a flat 0.5% — no tiers, no volume thresholds, no surprises. Banking rail fees (ACH, Wire, SWIFT) apply on top where applicable.
             </dd>
           </dl>
           <dl>
