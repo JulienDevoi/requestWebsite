@@ -45,13 +45,6 @@ const testimonials = [
       'Other solutions we saw did not have all the functionalities we needed, like batch payments.',
   },
   {
-    img: '/testimonials/daniel.jpeg',
-    name: 'Daniel Lustig',
-    title: 'Founding Member, Ocean Protocol',
-    quote:
-      'It makes the whole invoicing process more efficient for all the parties involved.',
-  },
-  {
     img: '/testimonials/juan.jpeg',
     name: 'Juan Pablo Andersson',
     title: 'Finance Operations, The Sandbox',

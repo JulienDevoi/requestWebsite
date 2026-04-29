@@ -121,7 +121,6 @@ function HeroSaved() {
                     '/testimonials/david.jpeg',
                     '/testimonials/magdalena.jpeg',
                     '/testimonials/sebastien.jpg',
-                    '/testimonials/daniel.jpeg',
                     '/testimonials/juan.jpeg',
                   ].map((src, i) => (
                     <img
