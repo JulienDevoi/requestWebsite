@@ -76,8 +76,6 @@ This means card spend no longer lives in a separate world. It sits next to bills
 
 [IMAGE:/blog/stablecoin-cards/What%20you%20will%20see%20in%20Request.png|Cards and Transactions in one place]
 
-[IMAGE:/blog/stablecoin-cards/card_details%20request%20finance.png|Card details and controls in the side panel]
-
 ## Who this early version of Business Mastercards is for
 
 Business Mastercards are designed for finance teams that want to move more of their operations over to stablecoins. This early version is built with you in mind if you:
