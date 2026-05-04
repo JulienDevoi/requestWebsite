@@ -1,6 +1,7 @@
 import { virtualCardGuideBody } from './posts/virtual-credit-card-business-guide'
 import { cryptoTreasuryGuideBody } from './posts/crypto-treasury-management-guide'
 import { stablecoinDecisionBody } from './posts/b2b-stablecoin-payments-decision-framework'
+import { stablecoinCardsEarlyLookBody } from './posts/an-early-look-at-requests-stablecoin-cards'
 
 export const categories = [
   { slug: 'product-updates', title: 'Product Updates' },
@@ -13,6 +14,18 @@ export const categories = [
 ]
 
 export const posts = [
+  {
+    slug: 'an-early-look-at-requests-stablecoin-cards',
+    title: "An early look at Request's Stablecoin Cards",
+    excerpt:
+      "Get an early look at Request's Stablecoin Business Cards, virtual USDC-funded cards that simplify spend, boost control, and remove extra fees.",
+    publishedAt: '2026-04-02',
+    author: { name: 'Request Finance', image: null },
+    mainImage: '/blog/stablecoin-cards/card_details%20request%20finance.png',
+    featured: true,
+    categories: ['product-updates', 'corporate-cards', 'stablecoins'],
+    body: stablecoinCardsEarlyLookBody,
+  },
   {
     slug: 'b2b-stablecoin-payments-decision-framework',
     title: 'Should Your Company Use Stablecoins? A Decision Framework for B2B Payments',

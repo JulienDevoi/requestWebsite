@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System</title>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" />
+  <style>
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* ── BRAND GRADIENT ── */
+      --color-brand-100: #dbeafe;
+      --color-brand-400: #60a5fa;
+      --color-brand-600: #2563eb;
+      --color-brand-700: #1d4ed8;
+      --color-brand-950: #172554;
+
+      /* ── NEUTRALS (Tailwind gray) ── */
+      --color-gray-50:  #f9fafb;
+      --color-gray-100: #f3f4f6;
+      --color-gray-200: #e5e7eb;
+      --color-gray-300: #d1d5db;
+      --color-gray-400: #9ca3af;
+      --color-gray-500: #6b7280;
+      --color-gray-600: #4b5563;
+      --color-gray-700: #374151;
+      --color-gray-800: #1f2937;
+      --color-gray-900: #111827;
+      --color-gray-950: #030712;
+
+      /* ── SEMANTIC ── */
+      --color-white:    #ffffff;
+      --color-black:    #000000;
+      --color-coral:    #D15052;
+      --color-green-50:  #f0fdf4;
+      --color-green-100: #dcfce7;
+      --color-green-200: #bbf7d0;
+      --color-green-700: #15803d;
+      --color-green-800: #166534;
+      --color-accent-cyan: #60d5ff;
+      --color-accent-yellow: #ffc124;
+
+      /* ── RADIUS ── */
+      --radius-sm:   0.125rem;   /* rounded-sm  */
+      --radius-md:   0.375rem;   /* rounded-md  */
+      --radius-lg:   0.5rem;     /* rounded-lg  */
+      --radius-xl:   0.75rem;    /* rounded-xl  */
+      --radius-2xl:  1rem;       /* rounded-2xl */
+      --radius-3xl:  1.5rem;     /* rounded-3xl */
+      --radius-4xl:  2rem;       /* rounded-4xl */
+      --radius-full: 9999px;
+
+      /* ── SHADOWS ── */
+      --shadow-xs:  0 1px 2px rgba(0,0,0,.05);
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+      --shadow-md:  0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+      --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+      --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
+      --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,.25);
+      --shadow-inset-glass: inset 0 0 2px 1px rgba(255,255,255,.3);
+
+      /* ── TYPOGRAPHY ── */
+      --font-sans:  'Switzer', system-ui, -apple-system, sans-serif;
+      --font-mono:  ui-monospace, 'SF Mono', 'Cascadia Code', monospace;
+
+      /* ── SPACING (base 4px) ── */
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--color-gray-950);
+      background: var(--color-gray-50);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─────────────────────────────────────────────
+       DOC LAYOUT
+    ───────────────────────────────────────────── */
+    .ds-header {
+      background: linear-gradient(115deg, var(--color-brand-100) 0%, var(--color-brand-400) 50%, var(--color-brand-600) 100%);
+      padding: var(--space-20) var(--space-8);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ds-header::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse at 30% 60%, var(--color-brand-400) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 30%, var(--color-brand-100) 0%, transparent 60%);
+      filter: blur(48px);
+      opacity: .5;
+    }
+    .ds-header-inner { position: relative; }
+    .ds-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      color: var(--color-white);
+      text-shadow: 0 1px 8px rgba(0,0,0,.15);
+    }
+    .ds-header p {
+      margin-top: var(--space-4);
+      font-size: 1.25rem;
+      color: rgba(255,255,255,.8);
+    }
+
+    nav.ds-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,0,0,.07);
+      display: flex;
+      gap: var(--space-1);
+      padding: var(--space-2) var(--space-6);
+      overflow-x: auto;
+    }
+    nav.ds-nav a {
+      flex-shrink: 0;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--color-gray-600);
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+    nav.ds-nav a:hover { background: var(--color-gray-100); color: var(--color-gray-950); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: var(--space-16) var(--space-6); }
+
+    .ds-section { margin-bottom: var(--space-24); }
+    .ds-section-title {
+      font-size: .6875rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+      font-family: var(--font-mono);
+      margin-bottom: var(--space-8);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .ds-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+    .ds-section-heading {
+      font-size: 1.875rem;
+      font-weight: 500;
+      letter-spacing: -.03em;
+      color: var(--color-gray-950);
+      margin-bottom: var(--space-6);
+    }
+
+    .ds-card {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,.06);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+    }
+
+    .ds-label {
+      font-family: var(--font-mono);
+      font-size: .6875rem;
+      color: var(--color-gray-400);
+      letter-spacing: .04em;
+      margin-top: var(--space-2);
+    }
+
+    .ds-grid { display: grid; gap: var(--space-6); }
+    .ds-grid-2 { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .ds-grid-3 { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .ds-grid-4 { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+
+    /* ─────────────────────────────────────────────
+       COLOR SWATCHES
+    ───────────────────────────────────────────── */
+    .swatch-group { display: flex; flex-direction: column; gap: var(--space-2); }
+    .swatch-group-label {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--color-gray-500);
+      margin-bottom: var(--space-1);
+    }
+    .swatch-row { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+    .swatch {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(0,0,0,.08);
+      flex-shrink: 0;
+      cursor: default;
+      transition: transform .15s;
+    }
+    .swatch:hover { transform: scale(1.08); }
+    .swatch-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .swatch-name { font-size: .625rem; font-family: var(--font-mono); color: var(--color-gray-500); text-align: center; }
+
+    /* ─────────────────────────────────────────────
+       GRADIENT DEMOS
+    ───────────────────────────────────────────── */
+    .gradient-demo {
+      height: 120px;
+      border-radius: var(--radius-2xl);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .gradient-brand {
+      background: linear-gradient(115deg, #dbeafe 28%, #60a5fa 70%, #2563eb 100%);
+    }
+    .gradient-brand-lg {
+      background: linear-gradient(145deg, #dbeafe 28%, #60a5fa 70%, #2563eb 100%);
+    }
+    .gradient-white-gray {
+      background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+    }
+    .gradient-text-demo {
+      font-size: 2rem;
+      font-weight: 600;
+      background: linear-gradient(to right, #60d5ff, #2b6ff4, #1e40af);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY
+    ───────────────────────────────────────────── */
+    .type-specimen { border-bottom: 1px solid var(--color-gray-100); padding-bottom: var(--space-6); margin-bottom: var(--space-6); }
+    .type-specimen:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .type-meta { font-family: var(--font-mono); font-size: .6875rem; color: var(--color-gray-400); margin-top: var(--space-2); }
+
+    .text-eyebrow {
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+    }
+    .text-display {
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      color: var(--color-gray-950);
+    }
+    .text-heading-1 { font-size: 2.25rem; font-weight: 500; letter-spacing: -.03em; line-height: 1.2; }
+    .text-heading-2 { font-size: 1.875rem; font-weight: 500; letter-spacing: -.02em; line-height: 1.25; }
+    .text-heading-3 { font-size: 1.5rem;   font-weight: 500; letter-spacing: -.01em; line-height: 1.3; }
+    .text-lead { font-size: 1.5rem; font-weight: 500; color: var(--color-gray-500); line-height: 1.4; }
+    .text-body { font-size: 1rem; color: var(--color-gray-700); line-height: 1.625; }
+    .text-small { font-size: .875rem; color: var(--color-gray-600); line-height: 1.5; }
+    .text-xs-ui { font-size: .75rem; color: var(--color-gray-500); }
+
+    /* ─────────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────────── */
+    .btn-row { display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; }
+
+    /* Primary */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: calc(.5rem - 1px) calc(1.25rem - 1px);
+      border-radius: var(--radius-full);
+      background: var(--color-gray-950);
+      color: var(--color-white);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-md);
+      transition: background .15s;
+      font-family: var(--font-sans);
+    }
+    .btn-primary:hover { background: #1a1a2e; }
+
+    /* Secondary */
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: calc(.5rem - 1px) calc(1.25rem - 1px);
+      border-radius: var(--radius-full);
+      background: rgba(255,255,255,.15);
+      color: var(--color-gray-950);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-md), inset 0 0 2px 1px rgba(255,255,255,.3);
+      ring: 1px solid rgba(209,80,82,.15);
+      outline: 1px solid rgba(209,80,82,.15);
+      transition: background .15s;
+      font-family: var(--font-sans);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.25); }
+
+    /* Outline */
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: .375rem .875rem;
+      border-radius: var(--radius-lg);
+      background: transparent;
+      color: var(--color-gray-700);
+      font-size: .875rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      outline: 1px solid rgba(0,0,0,.1);
+      transition: background .15s;
+      font-family: var(--font-sans);
+    }
+    .btn-outline:hover { background: var(--color-gray-50); }
+
+    /* Disabled */
+    .btn-disabled { opacity: .4; pointer-events: none; }
+
+    /* Button on dark bg preview */
+    .btn-preview-dark {
+      background: linear-gradient(115deg, #dbeafe 28%, #60a5fa 70%, #2563eb 100%);
+      padding: var(--space-8);
+      border-radius: var(--radius-2xl);
+    }
+
+    /* ─────────────────────────────────────────────
+       BADGES / PILLS
+    ───────────────────────────────────────────── */
+    .badge-row { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: .25rem .75rem;
+      border-radius: var(--radius-full);
+      font-size: .875rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .badge-blue-promo {
+      background: rgba(23,37,84,.35);
+      color: var(--color-white);
+    }
+    .badge-green {
+      background: var(--color-green-100);
+      color: var(--color-green-800);
+    }
+    .badge-green-outline {
+      background: var(--color-green-50);
+      color: var(--color-green-700);
+      outline: 1px solid var(--color-green-200);
+    }
+    .badge-gray {
+      background: var(--color-gray-100);
+      color: var(--color-gray-700);
+      outline: 1px solid rgba(0,0,0,.06);
+    }
+    .badge-gradient-text {
+      padding: .25rem 1rem;
+      background: var(--color-white);
+      outline: 1px solid rgba(0,0,0,.08);
+      border-radius: var(--radius-full);
+      font-size: .875rem;
+      font-weight: 600;
+    }
+    .badge-gradient-text span {
+      background: linear-gradient(to right, #60d5ff, #2b6ff4, #1e40af);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ─────────────────────────────────────────────
+       CARDS
+    ───────────────────────────────────────────── */
+    /* Bento card */
+    .bento-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xs);
+      outline: 1px solid rgba(0,0,0,.05);
+      padding: var(--space-6);
+      overflow: hidden;
+    }
+    .bento-card-dark {
+      background: var(--color-gray-800);
+      color: var(--color-white);
+      outline-color: rgba(255,255,255,.1);
+    }
+
+    /* Pricing shell */
+    .pricing-shell {
+      margin: -8px;
+      border-radius: var(--radius-4xl);
+      box-shadow: var(--shadow-inset-glass), 0 0 0 1px rgba(0,0,0,.05);
+      padding: 8px;
+    }
+    .pricing-inner {
+      background: var(--color-white);
+      border-radius: var(--radius-3xl);
+      padding: var(--space-8);
+      box-shadow: var(--shadow-2xl), 0 0 0 1px rgba(0,0,0,.05);
+    }
+    .pricing-shell-featured {
+      outline: 2px solid var(--color-brand-600);
+    }
+
+    /* Security row */
+    .security-row {
+      background: var(--color-white);
+      border-radius: var(--radius-3xl);
+      box-shadow: var(--shadow-md);
+      outline: 1px solid rgba(0,0,0,.05);
+      padding: var(--space-6) var(--space-8);
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    /* ─────────────────────────────────────────────
+       SHADOWS DEMO
+    ───────────────────────────────────────────── */
+    .shadow-demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: var(--space-6); }
+    .shadow-demo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .shadow-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-xl);
+      background: var(--color-white);
+    }
+
+    /* ─────────────────────────────────────────────
+       BORDER RADIUS
+    ───────────────────────────────────────────── */
+    .radius-demo-grid { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: flex-end; }
+    .radius-demo-item { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); }
+    .radius-swatch {
+      background: linear-gradient(135deg, var(--color-brand-400), var(--color-brand-600));
+      width: 64px;
+      height: 64px;
+    }
+
+    /* ─────────────────────────────────────────────
+       SPACING SCALE
+    ───────────────────────────────────────────── */
+    .spacing-table { width: 100%; border-collapse: collapse; }
+    .spacing-table th, .spacing-table td {
+      text-align: left;
+      padding: var(--space-3) var(--space-4);
+      font-size: .875rem;
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+    .spacing-table th {
+      font-family: var(--font-mono);
+      font-size: .6875rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--color-gray-500);
+    }
+    .spacing-bar-wrap { display: flex; align-items: center; gap: var(--space-3); }
+    .spacing-bar {
+      height: 12px;
+      background: linear-gradient(to right, var(--color-brand-400), var(--color-brand-600));
+      border-radius: var(--radius-full);
+    }
+
+    /* ─────────────────────────────────────────────
+       PLUS GRID MOTIF
+    ───────────────────────────────────────────── */
+    .plus-grid-demo {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .plus-grid-row {
+      display: contents;
+    }
+    .plus-grid-cell {
+      border-top: 1px solid rgba(0,0,0,.07);
+      border-right: 1px solid rgba(0,0,0,.07);
+      padding: var(--space-6);
+      font-size: .875rem;
+      color: var(--color-gray-600);
+    }
+    .plus-grid-cell:nth-child(3n) { border-right: none; }
+
+    /* ─────────────────────────────────────────────
+       FORM ELEMENTS
+    ───────────────────────────────────────────── */
+    .input-base {
+      width: 100%;
+      padding: .5rem .875rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-gray-200);
+      font-size: .9375rem;
+      font-family: var(--font-sans);
+      color: var(--color-gray-950);
+      background: var(--color-white);
+      box-shadow: var(--shadow-xs);
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .input-base:focus {
+      border-color: var(--color-brand-600);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+    }
+    .input-base::placeholder { color: var(--color-gray-400); }
+    .input-label {
+      display: block;
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--color-gray-700);
+      margin-bottom: var(--space-2);
+    }
+
+    /* Toggle */
+    .toggle-wrap { display: flex; align-items: center; gap: var(--space-3); }
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 28px;
+    }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute;
+      inset: 0;
+      background: var(--color-gray-200);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: background .2s ease-in-out;
+    }
+    .toggle-slider::before {
+      content: '';
+      position: absolute;
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background: var(--color-white);
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s ease-in-out;
+    }
+    .toggle input:checked + .toggle-slider { background: var(--color-brand-600); }
+    .toggle input:checked + .toggle-slider::before { transform: translateX(20px); }
+    .toggle-label { font-size: .9375rem; font-weight: 500; color: var(--color-gray-700); }
+
+    /* ─────────────────────────────────────────────
+       NAV PREVIEW
+    ───────────────────────────────────────────── */
+    .nav-preview {
+      background: var(--color-white);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,.06);
+      overflow: hidden;
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: var(--space-3) var(--space-6);
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      color: var(--color-gray-950);
+      margin-right: auto;
+    }
+    .nav-link {
+      padding: .5rem 1rem;
+      font-size: .9375rem;
+      font-weight: 500;
+      color: var(--color-gray-700);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: background .15s;
+      display: flex;
+      align-items: center;
+      gap: .25rem;
+    }
+    .nav-link:hover { background: var(--color-gray-50); }
+    .nav-chevron { font-size: .625rem; color: var(--color-gray-400); transition: transform .2s; }
+    .nav-link:hover .nav-chevron { transform: rotate(180deg); }
+
+    /* ─────────────────────────────────────────────
+       PRICING DEMO
+    ───────────────────────────────────────────── */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-6); }
+    .pricing-price { font-size: 3rem; font-weight: 500; letter-spacing: -.04em; color: var(--color-gray-950); }
+    .pricing-price sub { font-size: 1.25rem; vertical-align: middle; margin-right: 2px; }
+    .pricing-freq { font-size: .875rem; color: var(--color-gray-500); margin-left: 2px; }
+    .pricing-feature-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-6); }
+    .pricing-feature-list li { display: flex; align-items: center; gap: var(--space-3); font-size: .9375rem; color: var(--color-gray-700); }
+    .pricing-check { color: var(--color-brand-600); font-size: 1rem; }
+
+    /* ─────────────────────────────────────────────
+       ANIMATIONS
+    ───────────────────────────────────────────── */
+    @keyframes move-x {
+      from { transform: translateX(var(--move-x-from, -20px)); opacity: 0; }
+      to   { transform: translateX(var(--move-x-to, 0));     opacity: 1; }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .anim-demo-box {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--color-brand-400), var(--color-brand-600));
+      cursor: pointer;
+    }
+    .anim-demo-box:hover {
+      animation: move-x .35s ease forwards;
+      --move-x-from: 0; --move-x-to: 16px;
+    }
+
+    .anim-fade-demo {
+      animation: fade-in .5s ease both;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOCUS RING
+    ───────────────────────────────────────────── */
+    .focus-demo:focus-visible {
+      outline: 2px solid var(--color-brand-600);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(37,99,235,.2);
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER DEMO
+    ───────────────────────────────────────────── */
+    .footer-demo {
+      background: linear-gradient(145deg, #dbeafe 28%, #60a5fa 70%, #2563eb 100%);
+      border-radius: var(--radius-4xl);
+      padding: var(--space-3);
+    }
+    .footer-inner {
+      background: rgba(255,255,255,.8);
+      border-radius: var(--radius-3xl);
+      padding: var(--space-8) var(--space-10);
+      backdrop-filter: blur(8px);
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .footer-link { font-size: .875rem; color: var(--color-gray-600); text-decoration: none; padding: .25rem .5rem; transition: color .15s; }
+    .footer-link:hover { color: var(--color-brand-600); }
+
+    /* ─────────────────────────────────────────────
+       UTILITY CLASSES
+    ───────────────────────────────────────────── */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: .5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+    .flex { display: flex; }
+    .flex-wrap { flex-wrap: wrap; }
+    .gap-3 { gap: .75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .items-center { align-items: center; }
+    .col { flex-direction: column; }
+  </style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║              HEADER                     ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<header class="ds-header">
+  <div class="ds-header-inner">
+    <h1>Design System</h1>
+    <p>Tokens, components, and patterns used throughout the site</p>
+  </div>
+</header>
+
+<!-- ╔══════════════════════════════════════════╗ -->
+<!-- ║              STICKY NAV                 ║ -->
+<!-- ╚══════════════════════════════════════════╝ -->
+<nav class="ds-nav">
+  <a href="#colors">Colors</a>
+  <a href="#gradients">Gradients</a>
+  <a href="#typography">Typography</a>
+  <a href="#spacing">Spacing</a>
+  <a href="#radius">Border Radius</a>
+  <a href="#shadows">Shadows</a>
+  <a href="#buttons">Buttons</a>
+  <a href="#badges">Badges</a>
+  <a href="#cards">Cards</a>
+  <a href="#forms">Forms</a>
+  <a href="#navigation">Navigation</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#footer">Footer</a>
+  <a href="#animations">Animations</a>
+</nav>
+
+<main>
+
+  <!-- ══════════════════════════════════════════
+       COLORS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="colors">
+    <p class="ds-section-title">01 — Colors</p>
+
+    <!-- Brand -->
+    <div class="ds-card">
+      <p class="swatch-group-label">Brand Blue</p>
+      <div class="swatch-row mt-2">
+        <div class="swatch-item">
+          <div class="swatch" style="background:#dbeafe;"></div>
+          <span class="swatch-name">100<br>#dbeafe</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#93c5fd;"></div>
+          <span class="swatch-name">300<br>#93c5fd</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#60a5fa;"></div>
+          <span class="swatch-name">400<br>#60a5fa</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#3b82f6;"></div>
+          <span class="swatch-name">500<br>#3b82f6</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#2563eb;"></div>
+          <span class="swatch-name">600<br>#2563eb</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#1d4ed8;"></div>
+          <span class="swatch-name">700<br>#1d4ed8</span>
+        </div>
+        <div class="swatch-item">
+          <div class="swatch" style="background:#172554;"></div>
+          <span class="swatch-name">950<br>#172554</span>
+        </div>
+      </div>
+
+      <p class="swatch-group-label mt-6">Neutrals — Gray</p>
+      <div class="swatch-row mt-2">
+        <div class="swatch-item"><div class="swatch" style="background:#f9fafb;"></div><span class="swatch-name">50<br>#f9fafb</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#f3f4f6;"></div><span class="swatch-name">100<br>#f3f4f6</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#e5e7eb;"></div><span class="swatch-name">200<br>#e5e7eb</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#d1d5db;"></div><span class="swatch-name">300<br>#d1d5db</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#9ca3af;"></div><span class="swatch-name">400<br>#9ca3af</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#6b7280;"></div><span class="swatch-name">500<br>#6b7280</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#4b5563;"></div><span class="swatch-name">600<br>#4b5563</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#374151;"></div><span class="swatch-name">700<br>#374151</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#1f2937;"></div><span class="swatch-name">800<br>#1f2937</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#111827;"></div><span class="swatch-name">900<br>#111827</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#030712; border-color:rgba(255,255,255,.1);"></div><span class="swatch-name">950<br>#030712</span></div>
+      </div>
+
+      <p class="swatch-group-label mt-6">Semantic Accents</p>
+      <div class="swatch-row mt-2">
+        <div class="swatch-item"><div class="swatch" style="background:#D15052;"></div><span class="swatch-name">Coral<br>#D15052</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#60d5ff;"></div><span class="swatch-name">Cyan<br>#60d5ff</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#ffc124;"></div><span class="swatch-name">Yellow<br>#ffc124</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#15803d;"></div><span class="swatch-name">Green 700<br>#15803d</span></div>
+        <div class="swatch-item"><div class="swatch" style="background:#dcfce7;"></div><span class="swatch-name">Green 100<br>#dcfce7</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       GRADIENTS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="gradients">
+    <p class="ds-section-title">02 — Gradients</p>
+    <div class="ds-grid ds-grid-2">
+      <div>
+        <div class="gradient-demo gradient-brand"></div>
+        <p class="ds-label">Brand slab — 115deg · #dbeafe 28% → #60a5fa 70% → #2563eb</p>
+      </div>
+      <div>
+        <div class="gradient-demo gradient-brand-lg"></div>
+        <p class="ds-label">Brand slab large — 145deg (sm+ breakpoint)</p>
+      </div>
+      <div>
+        <div class="gradient-demo gradient-white-gray"></div>
+        <p class="ds-label">Section fade — white → gray-100 (linear-to-b)</p>
+      </div>
+      <div class="ds-card" style="display:flex; align-items:center; justify-content:center; padding: 2rem;">
+        <div>
+          <div class="gradient-text-demo">Coming Soon</div>
+          <p class="ds-label" style="margin-top:.5rem;">Text gradient — cyan → blue → navy (bg-clip-text)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TYPOGRAPHY
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="typography">
+    <p class="ds-section-title">03 — Typography</p>
+    <div class="ds-card">
+
+      <div class="type-specimen">
+        <p class="text-eyebrow">Eyebrow / Label</p>
+        <p class="type-meta">font-mono · 0.75rem · 600 · tracking-widest · uppercase · gray-500</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-display">The future of payments.</p>
+        <p class="type-meta">Display — Switzer · 3.75rem (clamp) · 500 · tracking -0.04em · lh 1.1</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-heading-1">Heading One — Switzer 500</p>
+        <p class="type-meta">2.25rem · 500 · tracking -0.03em</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-heading-2">Heading Two — Clear & Precise</p>
+        <p class="type-meta">1.875rem · 500 · tracking -0.02em</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-heading-3">Heading Three — Feature Callout</p>
+        <p class="type-meta">1.5rem · 500 · tracking -0.01em</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-lead">Lead text for hero sections and sub-headings that need weight.</p>
+        <p class="type-meta">1.5rem · 500 · gray-500</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-body">Body copy for general content. Legible, comfortable line-height designed to keep readers engaged through longer paragraphs without fatigue.</p>
+        <p class="type-meta">1rem · 400 · gray-700 · lh 1.625</p>
+      </div>
+
+      <div class="type-specimen">
+        <p class="text-small">Small / UI text — labels, captions, helper messages, pricing annotations.</p>
+        <p class="type-meta">0.875rem · gray-600</p>
+      </div>
+
+      <div class="type-specimen" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+        <p class="text-xs-ui">XS UI — metadata, tags, timestamps</p>
+        <p class="type-meta">0.75rem · gray-500</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SPACING
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="spacing">
+    <p class="ds-section-title">04 — Spacing Scale</p>
+    <div class="ds-card" style="padding: 0; overflow: hidden;">
+      <table class="spacing-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Tailwind</th>
+            <th>px</th>
+            <th>rem</th>
+            <th>Visual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--space-1</code></td><td>space-1</td><td>4px</td><td>0.25rem</td><td><div class="spacing-bar" style="width:4px;"></div></td></tr>
+          <tr><td><code>--space-2</code></td><td>space-2</td><td>8px</td><td>0.5rem</td><td><div class="spacing-bar" style="width:8px;"></div></td></tr>
+          <tr><td><code>--space-3</code></td><td>space-3</td><td>12px</td><td>0.75rem</td><td><div class="spacing-bar" style="width:12px;"></div></td></tr>
+          <tr><td><code>--space-4</code></td><td>space-4</td><td>16px</td><td>1rem</td><td><div class="spacing-bar" style="width:16px;"></div></td></tr>
+          <tr><td><code>--space-5</code></td><td>space-5</td><td>20px</td><td>1.25rem</td><td><div class="spacing-bar" style="width:20px;"></div></td></tr>
+          <tr><td><code>--space-6</code></td><td>space-6</td><td>24px</td><td>1.5rem</td><td><div class="spacing-bar" style="width:24px;"></div></td></tr>
+          <tr><td><code>--space-8</code></td><td>space-8</td><td>32px</td><td>2rem</td><td><div class="spacing-bar" style="width:32px;"></div></td></tr>
+          <tr><td><code>--space-10</code></td><td>space-10</td><td>40px</td><td>2.5rem</td><td><div class="spacing-bar" style="width:40px;"></div></td></tr>
+          <tr><td><code>--space-12</code></td><td>space-12</td><td>48px</td><td>3rem</td><td><div class="spacing-bar" style="width:48px;"></div></td></tr>
+          <tr><td><code>--space-16</code></td><td>space-16</td><td>64px</td><td>4rem</td><td><div class="spacing-bar" style="width:64px;"></div></td></tr>
+          <tr><td><code>--space-20</code></td><td>space-20</td><td>80px</td><td>5rem</td><td><div class="spacing-bar" style="width:80px;"></div></td></tr>
+          <tr><td><code>--space-24</code></td><td>space-24</td><td>96px</td><td>6rem</td><td><div class="spacing-bar" style="width:96px;"></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       BORDER RADIUS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="radius">
+    <p class="ds-section-title">05 — Border Radius</p>
+    <div class="ds-card">
+      <div class="radius-demo-grid">
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-sm);"></div>
+          <p class="ds-label">sm · 2px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-md);"></div>
+          <p class="ds-label">md · 6px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-lg);"></div>
+          <p class="ds-label">lg · 8px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-xl);"></div>
+          <p class="ds-label">xl · 12px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-2xl);"></div>
+          <p class="ds-label">2xl · 16px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-3xl);"></div>
+          <p class="ds-label">3xl · 24px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-4xl);"></div>
+          <p class="ds-label">4xl · 32px</p>
+        </div>
+        <div class="radius-demo-item">
+          <div class="radius-swatch" style="border-radius:var(--radius-full); width:64px; height:64px;"></div>
+          <p class="ds-label">full · 9999px</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SHADOWS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="shadows">
+    <p class="ds-section-title">06 — Shadows</p>
+    <div class="ds-card">
+      <div class="shadow-demo-grid">
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-xs);"></div>
+          <p class="ds-label">xs</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-sm);"></div>
+          <p class="ds-label">sm</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-md);"></div>
+          <p class="ds-label">md</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-lg);"></div>
+          <p class="ds-label">lg</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-xl);"></div>
+          <p class="ds-label">xl</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-2xl);"></div>
+          <p class="ds-label">2xl</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-inset-glass); background:linear-gradient(135deg,#f0f4ff,#fff);"></div>
+          <p class="ds-label">inset glass</p>
+        </div>
+        <div class="shadow-demo-item">
+          <div class="shadow-swatch" style="box-shadow:var(--shadow-md); outline:1px solid rgba(0,0,0,.05);"></div>
+          <p class="ds-label">md + ring/5</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       BUTTONS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="buttons">
+    <p class="ds-section-title">07 — Buttons</p>
+
+    <div class="ds-card">
+      <p style="font-size:.875rem; font-weight:600; color:var(--color-gray-700); margin-bottom:1rem;">On light background</p>
+      <div class="btn-row">
+        <button class="btn-primary focus-demo">Primary</button>
+        <button class="btn-secondary focus-demo">Secondary</button>
+        <button class="btn-outline focus-demo">Outline</button>
+        <button class="btn-primary btn-disabled" tabindex="-1">Disabled</button>
+      </div>
+
+      <div class="mt-8 btn-preview-dark" style="border-radius:var(--radius-xl); padding:1.5rem 2rem;">
+        <p style="font-size:.875rem; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:1rem;">On brand gradient background</p>
+        <div class="btn-row">
+          <button class="btn-primary">Get Started</button>
+          <button class="btn-secondary">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ds-card mt-4" style="background:var(--color-gray-900);">
+      <p style="font-size:.875rem; font-weight:600; color:rgba(255,255,255,.5); margin-bottom:1rem;">On dark background</p>
+      <div class="btn-row">
+        <button class="btn-primary" style="background:white; color:var(--color-gray-950);">Primary Light</button>
+        <button class="btn-secondary" style="color:white; outline:1px solid rgba(255,255,255,.2);">Secondary</button>
+        <button class="btn-outline" style="color:rgba(255,255,255,.7); outline-color:rgba(255,255,255,.15);">Outline</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       BADGES & PILLS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="badges">
+    <p class="ds-section-title">08 — Badges & Pills</p>
+    <div class="ds-card">
+      <div class="badge-row">
+        <span class="badge badge-gray">Default</span>
+        <span class="badge badge-green">Saved 30%</span>
+        <span class="badge badge-green-outline">Active</span>
+        <span class="badge badge-gradient-text"><span>Coming Soon ✦</span></span>
+      </div>
+      <div class="badge-row mt-4" style="background:linear-gradient(115deg,#dbeafe,#2563eb); padding:1rem 1.25rem; border-radius:var(--radius-xl);">
+        <span class="badge badge-blue-promo">✦ New — Radically simple pricing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CARDS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="cards">
+    <p class="ds-section-title">09 — Cards</p>
+
+    <!-- Bento -->
+    <p style="font-size:.875rem; font-weight:600; color:var(--color-gray-500); margin-bottom:.75rem;">Bento Card</p>
+    <div class="ds-grid ds-grid-2 mt-2">
+      <div class="bento-card">
+        <p class="text-eyebrow">Feature</p>
+        <p style="font-size:1.125rem; font-weight:500; margin-top:.5rem; letter-spacing:-.01em;">Bento card — light</p>
+        <p class="text-small mt-2">Used in feature sections. White background, subtle ring and shadow.</p>
+      </div>
+      <div class="bento-card bento-card-dark">
+        <p class="text-eyebrow" style="color:rgba(255,255,255,.5);">Feature</p>
+        <p style="font-size:1.125rem; font-weight:500; margin-top:.5rem; letter-spacing:-.01em; color:white;">Bento card — dark</p>
+        <p style="font-size:.875rem; color:rgba(255,255,255,.5); margin-top:.5rem;">Used when a dark variant is needed within a light grid.</p>
+      </div>
+    </div>
+
+    <!-- Pricing shell -->
+    <p style="font-size:.875rem; font-weight:600; color:var(--color-gray-500); margin-top:2rem; margin-bottom:.75rem;">Pricing Shell</p>
+    <div class="pricing-grid">
+      <div class="pricing-shell">
+        <div class="pricing-inner">
+          <p class="text-eyebrow">Starter</p>
+          <p class="pricing-price mt-4"><sub>$</sub>29<span class="pricing-freq">/mo</span></p>
+          <p class="text-small mt-2">For individuals and small teams getting started.</p>
+          <ul class="pricing-feature-list">
+            <li><span class="pricing-check">✓</span> 5 projects</li>
+            <li><span class="pricing-check">✓</span> 10 GB storage</li>
+            <li><span class="pricing-check">✓</span> Email support</li>
+          </ul>
+          <button class="btn-outline mt-6" style="width:100%; justify-content:center;">Get started</button>
+        </div>
+      </div>
+      <div class="pricing-shell pricing-shell-featured">
+        <div class="pricing-inner">
+          <p class="text-eyebrow" style="color:var(--color-brand-600);">Pro — Most Popular</p>
+          <p class="pricing-price mt-4" style="color:var(--color-brand-600);"><sub>$</sub>79<span class="pricing-freq">/mo</span></p>
+          <p class="text-small mt-2">For growing teams that need more power and flexibility.</p>
+          <ul class="pricing-feature-list">
+            <li><span class="pricing-check">✓</span> Unlimited projects</li>
+            <li><span class="pricing-check">✓</span> 100 GB storage</li>
+            <li><span class="pricing-check">✓</span> Priority support</li>
+            <li><span class="pricing-check">✓</span> Advanced analytics</li>
+          </ul>
+          <button class="btn-primary mt-6" style="width:100%; justify-content:center;">Get started</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security row -->
+    <p style="font-size:.875rem; font-weight:600; color:var(--color-gray-500); margin-top:2rem; margin-bottom:.75rem;">Security / Feature Row</p>
+    <div class="security-row">
+      <div style="width:40px; height:40px; border-radius:var(--radius-lg); background:var(--color-brand-100); display:flex; align-items:center; justify-content:center; font-size:1.25rem; flex-shrink:0;">🔒</div>
+      <div>
+        <p style="font-weight:600; font-size:.9375rem;">Bank-grade encryption</p>
+        <p class="text-small">Your data is protected with AES-256 encryption at rest and in transit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FORMS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="forms">
+    <p class="ds-section-title">10 — Form Elements</p>
+    <div class="ds-card">
+      <div class="ds-grid ds-grid-2">
+        <div>
+          <label class="input-label" for="demo-input">Label</label>
+          <input id="demo-input" class="input-base focus-demo" type="text" placeholder="Placeholder text…" />
+          <p class="ds-label">Input base — rounded-lg · gray-200 border · focus: blue-600 ring</p>
+        </div>
+        <div>
+          <label class="input-label" for="demo-select">Select</label>
+          <select id="demo-select" class="input-base focus-demo">
+            <option>Option one</option>
+            <option>Option two</option>
+            <option>Option three</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-6">
+        <div class="toggle-wrap">
+          <label class="toggle">
+            <input type="checkbox" checked />
+            <span class="toggle-slider"></span>
+          </label>
+          <span class="toggle-label">Annual billing</span>
+          <span class="badge badge-green" style="font-size:.75rem; padding:.15rem .6rem;">Save 30%</span>
+        </div>
+        <p class="ds-label mt-2">Toggle — billing period switcher pattern</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="navigation">
+    <p class="ds-section-title">11 — Navigation</p>
+    <div class="nav-preview">
+      <div class="nav-bar">
+        <span class="nav-logo">Brand</span>
+        <a class="nav-link" href="#">Product <span class="nav-chevron">▾</span></a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Company <span class="nav-chevron">▾</span></a>
+        <button class="btn-outline" style="margin-left:.5rem;">Sign in</button>
+        <button class="btn-primary" style="font-size:.875rem; padding:.375rem 1rem;">Get started</button>
+      </div>
+      <div style="padding:var(--space-4) var(--space-6); background:var(--color-gray-50); font-size:.8125rem; color:var(--color-gray-500);">
+        PlusGrid row — <code>border-top: 1px solid rgba(0,0,0,.07)</code> · nav links: font-medium · hover: gray-50 bg · dropdowns: rounded-xl shadow-lg ring-1
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PLUS GRID MOTIF
+  ══════════════════════════════════════════ -->
+  <section class="ds-section">
+    <p class="ds-section-title">11b — Plus Grid Pattern</p>
+    <div class="ds-card" style="padding:0; overflow:hidden;">
+      <div class="plus-grid-demo">
+        <div class="plus-grid-cell">Feature A<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Seamlessly connected</span></div>
+        <div class="plus-grid-cell">Feature B<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Always in sync</span></div>
+        <div class="plus-grid-cell">Feature C<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Lightning fast</span></div>
+        <div class="plus-grid-cell">Feature D<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Enterprise ready</span></div>
+        <div class="plus-grid-cell">Feature E<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Zero downtime</span></div>
+        <div class="plus-grid-cell">Feature F<br><span style="color:var(--color-gray-400); font-size:.8125rem;">Built to scale</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PRICING
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="pricing">
+    <p class="ds-section-title">12 — Pricing Anatomy</p>
+    <div class="ds-card">
+      <p class="text-small" style="color:var(--color-gray-500); line-height:1.7;">
+        Pricing shells use a <strong>3-layer depth</strong> pattern:<br>
+        1. Outer wrapper at <code>-m-2</code> with <code>rounded-4xl</code>, <code>inset glass shadow</code>, and <code>ring-1 ring-black/5</code><br>
+        2. Middle padding <code>p-2 shadow-md shadow-black/5</code><br>
+        3. Inner white card <code>rounded-3xl bg-white p-8 shadow-2xl ring-1 ring-black/5</code><br>
+        Featured tier adds <code>ring-2 ring-blue-600</code> to the outer shell.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="footer">
+    <p class="ds-section-title">13 — Footer Pattern</p>
+    <div class="footer-demo">
+      <div class="footer-inner">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <p style="font-weight:700; font-size:1rem; letter-spacing:-.02em;">Brand</p>
+          <div class="footer-links">
+            <a class="footer-link" href="#">Privacy</a>
+            <a class="footer-link" href="#">Terms</a>
+            <a class="footer-link" href="#">Sitemap</a>
+            <a class="footer-link" href="#">Cookie Policy</a>
+          </div>
+        </div>
+        <p style="font-size:.8125rem; color:var(--color-gray-500); margin-top:1rem;">© 2026 Brand Inc. All rights reserved.</p>
+      </div>
+    </div>
+    <p class="ds-label mt-2">Footer: brand gradient shell with <code>rounded-4xl</code> · inner frosted layer <code>bg-white/80 rounded-3xl backdrop-blur-sm</code></p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       ANIMATIONS
+  ══════════════════════════════════════════ -->
+  <section class="ds-section" id="animations">
+    <p class="ds-section-title">14 — Motion & Animation</p>
+    <div class="ds-card">
+      <div class="ds-grid ds-grid-3">
+
+        <div>
+          <div class="anim-demo-box" title="Hover me"></div>
+          <p class="ds-label mt-2">move-x — hover to slide right<br><code>keyframes move-x</code></p>
+        </div>
+
+        <div>
+          <div class="anim-demo-box anim-fade-demo" style="animation-delay:.1s;"></div>
+          <p class="ds-label mt-2">fade-in — entrance animation<br><code>opacity + translateY(8px)</code></p>
+        </div>
+
+        <div>
+          <div style="display:flex; flex-direction:column; gap:.75rem;">
+            <div style="display:flex; gap:.5rem; align-items:center;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--color-brand-600);"></div>
+              <span class="text-small">transition-colors <code>150ms</code></span>
+            </div>
+            <div style="display:flex; gap:.5rem; align-items:center;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--color-brand-400);"></div>
+              <span class="text-small">transition ease-in-out <code>200ms</code></span>
+            </div>
+            <div style="display:flex; gap:.5rem; align-items:center;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--color-gray-400);"></div>
+              <span class="text-small">chevron rotate <code>200ms</code></span>
+            </div>
+            <div style="display:flex; gap:.5rem; align-items:center;">
+              <div style="width:12px;height:12px;border-radius:50%;background:var(--color-gray-300);"></div>
+              <span class="text-small">mobile nav: Framer rotateX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6" style="border-top:1px solid var(--color-gray-100); padding-top:1.5rem;">
+        <p style="font-size:.875rem; font-weight:600; color:var(--color-gray-700); margin-bottom:.75rem;">Focus Ring</p>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+          <button class="btn-primary focus-demo" style="outline:2px solid var(--color-brand-600); outline-offset:2px; box-shadow:0 0 0 4px rgba(37,99,235,.2);">Focused state</button>
+          <input class="input-base focus-demo" style="max-width:220px; border-color:var(--color-brand-600); box-shadow:0 0 0 3px rgba(37,99,235,.15);" value="Focused input" />
+        </div>
+        <p class="ds-label mt-2">Focus visible: <code>outline: 2px solid blue-600 · offset: 2px · ring glow: rgba(37,99,235,.2)</code></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       TOKEN REFERENCE
+  ══════════════════════════════════════════ -->
+  <section class="ds-section">
+    <p class="ds-section-title">15 — CSS Custom Properties Reference</p>
+    <div class="ds-card" style="padding:0; overflow:hidden;">
+      <table class="spacing-table">
+        <thead>
+          <tr><th>Variable</th><th>Value</th><th>Usage</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>--color-brand-600</code></td><td>#2563eb</td><td>Primary CTA, focus rings, featured tier ring</td></tr>
+          <tr><td><code>--color-gray-950</code></td><td>#030712</td><td>Primary text, primary button bg</td></tr>
+          <tr><td><code>--color-gray-500</code></td><td>#6b7280</td><td>Secondary text, eyebrows, placeholders</td></tr>
+          <tr><td><code>--color-coral</code></td><td>#D15052</td><td>Secondary button ring accent (15% opacity)</td></tr>
+          <tr><td><code>--radius-4xl</code></td><td>2rem</td><td>Pricing shells, footer, large containers</td></tr>
+          <tr><td><code>--radius-full</code></td><td>9999px</td><td>CTAs, badges, toggles, pills</td></tr>
+          <tr><td><code>--shadow-inset-glass</code></td><td>inset 0 0 2px 1px rgba(255,255,255,.3)</td><td>Frosted surface highlight</td></tr>
+          <tr><td><code>--font-sans</code></td><td>Switzer, system-ui</td><td>All body and UI text</td></tr>
+          <tr><td><code>--font-mono</code></td><td>ui-monospace, SF Mono</td><td>Eyebrows, labels, code, metadata</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align:center; padding:var(--space-12) var(--space-6); border-top:1px solid var(--color-gray-200);">
+  <p style="font-size:.8125rem; color:var(--color-gray-400);">Design System — generated from <code>/src</code></p>
+</footer>
+
+</body>
+</html>
