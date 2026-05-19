@@ -40,6 +40,8 @@ const tiers = [
       { description: 'Payroll & Expenses', isSection: true },
       { description: 'Payroll templates & bulk upload' },
       { description: 'Mobile expense claims' },
+      { description: 'Team & Organization', isSection: true },
+      { description: '1 entity' },
       { description: 'Support', isSection: true },
       { description: 'Email & chat support (median response 2h)' },
     ],
@@ -76,7 +78,7 @@ const tiers = [
       { section: 'Support & Services', name: 'Slack support', value: false },
       { section: 'Support & Services', name: 'White-glove onboarding', value: false },
       { section: 'Team & Organization', name: 'Number of seats', value: '5' },
-      { section: 'Team & Organization', name: 'Multi-entity support', value: false },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: '1' },
     ],
   },
   {
@@ -98,7 +100,7 @@ const tiers = [
       { description: 'Accounting & Integrations', isSection: true },
       { description: 'QuickBooks Online & Xero integrations' },
       { description: 'Multi-entity', isSection: true },
-      { description: 'Manage multiple entities from one dashboard' },
+      { description: 'Up to 3 entities' },
       { description: 'Support', isSection: true },
       { description: 'Dedicated senior CSM' },
       { description: 'Slack support' },
@@ -136,7 +138,7 @@ const tiers = [
       { section: 'Support & Services', name: 'Slack support', value: true },
       { section: 'Support & Services', name: 'White-glove onboarding', value: false },
       { section: 'Team & Organization', name: 'Number of seats', value: '20' },
-      { section: 'Team & Organization', name: 'Multi-entity support', value: true },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: '3' },
     ],
   },
   {
@@ -154,6 +156,8 @@ const tiers = [
       { description: 'Up to 5 Virtual Accounts' },
       { description: 'Accounting & Integrations', isSection: true },
       { description: 'NetSuite integration' },
+      { description: 'Multi-entity', isSection: true },
+      { description: 'Up to 10 entities' },
       { description: 'Operations', isSection: true },
       { description: 'Priority routing on all payouts' },
       { description: 'Custom development available' },
@@ -194,7 +198,7 @@ const tiers = [
       { section: 'Support & Services', name: 'Slack support', value: true },
       { section: 'Support & Services', name: 'White-glove onboarding', value: true },
       { section: 'Team & Organization', name: 'Number of seats', value: 'Unlimited' },
-      { section: 'Team & Organization', name: 'Multi-entity support', value: true },
+      { section: 'Team & Organization', name: 'Multi-entity support', value: '10' },
     ],
   },
 ]
@@ -428,7 +432,7 @@ function TransactionPricing() {
           <p className="text-sm/6 text-gray-600">
             <span className="font-semibold text-gray-950">Enterprise needs?</span>{' '}
             Custom contracts, dedicated CSM, and tailored pricing available.{' '}
-            <Link href="https://app.request.finance/signup" className="font-medium text-blue-600 hover:text-blue-500">
+            <Link href="/demo" className="font-medium text-blue-600 hover:text-blue-500">
               Talk to sales &rarr;
             </Link>
           </p>
