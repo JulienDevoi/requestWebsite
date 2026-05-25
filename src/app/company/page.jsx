@@ -333,11 +333,6 @@ Request Finance turns that infrastructure into a practical platform for finance 
           img="/team/Uyen.png"
         />
         <Person
-          name="Vincent"
-          description="Finance Associate"
-          img="/team/placeholder.png"
-        />
-        <Person
           name="Yoann"
           description="CTO"
           img="/team/Yoann.png"
