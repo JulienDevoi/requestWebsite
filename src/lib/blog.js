@@ -2,6 +2,7 @@ import { virtualCardGuideBody } from './posts/virtual-credit-card-business-guide
 import { cryptoTreasuryGuideBody } from './posts/crypto-treasury-management-guide'
 import { stablecoinDecisionBody } from './posts/b2b-stablecoin-payments-decision-framework'
 import { stablecoinCardsEarlyLookBody } from './posts/an-early-look-at-requests-stablecoin-cards'
+import { stablecoinB2bGuide2026Body } from './posts/complete-guide-stablecoin-b2b-payments-2026'
 
 export const categories = [
   { slug: 'product-updates', title: 'Product Updates' },
@@ -14,6 +15,18 @@ export const categories = [
 ]
 
 export const posts = [
+  {
+    slug: 'complete-guide-stablecoin-b2b-payments-2026',
+    title: 'The Complete Guide to Stablecoin B2B Payments in 2026',
+    excerpt:
+      'A practical 2026 guide for finance and ops teams on stablecoin B2B payments: what works, what does not, compliance, costs, and how to get started.',
+    publishedAt: '2026-06-11',
+    author: { name: 'Request Finance', image: null },
+    mainImage: '/blog/b2b-stablecoin-payments.png',
+    featured: true,
+    categories: ['stablecoins', 'guides'],
+    body: stablecoinB2bGuide2026Body,
+  },
   {
     slug: 'an-early-look-at-requests-stablecoin-cards',
     title: "An early look at Request's Stablecoin Cards",
