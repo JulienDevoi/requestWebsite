@@ -11,6 +11,7 @@ import { getPostBySlug, resolveCategories } from '@/lib/blog'
 import { ChevronLeftIcon } from '@heroicons/react/16/solid'
 import { TableOfContents } from './TableOfContents'
 import { blogComponents } from '@/components/blog/blog-components'
+import { BlogAuthor } from '@/components/blog/BlogAuthor'
 import dayjs from 'dayjs'
 import { notFound } from 'next/navigation'
 
@@ -159,11 +160,17 @@ export default async function BlogPost({ params }) {
     headline: post.title,
     description: post.excerpt,
     datePublished: post.publishedAt,
-    author: {
-      '@type': 'Organization',
-      name: post.author?.name || 'Request Finance',
-      url: siteUrl,
-    },
+    author: post.author?.name
+      ? {
+          '@type': 'Person',
+          name: post.author.name,
+          url: post.author.linkedin || siteUrl,
+        }
+      : {
+          '@type': 'Organization',
+          name: 'Request Finance',
+          url: siteUrl,
+        },
     publisher: {
       '@type': 'Organization',
       name: 'Request Finance',
@@ -349,6 +356,7 @@ export default async function BlogPost({ params }) {
                   })}
                 </div>
               )}
+              <BlogAuthor author={post.author} />
               <div className="mt-10">
                 <Button variant="outline" href="/blog">
                   <ChevronLeftIcon className="size-4" />

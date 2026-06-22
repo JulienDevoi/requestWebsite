@@ -3,6 +3,8 @@ import { cryptoTreasuryGuideBody } from './posts/crypto-treasury-management-guid
 import { stablecoinDecisionBody } from './posts/b2b-stablecoin-payments-decision-framework'
 import { stablecoinCardsEarlyLookBody } from './posts/an-early-look-at-requests-stablecoin-cards'
 import { stablecoinB2bGuide2026Body } from './posts/complete-guide-stablecoin-b2b-payments-2026'
+import { stablecoinPlatformsCompared2026Body } from './posts/stablecoin-payment-platforms-compared-2026'
+import { resolveAuthor } from './blog-authors'
 
 export const categories = [
   { slug: 'product-updates', title: 'Product Updates' },
@@ -16,12 +18,24 @@ export const categories = [
 
 export const posts = [
   {
+    slug: 'stablecoin-payment-platforms-compared-2026',
+    title: 'Stablecoin payment platforms compared: the 2026 shortlist',
+    excerpt:
+      "A CFO and COO's guide to the nine stablecoin and spend management platforms worth evaluating in 2026, and where each one ends.",
+    publishedAt: '2026-06-22',
+    author: 'laura-girod',
+    mainImage: '/blog/stablecoin-payment-platforms.jpg',
+    featured: true,
+    categories: ['stablecoins', 'guides'],
+    body: stablecoinPlatformsCompared2026Body,
+  },
+  {
     slug: 'complete-guide-stablecoin-b2b-payments-2026',
     title: 'The Complete Guide to Stablecoin B2B Payments in 2026',
     excerpt:
       'A practical 2026 guide for finance and ops teams on stablecoin B2B payments: what works, what does not, compliance, costs, and how to get started.',
     publishedAt: '2026-06-11',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/b2b-stablecoin-payments.png',
     featured: true,
     categories: ['stablecoins', 'guides'],
@@ -33,7 +47,7 @@ export const posts = [
     excerpt:
       "Get an early look at Request's Stablecoin Business Cards, virtual USDC-funded cards that simplify spend, boost control, and remove extra fees.",
     publishedAt: '2026-04-02',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/stablecoin-cards/card_details%20request%20finance.png',
     featured: true,
     categories: ['product-updates', 'corporate-cards', 'stablecoins'],
@@ -45,7 +59,7 @@ export const posts = [
     excerpt:
       'Not every company needs stablecoins. Use this decision framework to determine when B2B stablecoin payments actually make sense for your finance operations, and when they do not.',
     publishedAt: '2026-03-22',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/b2b-stablecoin-payments.png',
     featured: true,
     categories: ['stablecoins', 'guides'],
@@ -57,7 +71,7 @@ export const posts = [
     excerpt:
       'A practical, no-fluff guide to managing your organization\'s crypto treasury, covering liquidity, risk, funding, DAO operations, wallet infrastructure, and the tools that make it work.',
     publishedAt: '2026-03-23',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/crypto-treasury-management.png',
     featured: true,
     categories: ['crypto-treasury', 'guides'],
@@ -69,7 +83,7 @@ export const posts = [
     excerpt:
       'Learn about the pros and cons of the different types of stablecoins, and what it means for your business.',
     publishedAt: '2026-03-15',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/stablecoins-how-they-work-and-what-they-mean-for-your-business.png',
     featured: true,
     categories: ['stablecoins'],
@@ -177,7 +191,7 @@ As one of the largest crypto payroll solutions with [nearly $350 million in tota
     excerpt:
       'What is a virtual credit card, how does it work, and when does it actually make sense for your finance team? A practical, no-fluff guide for CFOs, controllers, and AP/AR teams.',
     publishedAt: '2026-03-20',
-    author: { name: 'Request Finance', image: null },
+    author: 'laura-girod',
     mainImage: '/blog/virtual-cards-for-businesses.png',
     featured: true,
     categories: ['insights', 'corporate-cards'],
@@ -194,7 +208,11 @@ export function getAllCategories() {
 /** All posts sorted newest-first, without body (for listings). */
 export function getAllPosts() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars -- body intentionally omitted for listings
-  return posts.map(({ body, ...rest }) => rest)
+  return posts
+    .map(({ body, author, ...rest }) => ({
+      ...rest,
+      author: resolveAuthor(author),
+    }))
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1))
 }
 
@@ -207,7 +225,12 @@ export function getFeaturedPosts(limit = 3) {
 
 /** Single post with full body, or null if not found. */
 export function getPostBySlug(slug) {
-  return posts.find((p) => p.slug === slug) ?? null
+  const post = posts.find((p) => p.slug === slug)
+  if (!post) return null
+  return {
+    ...post,
+    author: resolveAuthor(post.author),
+  }
 }
 
 /** Posts filtered by category slug, without body. */

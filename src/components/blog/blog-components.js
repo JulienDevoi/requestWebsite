@@ -30,6 +30,7 @@ import { CryptoTreasuryFAQ } from './crypto-treasury/CryptoTreasuryFAQ'
 import { StablecoinWorkflow } from './stablecoins/StablecoinWorkflow'
 import { StablecoinDecisionFramework } from './stablecoins/StablecoinDecisionFramework'
 import { StablecoinComparisonTable } from './stablecoins/StablecoinComparisonTable'
+import { StablecoinPlatformComparisonTable } from './stablecoins/StablecoinPlatformComparisonTable'
 import { StablecoinFAQ } from './stablecoins/StablecoinFAQ'
 
 export const blogComponents = {
@@ -59,5 +60,6 @@ export const blogComponents = {
   'stablecoin-workflow': StablecoinWorkflow,
   'stablecoin-decision-framework': StablecoinDecisionFramework,
   'stablecoin-comparison-table': StablecoinComparisonTable,
+  'stablecoin-platform-comparison-table': StablecoinPlatformComparisonTable,
   'stablecoin-faq': StablecoinFAQ,
 }
