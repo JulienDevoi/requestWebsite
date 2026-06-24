@@ -85,6 +85,12 @@ export default async function RootLayout({ children }) {
             gtag('config', 'AW-708726534');
           `}
         </Script>
+        {/* HubSpot tracking */}
+        <Script
+          src="https://js.hs-scripts.com/4477725.js"
+          strategy="afterInteractive"
+          nonce={nonce}
+        />
         {/* Privacy-friendly analytics by Plausible — https://plausible.io/docs/integration-guides */}
         <Script
           src="https://plausible.io/js/pa-cGM-QYfVbusT8oUQwySvd.js"
