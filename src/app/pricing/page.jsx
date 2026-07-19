@@ -249,9 +249,9 @@ function BillingToggle({ billingPeriod, setBillingPeriod }) {
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Simple pricing for global spend and corporate cards.</Heading>
+      <Heading as="h1">Simple pricing for payments that settle in minutes.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Bill payments, corporate cards, and global payouts on a single platform. Predictable subscriptions. Simple, transparent transaction fees.
+        Bill payments, corporate cards, and global payouts on a single platform powered by stablecoins. Predictable subscriptions. Simple, transparent transaction fees.
       </Lead>
     </Container>
   )

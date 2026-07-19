@@ -41,7 +41,7 @@ const industries = [
   { href: '/industries/healthcare', label: 'Healthcare', icon: HeartIcon },
   { href: '/industries/wholesalers', label: 'Wholesalers', icon: TruckIcon },
   { href: '/industries/marketing-agencies', label: 'Marketing Agencies', icon: MegaphoneIcon },
-  { href: '/industries/web3', label: 'Web3', icon: CubeTransparentIcon },
+  { href: '/industries/web3', label: 'Crypto & Web3', icon: CubeTransparentIcon },
   { href: '/industries/online-travel-agencies', label: 'Online Travel Agencies', icon: PaperAirplaneIcon },
   { href: '/industries/gaming-betting', label: 'Gaming & Betting', icon: SparklesIcon },
 ]

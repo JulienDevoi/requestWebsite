@@ -10,10 +10,11 @@ import { Heading, Lead, Subheading } from '@/components/text'
 export const metadata = {
   title: 'Company - Request Finance',
   description:
-    'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+    'Learn about Request Finance, our mission to help finance teams move money at the speed of the internet using stablecoins, and meet the team building it.',
   keywords: [
     'Request Finance company',
     'fintech company',
+    'stablecoin company',
     'spend management company',
     'corporate finance team',
     'business payments company',
@@ -21,7 +22,7 @@ export const metadata = {
   openGraph: {
     title: 'Company - Request Finance',
     description:
-      'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+      'Learn about Request Finance, our mission to help finance teams move money at the speed of the internet using stablecoins, and meet the team building it.',
     url: `${siteUrl}/company`,
     siteName: 'Request Finance',
     images: [
@@ -39,7 +40,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Company - Request Finance',
     description:
-      'Learn about Request Finance, our mission to transform business spend management, and meet the team building the future of corporate finance.',
+      'Learn about Request Finance, our mission to help finance teams move money at the speed of the internet using stablecoins, and meet the team building it.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
@@ -50,24 +51,20 @@ export const metadata = {
 function Header() {
   return (
     <Container className="mt-16">
-      <Heading as="h1">Giving finance teams the tools they need to operate globally without friction.</Heading>
+      <Heading as="h1">Helping finance teams move money at the speed of the internet.</Heading>
       <Lead className="mt-6 max-w-3xl">
-      That means faster payments. Clearer visibility. Better control. And financial infrastructure designed for the internet economy.
+      Faster payments. Clearer visibility. Better control. Request is built on stablecoins, so global finance teams stop waiting on banks.
       </Lead>
       <section className="mt-16 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
         <div className="max-w-lg">
           <h2 className="text-2xl font-medium tracking-tight">Our mission</h2>
           <p className="mt-6 text-sm/6 text-gray-600">
-          Companies should not adapt to outdated financial systems. Financial systems should adapt to modern companies. Request Finance is building that future.
+          Companies shouldn&apos;t have to adapt to outdated financial systems. Request Finance gives them a way out.
           </p>
           <p className="mt-8 text-sm/6 text-gray-600">
-          Request Finance is a modern financial operations platform.
-
-It helps companies manage spend, pay vendors, and control finances in one place.
+          One platform for spend, vendor payments, and financial control, running on stablecoins so money moves in minutes, not days.
 
 The platform combines business accounts, corporate cards, accounts payable, and accrual accounting.
-
-Stablecoins power the infrastructure behind it.
 
 The result is faster, clearer, and more global financial operations.
 

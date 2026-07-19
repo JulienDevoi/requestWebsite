@@ -8,15 +8,18 @@ import { siteUrl } from '@/lib/config'
 export const metadata = {
   title: {
     template: '%s - Request Finance',
-    default: 'Request Finance - Spend Management for Modern Companies',
+    default: 'Request Finance - Global Payments, Settled in Minutes',
   },
   description:
-    'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
   keywords: [
     'spend management',
     'corporate cards',
     'accounts payable',
     'stablecoins',
+    'stablecoin payments',
+    'crypto payments',
+    'cryptocurrency',
     'business finance',
     'expense management',
     'fintech startup',
@@ -25,9 +28,9 @@ export const metadata = {
     'accrual accounting',
   ],
   openGraph: {
-    title: 'Request Finance - Spend Management for Modern Companies',
+    title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
     url: siteUrl,
     siteName: 'Request Finance',
     images: [
@@ -35,7 +38,7 @@ export const metadata = {
         url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
-        alt: 'Request Finance - Spend Management Platform',
+        alt: 'Request Finance - Stablecoin-Powered Payments Platform',
       },
     ],
     locale: 'en_US',
@@ -44,9 +47,9 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@RequestFinance',
-    title: 'Request Finance - Spend Management for Modern Companies',
+    title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {

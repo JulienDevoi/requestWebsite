@@ -3,13 +3,14 @@ import { siteUrl } from '@/lib/config'
 export const metadata = {
   title: 'Pricing - Request Finance',
   description:
-    'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow. Start with a 30-day free trial.',
+    'Simple, transparent pricing for payments that settle in minutes. Bill payments, corporate cards, and global payouts powered by stablecoins. Three plans starting at $300/month, with volume-based transaction fees that decrease as you grow. Start with a 30-day free trial.',
   keywords: [
     'spend management pricing',
     'corporate cards pricing',
     'bill payments pricing',
     'global payouts pricing',
     'stablecoin payments',
+    'crypto payments pricing',
     'business finance pricing',
     'payment platform pricing',
     'expense management pricing',
@@ -17,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: 'Pricing - Request Finance',
     description:
-      'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow.',
+      'Simple, transparent pricing for payments that settle in minutes. Bill payments, corporate cards, and global payouts powered by stablecoins. Three plans starting at $300/month, with volume-based transaction fees that decrease as you grow.',
     url: `${siteUrl}/pricing`,
     siteName: 'Request Finance',
     images: [
@@ -35,7 +36,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Pricing - Request Finance',
     description:
-      'Simple, transparent pricing for bill payments, corporate cards, and global payouts. Three plans starting at $300/month. Volume-based transaction fees that decrease as you grow.',
+      'Simple, transparent pricing for payments that settle in minutes. Bill payments, corporate cards, and global payouts powered by stablecoins. Three plans starting at $300/month, with volume-based transaction fees that decrease as you grow.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {

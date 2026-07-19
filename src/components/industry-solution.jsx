@@ -9,11 +9,11 @@ export function IndustrySolution({ eyebrow, title, description }) {
     <Container>
       <Subheading>{eyebrow || 'The Solution'}</Subheading>
       <Heading as="h3" className="mt-2 max-w-6xl">
-        {title || 'The alternative to the banks who failed your business'}
+        {title || 'Money that moves at internet speed, not bank speed'}
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
         {description ||
-          "Managing company spending with spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work. It's time for an upgrade."}
+          "Spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work. Request replaces the slow rails with stablecoins, so spend moves as fast as your business does."}
       </p>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -79,7 +79,7 @@ export function IndustrySolution({ eyebrow, title, description }) {
           key="operate-globally"
           eyebrow="Worldwide"
           title="Operate globally"
-          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees. Support for ACH, Wire, SEPA, SWIFT, SPEI (MXN), Faster Payments (GBP), and stablecoins."
+          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees. Support for ACH, Wire, SEPA, SWIFT, SPEI (MXN), Faster Payments (GBP), and stablecoins (crypto)."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />

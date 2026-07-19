@@ -84,7 +84,7 @@ export const alternatives = {
         icon: 'GlobeAltIcon',
       },
       {
-        title: 'Stablecoin-powered, fiat-friendly',
+        title: 'Hold crypto, pay fiat automatically',
         description:
           'Hold stablecoins in your treasury and pay vendors in fiat automatically. Or pay in crypto. Request bridges the gap between traditional finance and digital assets — something Ramp simply doesn\'t do.',
         icon: 'CurrencyDollarIcon',
@@ -224,7 +224,7 @@ export const alternatives = {
         icon: 'GlobeAltIcon',
       },
       {
-        title: 'Stablecoin-native treasury & payments',
+        title: 'Fund cards and pay vendors straight from your crypto treasury',
         description:
           'If your company holds USDC, USDT, or other digital assets, Brex can\'t help you. Request Finance lets you fund cards, pay vendors, and manage your treasury in both stablecoins and fiat — from one platform.',
         icon: 'CurrencyDollarIcon',
@@ -350,7 +350,7 @@ export const alternatives = {
         icon: 'BuildingOfficeIcon',
       },
       {
-        title: 'Stablecoin & fiat in one platform',
+        title: 'Move between crypto and fiat without switching platforms',
         description:
           'If your company holds or transacts in digital assets, Airwallex can\'t help. Request Finance natively supports stablecoin treasuries, USDC/USDT payments, and crypto-to-fiat offramps — alongside all traditional payment rails.',
         icon: 'CurrencyDollarIcon',

@@ -201,8 +201,8 @@ export function IndustryFooter({ industry }) {
         <Container>
           <CallToAction
             eyebrow={footerEyebrow || 'Get started'}
-            title={footerTitle || 'Ready to Upgrade Your Business Spend Management?'}
-            description={footerDescription || 'Experience the simplicity and reliability of stablecoins. Your account setup takes less than 5 minutes.'}
+            title={footerTitle || 'Ready to Settle Payments in Minutes, Not Days?'}
+            description={footerDescription || 'Stablecoins make it possible: instant, global, and simple. Your account setup takes less than 5 minutes.'}
           />
           <PlusGrid className="pb-16">
             <PlusGridRow>

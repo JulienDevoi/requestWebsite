@@ -24,23 +24,25 @@ import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
-  title: 'Request Finance - Spend Management for Modern Companies',
+  title: 'Request Finance - Global Payments, Settled in Minutes',
   description:
-    'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
   keywords: [
     'spend management',
     'corporate cards',
     'accounts payable',
     'stablecoins',
+    'stablecoin payments',
+    'crypto payments',
     'business finance',
     'expense management',
     'fintech',
     'business payments',
   ],
   openGraph: {
-    title: 'Request Finance - Spend Management for Modern Companies',
+    title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
     url: siteUrl,
     siteName: 'Request Finance',
     images: [
@@ -48,7 +50,7 @@ export const metadata = {
         url: `${siteUrl}/images/thumbnail.png`,
         width: 1200,
         height: 630,
-        alt: 'Request Finance - Spend Management Platform',
+        alt: 'Request Finance - Stablecoin-Powered Payments Platform',
       },
     ],
     locale: 'en_US',
@@ -56,9 +58,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Request Finance - Spend Management for Modern Companies',
+    title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
@@ -77,7 +79,7 @@ function HeroSaved() {
               href="https://app.request.finance/signup" target="_blank"
               className="flex items-center gap-1 rounded-full bg-blue-950/35 px-3 py-0.5 text-sm/6 font-medium text-white data-hover:bg-blue-950/30"
             >
-              Ready to Simplify Your Business Spend Management?
+              Ready to Settle Payments in Minutes, Not Days?
               <ChevronRightIcon className="size-4" />
             </Link>
           }
@@ -103,11 +105,10 @@ function HeroSaved() {
                 </Link>
               </div>
               <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-                Take Control of Company Spend
+                Global Business Payments, Settled in Minutes
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-                One platform to control, approve, and monitor business spend in real time. <br />
-                Powered by stablecoins, simplified for everyone.
+                Request runs your company spend on stablecoins: instant, global, and simple, with none of the crypto complexity.
               </p>
               <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
                 <Button href="https://app.request.finance/signup" target="_blank">Start for free</Button>
@@ -274,10 +275,10 @@ function BentoSection() {
     <Container id="proactive-spend-control">
       <Subheading>Proactive spend control, not reactive expense tracking</Subheading>
       <Heading as="h3" className="mt-2 max-w-6xl">
-        The alternative to the banks who failed your business
+        Money that moves at internet speed, not bank speed
       </Heading>
       <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-1xl/8">
-      Managing company spending with spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work. It's time for an upgrade.
+      Spreadsheets, scattered tools, and slow banking systems create chaos, blind spots, and unnecessary work. Request replaces the slow rails with stablecoins, so spend moves as fast as your business does.
         </p>
 
       <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">

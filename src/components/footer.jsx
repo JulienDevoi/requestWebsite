@@ -12,13 +12,13 @@ function CallToAction() {
       <hgroup>
         <Subheading>Get started</Subheading>
         <p className="mt-6 text-3xl font-medium tracking-tight text-gray-950 sm:text-5xl">
-          Still running finance across 6 different tools?
+          Still waiting days for payments to settle?
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-2xl text-sm/6 text-gray-500">
-        Manage payments, spend, cards, and accounting in one platform.
+        Manage payments, spend, cards, and accounting in one platform, running on stablecoins.
         <br />
-        Built for modern companies operating globally like yours.
+        Money moves in minutes, not days, for modern companies operating globally like yours.
         <br />
         Your account takes less than 5 minutes to create.
       </p>

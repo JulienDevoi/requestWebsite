@@ -5,7 +5,7 @@ export const industries = {
     name: 'SaaS',
     heroTitle: 'Run Your SaaS Finances with unmatched efficiency',
     heroDescription:
-      'A modern spend & payments platform built for SaaS companies that want faster operations, lower costs, and full control.',
+      'Pay vendors and manage subscriptions on a platform built for stablecoins, with faster operations, lower costs, and full control for SaaS companies.',
     heroImage: '/images/saas.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -28,7 +28,7 @@ export const industries = {
     solutionEyebrow: 'The Solution',
     solutionTitle: 'One platform for all your SaaS financial operations',
     solutionDescription:
-      'Request brings together corporate cards, vendor payments, and real-time visibility in a single platform built for high-growth SaaS companies.',
+      'Request brings together corporate cards, vendor payments, and real-time visibility, powered by stablecoins, in a single platform built for high-growth SaaS companies.',
     // Footer CTA customization
     footerEyebrow: 'Built for SaaS',
     footerTitle: 'Ready to scale your SaaS financial operations?',
@@ -40,7 +40,7 @@ export const industries = {
     name: 'Wholesalers',
     heroTitle: 'Run your finances with enterprise-grade control',
     heroDescription:
-      'A modern spend & payments platform built for Wholesalers that want faster operations, lower costs, and full control.',
+      'Pay suppliers worldwide in stablecoins or fiat, with faster operations, lower costs, and full control built for Wholesalers.',
     heroImage: '/images/wholesalers.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -69,7 +69,7 @@ export const industries = {
     whyItWorks: {
       title: 'Reduce AP payment operations by 70–80% with automated workflows',
       description:
-        'Support both stablecoins & fiat seamlessly. Faster payments mean better supplier relationships and stronger discount negotiation power.',
+        'Support both stablecoins (crypto) & fiat seamlessly. Faster payments mean better supplier relationships and stronger discount negotiation power.',
       reasons: [
         {
           title: 'Pay suppliers across 190+ countries quickly and cheaply',
@@ -99,7 +99,7 @@ export const industries = {
     name: 'Marketing Agencies',
     heroTitle: 'Run your agency finances at the speed of campaigns',
     heroDescription:
-      'A modern spend & payments platform built for marketing agencies that need to move fast, pay globally, and keep clients happy.',
+      'Pay freelancers and vendors globally in stablecoins or fiat, built for marketing agencies that need to move fast and keep clients happy.',
     heroImage: '/images/affiliates.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -128,7 +128,7 @@ export const industries = {
     whyItWorks: {
       title: 'Reduce payment ops workload by 80% with automated workflows',
       description:
-        'Request Finance enables stablecoin payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
       reasons: [
         {
           title: 'Pay affiliates, creators, and influencers anywhere instantly',
@@ -218,7 +218,7 @@ export const industries = {
     name: 'E-commerce',
     heroTitle: 'Run Your E-commerce Finances at scale',
     heroDescription:
-      'A modern spend & payments platform built for e-commerce businesses that want faster operations, lower costs, and full control.',
+      'Pay suppliers and marketplaces in stablecoins or fiat, with faster operations, lower costs, and full control built for e-commerce businesses.',
     heroImage: '/images/e-commerce.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -247,7 +247,7 @@ export const industries = {
     whyItWorks: {
       title: 'Reduce AP payment operations by 70–80% with automated workflows',
       description:
-        'Support both stablecoins & fiat seamlessly. Faster payments mean better supplier relationships and stronger discount negotiation power.',
+        'Support both stablecoins (crypto) & fiat seamlessly. Faster payments mean better supplier relationships and stronger discount negotiation power.',
       reasons: [
         {
           title: 'Pay suppliers across 190+ countries quickly and cheaply',
@@ -277,7 +277,7 @@ export const industries = {
     name: 'Healthcare',
     heroTitle: 'Run Your Healthcare Finances with precision',
     heroDescription:
-      'A modern spend & payments platform built for healthcare organizations that want faster operations, lower costs, and full compliance.',
+      'Pay medical suppliers fast with stablecoins or fiat, and stay fully compliant, built for healthcare organizations.',
     heroImage: '/images/healthcare.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -306,7 +306,7 @@ export const industries = {
     whyItWorks: {
       title: 'Fast international payments at low cost for vital healthcare activities',
       description:
-        'Healthcare actors have vital activities; they need fast international payments at a low cost. Request Finance enables instant stablecoin payments to most countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Healthcare actors have vital activities; they need fast international payments at a low cost. Request Finance enables instant stablecoin (crypto) payments to most countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
       reasons: [
         {
           title: 'Fast payments across 190+ countries',
@@ -336,7 +336,7 @@ export const industries = {
     name: 'Online Travel Agencies',
     heroTitle: 'Run Your Online Travel Agency Finances with global reach',
     heroDescription:
-      'A modern spend & payments platform built for Online Travel Agencies that need fast, low-cost payments to many countries worldwide.',
+      'Pay hotels, airlines, and suppliers fast with stablecoins or fiat, built for Online Travel Agencies that need low-cost payments to many countries worldwide.',
     heroImage: '/images/online-travel-agency.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -366,7 +366,7 @@ export const industries = {
     whyItWorks: {
       title: 'Online Travel Agencies need fast payments at a low cost to many countries worldwide',
       description:
-        'Request Finance enables stablecoin payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
       reasons: [
         {
           title: 'Fast payments at low cost',
@@ -396,7 +396,7 @@ export const industries = {
     name: 'Gaming & Betting',
     heroTitle: 'Run Your Gaming & Betting Finances at scale',
     heroDescription:
-      'A modern spend & payments platform built for gaming and betting operators that need to automate high-volume, cross-border payment operations.',
+      'Pay affiliates and partners worldwide in stablecoins or fiat, built for gaming and betting operators that need to automate high-volume, cross-border payment operations.',
     heroImage: '/images/gaming-betting.jpg',
     // Intro section - The Problem
     introEyebrow: 'The Problem',
@@ -423,7 +423,7 @@ export const industries = {
     solutionEyebrow: 'The Solution',
     solutionTitle: 'Automate mass payouts and vendor payments across 190+ countries',
     solutionDescription:
-      'Request Finance automates how gaming and betting companies pay affiliates, creators, vendors, contractors, data providers, and teams across 190+ countries using stablecoins or connected fiat rails.',
+      'Request Finance automates how gaming and betting companies pay affiliates, creators, vendors, contractors, data providers, and teams across 190+ countries using stablecoins (crypto) or connected fiat rails.',
     // Why It Works section
     whyItWorks: {
       title: 'Reduce payment ops workload by 80% with automated workflows',

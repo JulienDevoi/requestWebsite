@@ -4,7 +4,7 @@ export const products = [
     name: 'Corporate Cards',
     heroTitle: 'Corporate cards that work globally',
     heroDescription:
-      'Issue virtual and physical cards instantly. Control spending in real-time. No hidden fees, no FX surprises.',
+      'Issue virtual and physical cards instantly, funded by stablecoins or fiat. Control spending in real-time. No hidden fees, no FX surprises.',
     heroImage: '/screenshots/corporate-cards.png',
     benefitsEyebrow: 'Why choose our corporate cards',
     benefitsTitle: 'Everything you need to manage spend',
@@ -54,7 +54,7 @@ export const products = [
       'Move money globally in real time using USDT: faster settlement, lower costs, full control.',
     heroImage: '/screenshots/virtual-account.png',
     benefitsEyebrow: 'A modern payment rail for global B2B transactions',
-    benefitsTitle: 'Use stablecoins as a settlement layer, not a speculative asset.',
+    benefitsTitle: 'Use stablecoins (crypto) as a settlement layer, not a speculative asset.',
     benefitsDescription:
       'Send and receive USDT directly from your business platform. No exchange accounts needed, no crypto holdings required.',
     benefits: [
@@ -125,7 +125,7 @@ export const products = [
     name: 'Business Account',
     heroTitle: 'A modern USD account for your business',
     heroDescription:
-      'Get a dedicated Business Account when you sign up. Top up instantly, manage multiple entities, and keep your finances organized.',
+      'Get a dedicated Business Account when you sign up. Top up instantly with stablecoins or fiat, manage multiple entities, and keep your finances organized.',
     heroImage: '/screenshots/virtual-account.png',
     benefitsEyebrow: 'Why choose Business Accounts',
     benefitsTitle: 'Simplify your business banking',
@@ -144,7 +144,7 @@ export const products = [
       },
       {
         name: 'Easy Top-ups',
-        description: 'Fund your account instantly via bank transfer or card',
+        description: 'Fund your account instantly via bank transfer, card, or stablecoins (crypto)',
         icon: 'ArrowPathIcon',
       },
       {
@@ -169,7 +169,7 @@ export const products = [
     name: 'Accounts Payable',
     heroTitle: 'A month of AP done in minutes',
     heroDescription:
-      'Process bills, accelerate approvals, and manage cash flow 2.4x faster than legacy software.',
+      'Process bills, accelerate approvals, and pay vendors globally via stablecoins or fiat, 2.4x faster than legacy software.',
     heroImage: '/images/accounts-payable.mp4',
     benefitsEyebrow: 'Why choose our accounts payable',
     benefitsTitle: 'Bill processing, reimagined',
@@ -188,7 +188,7 @@ export const products = [
       },
       {
         name: 'Batch Payments',
-        description: 'Pay hundreds of vendors in one click across multiple currencies',
+        description: 'Pay hundreds of vendors in one click across multiple currencies, including stablecoins (crypto)',
         icon: 'BanknotesIcon',
       },
       {
@@ -213,7 +213,7 @@ export const products = [
     name: 'Accrual Accounting',
     heroTitle: 'Close your books with confidence',
     heroDescription:
-      'Automate accruals, deferrals, and prepaid expenses. Get accurate financials without the manual spreadsheet work.',
+      'Automate accruals, deferrals, and prepaid expenses, whether you pay in fiat or stablecoins. Get accurate financials without the manual spreadsheet work.',
     heroImage: '/screenshots/accrual-accounting.png',
     benefitsEyebrow: 'Why choose our accrual accounting',
     benefitsTitle: 'Financial accuracy on autopilot',
