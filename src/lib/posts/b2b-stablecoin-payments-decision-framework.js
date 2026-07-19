@@ -46,7 +46,7 @@ Companies that run affiliate programs or marketplace payouts often batch payment
 
 ### Managing treasury across multiple entities
 
-A company with subsidiaries in three countries typically holds idle cash buffers in each local entity to cover short-term obligations. USD-pegged stablecoins can function as a [shared liquidity pool](https://www.requestfinance.com/products/global-usd-account), transferable between entities in minutes, reducing the total cash you need to keep parked across accounts.
+A company with subsidiaries in three countries typically holds idle cash buffers in each local entity to cover short-term obligations. USD-pegged stablecoins can function as a [shared liquidity pool](https://www.requestfinance.com/products/business-account), transferable between entities in minutes, reducing the total cash you need to keep parked across accounts.
 
 The caveat: stablecoins are not classified as cash equivalents in most accounting frameworks. Your auditor will have opinions about this.
 

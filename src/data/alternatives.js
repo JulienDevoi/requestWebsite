@@ -19,7 +19,7 @@ export const alternatives = {
       'US-only corporate cards with limited international merchant acceptance',
       'No native stablecoin or crypto payment support',
       'International wire transfers are slow and expensive',
-      'No global USD accounts for non-US entities',
+      'No business accounts for non-US entities',
       'Limited payment rails — no SEPA, SWIFT, or SPEI support',
       'FX fees eat into your margins on every cross-border transaction',
       'No offramp capabilities for companies holding digital assets',
@@ -54,7 +54,7 @@ export const alternatives = {
       {
         category: 'Global Operations',
         features: [
-          { name: 'Global USD accounts per entity', request: true, competitor: false },
+          { name: 'Business accounts per entity', request: true, competitor: false },
           { name: 'Multi-entity support', request: true, competitor: true },
           { name: 'Support for 190+ countries', request: true, competitor: false },
           { name: 'Competitive FX rates', request: true, competitor: 'Partial' },
@@ -80,7 +80,7 @@ export const alternatives = {
       {
         title: 'Built for global-first companies',
         description:
-          'Unlike Ramp\'s US-centric model, Request Finance gives every entity its own global USD account, corporate cards that work in 190+ countries, and payment rails that include SEPA, SWIFT, SPEI, and Faster Payments.',
+          'Unlike Ramp\'s US-centric model, Request Finance gives every entity its own business account, corporate cards that work in 190+ countries, and payment rails that include SEPA, SWIFT, SPEI, and Faster Payments.',
         icon: 'GlobeAltIcon',
       },
       {
@@ -151,7 +151,7 @@ export const alternatives = {
       'Dropped SMB customers entirely in 2022 to focus on enterprise',
       'International payment support is limited to ACH and domestic US wires',
       'No stablecoin payments, no digital asset support, no offramp functionality',
-      'No global USD accounts — each entity can\'t have its own dedicated account',
+      'No business accounts — each entity can\'t have its own dedicated account',
       'FX markups on international card spend are not disclosed upfront',
       'Vendor payments outside the US require workarounds and manual processes',
       'Onboarding requires extensive documentation and can take weeks for non-US entities',
@@ -319,7 +319,7 @@ export const alternatives = {
       {
         category: 'Global Operations',
         features: [
-          { name: 'Global USD accounts per entity', request: true, competitor: true },
+          { name: 'Business accounts per entity', request: true, competitor: true },
           { name: 'Multi-currency accounts (EUR, GBP, etc.)', request: true, competitor: true },
           { name: 'Vendor payments in 190+ countries', request: true, competitor: true },
           { name: 'Competitive FX rates', request: true, competitor: true },

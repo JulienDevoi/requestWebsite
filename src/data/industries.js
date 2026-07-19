@@ -428,7 +428,7 @@ export const industries = {
     whyItWorks: {
       title: 'Reduce payment ops workload by 80% with automated workflows',
       description:
-        'Pay affiliates, creators, and agents anywhere instantly. Cut international transfer fees and avoid banking friction. Move money using stablecoins or fiat via partners seamlessly via the Global USD Account.',
+        'Pay affiliates, creators, and agents anywhere instantly. Cut international transfer fees and avoid banking friction. Move money using stablecoins or fiat via partners seamlessly via the Business Account.',
       reasons: [
         {
           title: 'Pay affiliates, creators, and agents anywhere instantly',

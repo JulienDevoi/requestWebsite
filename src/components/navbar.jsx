@@ -58,7 +58,7 @@ const useCases = [
 ]
 
 const products = [
-  { href: '/products/global-usd-account', label: 'Global USD Account', icon: BuildingOfficeIcon },
+  { href: '/products/business-account', label: 'Business Account', icon: BuildingOfficeIcon },
   { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
   { href: '/products/stablecoin-payments', label: 'Stablecoin Payments', icon: CurrencyDollarIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },

@@ -65,7 +65,7 @@ function Header() {
 
 It helps companies manage spend, pay vendors, and control finances in one place.
 
-The platform combines global USD accounts, corporate cards, accounts payable, and accrual accounting.
+The platform combines business accounts, corporate cards, accounts payable, and accrual accounting.
 
 Stablecoins power the infrastructure behind it.
 

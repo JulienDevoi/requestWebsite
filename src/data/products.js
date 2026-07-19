@@ -121,13 +121,13 @@ export const products = [
     },
   },
   {
-    slug: 'global-usd-account',
-    name: 'Global USD Account',
+    slug: 'business-account',
+    name: 'Business Account',
     heroTitle: 'A modern USD account for your business',
     heroDescription:
-      'Get a dedicated Global USD Account when you sign up. Top up instantly, manage multiple entities, and keep your finances organized.',
+      'Get a dedicated Business Account when you sign up. Top up instantly, manage multiple entities, and keep your finances organized.',
     heroImage: '/screenshots/virtual-account.png',
-    benefitsEyebrow: 'Why choose Global USD Accounts',
+    benefitsEyebrow: 'Why choose Business Accounts',
     benefitsTitle: 'Simplify your business banking',
     benefitsDescription:
       'A dedicated account for each entity, with instant top-ups, multi-currency support, and complete visibility over your funds.',
