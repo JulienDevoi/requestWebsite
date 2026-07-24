@@ -1,8 +1,6 @@
 import '@/styles/tailwind.css'
-import { headers } from 'next/headers'
 import Script from 'next/script'
 import { WeglotScript } from '@/components/weglot'
-import { OpenAccountConversionTracker } from '@/components/open-account-conversion'
 import { siteUrl } from '@/lib/config'
 
 export const metadata = {
@@ -67,40 +65,23 @@ export const metadata = {
   },
 }
 
-export default async function RootLayout({ children }) {
-  const nonce = (await headers()).get('x-nonce') ?? undefined
+export default function RootLayout({ children }) {
   const beamAnalyticsToken = process.env.NEXT_PUBLIC_BEAM_ANALYTICS_TOKEN
 
   return (
     <html lang="en" translate="no">
       <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-708726534"
-          strategy="afterInteractive"
-          nonce={nonce}
-        />
-        <Script id="google-ads" strategy="afterInteractive" nonce={nonce}>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-708726534');
-          `}
-        </Script>
         {/* HubSpot tracking */}
         <Script
           src="https://js.hs-scripts.com/4477725.js"
           strategy="afterInteractive"
-          nonce={nonce}
         />
         {/* Privacy-friendly analytics by Plausible — https://plausible.io/docs/integration-guides */}
         <Script
           src="https://plausible.io/js/pa-cGM-QYfVbusT8oUQwySvd.js"
           strategy="afterInteractive"
-          nonce={nonce}
         />
-        <Script id="plausible-init" strategy="afterInteractive" nonce={nonce}>
+        <Script id="plausible-init" strategy="afterInteractive">
           {`
             window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
             plausible.init()
@@ -120,14 +101,12 @@ export default async function RootLayout({ children }) {
       </head>
       <body className="text-gray-950 antialiased">
         <WeglotScript />
-        <OpenAccountConversionTracker />
         {children}
         {beamAnalyticsToken && (
           <Script
             src="https://beamanalytics.b-cdn.net/beam.min.js"
             data-token={beamAnalyticsToken}
             strategy="afterInteractive"
-            nonce={nonce}
           />
         )}
       </body>

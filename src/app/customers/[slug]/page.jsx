@@ -236,9 +236,7 @@ Over this year, the RealT team has been expanding the DeFi services available to
 
 Like every other disruptor, RealT has grown to be bigger than just the visionary pair that co-founded the company. The current team of about twenty, have specialized competencies in critical components of the entire value chain.
 
-On the ground, the team has specialists to oversee the day-to-day asset management activities like assessing and tokenizing properties, managing tenants, and rent payments. Compliance is also a core pillar of the company. Sherri Perlski, CFO & CCO of RealT, formerly leading divisions of investment funds such as Black Rock, Natixis, and ensures RealT remains in line with US (SEC) and French (AMF) regulations.
-
-The company also has a strong team of experts in the DeFi space like their COO, Michael Courvoisier, who also advises various projects, like [Jarvis Network](https://jarvis.network/) and Mt Pelerin, as well as their advisors, Anton Bukov and Sergej Kunz—co-founders of the decentralized exchange aggregator, [1inch](https://1inch.io/).`,
+On the ground, the team has specialists to oversee the day-to-day asset management activities like assessing and tokenizing properties, managing tenants, and rent payments. Compliance is also a core pillar of the company. Sherri Perlski, CFO & CCO of RealT, formerly leading divisions of investment funds such as Black Rock, Natixis, and ensures RealT remains in line with US (SEC) and French (AMF) regulations.`,
   },
 }
 

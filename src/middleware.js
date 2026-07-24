@@ -62,33 +62,6 @@ function inMemoryCheck(key, limit, windowMs) {
   return { success: true, remaining: limit - record.count, reset: record.resetTime }
 }
 
-// ─── Nonce & CSP ─────────────────────────────────────────────────────────────
-
-function generateNonce() {
-  return Buffer.from(crypto.randomUUID()).toString('base64')
-}
-
-function buildCSP(nonce) {
-  return [
-    "default-src 'self'",
-    // unsafe-eval kept for Framer Motion; unsafe-inline removed in favour of nonce + strict-dynamic.
-    // strict-dynamic allows scripts created by already-trusted scripts (e.g. HubSpot forms SDK
-    // injecting child scripts at runtime). Domain allowlist is retained for older browsers.
-    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://*.beamanalytics.com https://beamanalytics.com https://api.fontshare.com https://static.hsappstatic.net https://js.hs-scripts.com https://js.hsforms.net https://plausible.io https://www.googletagmanager.com`,
-    "style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.weglot.com https://weglot.com https://static.hsappstatic.net https://js.hsforms.net https://fonts.googleapis.com",
-    "img-src 'self' data: https://cdn.weglot.com https://weglot.com https://cdn-api-weglot.com https://track.hubspot.com https:",
-    "font-src 'self' https://api.fontshare.com data: https://static.hsappstatic.net https://js.hsforms.net https://fonts.gstatic.com",
-    // Specific domains only — wildcard https: removed
-    "connect-src 'self' https://cdn.weglot.com https://weglot.com https://api.weglot.com https://cdn-api-weglot.com https://beamanalytics.b-cdn.net https://beamanalytics.com https://*.beamanalytics.com https://api.hubapi.com https://api.hubspot.com https://api.hsforms.com https://forms.hubspot.com https://forms.hsforms.com https://hubspot-forms-static-embed.s3.amazonaws.com https://content.request.finance https://plausible.io https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com https://googleads.g.doubleclick.net",
-    // forms.hsforms.com hosts the HubSpot form iframe
-    "frame-src 'self' https://content.request.finance https://app.hubspot.com https://forms.hsforms.com",
-    "frame-ancestors 'self'",
-    "base-uri 'self'",
-    "form-action 'self' https://forms.hubspot.com",
-    "upgrade-insecure-requests",
-  ].join('; ')
-}
-
 // ─── Middleware ───────────────────────────────────────────────────────────────
 
 function getClientIP(request) {
@@ -141,22 +114,7 @@ export async function middleware(request) {
     }
   }
 
-  // 2. Nonce + CSP — applied to all page requests
-  const nonce = generateNonce()
-  const csp = buildCSP(nonce)
-
-  // Pass the nonce to Server Components via a request header
-  const requestHeaders = new Headers(request.headers)
-  requestHeaders.set('x-nonce', nonce)
-
-  const response = NextResponse.next({
-    request: { headers: requestHeaders },
-  })
-
-  // Set CSP on the response (overrides the static one in next.config.mjs)
-  response.headers.set('Content-Security-Policy', csp)
-
-  return response
+  return NextResponse.next()
 }
 
 export const config = {
