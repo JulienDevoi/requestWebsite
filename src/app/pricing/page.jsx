@@ -397,7 +397,7 @@ function TransactionPricing() {
                   Fees apply only when adding money to your account.
                 </p>
                 <div className="mt-6 flex items-baseline gap-2">
-                  <span className="text-4xl font-semibold text-gray-950">0.10%</span>
+                  <span className="text-4xl font-semibold text-gray-950">Free</span>
                   <span className="text-sm text-gray-950/75">as low as</span>
                 </div>
                 <table className="mt-6 w-full text-sm">
@@ -409,8 +409,12 @@ function TransactionPricing() {
                   </thead>
                   <tbody>
                     <tr className="border-b border-gray-50">
-                      <td className="py-2.5 text-gray-700">Stablecoin top-up (USDC / USDT)</td>
-                      <td className="py-2.5 text-right font-medium text-gray-950">0.10%</td>
+                      <td className="py-2.5 text-gray-700">USDC top-up</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">Free</td>
+                    </tr>
+                    <tr className="border-b border-gray-50">
+                      <td className="py-2.5 text-gray-700">USDT top-up</td>
+                      <td className="py-2.5 text-right font-medium text-gray-950">0.30%</td>
                     </tr>
                     <tr className="border-b border-gray-50">
                       <td className="py-2.5 text-gray-700">Fiat top-up (USD, local & international)</td>
@@ -702,7 +706,7 @@ const faqItems = [
   {
     question: 'What are funding fees?',
     answer:
-      'Funding fees are a small, one-time cost that applies only when you add money to your Business Account. Stablecoin top-ups are just 0.10%, and fiat USD top-ups are 0.30%. These are not recurring — you only pay when you fund your account.',
+      'Funding fees are a small, one-time cost that applies only when you add money to your Business Account. USDC top-ups are free, USDT top-ups are 0.30%, and fiat USD top-ups are 0.30%. These are not recurring — you only pay when you fund your account.',
   },
   {
     question: 'Do you have a yearly payment option?',
@@ -782,7 +786,7 @@ function FrequentlyAskedQuestions() {
               What are funding fees?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              Funding fees are a small, one-time cost that applies only when you add money to your Business Account. Stablecoin top-ups are just 0.10%, and fiat USD top-ups are 0.30%. These are not recurring — you only pay when you fund your account.
+              Funding fees are a small, one-time cost that applies only when you add money to your Business Account. USDC top-ups are free, USDT top-ups are 0.30%, and fiat USD top-ups are 0.30%. These are not recurring — you only pay when you fund your account.
             </dd>
           </dl>
           <dl>
