@@ -59,7 +59,7 @@ const useCases = [
 
 const products = [
   { href: '/products/business-account', label: 'Business Account', icon: BuildingOfficeIcon },
-  { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon },
+  { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon, comingSoon: true },
   { href: '/products/stablecoin-payments', label: 'Stablecoin Payments', icon: CurrencyDollarIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },

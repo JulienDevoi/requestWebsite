@@ -26,9 +26,8 @@ const tiers = [
     priceAnnually: 250,
     href: 'https://app.request.finance/signup',
     highlights: [
-      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Spend Management', isSection: true },
       { description: 'Up to 5 team members' },
-      { description: 'Up to 5 corporate cards' },
       { description: 'Spend limits & controls' },
       { description: 'One Virtual Account' },
       { description: 'Bill Payments', isSection: true },
@@ -47,9 +46,7 @@ const tiers = [
     ],
     features: [
       { section: 'Spend Management', name: 'Team members included', value: '5' },
-      { section: 'Spend Management', name: 'Corporate cards', value: '5' },
       { section: 'Spend Management', name: 'Virtual Accounts', value: '1' },
-      { section: 'Spend Management', name: 'Physical cards', value: false },
       { section: 'Spend Management', name: 'Spend limits & controls', value: true },
       { section: 'Spend Management', name: 'Advanced spending controls', value: false },
       { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
@@ -91,9 +88,8 @@ const tiers = [
     featured: true,
     includesLabel: 'Everything in Basic, plus:',
     highlights: [
-      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Spend Management', isSection: true },
       { description: 'Up to 20 users' },
-      { description: 'Up to 20 cards, including physical' },
       { description: 'Up to 3 Virtual Accounts' },
       { description: 'Bill Payments', isSection: true },
       { description: 'Advanced approval workflows' },
@@ -107,9 +103,7 @@ const tiers = [
     ],
     features: [
       { section: 'Spend Management', name: 'Team members included', value: '20' },
-      { section: 'Spend Management', name: 'Corporate cards', value: '20' },
       { section: 'Spend Management', name: 'Virtual Accounts', value: '3' },
-      { section: 'Spend Management', name: 'Physical cards', value: true },
       { section: 'Spend Management', name: 'Spend limits & controls', value: true },
       { section: 'Spend Management', name: 'Advanced spending controls', value: true },
       { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
@@ -150,9 +144,8 @@ const tiers = [
     href: 'https://app.request.finance/signup',
     includesLabel: 'Everything in Pro, plus:',
     highlights: [
-      { description: 'Spend Management & Cards', isSection: true },
+      { description: 'Spend Management', isSection: true },
       { description: 'Unlimited users' },
-      { description: 'Unlimited cards' },
       { description: 'Up to 5 Virtual Accounts' },
       { description: 'Accounting & Integrations', isSection: true },
       { description: 'NetSuite integration' },
@@ -167,9 +160,7 @@ const tiers = [
     ],
     features: [
       { section: 'Spend Management', name: 'Team members included', value: 'Unlimited' },
-      { section: 'Spend Management', name: 'Corporate cards', value: 'Unlimited' },
       { section: 'Spend Management', name: 'Virtual Accounts', value: '5' },
-      { section: 'Spend Management', name: 'Physical cards', value: true },
       { section: 'Spend Management', name: 'Spend limits & controls', value: true },
       { section: 'Spend Management', name: 'Advanced spending controls', value: true },
       { section: 'Bill Payments & Payables', name: 'Bill approval workflows', value: true },
@@ -251,7 +242,7 @@ function Header() {
     <Container className="mt-16">
       <Heading as="h1">Simple pricing for payments that settle in minutes.</Heading>
       <Lead className="mt-6 max-w-3xl">
-        Bill payments, corporate cards, and global payouts on a single platform powered by stablecoins. Predictable subscriptions. Simple, transparent transaction fees.
+        Bill payments and global payouts on a single platform powered by stablecoins. Predictable subscriptions. Simple, transparent transaction fees.
       </Lead>
     </Container>
   )
@@ -263,7 +254,7 @@ function PricingCards({ billingPeriod, setBillingPeriod }) {
       <Gradient className="absolute inset-x-2 top-48 bottom-0 rounded-4xl ring-1 ring-black/5 ring-inset" />
       <Container className="relative">
         <div className="flex items-center justify-center">
-          <Subheading>Spend Management & Corporate Cards</Subheading>
+          <Subheading>Spend Management</Subheading>
         </div>
         <BillingToggle billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
         <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -696,7 +687,7 @@ const faqItems = [
   {
     question: 'How does the pricing work? What do I pay for?',
     answer:
-      'Your pricing has two parts: a monthly subscription that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more — and transaction fees that apply only when you actually move money. Fees are flat and simple: stablecoin payouts are always free, and fiat payouts are a flat 0.5% regardless of volume.',
+      'Your pricing has two parts: a monthly subscription that covers the full platform — bill approval workflows, automated reconciliation, multi-entity management, payroll, and more — and transaction fees that apply only when you actually move money. Fees are flat and simple: stablecoin payouts are always free, and fiat payouts are a flat 0.5% regardless of volume.',
   },
   {
     question: 'How are transaction fees calculated?',
@@ -767,7 +758,7 @@ function FrequentlyAskedQuestions() {
             <dd className="mt-4 text-sm/6 text-gray-600">
               <p>Your pricing has two parts:</p>
               <ul className="mt-2 list-disc space-y-1 pl-5">
-                <li><strong>A monthly subscription</strong> that covers the full platform — corporate cards, bill approval workflows, automated reconciliation, multi-entity management, payroll, and more.</li>
+                <li><strong>A monthly subscription</strong> that covers the full platform — bill approval workflows, automated reconciliation, multi-entity management, payroll, and more.</li>
                 <li><strong>Transaction fees</strong> that apply only when you actually move money. Fees are flat — no tiers, no volume thresholds.</li>
               </ul>
               <p className="mt-3">Stablecoin payouts are always free. Fiat payouts are a flat 0.5% regardless of volume.</p>

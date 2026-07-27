@@ -1,49 +1,5 @@
 export const products = [
   {
-    slug: 'corporate-cards',
-    name: 'Corporate Cards',
-    heroTitle: 'Corporate cards that work globally',
-    heroDescription:
-      'Issue virtual and physical cards instantly, funded by stablecoins or fiat. Control spending in real-time. No hidden fees, no FX surprises.',
-    heroImage: '/screenshots/corporate-cards.png',
-    benefitsEyebrow: 'Why choose our corporate cards',
-    benefitsTitle: 'Everything you need to manage spend',
-    benefitsDescription:
-      'From instant issuance to real-time controls, our corporate cards give you full visibility and control over every dollar spent.',
-    benefits: [
-      {
-        name: 'Instant Issuance',
-        description: 'Create virtual cards in seconds for your team or vendors',
-        icon: 'BoltIcon',
-      },
-      {
-        name: 'Global Acceptance',
-        description: 'Spend anywhere Visa or Mastercard is accepted worldwide',
-        icon: 'GlobeAltIcon',
-      },
-      {
-        name: 'Built-in Security',
-        description: 'Set spending limits, freeze cards, and control access in real-time',
-        icon: 'ShieldCheckIcon',
-      },
-      {
-        name: 'Zero FX Fees',
-        description: 'No hidden currency conversion fees on international purchases',
-        icon: 'CurrencyDollarIcon',
-      },
-      {
-        name: 'Real-time Tracking',
-        description: 'Monitor all transactions as they happen with instant notifications',
-        icon: 'ChartBarIcon',
-      },
-      {
-        name: 'Unlimited Cards',
-        description: 'Issue as many virtual cards as you need at no extra cost',
-        icon: 'CreditCardIcon',
-      },
-    ],
-  },
-  {
     slug: 'stablecoin-payments',
     name: 'Stablecoin Payments',
     metaTitle: 'Enterprise Stablecoin Payments',

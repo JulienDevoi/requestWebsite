@@ -56,7 +56,6 @@ function Sitemap() {
         <SitemapHeading>Products</SitemapHeading>
         <SitemapLinks>
           <SitemapLink href="/products/business-account">Business Account</SitemapLink>
-          <SitemapLink href="/products/corporate-cards">Corporate Cards</SitemapLink>
           <SitemapLink href="/products/stablecoin-payments">Stablecoin Payments</SitemapLink>
           <SitemapLink href="/products/accounts-payable">Accounts Payable</SitemapLink>
           <SitemapLink href="/products/accrual-accounting">Accrual Accounting</SitemapLink>
