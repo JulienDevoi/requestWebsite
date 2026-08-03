@@ -5,44 +5,44 @@ export const products = [
     metaTitle: 'Enterprise Stablecoin Payments',
     heroTitle: 'Enterprise Stablecoin Payments',
     heroSubtitle:
-      'Move money globally in real time using USDT: faster settlement, lower costs, full control.',
+      'Send and receive in 25+ currencies with virtual IBANs, SWIFT and stablecoin wallets.',
     heroDescription:
-      'Move money globally in real time using USDT: faster settlement, lower costs, full control.',
+      'Move money globally in real time using USDC, USDT, and fiat — faster settlement, lower costs, full control. No exchange account needed.',
     heroImage: '/screenshots/virtual-account.png',
     benefitsEyebrow: 'A modern payment rail for global B2B transactions',
-    benefitsTitle: 'Use stablecoins (crypto) as a settlement layer, not a speculative asset.',
+    benefitsTitle: 'Use stablecoins as a settlement layer, not a speculative asset.',
     benefitsDescription:
-      'Send and receive USDT directly from your business platform. No exchange accounts needed, no crypto holdings required.',
+      'Send and receive USDC, USDT, and fiat from one platform. Top up via stablecoin wallets or bank transfer — pay vendors in 190+ countries without switching tools.',
     benefits: [
+      {
+        name: 'Virtual IBANs & SWIFT',
+        description: 'Send and receive in 25+ currencies via virtual IBANs, SWIFT, ACH, SEPA, and local rails',
+        icon: 'GlobeAltIcon',
+      },
+      {
+        name: 'USDC & USDT Wallets',
+        description: 'Dedicated stablecoin wallets with USDC and USDT support — free USDC top-ups',
+        icon: 'CurrencyDollarIcon',
+      },
       {
         name: 'No Exchange Account',
         description: 'Send and receive stablecoins without managing a separate exchange account',
         icon: 'BoltIcon',
       },
       {
-        name: 'USDT Support',
-        description: 'Send and receive the most popular stablecoins directly from your platform',
-        icon: 'CurrencyDollarIcon',
-      },
-      {
-        name: 'No Crypto Holdings',
+        name: 'No Crypto Holdings Required',
         description: 'Use stablecoins for payments without having to hold them yourself',
         icon: 'ShieldCheckIcon',
       },
       {
         name: 'Integrated Platform',
-        description: 'Manage stablecoin payments alongside your regular business banking',
-        icon: 'GlobeAltIcon',
+        description: 'Manage stablecoin and fiat payments alongside AP, payroll, and accounting',
+        icon: 'ArrowsRightLeftIcon',
       },
       {
         name: 'Real-time Processing',
-        description: 'Fast and reliable stablecoin transfers with instant confirmation',
+        description: 'Stablecoin transfers settle in seconds — fiat payouts at a flat 0.5%',
         icon: 'ChartBarIcon',
-      },
-      {
-        name: 'Secure & Compliant',
-        description: 'Bank-grade security with full regulatory compliance for crypto transactions',
-        icon: 'ShieldCheckIcon',
       },
     ],
     faq: {
@@ -51,7 +51,11 @@ export const products = [
       items: [
         {
           question: 'What stablecoins are supported?',
-          answer: 'We support USDT, the most widely used stablecoins in the market. You can send and receive them directly from your Request Finance platform.',
+          answer: 'We support USDC and USDT — the most widely used stablecoins in B2B payments. You can send and receive them directly from your Request Finance platform via dedicated stablecoin wallets.',
+        },
+        {
+          question: 'What currencies and payment rails do you support?',
+          answer: 'Send and receive in 25+ currencies with virtual IBANs, SWIFT, ACH, SEPA, and local fast payment rails. Pay vendors in 190+ countries via fiat or stablecoin — USDC and USDT payouts are always free.',
         },
         {
           question: 'Do I need to hold crypto to use stablecoin payments?',
@@ -59,11 +63,11 @@ export const products = [
         },
         {
           question: 'How fast are stablecoin payments processed?',
-          answer: 'Stablecoin payments are processed in real-time, typically completing within seconds. This is much faster than traditional bank transfers, especially for international payments.',
+          answer: 'Stablecoin payments are processed in real time, typically completing within seconds. This is much faster than traditional bank transfers, especially for international payments.',
         },
         {
           question: 'Are there any fees for stablecoin payments?',
-          answer: 'Our stablecoin payment fees are transparent and competitive. Contact our team for specific pricing details based on your transaction volume and needs.',
+          answer: 'Stablecoin payouts are free. Fiat payouts are a flat 0.5%. USDC top-ups are free; USDT and fiat USD top-ups are 0.30%. Banking rail fees (ACH, Wire, SWIFT) apply where applicable.',
         },
         {
           question: 'Is it safe to use stablecoins for business payments?',

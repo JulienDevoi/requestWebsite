@@ -20,13 +20,14 @@ import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { Industries } from '@/components/industries'
 import { Security } from '@/components/security'
+import { FAQ } from '@/components/faq'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { ChevronRightIcon } from '@heroicons/react/16/solid'
 
 export const metadata = {
   title: 'Request Finance - Global Payments, Settled in Minutes',
   description:
-    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
   keywords: [
     'spend management',
     'corporate cards',
@@ -42,7 +43,7 @@ export const metadata = {
   openGraph: {
     title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
     url: siteUrl,
     siteName: 'Request Finance',
     images: [
@@ -60,13 +61,36 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
     canonical: siteUrl,
   },
 }
+
+const homepageFaqItems = [
+  {
+    question: 'We already have a bank account.',
+    answer:
+      "Banks don't do stablecoins, and they charge you 2–8% every time you pay someone abroad. Request gives you fiat Global Accounts and stablecoin rails in one place, so you stop paying the cross-border tax without giving up the tooling.",
+  },
+  {
+    question: "We're not ready for crypto.",
+    answer:
+      "You don't have to be. Start with the fiat Global Accounts and AP/AR alone, and switch on stablecoin payouts whenever you're ready. It's modular, and you never have to hold a digital asset to use it.",
+  },
+  {
+    question: 'What about compliance and KYB?',
+    answer:
+      "KYB is required before you go live and usually takes a few days. We think that's a feature: it means your counterparties are verified too, and your auditors get a complete paper trail.",
+  },
+  {
+    question: 'We already use Coinbase or Binance.',
+    answer:
+      'Those are wallets, not finance platforms. No invoicing, no approval workflows, no payroll, no accrual accounting, no fiat payouts. Request is the layer on top.',
+  },
+]
 
 function HeroSaved() {
   return (
@@ -85,7 +109,7 @@ function HeroSaved() {
           }
         />
         <div className="pt-16 pb-24 sm:pt-24 sm:pb-32 md:pt-32 md:pb-48">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12 xl:gap-16">
             <div className="min-w-0 flex-1">
               <div className="mb-6 flex items-center gap-3">
                 <div className="flex items-center gap-1 text-amber-500" aria-hidden="true">
@@ -105,15 +129,15 @@ function HeroSaved() {
                 </Link>
               </div>
               <h1 className="font-display text-4xl/[1.2] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[1.15] md:text-6xl/[1.15]">
-                Global Business Payments, Settled in Minutes
+                One business account for all your currencies, including stablecoins.
               </h1>
               <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-                Request runs your company spend on stablecoins: instant, global, and simple, with none of the crypto complexity.
+                Send and receive in 25+ currencies with virtual IBANs, SWIFT and stablecoin wallets. Settle globally in minutes instead of days, and stop losing 2–8% to your bank. AP/AR, payroll and accounting built in.
               </p>
               <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-                <Button href="https://app.request.finance/signup" target="_blank">Start for free</Button>
-                <Button variant="secondary" href="/demo">
-                  Book a demo
+                <Button href="/demo">Book a 15-min demo</Button>
+                <Button variant="secondary" href="https://app.request.finance/signup" target="_blank">
+                  Start for free
                 </Button>
               </div>
               <div className="mt-10 flex flex-wrap items-center justify-start gap-4 sm:gap-6">
@@ -133,17 +157,17 @@ function HeroSaved() {
                   ))}
                 </div>
                 <p className="text-sm font-medium text-gray-950/80 sm:text-base">
-                  Join 1,500+ finance leaders processing $1B+ in payments
+                  1,500+ finance teams · $1B+ processed
                 </p>
               </div>
             </div>
-            <div className="flex shrink-0 justify-center lg:w-[420px] lg:justify-end">
+            <div className="flex shrink-0 justify-center lg:-mt-6 lg:w-[560px] xl:-mt-10 xl:w-[640px] lg:justify-end lg:self-start">
               <Image
-                src="/images/corporate-cards-2.png"
-                alt="Request Finance corporate cards dashboard"
-                width={420}
-                height={560}
-                className="w-full max-w-[280px] object-contain lg:max-w-none"
+                src="/screenshots/request-global-fiat-stablecoin.png"
+                alt="Global fiat and stablecoin payments across New York, Paris, London, Singapore, and San Francisco"
+                width={960}
+                height={640}
+                className="w-full max-w-[420px] object-contain sm:max-w-[480px] lg:max-w-none"
                 priority
               />
             </div>
@@ -301,7 +325,9 @@ function BentoSection() {
           key="corporate-cards"
           eyebrow="Corporate cards"
           title="Control your spend"
-          description="Issue virtual and physical cards with real-time controls and instant notifications."
+          description="Virtual and physical cards with real-time controls and instant notifications. Join the waitlist — launching soon."
+          comingSoon
+          waitlistHref="/products/corporate-cards"
           graphic={
             <img 
               src="/images/corporate-cards.gif" 
@@ -347,7 +373,7 @@ function BentoSection() {
           key="operate-globally"
           eyebrow="Worldwide"
           title="Operate globally"
-          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees. Support for ACH, Wire, SEPA, SWIFT, SPEI (MXN), Faster Payments (GBP), and stablecoins."
+          description="Send and receive in 25+ currencies. Pay suppliers in 190+ countries via virtual IBANs, SWIFT, ACH, SEPA, and stablecoin wallets."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />
@@ -462,7 +488,7 @@ function DarkBentoSection() {
           The easier way to manage company spend
         </Heading>
         <p className="mt-8 max-w-5xl text-xl/7 font-medium text-gray-400 sm:text-1xl/8">
-        Request gives finance teams full control over corporate cards, vendor payments, and accrual accounting, with the power of stablecoins built in, without the complexity.
+        Request gives finance teams full control over vendor payments and accrual accounting, with the power of stablecoins built in, without the complexity. Corporate cards are coming soon.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
@@ -514,7 +540,9 @@ function DarkBentoSection() {
             dark
             eyebrow="Corporate cards"
             title="Spend management simplified"
-            description="Unlock the full potential of stablecoins and fiat payments with our business credit card."
+            description="Stablecoin- and fiat-funded business cards with real-time controls. Launching soon."
+            comingSoon
+            waitlistHref="/products/corporate-cards"
             graphic={
               <div className="h-80 bg-[url(/images/corporate-cards.png)] bg-size-[851px_344px] bg-no-repeat" />
             }
@@ -534,7 +562,7 @@ export default function Home() {
     name: 'Request Finance',
     url: siteUrl,
     logo: `${siteUrl}/images/icon2.png`,
-    description: 'Empower your finance team with corporate cards, accounts payable, and accrual accounting. Powered by stablecoins, simplified for everyone.',
+    description: 'Empower your finance team with accounts payable and accrual accounting. Powered by stablecoins, simplified for everyone.',
     sameAs: [
       'https://twitter.com/requestfinance',
       'https://linkedin.com/company/request-finance',
@@ -552,7 +580,7 @@ export default function Home() {
     '@type': 'WebSite',
     name: 'Request Finance',
     url: siteUrl,
-    description: 'Spend management for modern companies. Corporate cards, accounts payable, and accrual accounting powered by stablecoins.',
+    description: 'Spend management for modern companies. Accounts payable and accrual accounting powered by stablecoins.',
     publisher: {
       '@type': 'Organization',
       name: 'Request Finance',
@@ -567,7 +595,7 @@ export default function Home() {
     operatingSystem: 'Web',
     url: siteUrl,
     description:
-      'Spend management platform for modern companies. Corporate cards, accounts payable automation, and accrual accounting powered by stablecoins.',
+      'Spend management platform for modern companies. Accounts payable automation and accrual accounting powered by stablecoins.',
     offers: {
       '@type': 'Offer',
       price: '300',
@@ -612,7 +640,7 @@ export default function Home() {
           items={[
             {
               title: "Corporate Cards",
-              description: "Issue virtual and physical cards with real-time controls and instant notifications.",
+              description: "Virtual and physical cards with real-time controls — coming soon.",
               image: "/images/corporate-cards.png",
             },
             {
@@ -659,6 +687,11 @@ export default function Home() {
       <Industries />
       <Security />
       <UseCases />
+      <FAQ
+        eyebrow="Straight answers"
+        title="The four questions every finance team asks us"
+        items={homepageFaqItems}
+      />
       <Footer />
     </div>
   )

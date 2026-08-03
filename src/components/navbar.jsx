@@ -59,7 +59,7 @@ const useCases = [
 
 const products = [
   { href: '/products/business-account', label: 'Business Account', icon: BuildingOfficeIcon },
-  { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon, comingSoon: true },
+  { href: '/products/corporate-cards', label: 'Corporate Cards', icon: CreditCardIcon, comingSoon: true, waitlist: true },
   { href: '/products/stablecoin-payments', label: 'Stablecoin Payments', icon: CurrencyDollarIcon },
   { href: '/products/accounts-payable', label: 'Accounts Payable', icon: DocumentTextIcon },
   { href: '/products/accrual-accounting', label: 'Accrual Accounting', icon: CalculatorIcon },
@@ -78,7 +78,7 @@ function DesktopNav() {
         </span>
         <div className="absolute left-0 top-full z-20 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
           <div className="w-56 origin-top rounded-xl bg-white p-2 shadow-lg ring-1 ring-black/5">
-            {products.map(({ href, label, icon: Icon, comingSoon }) => {
+            {products.map(({ href, label, icon: Icon, comingSoon, waitlist }) => {
               const content = (
                 <>
                   <Icon className="size-5 text-gray-500" />
@@ -93,7 +93,7 @@ function DesktopNav() {
                 </>
               )
               
-              if (comingSoon) {
+              if (comingSoon && !waitlist) {
                 return (
                   <div
                     key={href}
@@ -108,7 +108,7 @@ function DesktopNav() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50"
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-gray-950 transition hover:bg-gray-50${comingSoon ? ' opacity-90' : ''}`}
                 >
                   {content}
                 </Link>
@@ -204,7 +204,7 @@ function MobileNav() {
         >
           <p className="text-sm font-medium text-gray-500 mb-2">Products</p>
           <div className="flex flex-col gap-3 pl-3">
-            {products.map(({ href, label, icon: Icon, comingSoon }) => {
+            {products.map(({ href, label, icon: Icon, comingSoon, waitlist }) => {
               const content = (
                 <>
                   <Icon className="size-5 text-gray-500" />
@@ -219,7 +219,7 @@ function MobileNav() {
                 </>
               )
               
-              if (comingSoon) {
+              if (comingSoon && !waitlist) {
                 return (
                   <div key={href} className="flex items-center gap-2 text-base font-medium text-gray-950 cursor-not-allowed opacity-75">
                     {content}
@@ -228,7 +228,7 @@ function MobileNav() {
               }
               
               return (
-                <Link key={href} href={href} className="flex items-center gap-2 text-base font-medium text-gray-950">
+                <Link key={href} href={href} className={`flex items-center gap-2 text-base font-medium text-gray-950${comingSoon ? ' opacity-90' : ''}`}>
                   {content}
                 </Link>
               )

@@ -16,7 +16,7 @@ function CallToAction() {
         </p>
       </hgroup>
       <p className="mx-auto mt-6 max-w-2xl text-sm/6 text-gray-500">
-        Manage payments, spend, cards, and accounting in one platform, running on stablecoins.
+        Manage payments, spend, and accounting in one platform, running on stablecoins. Corporate cards coming soon.
         <br />
         Money moves in minutes, not days, for modern companies operating globally like yours.
         <br />

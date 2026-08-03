@@ -4,7 +4,7 @@ export const alternatives = {
     name: 'Ramp',
     metaTitle: 'Request Finance vs Ramp: The Best Alternative to Ramp in 2025',
     metaDescription:
-      'Comparing Request Finance vs Ramp for corporate cards, accounts payable, and spend management. See why global companies choose Request Finance over Ramp.',
+      'Comparing Request Finance vs Ramp for accounts payable, global payments, and spend management. See why global companies choose Request Finance over Ramp.',
     heroTitle: 'The #1 Alternative to Ramp for Global Companies',
     heroDescription:
       'Ramp is great for US-based startups. But if your business operates globally, needs stablecoin support, or wants lower fees on international transactions, Request Finance is built for you.',
@@ -32,12 +32,12 @@ export const alternatives = {
       {
         category: 'Corporate Cards',
         features: [
-          { name: 'Virtual cards', request: true, competitor: true },
-          { name: 'Physical cards', request: true, competitor: true },
-          { name: 'Real-time spend controls', request: true, competitor: true },
-          { name: 'Works internationally (190+ countries)', request: true, competitor: false },
-          { name: 'Fund with stablecoins', request: true, competitor: false },
-          { name: 'No FX markup on international spend', request: true, competitor: false },
+          { name: 'Virtual cards', request: 'Coming soon', competitor: true },
+          { name: 'Physical cards', request: 'Coming soon', competitor: true },
+          { name: 'Real-time spend controls', request: 'Coming soon', competitor: true },
+          { name: 'Works internationally (190+ countries)', request: 'Coming soon', competitor: false },
+          { name: 'Fund with stablecoins', request: 'Coming soon', competitor: false },
+          { name: 'No FX markup on international spend', request: 'Coming soon', competitor: false },
         ],
       },
       {
@@ -80,7 +80,7 @@ export const alternatives = {
       {
         title: 'Built for global-first companies',
         description:
-          'Unlike Ramp\'s US-centric model, Request Finance gives every entity its own business account, corporate cards that work in 190+ countries, and payment rails that include SEPA, SWIFT, SPEI, and Faster Payments.',
+          'Unlike Ramp\'s US-centric model, Request Finance gives every entity its own business account, global payment rails that include SEPA, SWIFT, SPEI, and Faster Payments, and corporate cards coming soon.',
         icon: 'GlobeAltIcon',
       },
       {
@@ -98,7 +98,7 @@ export const alternatives = {
       {
         title: 'Enterprise-grade controls',
         description:
-          'Multi-level approval workflows, per-card spending limits, role-based access, and complete audit trails. Everything your finance team needs to maintain control as you scale.',
+          'Multi-level approval workflows, role-based access, and complete audit trails. Everything your finance team needs to maintain control as you scale.',
         icon: 'ShieldCheckIcon',
       },
     ],
@@ -128,7 +128,7 @@ export const alternatives = {
     footerEyebrow: 'Switch from Ramp',
     footerTitle: 'Ready to go beyond US-only spend management?',
     footerDescription:
-      'Join 1,500+ finance leaders who manage global payments with Request Finance. Your account setup takes less than 5 minutes.',
+      'Join 1,500+ finance teams processing $1B+ with Request Finance. Your account setup takes less than 5 minutes.',
   },
 
   brex: {
@@ -136,10 +136,10 @@ export const alternatives = {
     name: 'Brex',
     metaTitle: 'Request Finance vs Brex: The Best Alternative to Brex in 2025',
     metaDescription:
-      'Comparing Request Finance vs Brex for corporate cards, global payments, and spend management. See why global companies choose Request Finance over Brex.',
+      'Comparing Request Finance vs Brex for global payments and spend management. See why global companies choose Request Finance over Brex.',
     heroTitle: 'The #1 Alternative to Brex for Growing Global Companies',
     heroDescription:
-      'Brex dropped small businesses to focus on enterprise. Request Finance welcomes companies of every size — with global payment rails, stablecoin infrastructure, and corporate cards that work in 190+ countries.',
+      'Brex dropped small businesses to focus on enterprise. Request Finance welcomes companies of every size — with global payment rails, stablecoin infrastructure, and corporate cards coming soon.',
     heroLabel: 'Request Finance vs Brex',
 
     introEyebrow: 'Why switch from Brex?',
@@ -163,13 +163,13 @@ export const alternatives = {
       {
         category: 'Corporate Cards',
         features: [
-          { name: 'Virtual cards', request: true, competitor: true },
-          { name: 'Physical cards', request: true, competitor: true },
-          { name: 'Real-time spend controls & notifications', request: true, competitor: true },
-          { name: 'Cards accepted internationally (190+ countries)', request: true, competitor: 'Partial' },
-          { name: 'Fund cards with stablecoins (USDC, USDT)', request: true, competitor: false },
-          { name: 'No hidden FX markup on international spend', request: true, competitor: false },
-          { name: 'Issue cards to non-US team members', request: true, competitor: 'Partial' },
+          { name: 'Virtual cards', request: 'Coming soon', competitor: true },
+          { name: 'Physical cards', request: 'Coming soon', competitor: true },
+          { name: 'Real-time spend controls & notifications', request: 'Coming soon', competitor: true },
+          { name: 'Cards accepted internationally (190+ countries)', request: 'Coming soon', competitor: 'Partial' },
+          { name: 'Fund cards with stablecoins (USDC, USDT)', request: 'Coming soon', competitor: false },
+          { name: 'No hidden FX markup on international spend', request: 'Coming soon', competitor: false },
+          { name: 'Issue cards to non-US team members', request: 'Coming soon', competitor: 'Partial' },
         ],
       },
       {
@@ -224,9 +224,9 @@ export const alternatives = {
         icon: 'GlobeAltIcon',
       },
       {
-        title: 'Fund cards and pay vendors straight from your crypto treasury',
+        title: 'Pay vendors from your crypto treasury',
         description:
-          'If your company holds USDC, USDT, or other digital assets, Brex can\'t help you. Request Finance lets you fund cards, pay vendors, and manage your treasury in both stablecoins and fiat — from one platform.',
+          'If your company holds USDC, USDT, or other digital assets, Brex can\'t help you. Request Finance lets you pay vendors and manage your treasury in both stablecoins and fiat — from one platform. Corporate cards coming soon.',
         icon: 'CurrencyDollarIcon',
       },
       {
@@ -249,18 +249,18 @@ export const alternatives = {
       },
       {
         title: 'Your treasury includes digital assets',
-        description: 'You hold stablecoins and want to spend them as easily as fiat — funding corporate cards, paying invoices, or offramping to vendor bank accounts. Brex has zero crypto infrastructure.',
+        description: 'You hold stablecoins and want to spend them as easily as fiat — paying invoices or offramping to vendor bank accounts. Brex has zero crypto infrastructure. Request corporate cards are coming soon.',
       },
       {
         title: 'You need one platform, not three',
-        description: 'With Brex, international payments require workarounds, AP needs supplementing, and crypto is off the table. Request Finance unifies cards, AP, multi-rail payments, and stablecoin support in one place.',
+        description: 'With Brex, international payments require workarounds, AP needs supplementing, and crypto is off the table. Request Finance unifies AP, multi-rail payments, and stablecoin support in one place — with corporate cards coming soon.',
       },
     ],
 
     footerEyebrow: 'Switch from Brex',
     footerTitle: 'Ready for a spend platform that works for every business?',
     footerDescription:
-      'Join 1,500+ finance leaders who manage global payments with Request Finance. No revenue minimums. No gatekeeping. Your account setup takes less than 5 minutes.',
+      'Join 1,500+ finance teams processing $1B+ with Request Finance. No revenue minimums. No gatekeeping. Your account setup takes less than 5 minutes.',
   },
 
   airwallex: {
@@ -268,10 +268,10 @@ export const alternatives = {
     name: 'Airwallex',
     metaTitle: 'Request Finance vs Airwallex: The Best Alternative to Airwallex in 2025',
     metaDescription:
-      'Comparing Request Finance vs Airwallex for global payments, corporate cards, and spend management. See why companies choose Request Finance over Airwallex.',
+      'Comparing Request Finance vs Airwallex for global payments and spend management. See why companies choose Request Finance over Airwallex.',
     heroTitle: 'The #1 Alternative to Airwallex for Unified Spend Management',
     heroDescription:
-      'Airwallex gives you multi-currency accounts and FX. But it\'s not a spend management platform. If you need corporate cards with real-time controls, stablecoin payments, and integrated AP — all in one — Request Finance is the complete solution.',
+      'Airwallex gives you multi-currency accounts and FX. But it\'s not a spend management platform. If you need stablecoin payments, integrated AP, and corporate cards coming soon — all in one — Request Finance is the complete solution.',
     heroLabel: 'Request Finance vs Airwallex',
 
     introEyebrow: 'Why switch from Airwallex?',
@@ -295,13 +295,13 @@ export const alternatives = {
       {
         category: 'Corporate Cards',
         features: [
-          { name: 'Virtual cards', request: true, competitor: true },
-          { name: 'Physical cards', request: true, competitor: true },
-          { name: 'Real-time spend controls & instant notifications', request: true, competitor: 'Basic' },
-          { name: 'Per-card spending limits, rules & merchant restrictions', request: true, competitor: 'Partial' },
-          { name: 'Cards work globally (190+ countries)', request: true, competitor: true },
-          { name: 'Fund cards with stablecoins (USDC, USDT)', request: true, competitor: false },
-          { name: 'Instant card issuance for new team members', request: true, competitor: true },
+          { name: 'Virtual cards', request: 'Coming soon', competitor: true },
+          { name: 'Physical cards', request: 'Coming soon', competitor: true },
+          { name: 'Real-time spend controls & instant notifications', request: 'Coming soon', competitor: 'Basic' },
+          { name: 'Per-card spending limits, rules & merchant restrictions', request: 'Coming soon', competitor: 'Partial' },
+          { name: 'Cards work globally (190+ countries)', request: 'Coming soon', competitor: true },
+          { name: 'Fund cards with stablecoins (USDC, USDT)', request: 'Coming soon', competitor: false },
+          { name: 'Instant card issuance for new team members', request: 'Coming soon', competitor: true },
         ],
       },
       {
@@ -346,7 +346,7 @@ export const alternatives = {
       {
         title: 'Purpose-built for spend management',
         description:
-          'Airwallex is a banking infrastructure platform that added cards and AP as features. Request Finance was built from day one as a spend management platform — cards, AP, approvals, accounting, and treasury management all work together natively.',
+          'Airwallex is a banking infrastructure platform that added cards and AP as features. Request Finance was built from day one as a spend management platform — AP, approvals, accounting, and treasury management work together natively. Corporate cards are coming soon.',
         icon: 'BuildingOfficeIcon',
       },
       {
@@ -362,9 +362,9 @@ export const alternatives = {
         icon: 'SparklesIcon',
       },
       {
-        title: 'Card controls your finance team actually needs',
+        title: 'Corporate card controls, coming soon',
         description:
-          'Airwallex cards offer basic spend controls. Request Finance gives you per-card spending limits, merchant category restrictions, multi-level approval chains, and instant real-time notifications — the granular control that prevents rogue spend.',
+          'Airwallex cards offer basic spend controls. Request Finance is launching per-card spending limits, merchant category restrictions, multi-level approval chains, and instant real-time notifications — the granular control that prevents rogue spend.',
         icon: 'ShieldCheckIcon',
       },
     ],
@@ -373,11 +373,11 @@ export const alternatives = {
     useCases: [
       {
         title: 'You need spend management, not just FX',
-        description: 'Airwallex is great if you only need multi-currency accounts and foreign exchange. But if you want corporate cards with real controls, approval workflows, and integrated AP — Request Finance is the complete platform.',
+        description: 'Airwallex is great if you only need multi-currency accounts and foreign exchange. Request Finance covers AP, approval workflows, and stablecoin payments today — with corporate cards coming soon.',
       },
       {
         title: 'Your business works with stablecoins',
-        description: 'You hold USDC, USDT, or other digital assets in your treasury. You need to fund cards, pay vendors, and offramp to fiat — all from one interface. Airwallex doesn\'t touch crypto.',
+        description: 'You hold USDC, USDT, or other digital assets in your treasury. You need to pay vendors and offramp to fiat — all from one interface. Airwallex doesn\'t touch crypto. Request corporate cards are coming soon.',
       },
       {
         title: 'You can\'t wait weeks for onboarding',
@@ -392,7 +392,7 @@ export const alternatives = {
     footerEyebrow: 'Switch from Airwallex',
     footerTitle: 'Ready for spend management that goes beyond FX?',
     footerDescription:
-      'Join 1,500+ finance leaders who manage global payments with Request Finance. Operational in minutes. No weeks-long onboarding.',
+      'Join 1,500+ finance teams processing $1B+ with Request Finance. Operational in minutes. No weeks-long onboarding.',
   },
 }
 

@@ -28,12 +28,12 @@ export const industries = {
     solutionEyebrow: 'The Solution',
     solutionTitle: 'One platform for all your SaaS financial operations',
     solutionDescription:
-      'Request brings together corporate cards, vendor payments, and real-time visibility, powered by stablecoins, in a single platform built for high-growth SaaS companies.',
+      'Request brings together global accounts, vendor payments, and real-time visibility, powered by stablecoins, in a single platform built for high-growth SaaS companies. Corporate cards are coming soon.',
     // Footer CTA customization
     footerEyebrow: 'Built for SaaS',
     footerTitle: 'Ready to scale your SaaS financial operations?',
     footerDescription:
-      'Join hundreds of SaaS companies managing their spend with Request. Get started in less than 5 minutes.',
+      'Join 1,500+ finance teams processing $1B+ with Request. Get started in less than 5 minutes.',
   },
   wholesalers: {
     slug: 'wholesalers',
@@ -123,12 +123,12 @@ export const industries = {
     solutionEyebrow: 'The Solution',
     solutionTitle: 'One platform for all your agency payments',
     solutionDescription:
-      'Request gives marketing agencies corporate cards for ad spend, streamlined vendor payments, and real-time visibility across all client accounts.',
+      'Request gives marketing agencies streamlined vendor payments and real-time visibility across all client accounts. Corporate cards for ad spend are coming soon.',
     // Why It Works section
     whyItWorks: {
       title: 'Reduce payment ops workload by 80% with automated workflows',
       description:
-        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 25+ currencies.',
       reasons: [
         {
           title: 'Pay affiliates, creators, and influencers anywhere instantly',
@@ -202,7 +202,7 @@ export const industries = {
         },
         {
           title: 'Business cards for your entire team',
-          description: 'Business cards are not easily accessible for Web3 businesses because of their nature. Request Finance provides business cards for the entire team, regardless of their location.',
+          description: 'Business cards are not easily accessible for Web3 businesses because of their nature. Request Finance is launching corporate cards for your entire team, regardless of location — coming soon.',
           icon: 'CreditCardIcon',
         },
       ],
@@ -306,11 +306,11 @@ export const industries = {
     whyItWorks: {
       title: 'Fast international payments at low cost for vital healthcare activities',
       description:
-        'Healthcare actors have vital activities; they need fast international payments at a low cost. Request Finance enables instant stablecoin (crypto) payments to most countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Healthcare actors have vital activities; they need fast international payments at a low cost. Request Finance enables instant stablecoin (crypto) payments to most countries worldwide, as well as fiat payments to over 190 countries, in 25+ currencies.',
       reasons: [
         {
           title: 'Fast payments across 190+ countries',
-          description: 'Request Finance enables instant stablecoin payments to most countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+          description: 'Request Finance enables instant stablecoin payments to most countries worldwide, as well as fiat payments to over 190 countries, in 25+ currencies.',
           icon: 'GlobeAltIcon',
         },
         {
@@ -366,11 +366,11 @@ export const industries = {
     whyItWorks: {
       title: 'Online Travel Agencies need fast payments at a low cost to many countries worldwide',
       description:
-        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+        'Request Finance enables stablecoin (crypto) payments to all countries worldwide, as well as fiat payments to over 190 countries, in 25+ currencies.',
       reasons: [
         {
           title: 'Fast payments at low cost',
-          description: 'Request Finance enables stablecoin payments to all countries worldwide, as well as fiat payments to over 190 countries, in 20+ currencies.',
+          description: 'Request Finance enables stablecoin payments to all countries worldwide, as well as fiat payments to over 190 countries, in 25+ currencies.',
           icon: 'GlobeAltIcon',
         },
         {

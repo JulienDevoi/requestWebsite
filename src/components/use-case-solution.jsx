@@ -36,7 +36,9 @@ export function UseCaseSolution({ eyebrow, title, description }) {
           key="corporate-cards"
           eyebrow="Corporate cards"
           title="Control your spend"
-          description="Issue virtual and physical cards with real-time controls and instant notifications."
+          description="Virtual and physical cards with real-time controls and instant notifications. Join the waitlist — launching soon."
+          comingSoon
+          waitlistHref="/products/corporate-cards"
           graphic={
             <img
               src="/images/corporate-cards.gif"
@@ -79,7 +81,7 @@ export function UseCaseSolution({ eyebrow, title, description }) {
           key="operate-globally"
           eyebrow="Worldwide"
           title="Operate globally"
-          description="Pay suppliers and vendors worldwide with competitive FX rates and transparent fees. Support for ACH, Wire, SEPA, SWIFT, SPEI (MXN), Faster Payments (GBP), and stablecoins (crypto)."
+          description="Send and receive in 25+ currencies. Pay suppliers in 190+ countries via virtual IBANs, SWIFT, ACH, SEPA, and stablecoin wallets."
           graphic={<Map />}
           className="max-lg:rounded-b-4xl lg:col-span-2 lg:rounded-br-4xl"
         />

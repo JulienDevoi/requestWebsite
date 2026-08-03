@@ -706,7 +706,7 @@ const faqItems = [
   {
     question: 'What payment rails and currencies do you support?',
     answer:
-      'Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin transfers across 20+ networks. You can pay vendors and employees in 350+ crypto and 20+ fiat currencies worldwide. For your subscription, you can pay with USDC, USDT, or DAI on Ethereum, Polygon, Avalanche, or BSC.',
+      'Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin wallets. Send and receive in 25+ currencies with virtual IBANs — including USDC and USDT — and pay vendors in 190+ countries. For your subscription, you can pay with USDC, USDT, or DAI on Ethereum, Polygon, Avalanche, or BSC.',
   },
   {
     question: 'Can I switch plans later?',
@@ -793,7 +793,7 @@ function FrequentlyAskedQuestions() {
               What payment rails and currencies do you support?
             </dt>
             <dd className="mt-4 text-sm/6 text-gray-600">
-              <p>Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin transfers across 20+ networks. You can pay vendors and employees in 350+ crypto and 20+ fiat currencies worldwide.</p>
+              <p>Request Finance supports ACH, SEPA, SWIFT, local fast payment rails, and stablecoin wallets. Send and receive in 25+ currencies with virtual IBANs — including USDC and USDT — and pay vendors in 190+ countries.</p>
               <p className="mt-3">For your subscription, you can pay with USDC, USDT, or DAI on Ethereum, Polygon, Avalanche, or BSC.</p>
             </dd>
           </dl>

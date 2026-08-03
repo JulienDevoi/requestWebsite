@@ -118,9 +118,9 @@ One system for modern finance teams.
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-              <dt className="text-sm/6 text-gray-600">Companies we helped</dt>
+              <dt className="text-sm/6 text-gray-600">Finance teams</dt>
               <dd className="order-first text-6xl font-medium tracking-tight">
-                <AnimatedNumber start={5} end={10} />K
+                1,500+
               </dd>
             </div>
             <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">

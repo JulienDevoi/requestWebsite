@@ -7,7 +7,7 @@ export function Steps() {
     {
       number: '1',
       title: 'Open your account',
-      description: 'Complete your Know Your Business verification quickly and securely or do it later.',
+      description: 'Complete your Know Your Business verification before you go live. It usually takes a few days and means your counterparties are verified too.',
     },
     {
       number: '2',

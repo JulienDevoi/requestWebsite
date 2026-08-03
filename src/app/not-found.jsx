@@ -12,7 +12,7 @@ export const metadata = {
 
 const helpfulLinks = [
   { label: 'Home', href: '/', description: 'Back to the Request Finance homepage.' },
-  { label: 'Pricing', href: '/pricing', description: 'See our plans starting at $300/month.' },
+  { label: 'Pricing', href: '/pricing', description: 'See our plans starting at $250/month.' },
   { label: 'Book a Demo', href: '/demo', description: 'Talk to the team and see the platform live.' },
   { label: 'Blog', href: '/blog', description: 'Insights on spend management and stablecoins.' },
   { label: 'Customers', href: '/customers', description: 'See how other companies use Request Finance.' },

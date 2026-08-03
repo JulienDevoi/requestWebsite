@@ -4,7 +4,7 @@ import { DemoContent } from './demo-content'
 export const metadata = {
   title: 'Book a Demo - Request Finance',
   description:
-    'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+    'Book a 15-minute working session to see what your cross-border payments really cost. Map your payment flows and get a written cost comparison versus Request.',
   keywords: [
     'book a demo',
     'spend management demo',
@@ -16,7 +16,7 @@ export const metadata = {
   openGraph: {
     title: 'Book a Demo - Request Finance',
     description:
-      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+      'Book a 15-minute working session to see what your cross-border payments really cost. Map your payment flows and get a written cost comparison versus Request.',
     url: `${siteUrl}/demo`,
     siteName: 'Request Finance',
     images: [
@@ -34,7 +34,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Book a Demo - Request Finance',
     description:
-      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+      'Book a 15-minute working session to see what your cross-border payments really cost. Map your payment flows and get a written cost comparison versus Request.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
@@ -54,7 +54,7 @@ export default function Demo() {
     },
     areaServed: 'Worldwide',
     description:
-      'Experience the new standard in business spend management. Book a demo to see how Request Finance can streamline your corporate cards, accounts payable, and global payments.',
+      'Book a 15-minute working session to see what your cross-border payments really cost. Map your payment flows and get a written cost comparison versus Request.',
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',

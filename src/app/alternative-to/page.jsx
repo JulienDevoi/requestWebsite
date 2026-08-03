@@ -62,14 +62,14 @@ const comparisonData = [
   {
     category: 'Corporate Cards',
     features: [
-      { name: 'Virtual cards', values: [true, true, true, true] },
-      { name: 'Physical cards', values: [true, true, true, true] },
-      { name: 'Real-time spend controls', values: [true, true, true, 'Basic'] },
-      { name: 'Per-card spending limits & merchant restrictions', values: [true, true, true, 'Partial'] },
-      { name: 'Cards work in 190+ countries', values: [true, false, 'Partial', true] },
-      { name: 'Fund cards with stablecoins', values: [true, false, false, false] },
-      { name: 'No hidden FX markup on international spend', values: [true, false, false, false] },
-      { name: 'Issue cards to non-US team members', values: [true, false, 'Partial', true] },
+      { name: 'Virtual cards', values: ['Coming soon', true, true, true] },
+      { name: 'Physical cards', values: ['Coming soon', true, true, true] },
+      { name: 'Real-time spend controls', values: ['Coming soon', true, true, 'Basic'] },
+      { name: 'Per-card spending limits & merchant restrictions', values: ['Coming soon', true, true, 'Partial'] },
+      { name: 'Cards work in 190+ countries', values: ['Coming soon', false, 'Partial', true] },
+      { name: 'Fund cards with stablecoins', values: ['Coming soon', false, false, false] },
+      { name: 'No hidden FX markup on international spend', values: ['Coming soon', false, false, false] },
+      { name: 'Issue cards to non-US team members', values: ['Coming soon', false, 'Partial', true] },
     ],
   },
   {
@@ -131,7 +131,7 @@ const platformSummaries = [
     name: 'Request Finance',
     slug: null,
     tagline: 'The complete spend management platform',
-    description: 'Corporate cards, accounts payable, stablecoin payments, and accrual accounting — all in one. Built for global companies that want control, speed, and flexibility.',
+    description: 'Accounts payable, stablecoin payments, and accrual accounting — all in one. Corporate cards coming soon. Built for global companies that want control, speed, and flexibility.',
     bestFor: 'Global companies, stablecoin-native businesses, multi-entity operations',
     highlight: true,
   },
@@ -327,7 +327,7 @@ function PlatformCards() {
 
 function ScoreCard() {
   const scores = [
-    { category: 'Corporate Cards', values: [5, 4, 4, 3] },
+    { category: 'Corporate Cards', values: [2, 4, 4, 3] },
     { category: 'Accounts Payable', values: [5, 4, 3, 3] },
     { category: 'Global Payments', values: [5, 2, 2, 5] },
     { category: 'Stablecoin Support', values: [5, 0, 0, 0] },

@@ -9,7 +9,7 @@ export const metadata = {
     default: 'Request Finance - Global Payments, Settled in Minutes',
   },
   description:
-    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+    'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
   keywords: [
     'spend management',
     'corporate cards',
@@ -28,7 +28,7 @@ export const metadata = {
   openGraph: {
     title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
     url: siteUrl,
     siteName: 'Request Finance',
     images: [
@@ -47,7 +47,7 @@ export const metadata = {
     site: '@RequestFinance',
     title: 'Request Finance - Global Payments, Settled in Minutes',
     description:
-      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, corporate cards, accounts payable, and accrual accounting, with no crypto complexity.',
+      'Pay vendors and manage spend on a platform built for stablecoins. Get instant, global settlement, accounts payable, and accrual accounting, with no crypto complexity.',
     images: [`${siteUrl}/images/thumbnail.png`],
   },
   alternates: {
