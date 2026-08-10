@@ -6,6 +6,10 @@ import { GradientBackground } from '@/components/gradient'
 import { Link } from '@/components/link'
 import { Navbar } from '@/components/navbar'
 import { Heading, Lead, Subheading } from '@/components/text'
+import {
+  customerCategories,
+  getCustomerStoriesForListing,
+} from '@/data/customers'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
   CheckIcon,
@@ -60,51 +64,11 @@ export const metadata = {
   },
 }
 
-// Mock data
-const mockCategories = [
-  { slug: 'case-studies', title: 'Case Studies' },
-  { slug: 'success-stories', title: 'Success Stories' },
-  { slug: 'testimonials', title: 'Testimonials' },
-]
-
-const mockPosts = [
-  {
-    slug: 'streamlining-crypto-accounting-at-scale',
-    title: 'Streamlining Crypto Accounting at Scale',
-    excerpt: 'How a decentralised governance research group simplified crypto reconciliation and month-end reporting with Request Accounting.',
-    publishedAt: '2025-03-07',
-    author: { name: 'Governance research group', image: null },
-    mainImage: '/customers/web3.png',
-    featured: true,
-    categories: ['case-studies'],
-  },
-  {
-    slug: 'polemos',
-    title: 'Polemos - Powering Web3 Gaming at Scale',
-    excerpt: 'How Request Finance helps Polemos streamline fiat and crypto payments to power the next generation of blockchain gaming.',
-    publishedAt: '2025-03-12',
-    author: { name: 'Polemos', image: null },
-    mainImage: '/customers/polemos.png',
-    featured: true,
-    categories: ['case-studies'],
-  },
-  {
-    slug: 'tokenizing-a-real-estate-empire-with-realt',
-    title: 'Tokenizing a Real Estate Empire with RealT',
-    excerpt: 'How RealT used Request Finance on Gnosis Chain for USDC payouts, xDAI billing, and a WooCommerce checkout gateway—plus results and the full RealT story.',
-    publishedAt: '2025-03-13',
-    author: { name: 'RealT', image: 'https://cdn.prod.website-files.com/606beb3c434b8b5fced72854/627e67b9c939f344a667d0a5_Icon%20realT.jpeg' },
-    mainImage: '/customers/realt/realt.png',
-    featured: true,
-    categories: ['case-studies'],
-  },
-]
-
 const postsPerPage = 5
 
 async function FeaturedPosts() {
-  let featuredPosts = [...mockPosts]
-    .filter(post => post.featured)
+  let featuredPosts = getCustomerStoriesForListing()
+    .filter((post) => post.featured)
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, 3)
 
@@ -166,7 +130,7 @@ async function FeaturedPosts() {
 }
 
 async function Categories({ selected }) {
-  let categories = mockCategories
+  let categories = customerCategories
 
   if (categories.length === 0) {
     return
@@ -217,16 +181,14 @@ async function Categories({ selected }) {
 }
 
 async function Posts({ page, category }) {
-  let posts = [...mockPosts].sort(
-    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  let posts = getCustomerStoriesForListing().sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt),
   )
 
-  // Filter by category if provided
   if (category) {
-    posts = posts.filter(post => post.categories.includes(category))
+    posts = posts.filter((post) => post.categories.includes(category))
   }
 
-  // Paginate
   const start = (page - 1) * postsPerPage
   const end = page * postsPerPage
   posts = posts.slice(start, end)
@@ -295,13 +257,13 @@ async function Pagination({ page, category }) {
     return params.size !== 0 ? `/customers?${params.toString()}` : '/customers'
   }
 
-  let allPosts = [...mockPosts].sort(
-    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt)
+  let allPosts = getCustomerStoriesForListing().sort(
+    (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt),
   )
   if (category) {
-    allPosts = allPosts.filter(post => post.categories.includes(category))
+    allPosts = allPosts.filter((post) => post.categories.includes(category))
   }
-  
+
   let totalPosts = allPosts.length
   let hasPreviousPage = page - 1
   let previousPageUrl = hasPreviousPage ? url(page - 1) : undefined
@@ -384,4 +346,3 @@ export default async function Customers({ searchParams }) {
     </main>
   )
 }
-

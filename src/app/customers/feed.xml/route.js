@@ -1,49 +1,20 @@
 import { Feed } from 'feed'
 import assert from 'node:assert'
-
-// Mock data
-const mockPosts = [
-  {
-    slug: 'streamlining-crypto-accounting-at-scale',
-    title: 'Streamlining Crypto Accounting at Scale',
-    excerpt:
-      'How a decentralised governance research group simplified crypto reconciliation and month-end reporting with Request Accounting.',
-    publishedAt: '2025-03-07',
-    author: { name: 'Governance research group' },
-  },
-  {
-    slug: 'polemos',
-    title: 'Polemos - Powering Web3 Gaming at Scale',
-    excerpt:
-      'How Request Finance helps Polemos streamline fiat and crypto payments to power the next generation of blockchain gaming.',
-    publishedAt: '2025-03-12',
-    author: { name: 'Polemos' },
-  },
-  {
-    slug: 'tokenizing-a-real-estate-empire-with-realt',
-    title: 'Tokenizing a Real Estate Empire with RealT',
-    excerpt:
-      'How RealT used Request Finance on Gnosis Chain for USDC payouts, xDAI billing, and a WooCommerce checkout gateway—plus results and the full RealT story.',
-    publishedAt: '2025-03-13',
-    author: { name: 'RealT' },
-  },
-]
+import { getCustomerStoriesForListing } from '@/data/customers'
 
 export async function GET(req) {
   const url = new URL(req.url)
   let origin = url.origin
-  
-  // Validate against allowed origins
+
   const allowedOrigins = [
     'https://requestfinance.com',
     'https://www.requestfinance.com',
     process.env.NEXT_PUBLIC_SITE_URL,
   ].filter(Boolean)
-  
-  // Use environment variable or default to production URL
-  const siteUrl = allowedOrigins.includes(origin) 
-    ? origin 
-    : (process.env.NEXT_PUBLIC_SITE_URL || 'https://requestfinance.com')
+
+  const siteUrl = allowedOrigins.includes(origin)
+    ? origin
+    : process.env.NEXT_PUBLIC_SITE_URL || 'https://requestfinance.com'
 
   let feed = new Feed({
     title: 'Customer Success Stories',
@@ -63,7 +34,7 @@ export async function GET(req) {
     },
   })
 
-  mockPosts.forEach((post) => {
+  getCustomerStoriesForListing().forEach((post) => {
     try {
       assert(typeof post.title === 'string')
       assert(typeof post.slug === 'string')
@@ -93,4 +64,3 @@ export async function GET(req) {
     },
   })
 }
-

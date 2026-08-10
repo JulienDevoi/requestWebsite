@@ -2,10 +2,12 @@ import { UseCaseFooter } from '@/components/use-case-footer'
 import { UseCaseHero } from '@/components/use-case-hero'
 import { UseCaseIntro } from '@/components/use-case-intro'
 import { UseCaseSolution } from '@/components/use-case-solution'
+import { UseCaseCaseStudy } from '@/components/use-case-case-study'
 import { Industries } from '@/components/industries'
 import { Steps } from '@/components/steps'
 import { Testimonials } from '@/components/testimonials'
 import { siteUrl } from '@/lib/config'
+import { getCustomerStoryByUseCase } from '@/data/customers'
 import { getUseCaseBySlug, getAllUseCaseSlugs } from '@/data/use-cases'
 import { notFound } from 'next/navigation'
 
@@ -95,6 +97,8 @@ export default async function UseCasePage({ params }) {
     notFound()
   }
 
+  const caseStudy = getCustomerStoryByUseCase(slug)
+
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -128,6 +132,7 @@ export default async function UseCasePage({ params }) {
           buttonText={useCase.introButtonText}
           buttonHref="https://app.request.finance/signup"
         />
+        {caseStudy && <UseCaseCaseStudy story={caseStudy} />}
         <div className="bg-linear-to-b from-white from-50% to-gray-100">
           <div className="py-32">
             <UseCaseSolution

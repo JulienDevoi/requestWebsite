@@ -2,6 +2,7 @@ import { getAllProducts } from '@/data/products'
 import { getAllUseCases } from '@/data/use-cases'
 import { getAllIndustries } from '@/data/industries'
 import { getAllAlternatives } from '@/data/alternatives'
+import { getAllCustomerStories } from '@/data/customers'
 import { getAllPosts } from '@/lib/blog'
 import { siteUrl } from '@/lib/config'
 
@@ -53,7 +54,7 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/customers`,
-      lastModified: new Date('2025-03-13'),
+      lastModified: new Date('2026-08-10'),
       changeFrequency: 'weekly',
       priority: 0.7,
     },
@@ -94,26 +95,12 @@ export default function sitemap() {
     priority: 0.6,
   }))
 
-  const customerStories = [
-    {
-      url: `${baseUrl}/customers/streamlining-crypto-accounting-at-scale`,
-      lastModified: new Date('2025-03-07'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/customers/polemos`,
-      lastModified: new Date('2025-03-12'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/customers/tokenizing-a-real-estate-empire-with-realt`,
-      lastModified: new Date('2025-03-13'),
-      changeFrequency: 'yearly',
-      priority: 0.6,
-    },
-  ]
+  const customerStories = getAllCustomerStories().map((story) => ({
+    url: `${baseUrl}/customers/${story.slug}`,
+    lastModified: new Date(story.publishedAt),
+    changeFrequency: 'yearly',
+    priority: 0.6,
+  }))
 
   return [
     ...staticPages,

@@ -8,6 +8,7 @@ import { Gradient, GradientBackground } from '@/components/gradient'
 import { Link } from '@/components/link'
 import { LogoCloud } from '@/components/logo-cloud'
 import { Navbar } from '@/components/navbar'
+import { FAQ } from '@/components/faq'
 import { Heading, Lead, Subheading } from '@/components/text'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
@@ -16,6 +17,29 @@ import {
   MinusIcon,
 } from '@heroicons/react/16/solid'
 import clsx from 'clsx'
+
+const objectionFaqItems = [
+  {
+    question: 'We already have a bank account.',
+    answer:
+      "Banks don't do stablecoins, and they charge you 2–8% every time you pay someone abroad. Request gives you fiat Global Accounts and stablecoin rails in one place, so you stop paying the cross-border tax without giving up the tooling.",
+  },
+  {
+    question: "We're not ready for crypto.",
+    answer:
+      "You don't have to be. Start with the fiat Global Accounts and AP/AR alone, and switch on stablecoin payouts whenever you're ready. It's modular, and you never have to hold a digital asset to use it.",
+  },
+  {
+    question: 'What about compliance and KYB?',
+    answer:
+      "KYB is required before you go live and usually takes a few days. We think that's a feature: it means your counterparties are verified too, and your auditors get a complete paper trail.",
+  },
+  {
+    question: 'We already use Coinbase or Binance.',
+    answer:
+      'Those are wallets, not finance platforms. No invoicing, no approval workflows, no payroll, no accrual accounting, no fiat payouts. Request is the layer on top.',
+  },
+]
 
 const tiers = [
   {
@@ -824,6 +848,11 @@ export default function Pricing() {
       <Header />
       <PricingCards billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
       <TransactionPricing />
+      <FAQ
+        eyebrow="Straight answers"
+        title="The four questions every finance team asks us"
+        items={objectionFaqItems}
+      />
       <PricingTable selectedTier={selectedTier} setSelectedTier={setSelectedTier} />
       <Testimonial />
       <FrequentlyAskedQuestions />
