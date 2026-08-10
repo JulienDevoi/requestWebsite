@@ -97,6 +97,7 @@ function Sitemap() {
           <SitemapLink href="/company">About us</SitemapLink>
           <SitemapLink href="/blog">Blog</SitemapLink>
           <SitemapLink href="/guide">The Stablecoin Guide</SitemapLink>
+          <SitemapLink href="/savings-calculator">Savings Calculator</SitemapLink>
           <SitemapLink href="/pricing">Pricing</SitemapLink>
           <SitemapLink href="/customers">Customer Stories</SitemapLink>
           <SitemapLink href="/alternative-to">Why Switch to Request?</SitemapLink>

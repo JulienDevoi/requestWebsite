@@ -272,6 +272,26 @@ function Header() {
   )
 }
 
+function SavingsCalloutBanner() {
+  return (
+    <Container className="mt-10">
+      <div className="flex flex-col items-start justify-between gap-4 rounded-2xl bg-blue-50 px-6 py-5 ring-1 ring-blue-600/10 sm:flex-row sm:items-center">
+        <div>
+          <p className="text-sm font-semibold text-gray-950">
+            Curious what your bank is actually costing you?
+          </p>
+          <p className="mt-1 text-sm/6 text-gray-600">
+            Calculate your annual FX and wire fee leakage, and see it stacked up against these plans.
+          </p>
+        </div>
+        <Button variant="outline" href="/savings-calculator" className="shrink-0">
+          Calculate your savings &rarr;
+        </Button>
+      </div>
+    </Container>
+  )
+}
+
 function PricingCards({ billingPeriod, setBillingPeriod }) {
   return (
     <div className="relative pt-12 pb-24">
@@ -846,6 +866,7 @@ export default function Pricing() {
         <Navbar />
       </Container>
       <Header />
+      <SavingsCalloutBanner />
       <PricingCards billingPeriod={billingPeriod} setBillingPeriod={setBillingPeriod} />
       <TransactionPricing />
       <FAQ
