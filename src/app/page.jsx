@@ -135,7 +135,7 @@ function HeroSaved() {
                 Send and receive in 25+ currencies with virtual IBANs, SWIFT and stablecoin wallets. Settle globally in minutes instead of days, and stop losing 2–8% to your bank. AP/AR, payroll and accounting built in.
               </p>
               <div className="mt-12 flex flex-col gap-x-6 gap-y-4 sm:flex-row">
-                <Button href="/demo">Book a 15-min demo</Button>
+                <Button href="/demo">Book a 30-min demo</Button>
                 <Button variant="secondary" href="https://app.request.finance/signup" target="_blank">
                   Start for free
                 </Button>

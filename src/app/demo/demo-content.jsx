@@ -3,58 +3,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
-import { useEffect } from 'react'
 import { Logo } from '@/components/logo'
 
+const CALENDLY_URL = 'https://calendly.com/d/dvrx-9cq-5ch/30-min-intro-call'
+
 export function DemoContent() {
-  useEffect(() => {
-    // HubSpot script should automatically initialize, but we can trigger it manually if needed
-    const initHubSpot = () => {
-      // The HubSpot script automatically finds elements with class 'meetings-iframe-container'
-      // and data-src attribute, so we just need to ensure the script is loaded
-      if (window.hbspt && typeof window.hbspt.meetings !== 'undefined') {
-        // Force re-initialization if needed
-        const containers = document.querySelectorAll('.meetings-iframe-container')
-        containers.forEach((container) => {
-          if (!container.querySelector('iframe')) {
-            const dataSrc = container.getAttribute('data-src')
-            if (dataSrc) {
-              // Create iframe directly since HubSpot's auto-init might not work in React
-              const iframe = document.createElement('iframe')
-              iframe.src = dataSrc
-              iframe.style.width = '100%'
-              iframe.style.height = '100%'
-              iframe.style.border = 'none'
-              iframe.style.minHeight = '600px'
-              iframe.setAttribute('frameborder', '0')
-              iframe.setAttribute('allowtransparency', 'true')
-              container.appendChild(iframe)
-            }
-          }
-        })
-      }
-    }
-
-    // Try to initialize immediately
-    initHubSpot()
-
-    // Also check periodically in case script loads later
-    const interval = setInterval(() => {
-      initHubSpot()
-    }, 500)
-
-    // Cleanup
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <>
       <header className="absolute w-full z-30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="px-6 sm:px-10 lg:pl-12 xl:pl-16 2xl:pl-24">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Site branding */}
             <div className="shrink-0 mr-4">
-              {/* Logo */}
               <Link className="block" href="/" aria-label="Request Finance">
                 <Logo className="h-9" />
               </Link>
@@ -63,190 +22,165 @@ export function DemoContent() {
         </div>
       </header>
 
-      {/* Page content */}
       <main className="grow">
-        <section>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <div className="pt-36 pb-12 md:pt-40 md:pb-20">
-              <div className="lg:flex lg:space-x-12 xl:space-x-16">
-                {/* Left side */}
-                <div className="grow lg:mt-16 mb-16 lg:mb-0 text-center lg:text-left">
-                  {/* Eyebrow */}
-                  <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-700 text-sm font-medium">
-                    <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
-                    For finance teams paying across borders
-                  </div>
+        <section className="lg:grid lg:grid-cols-2 lg:min-h-screen">
+          {/* Left column */}
+          <div className="px-6 sm:px-10 lg:pl-12 xl:pl-16 2xl:pl-24 lg:pr-10 xl:pr-16 pt-36 pb-12 md:pt-40 md:pb-20">
+            <div className="max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
+              <div className="inline-flex items-center gap-2 mb-5 px-3 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-700 text-sm font-medium">
+                <span className="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0" />
+                For finance teams paying across borders
+              </div>
 
-                  <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-4 sm:text-5xl">See what your cross-border payments really cost</h1>
-                  <p className="text-lg text-gray-600 mb-4 max-w-xl mx-auto lg:mx-0">
-                    Book a 15-minute working session. We&apos;ll map your current payment flows and show you, in your own numbers, what you&apos;re losing to FX spreads, wire fees and settlement delays — and what the same payments look like on Request.
-                  </p>
+              <h1 className="text-4xl font-medium tracking-tight text-gray-950 mb-4 sm:text-5xl xl:text-[3.25rem]/[1.15]">
+                See what your cross-border payments really cost
+              </h1>
+              <p className="text-lg text-gray-600 mb-4 xl:text-xl/8">
+                Book a 30-minute working session. We&apos;ll map your current payment flows and show you, in your own numbers, what you&apos;re losing to FX spreads, wire fees and settlement delays — and what the same payments look like on Request.
+              </p>
 
-                  <div className="mb-12">
-                    <ul className="inline-flex flex-col text-slate-500 space-y-4 max-w-xl mx-auto lg:mx-0 text-left w-full">
-                      <li className="flex items-start text-left w-full">
-                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <div>
-                          <span className="font-medium text-gray-900">Find the 2–8% you&apos;re losing today.</span>
-                          <span className="block text-sm text-gray-500 mt-0.5">Most teams are surprised by the true all-in cost once spreads, lifting fees and intermediary charges are added up.</span>
-                        </div>
-                      </li>
-                      <li className="flex items-start text-left w-full">
-                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <div>
-                          <span className="font-medium text-gray-900">Settle in minutes instead of days.</span>
-                          <span className="block text-sm text-gray-500 mt-0.5">See a live stablecoin payout land, and a fiat payout at a flat 0.5%.</span>
-                        </div>
-                      </li>
-                      <li className="flex items-start text-left w-full">
-                        <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                          <circle className="fill-blue-100" cx="10" cy="10" r="10" />
-                          <path
-                            className="fill-blue-500"
-                            d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
-                          />
-                        </svg>
-                        <div>
-                          <span className="font-medium text-gray-900">Leave with a written cost comparison.</span>
-                          <span className="block text-sm text-gray-500 mt-0.5">Your current setup versus Request, at your actual volume and currency mix.</span>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* What to expect */}
-                  <div className="mb-10 max-w-xl mx-auto lg:mx-0 text-left bg-gray-50 rounded-xl p-5 border border-gray-100">
-                    <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-                      What happens in your 15 minutes
-                    </h3>
-                    <ol className="space-y-3">
-                      <li className="flex gap-3">
-                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">01</span>
-                        <div>
-                          <span className="text-sm font-semibold text-gray-900">We map your payment flows.</span>
-                          <span className="block text-sm text-gray-500">Which countries, which currencies, who you pay and how often. No prep needed.</span>
-                        </div>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">02</span>
-                        <div>
-                          <span className="text-sm font-semibold text-gray-900">You see your exact use case, live.</span>
-                          <span className="block text-sm text-gray-500">Not a generic tour, but a walkthrough built around how your team actually moves money.</span>
-                        </div>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">03</span>
-                        <div>
-                          <span className="text-sm font-semibold text-gray-900">You get the numbers in writing.</span>
-                          <span className="block text-sm text-gray-500">Current cost, cost on Request, and what it would take to switch.</span>
-                        </div>
-                      </li>
-                    </ol>
-                  </div>
-
-                  {/* Press logos */}
-                  <div className="w-full">
-                    <div className="text-xs text-slate-400 font-[350] uppercase tracking-wider text-center lg:text-left mb-5">
-                      1,500+ finance teams · $1B+ processed
+              <div className="mb-12">
+                <ul className="flex flex-col text-slate-500 space-y-4 text-left w-full">
+                  <li className="flex items-start text-left w-full">
+                    <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <circle className="fill-blue-100" cx="10" cy="10" r="10" />
+                      <path
+                        className="fill-blue-500"
+                        d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
+                      />
+                    </svg>
+                    <div>
+                      <span className="font-medium text-gray-900">Find the 2–8% you&apos;re losing today.</span>
+                      <span className="block text-sm text-gray-500 mt-0.5">Most teams are surprised by the true all-in cost once spreads, lifting fees and intermediary charges are added up.</span>
                     </div>
-
-                    <div className="flex flex-nowrap items-center justify-center lg:justify-start -m-4 lg:-m-2 xl:-m-4">
-                      {/* Facebook */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/ht.svg" alt="Harris & Trotter" />
-                      </div>
-
-                      {/* Nike */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/deloitte.svg" alt="Deloitte" />
-                      </div>
-
-                      {/* Samsung */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/pwc.svg" alt="PWC" />
-                      </div>
-
-                      {/* Disney */}
-                      <div className="p-4 lg:p-2 xl:p-4">
-                        <img className="inline-flex max-w-full" src="/images/xange.svg" alt="Xange" />
-                      </div>
+                  </li>
+                  <li className="flex items-start text-left w-full">
+                    <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <circle className="fill-blue-100" cx="10" cy="10" r="10" />
+                      <path
+                        className="fill-blue-500"
+                        d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
+                      />
+                    </svg>
+                    <div>
+                      <span className="font-medium text-gray-900">Settle in minutes instead of days.</span>
+                      <span className="block text-sm text-gray-500 mt-0.5">See a live stablecoin payout land, and a fiat payout at a flat 0.5%.</span>
                     </div>
-                  </div>
+                  </li>
+                  <li className="flex items-start text-left w-full">
+                    <svg className="shrink-0 mr-3 mt-0.5" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+                      <circle className="fill-blue-100" cx="10" cy="10" r="10" />
+                      <path
+                        className="fill-blue-500"
+                        d="M15.335 7.933 14.87 7c-4.025 1.167-6.067 3.733-6.067 3.733l-1.867-1.4-.933.934L8.802 14c2.158-4.025 6.533-6.067 6.533-6.067Z"
+                      />
+                    </svg>
+                    <div>
+                      <span className="font-medium text-gray-900">Leave with a written cost comparison.</span>
+                      <span className="block text-sm text-gray-500 mt-0.5">Your current setup versus Request, at your actual volume and currency mix.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-10 text-left bg-gray-50 rounded-xl p-5 xl:p-6 border border-gray-100">
+                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+                  What happens in your 30 minutes
+                </h3>
+                <ol className="space-y-3">
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">01</span>
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">We map your payment flows.</span>
+                      <span className="block text-sm text-gray-500">Which countries, which currencies, who you pay and how often. No prep needed.</span>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">02</span>
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">You see your exact use case, live.</span>
+                      <span className="block text-sm text-gray-500">Not a generic tour, but a walkthrough built around how your team actually moves money.</span>
+                    </div>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="flex-shrink-0 w-7 h-7 rounded-full bg-blue-100 text-blue-600 text-xs font-bold flex items-center justify-center">03</span>
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900">You get the numbers in writing.</span>
+                      <span className="block text-sm text-gray-500">Current cost, cost on Request, and what it would take to switch.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+
+              <div className="w-full">
+                <div className="text-xs text-slate-400 font-[350] uppercase tracking-wider mb-5">
+                  1,500+ finance teams · $1B+ processed
                 </div>
 
-                {/* Right side */}
-                <div className="relative shrink-0 text-center lg:text-left">
-                  {/* Bg */}
-                  <div
-                    className="absolute inset-0 mb-44 -mx-4 sm:-mx-6 lg:-mt-[9999px] lg:ml-0 lg:-mr-[9999px] rounded-bl-[100px] bg-gradient-to-tr from-blue-600 to-blue-500 pointer-events-none -z-10"
-                    aria-hidden="true"
-                  />
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+                  <img className="h-7 w-auto sm:h-8" src="/images/ht.svg" alt="Harris & Trotter" />
+                  <img className="h-7 w-auto sm:h-8" src="/images/deloitte.svg" alt="Deloitte" />
+                  <img className="h-7 w-auto sm:h-8" src="/images/pwc.svg" alt="PWC" />
+                  <img className="h-7 w-auto sm:h-8" src="/images/xange.svg" alt="Xange" />
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  {/* Illustration */}
-                  <Image
-                    className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -mt-40 ml-20 pointer-events-none -z-10 max-w-none mix-blend-lighten"
-                    src="/images/hero-illustration.svg"
-                    alt="Request Finance spend management platform illustration"
-                    width={600}
-                    height={600}
-                    aria-hidden="true"
-                  />
+          {/* Right column — full half-width blue panel */}
+          <div className="relative">
+            <div
+              className="absolute inset-0 rounded-bl-[100px] bg-gradient-to-tr from-blue-600 to-blue-500 pointer-events-none"
+              aria-hidden="true"
+            />
 
-                  <div className="flex pt-12 lg:pt-0 lg:pl-12 xl:pl-20">
-                    <div className="w-full max-w-[480px] mx-auto lg:w-[480px] lg:max-w-none lg:mx-0 xl:w-[512px] bg-white shadow-2xl overflow-hidden rounded-t-2xl">
-                      {/* Form panel header */}
-                      <div className="px-6 pt-6 pb-4 border-b border-gray-100">
-                        <h2 className="text-lg font-semibold text-gray-900 mb-0.5">
-                          Get your cross-border cost breakdown
-                        </h2>
-                        <p className="text-sm text-gray-500">
-                          15 minutes. No prep required. Cancel anytime.
-                        </p>
-                      </div>
+            <Image
+              className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -mt-32 ml-16 pointer-events-none max-w-none mix-blend-lighten opacity-90 xl:w-[520px] 2xl:w-[600px]"
+              src="/images/hero-illustration.svg"
+              alt=""
+              width={600}
+              height={600}
+              aria-hidden="true"
+            />
 
-                      {/* HubSpot Meetings Embed */}
-                      <div 
-                        className="meetings-iframe-container w-full min-h-[600px]" 
-                        data-src="https://content.request.finance/meetings/rf-team/demo-call?embed=true"
-                      ></div>
+            <div className="relative px-6 sm:px-10 lg:px-10 xl:px-14 2xl:px-20 pt-12 lg:pt-40 pb-12 md:pb-20">
+              <div className="w-full bg-white shadow-2xl overflow-hidden rounded-t-2xl">
+                <div className="px-6 pt-6 pb-4 border-b border-gray-100">
+                  <h2 className="text-lg font-semibold text-gray-900 mb-0.5">
+                    Get your cross-border cost breakdown
+                  </h2>
+                  <p className="text-sm text-gray-500">
+                    30 minutes. No prep required. Cancel anytime.
+                  </p>
+                </div>
 
-                      {/* Below-form micro-copy */}
-                      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
-                        <ul className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-gray-500">
-                          <li className="flex items-center gap-1.5">
-                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            No spam, ever.
-                          </li>
-                          <li className="flex items-center gap-1.5">
-                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            Confirmed within 1 business hour
-                          </li>
-                          <li className="flex items-center gap-1.5">
-                            <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                            </svg>
-                            A working session, not a sales pitch
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                <div
+                  className="calendly-inline-widget w-full"
+                  data-url={CALENDLY_URL}
+                  style={{ minWidth: '320px', height: '700px' }}
+                />
+
+                <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+                  <ul className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4 text-xs text-gray-500">
+                    <li className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      No spam, ever.
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      Confirmed within 1 business hour
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <svg className="w-3.5 h-3.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      A working session, not a sales pitch
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -254,10 +188,9 @@ export function DemoContent() {
         </section>
       </main>
       <Script
-        src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"
+        src="https://assets.calendly.com/assets/external/widget.js"
         strategy="afterInteractive"
       />
     </>
   )
 }
-
